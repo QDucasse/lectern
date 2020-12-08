@@ -4,6 +4,7 @@
 # JabRef backup files
 **/*.bak
 **/*.sav
+**/*.sav.tmp
 
 # Divine and lectures materials
 DVE/

@@ -14,7 +14,6 @@
 
 @phdthesis{1987,
  author = {David Ungar},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1016/0141-9331(87)90466-2},
  groups = {VM},
  issn = {0141-9331},
@@ -27,7 +26,6 @@
 
 @article{Agesen1997,
  author = {Ole Agesen},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1002/(sici)1096-9942(1997)3:2<127::aid-tapo4>3.0.co;2-s},
  groups = {VM},
  issn = {1074-3227},
@@ -40,7 +38,6 @@
 
 @article{Agesen2010,
  author = {Ole Agesen and Alex Garthwaite and Jeffrey Sheldon and Pratap Subrahmanyam},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1899928.1899930},
  groups = {VM},
  issn = {0163-5980},
@@ -53,7 +50,6 @@
 
 @misc{Antero1998,
  author = {Taivalsaari Antero and Taivalsaari Antero},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1.1.23.6391},
  groups = {VM},
  journal = {SUN MICROSYSTEMS LABORATORIES SUN MICROSYSTEMS INC. 901 SAN ANTONIO ROAD PALO ALTO CA 94303},
@@ -63,7 +59,6 @@
 
 @article{Arnold2000,
  author = {Matthew Arnold and Stephen Fink and David Grove and Michael Hind and Peter F. Sweeney},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/353171.353175},
  groups = {VM},
  journal = {OOPSLA},
@@ -73,7 +68,6 @@
 
 @article{Bacon1996,
  author = {David F. Bacon and Peter F. Sweeney},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/236338.236371},
  groups = {VM},
  issn = {0362-1340},
@@ -86,7 +80,6 @@
 
 @article{Bell1973,
  author = {James R. Bell},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/362248.362270},
  groups = {VM},
  issn = {0001-0782},
@@ -102,7 +95,6 @@
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/icse/BlackburnCM04.bib},
  booktitle = {26th International Conference on Software Engineering {(ICSE} 2004), 23-28 May 2004, Edinburgh, United Kingdom},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1109/ICSE.2004.1317436},
  editor = {Anthony Finkelstein and Jacky Estublier and David S. Rosenblum},
  groups = {VM},
@@ -114,7 +106,6 @@
 
 @article{Bolz2009,
  author = {Carl Friedrich Bolz and Antonio Cuni and Maciej Fijalkowski and Armin Rigo},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1565824.1565827},
  groups = {VM},
  journal = {ICOOOLPS},
@@ -124,7 +115,6 @@
 
 @article{Bolz2011,
  author = {Carl Friedrich Bolz and Antonio Cuni and Maciej Fijałkowski and Michael Leuschel and Samuele Pedroni and Armin Rigo},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2069172.2069181},
  groups = {VM},
  journal = {ICOOOLPS},
@@ -134,7 +124,6 @@
 
 @article{Burke1999,
  author = {Michael G. Burke and John Whaley and Jong-Deok Choi and Stephen Fink and David Grove and Michael Hind and Vivek Sarkar and Mauricio J. Serrano and V. C. Sreedhar and Harini Srinivasan},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/304065.304113},
  groups = {VM},
  journal = {JAVA},
@@ -144,23 +133,6 @@
 
 @article{Bush1987,
  author = {William R. Bush and A. Dain Samples and David Ungar and Paul N. Hilfinger},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
-*[08/12/2020]:*
-
-Goal of SOAR (Smalltalk On A RISC) is to produce a high-performance Smalltalk-80 execution language. It can attain high performance on a modified reduced instruction set architecture. The most important optimization is the removal of a layer of interpretation, compiling the bytecoded virtual machine instructions into low-level, register-based hardware instructions.
-
-The Smalltalk-80 virtual machines executes *stack-based instructions* called **bytecodes**. An alternative is to compile **bytecodes** to native machine instructions directly. The SOAR approach consists of compiling all methods from *bytecodes* into **SOAR instructions**, therefor discarding the *bytecodes*. 
-
-The basic task of the compiler is to translate *stack-oriented bytecodes* into **RISC-style loads, stores, and other register-based instructions**. It does this by *assigning Smalltalk variables and stack locations to registers and memory locations*, and then *simulating at compile time the bytecode stack operations on a symbolic stack*, converting the operations into SOAR instructions.
-
-The RISC architecture presents a register file of overlapping register windows, each window corresponding to a procedure activation frame allocated in a stack discipline. The SOAR hardware uses a **window size of 16 registers with 8-register overlap**. Each window is divided into two identical sets of 8 registers, a **high set** (15-8) and a **low set** (7-0). Each set contains **6 general purpose registers and 2 dedicated registers** used for **return addresses** (15 and 7) and **return values** (14 and 6).
-
-*FIGURE 2 PROVIDES A VERY GOOD INSIGHT*
-
-When more registers are required than available, **spilling** is necessary. Spilling comes with two rules: (1) **Entire categories of variables are spilled if necessary** (arguments for example) (2) **A variable cannot be moved once it has been allocated a location**. These rules are not optimized in terms of register space usage but are simple and spilling is *minimized at reasonable cost*. Spills can either be *allocated from a common spill pool* or a separate *spill object can be allocated for each activation frame that spills*.
-
-SOAR takes advantage of the fact that all simple arithmetic operations are performed only on integers. If incorrect, the hardware will **trap** and transfer to a handler that will **look-up** the correct method. The compiler also takes advantage of hardware that **maps registers to memory addresses** and allows **pointers to registers**.},
  doi = {10.1145/36205.36192},
  groups = {VM, Read},
  issn = {0362-1340},
@@ -175,7 +147,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Chambers1989,
  author = {C. Chambers and D. Ungar and E. Lee},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/74877.74884},
  groups = {VM},
  journal = {ACM},
@@ -199,7 +170,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Chambers2004,
  author = {Craig Chambers and David Ungar},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/989393.989425},
  groups = {VM},
  issn = {0362-1340},
@@ -212,7 +182,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Cheng2001,
  author = {Perry Cheng and Guy E. Blelloch},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/378795.378823},
  groups = {VM},
  journal = {PLDI},
@@ -222,7 +191,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Click1995,
  author = {Cliff Click and Michael Paleczny},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/202529.202534},
  groups = {VM},
  journal = {IR},
@@ -232,7 +200,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Click2002,
  author = {Cliff Click and John Rose},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/583810.583821},
  groups = {VM},
  journal = {JGI},
@@ -242,7 +209,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Click2005,
  author = {Cliff Click and Gil Tene and Michael Wolf},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1064979.1064988},
  groups = {VM},
  journal = {VEE},
@@ -252,7 +218,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Dean,
  author = {Jeffrey Dean and David Grove and Craig Chambers},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1007/3-540-49538-x_5},
  groups = {VM},
  journal = {ECOOP},
@@ -266,7 +231,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/cgo/DehnertGBJKKM03.bib},
  booktitle = {1st {IEEE} / {ACM} International Symposium on Code Generation and Optimization {(CGO} 2003), 23-26 March 2003, San Francisco, CA, {USA}},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1109/CGO.2003.1191529},
  editor = {Richard Johnson and Tom Conte and Wen{-}mei W. Hwu},
  groups = {VM},
@@ -278,7 +242,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Deutsch1984,
  author = {L. Peter Deutsch and Allan M. Schiffman},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/800017.800542},
  groups = {VM, Read},
  journal = {ACM},
@@ -288,7 +251,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Dewar1975,
  author = {Robert B. K. Dewar},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/360825.360849},
  groups = {VM},
  issn = {0001-0782},
@@ -301,7 +263,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Diehl2000,
  author = {Stephan Diehl and Pieter Hartel and Peter Sestoft},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1016/s0167-739x(99)00088-6},
  groups = {VM},
  issn = {0167-739X},
@@ -314,7 +275,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Duboscq2014,
  author = {Gilles Duboscq and Thomas Würthinger and Hanspeter Mössenböck},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2647508.2647521},
  groups = {VM},
  journal = {PPPJ},
@@ -326,7 +286,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 @phdthesis{Eckert2014,
  address = {Hamburg},
  author = {Michael Marcel Eckert},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  editor = {Bernd Klauer},
  groups = {VM},
  pagetotal = {VI, 152},
@@ -337,7 +296,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Ertl1995,
  author = {M. Anton Ertl},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/207110.207165},
  groups = {VM},
  journal = {SIGPLAN},
@@ -349,7 +307,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  author = {M. Anton Ertl and David Gregg and Andreas Krall and Bernd Paysan},
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/journals/spe/ErtlGKP02.bib},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1002/spe.434},
  groups = {VM},
  journal = {Softw. Pract. Exp.},
@@ -362,7 +319,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Ertl2003,
  author = {M. Anton Ertl and David Gregg},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/781131.781162},
  groups = {VM},
  journal = {ACM Transactions on Programming Languages and Systems},
@@ -372,7 +328,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Ertl2004,
  author = {M. Anton Ertl and David Gregg},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1059579.1059583},
  groups = {VM},
  journal = {IVME},
@@ -394,37 +349,6 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Faes,
  author = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
- comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
-
-*[08/12/2020]:*
-
-This paper presents a virtual machine, based on the *Jikes Research Virtual Machine* (Jalapeno), that is able to bridge the gap by providing the same capabilities to hardware components as to software components. This integration is achieved by introducing an **architecture and protocol that allow reconfigurable hardware and software to communicate with each other in a transparent manner *i.e.* no component of the design needs to be aware whether other components are implemented in hardware or in software.** It also allows reconfigurable hardware to manage dynamically allocated memory.
-
-Granting the same capabilities to HW as SW with regard to object references highlights three advantages:
-
-- The number of HW registers can be limited. Instead of passing a large number of parameters, a reference to an object that contains the required data can be provided.
-- Neither the HW or SW needs to know in what type of memory the object actually resides. The JVM runtime can implement heuristics that place data closer to the computing unit that is likely to use it in the near future.
-- Calling a method, whether it is implemented in SW or HW is completely transparent. This allows a HW method to perform the same operations as a SW method, call methods of any of its arguments or pass them on to other methods.
-
-
-
-**Architecture:** The reconfigurable computing device is modeled as a *shared memory machine.* *The address space of the HW is mapped into the address space of the JVM.* This way, the *JVM can access memory and control the registers of the HW* while the *HW can access the JVM's heap through Direct Memory Access.*
-
-**Protocol:** A region is used for *garbage collection* and has a one-to-one mapping to the internal RAM for object references. *Method parameters* and *return values* are mapped arbitrarily onto addresses in the internal RAM for primitive datatypes or the internal RAM itself for object references. The rest of the addresses are *control registers* and are not mapped onto RAM but are either ignored or directly connected to HW registers.
-
-*USE CASE FROM THE PAPER IS A GOOD SUMMARY*
-
-***Garbage-Collector:*** The runtime system collects unused objects in the heap by conducting a liveness check (through an *object-reference graph*) and compacting the resulting memory to create a contiguous region of unused memory. This type of GC is called "stop-the-world". 
-
-The GC in the HW/SW system needs to send a *pause* signal to each HW entity and then *resume* them once finished. This can be done because the GC has access to a list of all available HW entities (note that pausing is required so that no reference is changed, primitive computation can continue). The object references on the HW side can either be in the RAM (that is directly mapped to the garbage collector region) or hidden and fragmented in many different small RAMs or in registers. When a pause is requested, the HW needs to expose those regions by copying them into the GC region. 
-
-
-
-***Results:*** Impact of GC is limited to an additional 2.32% execution time 
-
- 
-
-},
  doi = {10.1109/fpl.2005.1515811},
  groups = {VM, Read},
  journal = {IEEE},
@@ -437,7 +361,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/cgo/FinkQ03.bib},
  booktitle = {1st {IEEE} / {ACM} International Symposium on Code Generation and Optimization {(CGO} 2003), 23-26 March 2003, San Francisco, CA, {USA}},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1109/CGO.2003.1191549},
  editor = {Richard Johnson and Tom Conte and Wen{-}mei W. Hwu},
  groups = {VM},
@@ -457,7 +380,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Frampton2009,
  author = {Daniel Frampton and Stephen M. Blackburn and Perry Cheng and Robin J. Garner and David Grove and J. Eliot B. Moss and Sergey I. Salishev},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1508293.1508305},
  groups = {VM},
  journal = {VEE},
@@ -467,7 +389,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Franz1997,
  author = {Michael Franz and Thomas Kistler},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/265563.265576},
  groups = {VM},
  issn = {0001-0782},
@@ -489,7 +410,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Gal2006,
  author = {Andreas Gal and Christian W. Probst and Michael Franz},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1134760.1134780},
  groups = {VM},
  journal = {VEE},
@@ -512,7 +432,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/aosd/GrimmerSWM15.bib},
  booktitle = {Proceedings of the 14th International Conference on Modularity, {MODULARITY} 2015, Fort Collins, CO, USA, March 16 - 19, 2015},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2724525.2728790},
  editor = {Robert B. France and Sudipto Ghosh and Gary T. Leavens},
  groups = {VM},
@@ -592,7 +511,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Hussein2015,
  author = {Ahmed Hussein and Antony L. Hosking and Mathias Payer and Christopher A. Vick},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2754169.2754182},
  groups = {VM},
  journal = {ISMM},
@@ -620,7 +538,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Kotzmann2008,
  author = {Thomas Kotzmann and Christian Wimmer and Hanspeter Mössenböck and Thomas Rodriguez and Kenneth Russell and David Cox},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1369396.1370017},
  groups = {VM},
  issn = {1544-3566},
@@ -633,7 +550,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Kulkarni2013,
  author = {S. Kulkarni and J. Cavazos and C. Wimmer and D. Simon},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1109/cgo.2013.6495004},
  groups = {VM},
  journal = {CGO},
@@ -646,7 +562,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/jvm/PalecznyVC01.bib},
  booktitle = {Proceedings of the 1st Java Virtual Machine Research and Technology Symposium, April 23-24, 2001, Monterey, CA, {USA}},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  editor = {Saul Wold},
  groups = {VM},
  publisher = {{USENIX}},
@@ -657,7 +572,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Piumarta1998,
  author = {Ian Piumarta and Fabio Riccardi},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/277652.277743},
  groups = {VM},
  issn = {0362-1340},
@@ -670,7 +584,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Popek1974,
  author = {Gerald J. Popek and Robert P. Goldberg},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/361011.361073},
  groups = {VM},
  issn = {0001-0782},
@@ -686,7 +599,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/oopsla/RigoP06.bib},
  booktitle = {Companion to the 21th Annual {ACM} {SIGPLAN} Conference on Object-Oriented Programming, Systems, Languages, and Applications, {OOPSLA} 2006, October 22-26, 2006, Portland, Oregon, {USA}},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1176617.1176753},
  editor = {Peri L. Tarr and William R. Cook},
  groups = {VM, Read},
@@ -707,7 +619,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Rohou2015,
  author = {Erven Rohou and Bharath Narasimha Swamy and Andre Seznec},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1109/cgo.2015.7054191},
  groups = {VM},
  journal = {CGO},
@@ -720,7 +631,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/oopsla/RussellD06.bib},
  booktitle = {Proceedings of the 21th Annual {ACM} {SIGPLAN} Conference on Object-Oriented Programming, Systems, Languages, and Applications, {OOPSLA} 2006, October 22-26, 2006, Portland, Oregon, {USA}},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1167473.1167496},
  editor = {Peri L. Tarr and William R. Cook},
  groups = {VM},
@@ -732,7 +642,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Sachindran2004,
  author = {Narendran Sachindran and J. Eliot B. Moss and Emery D. Berger},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1028976.1028984},
  groups = {VM},
  journal = {OOPSLA},
@@ -742,7 +651,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Samples1986,
  author = {A. Dain Samples and David Ungar and Paul Hilfinger},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/28697.28708},
  groups = {VM},
  journal = {ACM},
@@ -752,7 +660,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Seaton2014,
  author = {Chris Seaton and Michael L. Van De Vanter and Michael Haupt},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2617548.2617550},
  groups = {VM},
  journal = {DYLA},
@@ -762,61 +669,6 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 @article{Shaylor2003,
  author = {Nik Shaylor and Douglas N. Simon and William R. Bush},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
-**The size of Java classfiles** has long been recognized as an issue, especially for embedded devices. Several methods exist to reduce the size, both as a transmission format and as an execution format. Some methods try to perturb the Java execution engine as little as possible while the **Java Card Paradigm introduces a muscular transformer between classfiles and interpreter.**
-
-The project’s main goal of building a CLDC-compliant system on a small device led to a few straightforward consequent goals, namely *minimizing the size of transmitted classfiles*, the *RAM needed for classfile loading*, the *size of loaded classfiles*, the *RAM required during execution*, and the *size of the interpreter and memory system*.
-
-These goals are then translated in design choices:
-
-- Standard CLDC classfiles are too large and complex. Using a **Java Card** technique, they are **preprocessed off-device** and packaged in a smaller representation (*suite*) that can be verified and loaded on-device.
-- The **classfile preprocesor** identifies code snippets that are hard to verify or garbage collect and translates them into simpler versions
-- Standard classfiles contain symbolic information for resolving references. **References are now resolved before execution**, either during off-device translation or during the installation of suites on the device.
-- Standard construction and **object initialization is recasted** into an equivalent form that can be verified more efficiently
-- Three memory spaces are available with different characteristics. A **region-aware memory manager** is therefore used.
-
-
-
-Bytecode verification and exact garbage collection are complex on small devices, especially due to the fact that pointers are hard to find and track. While CLDC added a classfile attribute called a *stackmap*, it is too complex and memory intensive. Specific restrictions are added to the translator and applied when the conversion from classfiles to *suites* is performed:
-
-- **A local variable can only hold one type**
-- **The evaluation stack must be empty at the end of a basic block**
-- **Bytecodes that can trigger a GC may only be executed when the evaluation stack contains only the operands for those bytecodes**
-
-
-
-A compact bytecode set is used with **reduced operand field sizes** that can then be extended (8 bits by default but that can be extended to 12, 16 or 32). Local variables are explicitly typed so **no type-specific load and store are needed**. Symbolic references (through a name string rather than an index or pointer) are **resolved as much as possible** when they are written into the memory of the target device **during loading**. A **field access** can be resolved to an **absolute offset within an object**, a **method invocation** to an **offset in a vtable**. Simple two-pass verification process. First step reads the bytecode and verifies **type safety**, **class member references** and writes them in NVM. Second pass checks the **branch targets** are valid.
-
-Standard Java object construction creates an *uninitialized* object and then fills it up. Squawk does not expose uninitialized object references to the bytecode. The **object method constructor creates the object and returns the address of the newly created object**. A *null* flag is used as the first parameter. A constructor will allocate an object and replace the first parameter only if that parameter is *null*.
-
-
-
-**Memory:**
-
-- Three memory spaces: *RAM*, *NVM* and *ROM*. Objects in less permanent memory are allowed to contain references to objets in more permanent memory but not the other way around.
-- *Chunky stack* composed of chunks allocated in the *RAM heap*. Each chunk is a Java object and can be GC'd.
-- Class definition information is divided into *immutable* and *mutable*. All objects have a one-word header pointing to the immutable class information for that object.
-- *Object monitors* are used to implement synchronization. The monitors are placed in an LRU queue in RAM. All monitors keep a reference to their corresponding objects.
-
-**Implementation:**
-
-- *Methods* are *byte arrays*
-- Every class contains a *reference to a byte array that contains an object pointer map* used by the GC
-- A class state record is the mutable part of a class definition, it contains the object reference fields and the integer fields used to hold the static variables of the class. The class state records are kept in an LRU queue in the RAM.
-
-Garbage collection is performed when the `interpret` method fails and outputs an `OutOfMemory` error. The `gc()` method is only called when it fails to allocate a stack chunk, when it fails to allocate an object or when it is explicitly called:
-
-```java
-for (;;) {
-	interpret(result);
-	result = gc();
-}
-```
-
-
-
-},
  doi = {10.1145/780732.780738},
  groups = {VM, Read},
  journal = {LCTES},
@@ -826,7 +678,6 @@ for (;;) {
 
 @article{Simon2015,
  author = {Doug Simon and Christian Wimmer and Bernhard Urban and Gilles Duboscq and Lukas Stadler and Thomas Würthinger},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2764907},
  groups = {VM},
  issn = {1544-3566},
@@ -850,7 +701,6 @@ for (;;) {
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/cgo/StadlerWM14.bib},
  booktitle = {12th Annual {IEEE/ACM} International Symposium on Code Generation and Optimization, {CGO} 2014, Orlando, FL, USA, February 15-19, 2014},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  editor = {David R. Kaeli and Tipp Moseley},
  groups = {VM},
  pages = {165},
@@ -862,7 +712,6 @@ for (;;) {
 
 @article{Ungar1984,
  author = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/773453.808182},
  groups = {VM, Read},
  issn = {0163-5964},
@@ -910,7 +759,6 @@ for (;;) {
 
 @article{Ungar2005,
  author = {David Ungar and Adam Spitz and Alex Ausch},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/1094855.1094865},
  groups = {VM},
  journal = {OOPSLA},
@@ -931,7 +779,6 @@ for (;;) {
  author = {Steven Varoumas},
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/phd/hal/Varoumas19.bib},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  groups = {VM},
  school = {Sorbonne University, Paris, France},
  title = {Mod{\`{e}}les de programmation de haut niveau pour microcontr{\^{o}}leurs {\`{a}} faibles ressources. (High-level programming models for microcontrollers with scarce resources)},
@@ -953,7 +800,6 @@ for (;;) {
 
 @article{Woess2014,
  author = {Andreas Wöß and Christian Wirth and Daniele Bonetta and Chris Seaton and Christian Humer and Hanspeter Mössenböck},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2647508.2647517},
  groups = {VM},
  journal = {PPPJ},

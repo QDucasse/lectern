@@ -1,0 +1,844 @@
+% Encoding: UTF-8
+
+@Article{Bell1973,
+  author  = {James R. Bell},
+  journal = {ACM},
+  title   = {Threaded code},
+  year    = {1973},
+  issn    = {0001-0782},
+  pages   = {370-372},
+  volume  = {16},
+  doi     = {10.1145/362248.362270},
+  groups  = {VM},
+}
+
+@Article{Popek1974,
+  author  = {Gerald J. Popek and Robert P. Goldberg},
+  journal = {OSP},
+  title   = {Formal requirements for virtualizable third generation architectures},
+  year    = {1974},
+  issn    = {0001-0782},
+  pages   = {412-421},
+  volume  = {17},
+  doi     = {10.1145/361011.361073},
+  groups  = {VM},
+}
+
+@Article{Dewar1975,
+  author  = {Robert B. K. Dewar},
+  journal = {ACM},
+  title   = {Indirect threaded code},
+  year    = {1975},
+  issn    = {0001-0782},
+  pages   = {330-331},
+  volume  = {18},
+  doi     = {10.1145/360825.360849},
+  groups  = {VM},
+}
+
+@Article{Deutsch1984,
+  author  = {L. Peter Deutsch and Allan M. Schiffman},
+  journal = {ACM},
+  title   = {Efficient implementation of the smalltalk-80 system},
+  year    = {1984},
+  doi     = {10.1145/800017.800542},
+  groups  = {VM},
+}
+
+@Article{Ungar1984,
+  author  = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
+  journal = {IEEE},
+  title   = {Architecture of SOAR: Smalltalk on a RISC},
+  year    = {1984},
+  issn    = {0163-5964},
+  pages   = {188-197},
+  volume  = {12},
+  doi     = {10.1145/773453.808182},
+  groups  = {VM},
+}
+
+@Article{Samples1986,
+  author  = {A. Dain Samples and David Ungar and Paul Hilfinger},
+  journal = {ACM},
+  title   = {SOAR: Smalltalk without bytecodes},
+  year    = {1986},
+  doi     = {10.1145/28697.28708},
+  groups  = {VM},
+}
+
+@Article{Ungar1984a,
+  author  = {David Ungar},
+  journal = {IEEE},
+  title   = {Generation Scavenging: A non-disruptive high performance storage reclamation algorithm},
+  year    = {1984},
+  issn    = {0163-5948},
+  pages   = {157-167},
+  volume  = {9},
+  doi     = {10.1145/390010.808261},
+  groups  = {VM},
+}
+
+@PhdThesis{1987,
+  author  = {David Ungar},
+  title   = {The design and evaluation of a high performance Smalltalk system},
+  year    = {1987},
+  doi     = {10.1016/0141-9331(87)90466-2},
+  groups  = {VM},
+  issn    = {0141-9331},
+  journal = {ACM},
+  pages   = {562},
+  volume  = {11},
+}
+
+@Article{Bush1987,
+  author  = {William R. Bush and A. Dain Samples and David Ungar and Paul N. Hilfinger},
+  journal = {ACM},
+  title   = {Compiling Smalltalk-80 to a RISC},
+  year    = {1987},
+  issn    = {0362-1340},
+  pages   = {112-116},
+  volume  = {22},
+  doi     = {10.1145/36205.36192},
+  groups  = {VM, Read},
+}
+
+@Article{Ungar1987,
+  author  = {David Ungar and Randall B. Smith},
+  journal = {ACM},
+  title   = {Self: The power of simplicity},
+  year    = {1987},
+  doi     = {10.1145/38765.38828},
+  groups  = {VM},
+}
+
+@Article{Ungar1987b,
+  author    = {David M. Ungar and David A. Patterson},
+  journal   = {Computer},
+  title     = {What Price Smalltalk?},
+  year      = {1987},
+  number    = {1},
+  pages     = {67--74},
+  volume    = {20},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/journals/computer/UngarP87.bib},
+  doi       = {10.1109/MC.1987.1663359},
+  groups    = {VM},
+}
+
+@Article{Chambers1989,
+  author  = {C. Chambers and D. Ungar and E. Lee},
+  journal = {ACM},
+  title   = {An efficient implementation of SELF a dynamically-typed object-oriented language based on prototypes},
+  year    = {1989},
+  doi     = {10.1145/74877.74884},
+  groups  = {VM},
+}
+
+@InProceedings{Chambers1989a,
+  author    = {Craig Chambers and David M. Ungar},
+  booktitle = {Proceedings of the {ACM} SIGPLAN'89 Conference on Programming Language Design and Implementation (PLDI), Portland, Oregon, USA, June 21-23, 1989},
+  title     = {Customization: Optimizing Compiler Technology for SELF, {A} Dynamically-Typed Object-Oriented Programming Language},
+  year      = {1989},
+  editor    = {Richard L. Wexelblat},
+  pages     = {146--160},
+  publisher = {{ACM}},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/pldi/ChambersU89.bib},
+  doi       = {10.1145/73141.74831},
+  groups    = {VM},
+}
+
+@Article{Hoelzle,
+  author  = {Urs Hölzle and Craig Chambers and David Ungar},
+  journal = {ECCOP Proceedings},
+  title   = {Optimizing dynamically-typed object-oriented languages with polymorphic inline caches},
+  year    = {1991},
+  pages   = {21-38},
+  doi     = {10.1007/bfb0057013},
+  groups  = {VM, Read},
+}
+
+@Article{Hoelzle1992,
+  author  = {Urs Hölzle and Craig Chambers and David Ungar},
+  journal = {ACM},
+  title   = {Debugging optimized code with dynamic deoptimization},
+  year    = {1992},
+  pages   = {32-43},
+  doi     = {10.1145/143095.143114},
+  groups  = {VM},
+}
+
+@Article{Hoelzle1994,
+  author   = {Urs Hölzle and David Ungar},
+  journal  = {OOPSLA},
+  title    = {A third-generation SELF implementation},
+  year     = {1994},
+  issn     = {0362-1340},
+  pages    = {229-243},
+  volume   = {29},
+  doi      = {10.1145/191081.191116},
+  groups   = {VM},
+  subtitle = {reconciling responsiveness with performance},
+}
+
+@PhdThesis{Hoelzle1994a,
+  author = {Urs Hölzle},
+  title  = {Adaptive Optimization for Self: Reconciling High Performance with Exploratory Programming},
+  year   = {1994},
+  type   = {phdthesis},
+  groups = {VM},
+}
+
+@Article{Click1995,
+  author  = {Cliff Click and Michael Paleczny},
+  journal = {IR},
+  title   = {A simple graph-based intermediate representation},
+  year    = {1995},
+  doi     = {10.1145/202529.202534},
+  groups  = {VM},
+}
+
+@Article{Dean,
+  author  = {Jeffrey Dean and David Grove and Craig Chambers},
+  journal = {ECOOP},
+  title   = {Optimization of Object-Oriented Programs Using Static Class Hierarchy Analysis},
+  year    = {1995},
+  pages   = {77-101},
+  doi     = {10.1007/3-540-49538-x_5},
+  groups  = {VM},
+}
+
+@Article{Ertl1995,
+  author  = {M. Anton Ertl},
+  journal = {SIGPLAN},
+  title   = {Stack caching for interpreters},
+  year    = {1995},
+  doi     = {10.1145/207110.207165},
+  groups  = {VM},
+}
+
+@Article{Gosling1995,
+  author   = {James Gosling},
+  journal  = {ACM SIGPLAN Workshop onIntermediate Representations},
+  title    = {Java intermediate bytecodes},
+  year     = {1995},
+  doi      = {10.1145/202529.202541},
+  groups   = {VM},
+  subtitle = {ACM SIGPLAN workshop on intermediate representations (IR'95)},
+}
+
+@Article{Bacon1996,
+  author  = {David F. Bacon and Peter F. Sweeney},
+  journal = {OOPSLA},
+  title   = {Fast static analysis of C++ virtual function calls},
+  year    = {1996},
+  issn    = {0362-1340},
+  pages   = {324-341},
+  volume  = {31},
+  doi     = {10.1145/236338.236371},
+  groups  = {VM},
+}
+
+@Article{Agesen1997,
+  author  = {Ole Agesen},
+  journal = {THEORY AND PRACTICE OF OBJECT SYSTEMS},
+  title   = {Design and implementation of Pep, a Java Just-In-Time translator},
+  year    = {1997},
+  issn    = {1074-3227},
+  pages   = {127-155},
+  volume  = {3},
+  doi     = {10.1002/(sici)1096-9942(1997)3:2<127::aid-tapo4>3.0.co;2-s},
+  groups  = {VM},
+}
+
+@Article{Ingalls1997,
+  author  = {Dan Ingalls and Ted Kaehler and John Maloney and Scott Wallace and Alan Kay},
+  journal = {OOPSLA},
+  title   = {Back to the future: the story of Squeak, a practical Smalltalk written in itself},
+  year    = {1997},
+  doi     = {10.1145/263698.263754},
+  groups  = {VM},
+}
+
+@Article{Franz1997,
+  author  = {Michael Franz and Thomas Kistler},
+  journal = {Communications of the ACM},
+  title   = {Slim binaries},
+  year    = {1997},
+  issn    = {0001-0782},
+  pages   = {87-94},
+  volume  = {40},
+  doi     = {10.1145/265563.265576},
+  groups  = {VM},
+}
+
+@Article{Piumarta1998,
+  author  = {Ian Piumarta and Fabio Riccardi},
+  journal = {SIGPLAN},
+  title   = {Optimizing direct threaded code by selective inlining},
+  year    = {1998},
+  issn    = {0362-1340},
+  pages   = {291-300},
+  volume  = {33},
+  doi     = {10.1145/277652.277743},
+  groups  = {VM},
+}
+
+@Misc{Antero1998,
+  author  = {Taivalsaari Antero and Taivalsaari Antero},
+  title   = {Implementing a Java Virtual Machine in the Java Programming Language},
+  year    = {1998},
+  doi     = {10.1.1.23.6391},
+  groups  = {VM},
+  journal = {SUN MICROSYSTEMS LABORATORIES SUN MICROSYSTEMS INC. 901 SAN ANTONIO ROAD PALO ALTO CA 94303},
+}
+
+@Article{Burke1999,
+  author  = {Michael G. Burke and John Whaley and Jong-Deok Choi and Stephen Fink and David Grove and Michael Hind and Vivek Sarkar and Mauricio J. Serrano and V. C. Sreedhar and Harini Srinivasan},
+  journal = {JAVA},
+  title   = {The Jalapeño dynamic optimizing compiler for Java},
+  year    = {1999},
+  doi     = {10.1145/304065.304113},
+  groups  = {VM},
+}
+
+@Misc{Yoshihiko1999,
+  author  = {Futamura Yoshihiko},
+  title   = {Partial Evaluation of Computation Process - an Approach to a Compiler-compiler},
+  year    = {1999},
+  doi     = {10.1.1.10.2747},
+  groups  = {VM},
+  journal = {SYSTEMS COMPUTERS CONTROLS},
+}
+
+@InProceedings{wolczko1996self,
+  author    = {Wolczko, Mario},
+  booktitle = {Workshop on Prototype-Based Languages, ECOOP ‘96, Linz, Austria},
+  title     = {self includes: Smalltalk},
+  year      = {1996},
+  groups    = {VM},
+}
+
+@Article{Arnold2000,
+  author  = {Matthew Arnold and Stephen Fink and David Grove and Michael Hind and Peter F. Sweeney},
+  journal = {OOPSLA},
+  title   = {Adaptive optimization in the Jalapeño JVM},
+  year    = {2000},
+  doi     = {10.1145/353171.353175},
+  groups  = {VM},
+}
+
+@Articles{Bala2000,
+  author = {Vasanth Bala and Evelyn Duesterwald and Sanjeev Banerjia},
+  doi    = {10.1145/349299.349303},
+  groups = {VM},
+  title  = {Dynamo: a transparent dynamic optimization system},
+  year   = {2000},
+}
+
+@Article{Diehl2000,
+  author  = {Stephan Diehl and Pieter Hartel and Peter Sestoft},
+  journal = {FGCS},
+  title   = {Abstract machines for programming language implementation},
+  year    = {2000},
+  issn    = {0167-739X},
+  pages   = {739-751},
+  volume  = {16},
+  doi     = {10.1016/s0167-739x(99)00088-6},
+  groups  = {VM},
+}
+
+@Article{Cheng2001,
+  author  = {Perry Cheng and Guy E. Blelloch},
+  journal = {PLDI},
+  title   = {A parallel, real-time garbage collector},
+  year    = {2001},
+  doi     = {10.1145/378795.378823},
+  groups  = {VM},
+}
+
+@InProceedings{Paleczny2001,
+  author    = {Michael Paleczny and Christopher A. Vick and Cliff Click},
+  booktitle = {Proceedings of the 1st Java Virtual Machine Research and Technology Symposium, April 23-24, 2001, Monterey, CA, {USA}},
+  title     = {The Java HotSpot Server Compiler},
+  year      = {2001},
+  editor    = {Saul Wold},
+  publisher = {{USENIX}},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/jvm/PalecznyVC01.bib},
+  groups    = {VM},
+  url       = {http://www.usenix.org/publications/library/proceedings/jvm01/paleczny.html},
+}
+
+@Article{Click2002,
+  author  = {Cliff Click and John Rose},
+  journal = {JGI},
+  title   = {Fast subtype checking in the HotSpot JVM},
+  year    = {2002},
+  doi     = {10.1145/583810.583821},
+  groups  = {VM},
+}
+
+@Article{Ertl2002,
+  author    = {M. Anton Ertl and David Gregg and Andreas Krall and Bernd Paysan},
+  journal   = {Softw. Pract. Exp.},
+  title     = {Vmgen - a generator of efficient virtual machine interpreters},
+  year      = {2002},
+  number    = {3},
+  pages     = {265--294},
+  volume    = {32},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/journals/spe/ErtlGKP02.bib},
+  doi       = {10.1002/spe.434},
+  groups    = {VM},
+}
+
+@InProceedings{Dehnert2003,
+  author    = {James C. Dehnert and Brian Grant and John P. Banning and Richard Johnson and Thomas Kistler and Alexander Klaiber and Jim Mattson},
+  booktitle = {1st {IEEE} / {ACM} International Symposium on Code Generation and Optimization {(CGO} 2003), 23-26 March 2003, San Francisco, CA, {USA}},
+  title     = {The Transmeta Code Morphing - Software: Using Speculation, Recovery, and Adaptive Retranslation to Address Real-Life Challenges},
+  year      = {2003},
+  editor    = {Richard Johnson and Tom Conte and Wen{-}mei W. Hwu},
+  pages     = {15--24},
+  publisher = {{IEEE} Computer Society},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/cgo/DehnertGBJKKM03.bib},
+  doi       = {10.1109/CGO.2003.1191529},
+  groups    = {VM},
+}
+
+@Misc{Ertl2003,
+  author = {M. Anton Ertl and David Gregg},
+  title  = {Optimizing indirect branch prediction accuracy in virtual machine interpreters},
+  year   = {2003},
+  doi    = {10.1145/781131.781162},
+  groups = {VM},
+}
+
+@Article{Ertl2005,
+  author  = {M. Anton Ertl},
+  journal = {SCP},
+  title   = {Advances in interpreters, virtual machines and emulators},
+  year    = {2005},
+  issn    = {0167-6423},
+  pages   = {251-252},
+  volume  = {57},
+  doi     = {10.1016/j.scico.2005.04.001},
+  groups  = {VM},
+}
+
+@Article{Ertl2004,
+  author  = {M. Anton Ertl and David Gregg},
+  journal = {IVME},
+  title   = {Combining stack caching with dynamic superinstructions},
+  year    = {2004},
+  doi     = {10.1145/1059579.1059583},
+  groups  = {VM},
+}
+
+@InProceedings{Fink2003,
+  author    = {Stephen J. Fink and Feng Qian},
+  booktitle = {1st {IEEE} / {ACM} International Symposium on Code Generation and Optimization {(CGO} 2003), 23-26 March 2003, San Francisco, CA, {USA}},
+  title     = {Design, Implementation and Evaluation of Adaptive Recompilation with On-Stack Replacement},
+  year      = {2003},
+  editor    = {Richard Johnson and Tom Conte and Wen{-}mei W. Hwu},
+  pages     = {241--252},
+  publisher = {{IEEE} Computer Society},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/cgo/FinkQ03.bib},
+  doi       = {10.1109/CGO.2003.1191549},
+  groups    = {VM},
+}
+
+@Article{Gunadi2015,
+  author        = {Hendra Gunadi and Alwen Tiu and Rajeev Gore},
+  journal       = {arXiv},
+  title         = {Formal Certification of Android Bytecode},
+  year          = {2015},
+  month         = apr,
+  abstract      = {Android is an operating system that has been used in a majority of mobile devices. Each application in Android runs in an instance of the Dalvik virtual machine, which is a register-based virtual machine (VM). Most applications for Android are developed using Java, compiled to Java bytecode and then translated to DEX bytecode using the dx tool in the Android SDK. In this work, we aim to develop a type-based method for certifying non-interference properties of DEX bytecode, following a methodology that has been developed for Java bytecode certification by Barthe et al. To this end, we develop a formal operational semantics of the Dalvik VM, a type system for DEX bytecode, and prove the soundness of the type system with respect to a notion of non-interference. We then study the translation process from Java bytecode to DEX bytecode, as implemented in the dx tool in the Android SDK. We show that an abstracted version of the translation from Java bytecode to DEX bytecode preserves the non-interference property. More precisely, we show that if the Java bytecode is typable in Barthe et al's type system (which guarantees non-interference) then its translation is typable in our type system. This result opens up the possibility to leverage existing bytecode verifiers for Java to certify non-interference properties of Android bytecode.},
+  archiveprefix = {arXiv},
+  eprint        = {1504.01842},
+  file          = {:http\://arxiv.org/pdf/1504.01842v5:PDF},
+  groups        = {VM},
+  keywords      = {cs.PL},
+  primaryclass  = {cs.PL},
+}
+
+@Article{Shaylor2003,
+  author  = {Nik Shaylor and Douglas N. Simon and William R. Bush},
+  journal = {LCTES},
+  title   = {A java virtual machine architecture for very small devices},
+  year    = {2003},
+  doi     = {10.1145/780732.780738},
+  groups  = {VM, Read},
+}
+
+@InProceedings{Blackburn2004,
+  author    = {Stephen M. Blackburn and Perry Cheng and Kathryn S. McKinley},
+  booktitle = {26th International Conference on Software Engineering {(ICSE} 2004), 23-28 May 2004, Edinburgh, United Kingdom},
+  title     = {Oil and Water? High Performance Garbage Collection in Java with MMTk},
+  year      = {2004},
+  editor    = {Anthony Finkelstein and Jacky Estublier and David S. Rosenblum},
+  pages     = {137--146},
+  publisher = {{IEEE} Computer Society},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/icse/BlackburnCM04.bib},
+  doi       = {10.1109/ICSE.2004.1317436},
+  groups    = {VM},
+}
+
+@Article{Chambers2004,
+  author  = {Craig Chambers and David Ungar},
+  journal = {SIGPLAN},
+  title   = {A Retrospective on "Customization: Optimizing Compiler Technology for Self, a Dynamically-Typed Object-Oriented Programming Language"},
+  year    = {2004},
+  issn    = {0362-1340},
+  pages   = {295-312},
+  volume  = {39},
+  doi     = {10.1145/989393.989425},
+  groups  = {VM},
+}
+
+@Article{Sachindran2004,
+  author  = {Narendran Sachindran and J. Eliot B. Moss and Emery D. Berger},
+  journal = {OOPSLA},
+  title   = {MC2: high-performance garbage collection for memory-constrained environments},
+  year    = {2004},
+  doi     = {10.1145/1028976.1028984},
+  groups  = {VM},
+}
+
+@Article{Click2005,
+  author  = {Cliff Click and Gil Tene and Michael Wolf},
+  journal = {VEE},
+  title   = {The pauseless GC algorithm},
+  year    = {2005},
+  doi     = {10.1145/1064979.1064988},
+  groups  = {VM},
+}
+
+@Article{Faes,
+  author  = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
+  journal = {IEEE},
+  title   = {FPGA-aware garbage collection in Java},
+  year    = {2005},
+  doi     = {10.1109/fpl.2005.1515811},
+  groups  = {VM, Read},
+}
+
+@Article{Ungar2005,
+  author  = {David Ungar and Adam Spitz and Alex Ausch},
+  journal = {OOPSLA},
+  title   = {Constructing a metacircular Virtual machine in an exploratory programming environment},
+  year    = {2005},
+  doi     = {10.1145/1094855.1094865},
+  groups  = {VM},
+}
+
+@Article{Gal2006,
+  author  = {Andreas Gal and Christian W. Probst and Michael Franz},
+  journal = {VEE},
+  title   = {HotpathVM: an effective JIT compiler for resource-constrained devices},
+  year    = {2006},
+  doi     = {10.1145/1134760.1134780},
+  groups  = {VM},
+}
+
+@InProceedings{Rigo2006,
+  author    = {Armin Rigo and Samuele Pedroni},
+  booktitle = {Companion to the 21th Annual {ACM} {SIGPLAN} Conference on Object-Oriented Programming, Systems, Languages, and Applications, {OOPSLA} 2006, October 22-26, 2006, Portland, Oregon, {USA}},
+  title     = {PyPy's approach to virtual machine construction},
+  year      = {2006},
+  editor    = {Peri L. Tarr and William R. Cook},
+  pages     = {944--953},
+  publisher = {{ACM}},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/oopsla/RigoP06.bib},
+  doi       = {10.1145/1176617.1176753},
+  groups    = {VM, Read},
+}
+
+@InProceedings{Russell2006,
+  author    = {Kenneth Russell and David Detlefs},
+  booktitle = {Proceedings of the 21th Annual {ACM} {SIGPLAN} Conference on Object-Oriented Programming, Systems, Languages, and Applications, {OOPSLA} 2006, October 22-26, 2006, Portland, Oregon, {USA}},
+  title     = {Eliminating synchronization-related atomic operations with biased locking and bulk rebiasing},
+  year      = {2006},
+  editor    = {Peri L. Tarr and William R. Cook},
+  pages     = {263--272},
+  publisher = {{ACM}},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/oopsla/RussellD06.bib},
+  doi       = {10.1145/1167473.1167496},
+  groups    = {VM},
+}
+
+@Article{Kotzmann2008,
+  author  = {Thomas Kotzmann and Christian Wimmer and Hanspeter Mössenböck and Thomas Rodriguez and Kenneth Russell and David Cox},
+  journal = {ACO},
+  title   = {Design of the Java HotSpot™ client compiler for Java 6},
+  year    = {2008},
+  issn    = {1544-3566},
+  pages   = {1-32},
+  volume  = {5},
+  doi     = {10.1145/1369396.1370017},
+  groups  = {VM},
+}
+
+@Article{Bolz2009,
+  author  = {Carl Friedrich Bolz and Antonio Cuni and Maciej Fijalkowski and Armin Rigo},
+  journal = {ICOOOLPS},
+  title   = {Tracing the meta-level: PyPy's tracing JIT compiler},
+  year    = {2009},
+  doi     = {10.1145/1565824.1565827},
+  groups  = {VM},
+}
+
+@Article{Frampton2009,
+  author  = {Daniel Frampton and Stephen M. Blackburn and Perry Cheng and Robin J. Garner and David Grove and J. Eliot B. Moss and Sergey I. Salishev},
+  journal = {VEE},
+  title   = {Demystifying magic: high-level low-level programming},
+  year    = {2009},
+  doi     = {10.1145/1508293.1508305},
+  groups  = {VM},
+}
+
+@Article{Agesen2010,
+  author  = {Ole Agesen and Alex Garthwaite and Jeffrey Sheldon and Pratap Subrahmanyam},
+  journal = {SIGOPS Oper. Syst. Rev.},
+  title   = {The evolution of an x86 virtual machine monitor},
+  year    = {2010},
+  issn    = {0163-5980},
+  pages   = {3-18},
+  volume  = {44},
+  doi     = {10.1145/1899928.1899930},
+  groups  = {VM},
+}
+
+@Article{Bolz2011,
+  author  = {Carl Friedrich Bolz and Antonio Cuni and Maciej Fijałkowski and Michael Leuschel and Samuele Pedroni and Armin Rigo},
+  journal = {ICOOOLPS},
+  title   = {Runtime feedback in a meta-tracing JIT for efficient dynamic languages},
+  year    = {2011},
+  doi     = {10.1145/2069172.2069181},
+  groups  = {VM},
+}
+
+@Article{Wuerthinger2012,
+  author  = {Thomas Würthinger and Andreas Wöß and Lukas Stadler and Gilles Duboscq and Doug Simon and Christian Wimmer},
+  journal = {DLS},
+  title   = {Self-optimizing AST interpreters},
+  year    = {2012},
+  doi     = {10.1145/2384577.2384587},
+  groups  = {VM, Reading},
+}
+
+@Article{Kulkarni2013,
+  author  = {S. Kulkarni and J. Cavazos and C. Wimmer and D. Simon},
+  journal = {CGO},
+  title   = {Automatic construction of inlining heuristics using machine learning},
+  year    = {2013},
+  doi     = {10.1109/cgo.2013.6495004},
+  groups  = {VM},
+}
+
+@Article{Wimmer2013,
+  author  = {Christian Wimmer and Michael Haupt and Michael L. Van De Vanter and Mick Jordan and Laurent Daynès and Douglas Simon},
+  journal = {ACO},
+  title   = {Maxine: An approachable virtual machine for, and in Java},
+  year    = {2013},
+  issn    = {1544-3566},
+  pages   = {1-24},
+  volume  = {9},
+  doi     = {10.1145/2400682.2400689},
+  groups  = {VM},
+}
+
+@InProceedings{Wuerthinger2013,
+  author    = {Thomas W{\"{u}}rthinger and Christian Wimmer and Andreas W{\"{o}}{\ss} and Lukas Stadler and Gilles Duboscq and Christian Humer and Gregor Richards and Doug Simon and Mario Wolczko},
+  booktitle = {{ACM} Symposium on New Ideas in Programming and Reflections on Software, Onward! 2013, part of {SPLASH} '13, Indianapolis, IN, USA, October 26-31, 2013},
+  title     = {One {VM} to rule them all},
+  year      = {2013},
+  editor    = {Antony L. Hosking and Patrick Th. Eugster and Robert Hirschfeld},
+  pages     = {187--204},
+  publisher = {{ACM}},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/oopsla/WurthingerWWSDHRSW13.bib},
+  doi       = {10.1145/2509578.2509581},
+  groups    = {VM},
+}
+
+@Article{Duboscq2014,
+  author   = {Gilles Duboscq and Thomas Würthinger and Hanspeter Mössenböck},
+  journal  = {PPPJ},
+  title    = {Speculation without regret},
+  year     = {2014},
+  doi      = {10.1145/2647508.2647521},
+  groups   = {VM},
+  subtitle = {reducing deoptimization meta-data in the Graal compiler},
+}
+
+@PhdThesis{Eckert2014,
+  author    = {Michael Marcel Eckert},
+  title     = {FPGA-based system virtual machines},
+  year      = {2014},
+  address   = {Hamburg},
+  editor    = {Bernd Klauer},
+  groups    = {VM},
+  pagetotal = {VI, 152},
+  ppn_gvk   = {784113750},
+}
+
+@Book{Smith2005,
+  author = {James E. Smith and Ravi Nair},
+  title  = {System Virtual Machines},
+  year   = {2005},
+  doi    = {10.1016/b978-155860910-5/50009-4},
+  groups = {VM},
+  pages  = {369-443},
+}
+
+@Article{Freudenberg2014,
+  author  = {Bert Freudenberg and Dan H. H. Ingalls and Tim Felgentreff and Tobias Pape and Robert Hirschfeld},
+  journal = {DLS},
+  title   = {SqueakJS: a modern and practical smalltalk that runs in any browser},
+  year    = {2014},
+  doi     = {10.1145/2661088.2661100},
+  groups  = {VM},
+}
+
+@Article{Humer2015,
+  author  = {Christian Humer and Christian Wimmer and Christian Wirth and Andreas Wöß and Thomas Würthinger},
+  journal = {GPCE},
+  title   = {A domain-specific language for building self-optimizing AST interpreters},
+  year    = {2015},
+  issn    = {0362-1340},
+  pages   = {123-132},
+  volume  = {50},
+  doi     = {10.1145/2775053.2658776},
+  groups  = {VM},
+}
+
+@Article{Seaton2014,
+  author  = {Chris Seaton and Michael L. Van De Vanter and Michael Haupt},
+  journal = {DYLA},
+  title   = {Debugging at Full Speed},
+  year    = {2014},
+  doi     = {10.1145/2617548.2617550},
+  groups  = {VM},
+}
+
+@InProceedings{Stadler2014,
+  author    = {Lukas Stadler and Thomas W{\"{u}}rthinger and Hanspeter M{\"{o}}ssenb{\"{o}}ck},
+  booktitle = {12th Annual {IEEE/ACM} International Symposium on Code Generation and Optimization, {CGO} 2014, Orlando, FL, USA, February 15-19, 2014},
+  title     = {Partial Escape Analysis and Scalar Replacement for Java},
+  year      = {2014},
+  editor    = {David R. Kaeli and Tipp Moseley},
+  pages     = {165},
+  publisher = {{ACM}},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/cgo/StadlerWM14.bib},
+  groups    = {VM},
+  url       = {https://dl.acm.org/citation.cfm?id=2544157},
+}
+
+@Article{Woess2014,
+  author  = {Andreas Wöß and Christian Wirth and Daniele Bonetta and Chris Seaton and Christian Humer and Hanspeter Mössenböck},
+  journal = {PPPJ},
+  title   = {An object storage model for the truffle language implementation framework},
+  year    = {2014},
+  doi     = {10.1145/2647508.2647517},
+  groups  = {VM},
+}
+
+@InProceedings{Grimmer2015,
+  author    = {Matthias Grimmer and Chris Seaton and Thomas W{\"{u}}rthinger and Hanspeter M{\"{o}}ssenb{\"{o}}ck},
+  booktitle = {Proceedings of the 14th International Conference on Modularity, {MODULARITY} 2015, Fort Collins, CO, USA, March 16 - 19, 2015},
+  title     = {Dynamically composing languages in a modular way: supporting {C} extensions for dynamic languages},
+  year      = {2015},
+  editor    = {Robert B. France and Sudipto Ghosh and Gary T. Leavens},
+  pages     = {1--13},
+  publisher = {{ACM}},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/conf/aosd/GrimmerSWM15.bib},
+  doi       = {10.1145/2724525.2728790},
+  groups    = {VM},
+}
+
+@Article{Hussein2015,
+  author  = {Ahmed Hussein and Antony L. Hosking and Mathias Payer and Christopher A. Vick},
+  journal = {ISMM},
+  title   = {Don't race the memory bus: taming the GC leadfoot},
+  year    = {2015},
+  doi     = {10.1145/2754169.2754182},
+  groups  = {VM},
+}
+
+@Article{Hussein2015a,
+  author  = {Ahmed Hussein and Mathias Payer and Antony Hosking and Christopher A. Vick},
+  journal = {SYSTOR},
+  title   = {Impact of GC design on power and performance for Android},
+  year    = {2015},
+  doi     = {10.1145/2757667.2757674},
+  groups  = {VM},
+}
+
+@Article{Rohou2015,
+  author  = {Erven Rohou and Bharath Narasimha Swamy and Andre Seznec},
+  journal = {CGO},
+  title   = {Branch prediction and the performance of interpreter, Don't trust folklore},
+  year    = {2015},
+  doi     = {10.1109/cgo.2015.7054191},
+  groups  = {VM},
+}
+
+@Article{Rohou2012,
+  author  = {Erven Rohou},
+  journal = {41st International Conference on Parallel Processing Workshops.},
+  title   = {Tiptop: Hardware Performance Counters for the Masses},
+  year    = {2012},
+  doi     = {10.1109/icppw.2012.58},
+  groups  = {VM},
+}
+
+@Article{Simon2015,
+  author  = {Doug Simon and Christian Wimmer and Bernhard Urban and Gilles Duboscq and Lukas Stadler and Thomas Würthinger},
+  journal = {ACM},
+  title   = {Snippets: Taking the High Road to a Low Level},
+  year    = {2015},
+  issn    = {1544-3566},
+  volume  = {12},
+  doi     = {10.1145/2764907},
+  groups  = {VM},
+}
+
+@Article{Vanter2015,
+  author  = {Michael L. Van De Vanter},
+  journal = {ICOOOLPS},
+  title   = {Building debuggers and other tools: we can "have it all"},
+  year    = {2015},
+  doi     = {10.1145/2843915.2843917},
+  groups  = {VM},
+}
+
+@PhdThesis{Varoumas2019,
+  author    = {Steven Varoumas},
+  school    = {Sorbonne University, Paris, France},
+  title     = {Mod{\`{e}}les de programmation de haut niveau pour microcontr{\^{o}}leurs {\`{a}} faibles ressources. (High-level programming models for microcontrollers with scarce resources)},
+  year      = {2019},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  biburl    = {https://dblp.org/rec/phd/hal/Varoumas19.bib},
+  groups    = {VM},
+  url       = {https://tel.archives-ouvertes.fr/tel-02426454},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
+
+@Comment{jabref-meta: grouping:
+0 AllEntriesGroup:;
+1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
+2 StaticGroup:Read\;0\;1\;0x80b380ff\;\;\;;
+2 StaticGroup:Reading\;0\;1\;0xffb366ff\;\;\;;
+1 StaticGroup:Security\;0\;1\;0x8066ccff\;\;\;;
+1 StaticGroup:Quantization\;0\;1\;0x8066ccff\;\;\;;
+}

@@ -77,6 +77,12 @@ def process_pdf_articles():
             f.write("<!-- Please prefix the notes with the date as in [22/12/2020] -->")
         os.rename("Articles/TO_PROCESS/" + article, "Articles/"+ article_name + "/" + article_name + ".pdf")
 
+def generate_readme():
+    '''
+    Appends the content of each note file to the README
+    '''
+    pass
+
 if __name__ == "__main__":
     import argparse
     import sys

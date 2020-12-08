@@ -3,6 +3,9 @@ import os
 import bibtexparser
 
 def propagate_notes():
+    '''
+    Appends the modifications added to notes.md files to the comment entry in the bibliography
+    '''
     # List the md files
     notes = glob.glob("**/*.md", recursive=True)
     # Filter out the md files other than notes
@@ -36,5 +39,22 @@ def propagate_notes():
         with open('Bibliography/VM.bib', 'w') as bibtex_file:
             bibtexparser.dump(bib_database, bibtex_file)
 
+
+def extract_bib_without_comments():
+    # Open initial bibtex file
+    with open("Bibliography/VM.bib") as bibtex_file:
+        bib_database = bibtexparser.load(bibtex_file)
+
+    # Remove the comment entry
+    for entry in bib_database.entries:
+        try:
+            del entry['comment']
+        except KeyError:
+            print("No comment found for that entry, skipping.")
+
+    with open('Bibliography/VM_NoComments.bib', 'w') as bibtex_file:
+        bibtexparser.dump(bib_database, bibtex_file)
+
 if __name__ == "__main__":
-    propagate_notes()
+    # propagate_notes()
+    extract_bib_without_comments()

@@ -81,7 +81,51 @@ def generate_readme():
     '''
     Appends the content of each note file to the README
     '''
-    pass
+    # Process all files
+    articles = os.listdir("Articles/")
+    articles = [article for article in articles if article != "TO_PROCESS"]
+    article_dict = {}
+    for article in articles:
+        article_year   = article.split("_")[0]
+        article_author = article.split("_")[1]
+        article_name   = article.split("_")[2]
+        dash_separated_header = article_year + "---" + article_author + "-" + article_name.replace(" ","-")
+        paragraph_link = "[{0} - {1}, {2}](#{3})".format(article_year, article_author, article_name, dash_separated_header)
+        content = ""
+        with open("Articles/" + article + "/notes.md", "r") as f:
+            content = f.read()
+        actual_paragraph = "### {0} - {1}, {2}".format(article_year, article_author, article_name) + "\n" + content + "\n\n"
+        article_dict[article_year + article_author] = (paragraph_link, actual_paragraph)
+
+    items = article_dict.items()
+    sorted_items = sorted(items)
+
+    with open("README.md", "w") as f:
+        f.write(''' ## VM-related Articles
+
+This repository contains the different articles and the bibliography (in BibTeX format) related to the VM world (to a LARGE extent). The `VM.bib` file in `Bibliography` is best used with  [JabRef]. The notes in each of the folders, namely `notes.md` are integrated in the bibliography using a Python script in `utils.py`.  This script contains several useful helpers:
+
+```bash
+$ python utils.py --propagate  # Adds the contents of the notes.md files to their respective entry
+$ python utils.py --nocomments # Generates a comment-free bibliography
+$ python utils.py --process    # Creates a repository and empty notes.md file for each pdf in
+							   # Articles/TO_PROCESS
+$ python utils.py --genreadme  # Adds the notes to the present README.md file
+```
+[JabRef]: https://www.jabref.org/
+
+
+
+## Article notes
+### Summary
+''')
+        for item in sorted_items:
+            f.write(item[1][0] + "\n")
+
+        f.write("\n\n\n")
+
+        for item in sorted_items:
+            f.write(item[1][1] + "\n")
 
 if __name__ == "__main__":
     import argparse
@@ -90,6 +134,7 @@ if __name__ == "__main__":
     parser.add_argument("--nocomments", action="store_true",  help="Flag to output a bibliography without comments.")
     parser.add_argument("--propagate", action="store_true", help="Propagate the markdown notes to the comment field of the corresponding bib entry")
     parser.add_argument("--process", action="store_true", help="Create a folder and a blank note file for each pdf article in TO_PROCESS")
+    parser.add_argument("--generate", action="store_true", help="Modify the README with the different notes from the articles")
     args = parser.parse_args(sys.argv[1:])
 
     if args.propagate:
@@ -98,3 +143,5 @@ if __name__ == "__main__":
         extract_bib_without_comments()
     if args.process:
         process_pdf_articles()
+    if args.generate:
+        generate_readme()

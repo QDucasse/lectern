@@ -16,80 +16,155 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 ## Article notes
 ### Summary
 [1973 - Bell, Threaded Code](#1973---Bell-Threaded-Code)
+
 [1974 - Popek, Formal Requirements for Virtualizable Third Generation Architectures](#1974---Popek-Formal-Requirements-for-Virtualizable-Third-Generation-Architectures)
+
 [1975 - Dewar, Indirect Threaded Code](#1975---Dewar-Indirect-Threaded-Code)
+
 [1983 - Krasner, Smalltalk-80 Bits of History Words of Advice](#1983---Krasner-Smalltalk-80-Bits-of-History-Words-of-Advice)
+
 [1984 - Deutsch, Efficient Implementation of the SmallTalk-80 System](#1984---Deutsch-Efficient-Implementation-of-the-SmallTalk-80-System)
+
 [1984 - Ungar, Generation Scavenging-A non-disruptive High Performance Storage Reclamation Algorithm](#1984---Ungar-Generation-Scavenging-A-non-disruptive-High-Performance-Storage-Reclamation-Algorithm)
+
 [1986 - Samples, SOAR Smalltalk Without Bytecodes](#1986---Samples-SOAR-Smalltalk-Without-Bytecodes)
+
 [1986 - Ungar, The Design and Evaluation of a High Performance Smalltalk System](#1986---Ungar-The-Design-and-Evaluation-of-a-High-Performance-Smalltalk-System)
+
 [1987 - Bush, Compiling Smalltalk-80 to a RISC](#1987---Bush-Compiling-Smalltalk-80-to-a-RISC)
+
 [1987 - Ungar, What Price Smalltalk](#1987---Ungar-What-Price-Smalltalk)
+
 [1989 - Chambers, Customization Optimizing Compiler Technology for SELF a Dynamically-Typed Object-Oriented Programming Language](#1989---Chambers-Customization-Optimizing-Compiler-Technology-for-SELF-a-Dynamically-Typed-Object-Oriented-Programming-Language)
+
 [1991 - Holzle, Optimizing Dynamically-Typed Object-Oriented Languages with Plymorphic Inline Caches](#1991---Holzle-Optimizing-Dynamically-Typed-Object-Oriented-Languages-with-Plymorphic-Inline-Caches)
+
 [1992 - Holzle, Debugging Optimized Code with Dynamic Deoptimization](#1992---Holzle-Debugging-Optimized-Code-with-Dynamic-Deoptimization)
+
 [1994 - Holzle, A Third-Generation SELF Implementation Reconciling Responsiveness with Performance](#1994---Holzle-A-Third-Generation-SELF-Implementation-Reconciling-Responsiveness-with-Performance)
+
 [1995 - Click, A Simple Graph-Based Intermediate Representation](#1995---Click-A-Simple-Graph-Based-Intermediate-Representation)
+
 [1995 - Dean, Optimization of Object-Oriented Programs Using Static Class Hierarchy Analysis](#1995---Dean-Optimization-of-Object-Oriented-Programs-Using-Static-Class-Hierarchy-Analysis)
+
 [1995 - Ertl, Stack Caching for Interpreters](#1995---Ertl-Stack-Caching-for-Interpreters)
+
 [1995 - gosling, Java Intermediate Bytecodes](#1995---gosling-Java-Intermediate-Bytecodes)
+
 [1996 - Bacon, Fast Static Analysis of C++ Virtual Function Calls](#1996---Bacon-Fast-Static-Analysis-of-C++-Virtual-Function-Calls)
+
 [1997 - Agesen, Design and Implementation of PEp a Java Just-In-Time Translator](#1997---Agesen-Design-and-Implementation-of-PEp-a-Java-Just-In-Time-Translator)
+
 [1997 - Ingals, Back to the Future The Story of Squeak a Practical Smalltalk Written in Itself](#1997---Ingals-Back-to-the-Future-The-Story-of-Squeak-a-Practical-Smalltalk-Written-in-Itself)
+
 [1997 - Kistler, Slim Binaries](#1997---Kistler-Slim-Binaries)
+
 [1998 - Piumarta, Optimising Direct Threaded Code by Selective Inlining](#1998---Piumarta-Optimising-Direct-Threaded-Code-by-Selective-Inlining)
+
 [1998 - Taivalsaari, Implementing a Java Virtual Machine in the Java Programming Language](#1998---Taivalsaari-Implementing-a-Java-Virtual-Machine-in-the-Java-Programming-Language)
+
 [1999 - Burke, The Jalapeno Dynamic Optimizing Compiler for Java](#1999---Burke-The-Jalapeno-Dynamic-Optimizing-Compiler-for-Java)
+
 [1999 - Tamura, Partial Evaluation of Computation Process an Approach to a Compiler-Compiler](#1999---Tamura-Partial-Evaluation-of-Computation-Process-an-Approach-to-a-Compiler-Compiler)
+
 [1999 - Wolczko, Self Includes Smalltalk](#1999---Wolczko-Self-Includes-Smalltalk)
+
 [2000 - Arnold, Adaptive Optimization in the Jalapeno JVM](#2000---Arnold-Adaptive-Optimization-in-the-Jalapeno-JVM)
+
 [2000 - Bala, Dynamo a Transparent Dynamic Optimisation System](#2000---Bala-Dynamo-a-Transparent-Dynamic-Optimisation-System)
+
 [2000 - Diehl, Abstract Machines for Programming Language Implementation](#2000---Diehl-Abstract-Machines-for-Programming-Language-Implementation)
+
 [2001 - Cheng, A Parallel Real-Time Garbage Collector](#2001---Cheng-A-Parallel-Real-Time-Garbage-Collector)
+
 [2001 - Paleczny, The Java HotSpot Server Compiler](#2001---Paleczny-The-Java-HotSpot-Server-Compiler)
+
 [2002 - Click, Fast Subtype Checking in the HotSpot JVM](#2002---Click-Fast-Subtype-Checking-in-the-HotSpot-JVM)
+
 [2002 - Ertl, Vmgen a Generator of Efficient Virtual Machine Interpreters](#2002---Ertl-Vmgen-a-Generator-of-Efficient-Virtual-Machine-Interpreters)
+
 [2003 - Dehnert, The Transmeta Code Morphing Software-Using Speculation recovery and Adaptive Retranslation to Address Real-Life Challenges](#2003---Dehnert-The-Transmeta-Code-Morphing-Software-Using-Speculation-recovery-and-Adaptive-Retranslation-to-Address-Real-Life-Challenges)
+
 [2003 - Ertl, The Structure and Performanceof Efficient Interpreters](#2003---Ertl-The-Structure-and-Performanceof-Efficient-Interpreters)
+
 [2003 - Fink, Design Implementation and Evaluation of Adaptive Recompilation with On-Stack Replacement](#2003---Fink-Design-Implementation-and-Evaluation-of-Adaptive-Recompilation-with-On-Stack-Replacement)
+
 [2003 - Shaylor, A Java Virtual Machine Architecture for Very Small Devices](#2003---Shaylor-A-Java-Virtual-Machine-Architecture-for-Very-Small-Devices)
+
 [2004 - Blackburn, Oil and Water High Performance Garbage Collection in Java with MMTk](#2004---Blackburn-Oil-and-Water-High-Performance-Garbage-Collection-in-Java-with-MMTk)
+
 [2004 - Chambers, A Retrospective on - Customization Optimizing Compiler Technology for SELF a Dynamically-Typed Object-Oriented Programming Language](#2004---Chambers-A-Retrospective-on---Customization-Optimizing-Compiler-Technology-for-SELF-a-Dynamically-Typed-Object-Oriented-Programming-Language)
+
 [2004 - Ertl, Combining Stack Caching with Dynamic Superinstructions](#2004---Ertl-Combining-Stack-Caching-with-Dynamic-Superinstructions)
+
 [2004 - Sachindran, MC2 High-Performance Garbage Collection for Memory-Constrained Environments](#2004---Sachindran-MC2-High-Performance-Garbage-Collection-for-Memory-Constrained-Environments)
+
 [2005 - Click, The Pauseless GC Algorithm](#2005---Click-The-Pauseless-GC-Algorithm)
+
 [2005 - Faes, FPGA-Aware Garbage Collection in Java](#2005---Faes-FPGA-Aware-Garbage-Collection-in-Java)
+
 [2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment](#2005---Ungar-Constructing-a-Metacircular-Virtual-Machine-in-an-Exploratory-Programming-Environment)
+
 [2006 - Gal, HotpathVM An Effective JIT Compiler for Resource-Constrained Devices](#2006---Gal-HotpathVM-An-Effective-JIT-Compiler-for-Resource-Constrained-Devices)
+
 [2006 - Rigo, PyPys Approach to Virtual Machine Construction](#2006---Rigo-PyPys-Approach-to-Virtual-Machine-Construction)
+
 [2006 - Russell, Eliminating Synchronization-Related Atomic Operations with Biased Locking and Bulk Rebiasing](#2006---Russell-Eliminating-Synchronization-Related-Atomic-Operations-with-Biased-Locking-and-Bulk-Rebiasing)
+
 [2008 - Kotzmann, Design of the Java HotSpot Client Compiler for Java 6](#2008---Kotzmann-Design-of-the-Java-HotSpot-Client-Compiler-for-Java-6)
+
 [2009 - Bolz, Tracing the Meta-Level PyPys Tracing JIT Compiler](#2009---Bolz-Tracing-the-Meta-Level-PyPys-Tracing-JIT-Compiler)
+
 [2009 - Frampton, Demystifying Magic High-Level Low-Level Programming](#2009---Frampton-Demystifying-Magic-High-Level-Low-Level-Programming)
+
 [2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor](#2010---Agesen-The-Evolution-of-an-X86-Virtual-Machine-Monitor)
+
 [2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages](#2011---Bolz-Runtime-Feedback-in-a-Meta-Tracing-JIT-for-Efficient-Dynamic-Languages)
+
 [2012 - Wurthinger, Self-Optimizing AST Interpreters](#2012---Wurthinger-Self-Optimizing-AST-Interpreters)
+
 [2013 - Decker, IFIP](#2013---Decker-IFIP)
+
 [2013 - Kulkarni, Automatic Construction of Inlining Heuristics using Machine Learning](#2013---Kulkarni-Automatic-Construction-of-Inlining-Heuristics-using-Machine-Learning)
+
 [2013 - Wimmer, Maxine an Approachable Virtual Machine for and in Java](#2013---Wimmer-Maxine-an-Approachable-Virtual-Machine-for-and-in-Java)
+
 [2013 - Wuerthinger, One VM to Rule Them All](#2013---Wuerthinger-One-VM-to-Rule-Them-All)
+
 [2014 - Duboscq, Speculation Without Regret Reducing Deoptimization Metadata in the Graal Compiler](#2014---Duboscq-Speculation-Without-Regret-Reducing-Deoptimization-Metadata-in-the-Graal-Compiler)
+
 [2014 - Eckert, FPGA-Based System Virtual Machines](#2014---Eckert-FPGA-Based-System-Virtual-Machines)
+
 [2014 - Freundenberg, SqueakJS a Modern and Practical Smalltalk that Runs in any Browser](#2014---Freundenberg-SqueakJS-a-Modern-and-Practical-Smalltalk-that-Runs-in-any-Browser)
+
 [2014 - Humer, A Domain-Specific Language for Building Self-Optimizing AST Interpreters](#2014---Humer-A-Domain-Specific-Language-for-Building-Self-Optimizing-AST-Interpreters)
+
 [2014 - Seaton, Debugging at Full Speed](#2014---Seaton-Debugging-at-Full-Speed)
+
 [2014 - Stadler, Partial Escape Analysis and Scalar Replacement for Java](#2014---Stadler-Partial-Escape-Analysis-and-Scalar-Replacement-for-Java)
+
 [2014 - Woss, An Object Storage Model for the Truffle Language Implementation Framework](#2014---Woss-An-Object-Storage-Model-for-the-Truffle-Language-Implementation-Framework)
+
 [2015 - Gosling, The Java 8 Language Specification](#2015---Gosling-The-Java-8-Language-Specification)
+
 [2015 - Grimmer, Dynamically Composing Languages in a Modular Way Supporting C Extensions for Dynamic Languages](#2015---Grimmer-Dynamically-Composing-Languages-in-a-Modular-Way-Supporting-C-Extensions-for-Dynamic-Languages)
+
 [2015 - Hussein, Impact of GC Design on Power and Performance for Android](#2015---Hussein-Impact-of-GC-Design-on-Power-and-Performance-for-Android)
+
 [2015 - Lindholm, The JVM 8 Specification](#2015---Lindholm-The-JVM-8-Specification)
+
 [2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore](#2015---Rohou-Branch-Prediction-and-the-Performance-of-Interpreters-Dont-Trust-Folklore)
+
 [2015 - Simon, Snippets Taking the High Road to a Low Level](#2015---Simon-Snippets-Taking-the-High-Road-to-a-Low-Level)
+
 [2015 - VanDeVanter, Building Debuggers and Other Tools We Can Have it All](#2015---VanDeVanter-Building-Debuggers-and-Other-Tools-We-Can-Have-it-All)
+
 [2019 - Patel, Runtime-Programmable Pipelines for Model Checkers on FPGAs](#2019---Patel-Runtime-Programmable-Pipelines-for-Model-Checkers-on-FPGAs)
+
 [2019 - Varoumas, Modèles de programmation de haut niveau pour microcontrôleurs à faibles ressources](#2019---Varoumas-Modèles-de-programmation-de-haut-niveau-pour-microcontrôleurs-à-faibles-ressources)
+
 [2020 - Fournier, Menchir Generic High-Speed FPGA Model-Checker](#2020---Fournier-Menchir-Generic-High-Speed-FPGA-Model-Checker)
+
 
 
 
@@ -97,32 +172,40 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1974 - Popek, Formal Requirements for Virtualizable Third Generation Architectures
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1975 - Dewar, Indirect Threaded Code
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1983 - Krasner, Smalltalk-80 Bits of History Words of Advice
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1984 - Deutsch, Efficient Implementation of the SmallTalk-80 System
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1984 - Ungar, Generation Scavenging-A non-disruptive High Performance Storage Reclamation Algorithm
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1986 - Samples, SOAR Smalltalk Without Bytecodes
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1986 - Ungar, The Design and Evaluation of a High Performance Smalltalk System
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1987 - Bush, Compiling Smalltalk-80 to a RISC
@@ -145,12 +228,15 @@ When more registers are required than available, **spilling** is necessary. Spil
 SOAR takes advantage of the fact that all simple arithmetic operations are performed only on integers. If incorrect, the hardware will **trap** and transfer to a handler that will **look-up** the correct method. The compiler also takes advantage of hardware that **maps registers to memory addresses** and allows **pointers to registers**.
 
 
+
 ### 1987 - Ungar, What Price Smalltalk
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1989 - Chambers, Customization Optimizing Compiler Technology for SELF a Dynamically-Typed Object-Oriented Programming Language
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1991 - Holzle, Optimizing Dynamically-Typed Object-Oriented Languages with Plymorphic Inline Caches
@@ -208,104 +294,130 @@ Remaining problems and possible solutions:
 - **Space efficiency improvement:** If the system runs on tight space, call sites with identical message names could share a common ***PIC*** to reduce the space overhead.
 
 
+
 ### 1992 - Holzle, Debugging Optimized Code with Dynamic Deoptimization
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1994 - Holzle, A Third-Generation SELF Implementation Reconciling Responsiveness with Performance
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1995 - Click, A Simple Graph-Based Intermediate Representation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1995 - Dean, Optimization of Object-Oriented Programs Using Static Class Hierarchy Analysis
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1995 - Ertl, Stack Caching for Interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1995 - gosling, Java Intermediate Bytecodes
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1996 - Bacon, Fast Static Analysis of C++ Virtual Function Calls
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1997 - Agesen, Design and Implementation of PEp a Java Just-In-Time Translator
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1997 - Ingals, Back to the Future The Story of Squeak a Practical Smalltalk Written in Itself
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1997 - Kistler, Slim Binaries
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1998 - Piumarta, Optimising Direct Threaded Code by Selective Inlining
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1998 - Taivalsaari, Implementing a Java Virtual Machine in the Java Programming Language
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1999 - Burke, The Jalapeno Dynamic Optimizing Compiler for Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 1999 - Tamura, Partial Evaluation of Computation Process an Approach to a Compiler-Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 1999 - Wolczko, Self Includes Smalltalk
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2000 - Arnold, Adaptive Optimization in the Jalapeno JVM
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2000 - Bala, Dynamo a Transparent Dynamic Optimisation System
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2000 - Diehl, Abstract Machines for Programming Language Implementation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2001 - Cheng, A Parallel Real-Time Garbage Collector
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2001 - Paleczny, The Java HotSpot Server Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2002 - Click, Fast Subtype Checking in the HotSpot JVM
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2002 - Ertl, Vmgen a Generator of Efficient Virtual Machine Interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2003 - Dehnert, The Transmeta Code Morphing Software-Using Speculation recovery and Adaptive Retranslation to Address Real-Life Challenges
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2003 - Ertl, The Structure and Performanceof Efficient Interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2003 - Fink, Design Implementation and Evaluation of Adaptive Recompilation with On-Stack Replacement
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2003 - Shaylor, A Java Virtual Machine Architecture for Very Small Devices
@@ -366,24 +478,30 @@ for (;;) {
 
 
 
+
 ### 2004 - Blackburn, Oil and Water High Performance Garbage Collection in Java with MMTk
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2004 - Chambers, A Retrospective on - Customization Optimizing Compiler Technology for SELF a Dynamically-Typed Object-Oriented Programming Language
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2004 - Ertl, Combining Stack Caching with Dynamic Superinstructions
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2004 - Sachindran, MC2 High-Performance Garbage Collection for Memory-Constrained Environments
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2005 - Click, The Pauseless GC Algorithm
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2005 - Faes, FPGA-Aware Garbage Collection in Java
@@ -420,116 +538,145 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 
 
+
 ### 2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2006 - Gal, HotpathVM An Effective JIT Compiler for Resource-Constrained Devices
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2006 - Rigo, PyPys Approach to Virtual Machine Construction
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2006 - Russell, Eliminating Synchronization-Related Atomic Operations with Biased Locking and Bulk Rebiasing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2008 - Kotzmann, Design of the Java HotSpot Client Compiler for Java 6
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2009 - Bolz, Tracing the Meta-Level PyPys Tracing JIT Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2009 - Frampton, Demystifying Magic High-Level Low-Level Programming
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2012 - Wurthinger, Self-Optimizing AST Interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2013 - Decker, IFIP
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2013 - Kulkarni, Automatic Construction of Inlining Heuristics using Machine Learning
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2013 - Wimmer, Maxine an Approachable Virtual Machine for and in Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2013 - Wuerthinger, One VM to Rule Them All
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2014 - Duboscq, Speculation Without Regret Reducing Deoptimization Metadata in the Graal Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2014 - Eckert, FPGA-Based System Virtual Machines
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2014 - Freundenberg, SqueakJS a Modern and Practical Smalltalk that Runs in any Browser
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2014 - Humer, A Domain-Specific Language for Building Self-Optimizing AST Interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2014 - Seaton, Debugging at Full Speed
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2014 - Stadler, Partial Escape Analysis and Scalar Replacement for Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2014 - Woss, An Object Storage Model for the Truffle Language Implementation Framework
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2015 - Gosling, The Java 8 Language Specification
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2015 - Grimmer, Dynamically Composing Languages in a Modular Way Supporting C Extensions for Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2015 - Hussein, Impact of GC Design on Power and Performance for Android
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2015 - Lindholm, The JVM 8 Specification
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2015 - Simon, Snippets Taking the High Road to a Low Level
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 
+
 ### 2015 - VanDeVanter, Building Debuggers and Other Tools We Can Have it All
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2019 - Patel, Runtime-Programmable Pipelines for Model Checkers on FPGAs
@@ -568,8 +715,10 @@ To obtain high throughput, each **pipeline must have access to its own BRAMs con
 
 
 
+
 ### 2019 - Varoumas, Modèles de programmation de haut niveau pour microcontrôleurs à faibles ressources
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 
 
 ### 2020 - Fournier, Menchir Generic High-Speed FPGA Model-Checker
@@ -620,6 +769,7 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 *LOOK AT FIGURE 2 FOR GLI SPECS*
 
 *LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*
+
 
 
 

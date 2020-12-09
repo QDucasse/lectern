@@ -120,12 +120,12 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 ### Summary
 ''')
         for item in sorted_items:
-            f.write(item[1][0] + "\n")
+            f.write(item[1][0] + "\n\n")
 
         f.write("\n\n\n")
 
         for item in sorted_items:
-            f.write(item[1][1] + "\n")
+            f.write(item[1][1] + "\n\n")
 
 if __name__ == "__main__":
     import argparse

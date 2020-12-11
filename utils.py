@@ -2,6 +2,26 @@ import glob
 import os
 import bibtexparser
 
+
+def find_entry(author, year, title, database):
+    unwanted_characters = [",", ".", ":", "{", "}", '"', "'", "+", "`", "^", "&", "*", "?", "!", "\\", "/", "™"]
+    for entry in database.entries:
+        # Process unwanted characters
+        modified_title = entry['title'].strip()
+        modified_author = entry['author'].strip()
+        for char in unwanted_characters:
+            modified_title =   modified_title.replace(char, "")
+            modified_author = modified_author.replace(char, " ")
+        # Compare Title
+        # print("Comparing '" + modified_title + "' with '" + title + "'")
+        if title.lower() in modified_title.lower():
+            return entry
+        # Compare year and author
+        elif year == entry['year'] and author.lower() in modified_author.lower():
+            return entry
+    return "Entry not found!"
+
+
 def propagate_notes():
     '''
     Appends the modifications added to notes.md files to the comment entry in the bibliography
@@ -16,7 +36,7 @@ def propagate_notes():
 
     for note in notes:
         # Process file name
-        year, author_name, article_name = note.split("/")[1].split("_")
+        year, author, title = note.split("/")[1].split("_")
 
         # Get the content of the notes file
         content = ""
@@ -24,21 +44,57 @@ def propagate_notes():
              content = f.read()
 
         # Add notes to the correct article
-        for entry in bib_database.entries:
-            if article_name == entry['title']:
-                print("Title matched!")
-                entry['comment'] = str(content)
-                break
-            elif author_name in entry['author'] and year == entry['year']:
-                print("Author and year matched!")
-                entry['comment'] = str(content)
-                break
-
+        entry = find_entry(year, author, title, bib_database)
+        if entry != "Entry not found!":
+            entry['comment'] = str(content)
 
         # Write down the bibliography
-        with open('Bibliography/VM.bib', 'w') as bibtex_file:
-            bibtexparser.dump(bib_database, bibtex_file)
+    with open('Bibliography/VM.bib', 'w') as bibtex_file:
+        bibtexparser.dump(bib_database, bibtex_file)
 
+def compare_bib_physical():
+    '''
+    Compare the physical bibliography with the contents of the bib file and show the differences
+    '''
+    # Articles list
+    articles = os.listdir("Articles/")
+    articles.remove("TO_PROCESS")
+    # Open the bibliography
+    with open("Bibliography/VM.bib") as bibtex_file:
+        bib_database = bibtexparser.load(bibtex_file)
+    for entry in bib_database.entries:
+        entry['found'] = 'false'
+
+    # Check that articles are in the bib
+    not_found_in_bib = []
+    for article in articles:
+        # Process filename
+        year, author, title = article.split("_")
+        entry = find_entry(year, author, title, bib_database)
+        if entry == "Entry not found!":
+            # Article not found
+            not_found_in_bib.append(article)
+        else:
+            # Article found
+            entry['found'] = 'true'
+
+    # Print missing article
+    if len(not_found_in_bib) > 1:
+        print("The following articles are present in physical but not in the bib file:")
+        for article in not_found_in_bib:
+            print(article.replace("_"," "))
+    else:
+        print("All physical articles in the bib!")
+
+    # Check for articles in the bib file but not in physical
+    not_found_in_phys = [(entry['year'] + " " + entry['author'] + " " + entry['title']) for entry in bib_database.entries if entry['found'] != 'true']
+
+    if len(not_found_in_bib) > 1:
+        print("\n\n\nThe following articles are present in the bib file but not in physical form:")
+        for article in not_found_in_phys:
+            print(article)
+    else:
+        print("All bib articles in physical!")
 
 def extract_bib_without_comments():
     '''
@@ -94,7 +150,7 @@ def generate_readme():
         content = ""
         with open("Articles/" + article + "/notes.md", "r") as f:
             content = f.read()
-        actual_paragraph = "### {0} - {1}, {2}".format(article_year, article_author, article_name) + "\n" + content + "\n\n"
+        actual_paragraph = "### {0} - {1}, {2}".format(article_year, article_author, article_name) + "\n" + content + "\n\n---\n\n"
         article_dict[article_year + article_author] = (paragraph_link, actual_paragraph)
 
     items = article_dict.items()
@@ -125,7 +181,7 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
         f.write("\n\n\n")
 
         for item in sorted_items:
-            f.write(item[1][1] + "\n\n")
+            f.write(item[1][1] + "\n")
 
 if __name__ == "__main__":
     import argparse
@@ -135,6 +191,7 @@ if __name__ == "__main__":
     parser.add_argument("--propagate", action="store_true", help="Propagate the markdown notes to the comment field of the corresponding bib entry")
     parser.add_argument("--process", action="store_true", help="Create a folder and a blank note file for each pdf article in TO_PROCESS")
     parser.add_argument("--generate", action="store_true", help="Modify the README with the different notes from the articles")
+    parser.add_argument("--compare", action="store_true", help="Compare the physical bibliography structure with the bib file and notes the differences")
     args = parser.parse_args(sys.argv[1:])
 
     if args.propagate:
@@ -145,3 +202,5 @@ if __name__ == "__main__":
         process_pdf_articles()
     if args.generate:
         generate_readme()
+    if args.compare:
+        compare_bib_physical()

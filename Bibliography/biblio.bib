@@ -50,14 +50,14 @@
  year = {1998}
 }
 
-@Article{Arnold2000,
-  author  = {Matthew Arnold and Stephen Fink and David Grove and Michael Hind and Peter F. Sweeney},
-  journal = {OOPSLA},
-  title   = {Adaptive optimization in the Jalapeno JVM},
-  year    = {2000},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi     = {10.1145/353171.353175},
-  groups  = {VM},
+@article{Arnold2000,
+ author = {Matthew Arnold and Stephen Fink and David Grove and Michael Hind and Peter F. Sweeney},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/353171.353175},
+ groups = {VM},
+ journal = {OOPSLA},
+ title = {Adaptive optimization in the Jalapeno JVM},
+ year = {2000}
 }
 
 @article{Bacon1996,
@@ -121,14 +121,14 @@
  year = {2011}
 }
 
-@Article{Burke1999,
-  author  = {Michael G. Burke and John Whaley and Jong-Deok Choi and Stephen Fink and David Grove and Michael Hind and Vivek Sarkar and Mauricio J. Serrano and V. C. Sreedhar and Harini Srinivasan},
-  journal = {JAVA},
-  title   = {The Jalapeno dynamic optimizing compiler for Java},
-  year    = {1999},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi     = {10.1145/304065.304113},
-  groups  = {VM},
+@article{Burke1999,
+ author = {Michael G. Burke and John Whaley and Jong-Deok Choi and Stephen Fink and David Grove and Michael Hind and Vivek Sarkar and Mauricio J. Serrano and V. C. Sreedhar and Harini Srinivasan},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/304065.304113},
+ groups = {VM},
+ journal = {JAVA},
+ title = {The Jalapeno dynamic optimizing compiler for Java},
+ year = {1999}
 }
 
 @article{Bush1987,
@@ -266,14 +266,14 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2003}
 }
 
-@article{Deutsch1984,
- author = {L. Peter Deutsch and Allan M. Schiffman},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
- doi = {10.1145/800017.800542},
- groups = {VM, Read},
- journal = {ACM},
- title = {Efficient implementation of the smalltalk-80 system},
- year = {1984}
+@Article{Deutsch1984,
+  author  = {L. Peter Deutsch and Allan M. Schiffman},
+  journal = {ACM},
+  title   = {Efficient implementation of the smalltalk-80 system},
+  year    = {1984},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+  doi     = {10.1145/800017.800542},
+  groups  = {VM},
 }
 
 @article{Dewar1975,
@@ -302,14 +302,47 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2000}
 }
 
-@Article{Duboscq2014,
-  author  = {Gilles Duboscq and Thomas Würthinger and Hanspeter Mössenböck},
-  journal = {PPPJ},
-  title   = {Speculation without regret reducing deoptimization meta-data in the Graal compiler},
-  year    = {2014},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi     = {10.1145/2647508.2647521},
-  groups  = {VM},
+@article{Duboscq2014,
+ author = {Gilles Duboscq and Thomas Würthinger and Hanspeter Mössenböck},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/2647508.2647521},
+ groups = {VM},
+ journal = {PPPJ},
+ title = {Speculation without regret reducing deoptimization meta-data in the Graal compiler},
+ year = {2014}
+}
+
+@Misc{Eckert2013,
+  author  = {Marcel Eckert and Igor Podebrad and Bernd Klauer},
+  title   = {Hardware Based Security Enhanced Direct Memory Access},
+  year    = {2013},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[15/12/2020]*
+
+Prevention against **Direct Memory Access (DMA)** attacks adding a **watchdog mechanism** that scans the data passing by and interrupts the processor after the detection of a malicious data or instruction sequence.
+
+*REFERENCES TO OTHER ARTICLES IN THE FIELD OF PROCESSOR SECURITY*
+
+[1] Chhabra et al., *An analysis of secure processor architectures*
+
+[2] Wang et al., *Computer Architecture and Security: Fundamentals of Designing Secure Computer Systems*
+
+
+
+DMA is a well-known technique to release processors from time consuming workload caused by simple data transfers. **Those transfers are performed without supervision**. Data and instruction are communicated between the memory as sink and source or between the memory and mass storage or interfaces. They reach their destination block-wise without completely before being checked by anti-malware agents. To complete the success of a DMA attack, **the attack pattern needs to launch the code before it has been checked** by the anti-malware agent. Another opportunity is to infect the **anti-malware** software directly.
+
+The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides between the *DMA-Controller* and the *Memory Controller*. It supervises the data part of the memory-bus with a number of sensors that provide a pattern matching functionality to identify malware. If one of the sensors is matching, it signals the watchdog that will, in turn, block the current DMA-transfer. The pattern matching is performed in parallel.
+
+*PRHS (Partially Reconfigurable Heterogeneous System)* framework used to deploy the project on FPGA. 
+
+*DESCRIPTION AND FIGURE*
+
+**Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.},
+  doi     = {10.1007/978-3-642-40779-6_12},
+  groups  = {Hardware, Security, Read},
+  issn    = {0302-9743},
+  pages   = {145-151},
 }
 
 @phdthesis{Eckert2014,
@@ -334,19 +367,19 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {1995}
 }
 
-@Article{Ertl2002,
-  author    = {M. Anton Ertl and David Gregg and Andreas Krall and Bernd Paysan},
-  journal   = {Softw. Pract. Exp.},
-  title     = {Vmgen: a generator of efficient virtual machine interpreters},
-  year      = {2002},
-  number    = {3},
-  pages     = {265--294},
-  volume    = {32},
-  bibsource = {dblp computer science bibliography, https://dblp.org},
-  biburl    = {https://dblp.org/rec/journals/spe/ErtlGKP02.bib},
-  comment   = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi       = {10.1002/spe.434},
-  groups    = {VM},
+@article{Ertl2002,
+ author = {M. Anton Ertl and David Gregg and Andreas Krall and Bernd Paysan},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/journals/spe/ErtlGKP02.bib},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1002/spe.434},
+ groups = {VM},
+ journal = {Softw. Pract. Exp.},
+ number = {3},
+ pages = {265--294},
+ title = {Vmgen: a generator of efficient virtual machine interpreters},
+ volume = {32},
+ year = {2002}
 }
 
 @article{Ertl2003,
@@ -371,6 +404,7 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 
 @article{Ertl2005,
  author = {M. Anton Ertl},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1016/j.scico.2005.04.001},
  groups = {VM},
  issn = {0167-6423},
@@ -381,9 +415,12 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2005}
 }
 
-@article{Faes,
- author = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
- comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
+@Article{Faes,
+  author  = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
+  journal = {IEEE},
+  title   = {FPGA-aware garbage collection in Java},
+  year    = {2005},
+  comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
 
 *[08/12/2020]:*
 
@@ -403,18 +440,15 @@ Granting the same capabilities to HW as SW with regard to object references high
 
 *USE CASE FROM THE PAPER IS A GOOD SUMMARY*
 
-***Garbage-Collector:*** The runtime system collects unused objects in the heap by conducting a liveness check (through an *object-reference graph*) and compacting the resulting memory to create a contiguous region of unused memory. This type of GC is called "stop-the-world".
+***Garbage-Collector:*** The runtime system collects unused objects in the heap by conducting a liveness check (through an *object-reference graph*) and compacting the resulting memory to create a contiguous region of unused memory. This type of GC is called "stop-the-world". 
 
-The GC in the HW/SW system needs to send a *pause* signal to each HW entity and then *resume* them once finished. This can be done because the GC has access to a list of all available HW entities (note that pausing is required so that no reference is changed, primitive computation can continue). The object references on the HW side can either be in the RAM (that is directly mapped to the garbage collector region) or hidden and fragmented in many different small RAMs or in registers. When a pause is requested, the HW needs to expose those regions by copying them into the GC region.
+The GC in the HW/SW system needs to send a *pause* signal to each HW entity and then *resume* them once finished. This can be done because the GC has access to a list of all available HW entities (note that pausing is required so that no reference is changed, primitive computation can continue). The object references on the HW side can either be in the RAM (that is directly mapped to the garbage collector region) or hidden and fragmented in many different small RAMs or in registers. When a pause is requested, the HW needs to expose those regions by copying them into the GC region. 
 
 
 
 ***Results:*** Impact of GC is limited to an additional 2.32% execution time},
- doi = {10.1109/fpl.2005.1515811},
- groups = {VM, Read},
- journal = {IEEE},
- title = {FPGA-aware garbage collection in Java},
- year = {2005}
+  doi     = {10.1109/fpl.2005.1515811},
+  groups  = {VM, Read},
 }
 
 @inproceedings{Fink2003,
@@ -432,9 +466,11 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  year = {2003}
 }
 
-@article{Fournier2020,
- author = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@Article{Fournier2020,
+  author  = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
+  title   = {Menhir: Generic High-Speed FPGA Model-Checker},
+  year    = {2020},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[08/12/2020]*
 
@@ -446,12 +482,12 @@ The verification algorithm is built upon a model. The model is represented as fo
 
 ```pseudocode
 structure M (C: Type) :=
-(initial : set C)
-(next    : C -> set C)
-(is_safe : C -> bool)
+	(initial : set C)
+	(next    : C -> set C)
+	(is_safe : C -> bool)
 ```
 
-where `M` is the model over an arbitrary configuration `C`. `initial` is the set of the initial configurations, `next` outputs a set of configurations given a specific one and `is_safe` checks that a given configuration is safe.
+where `M` is the model over an arbitrary configuration `C`. `initial` is the set of the initial configurations, `next` outputs a set of configurations given a specific one and `is_safe` checks that a given configuration is safe. 
 
 
 
@@ -459,32 +495,30 @@ The verification algorithm itself is presented as follows:
 
 ``` pseudocode
 def safety_checker (m: M) : bool :=
-K <- {}
-F <- {}
-N <- m.initial
-do
-if there is n in N such as not(m.is_safe(n))
-then return false
-K, F <- KuN, N\K
-while not(F is empty)
-return true
+	K <- {}
+	F <- {}
+	N <- m.initial
+	do
+		if there is n in N such as not(m.is_safe(n)) 
+			then return false
+		K, F <- KuN, N\K
+	while not(F is empty)
+	return true
 ```
 
 where `K` is the known set and `F` the frontier. `K` stores the states encountered while `F` only stores the configurations discovered recently that HAVE NOT yet been processed. The algorithm starts by populating the `N` set with the initial states. The states in the `N` set are checked for safety and the next states are added to `F` and `K`.  If an unsafe configuration is found, the algorithm stops.
 
 *LOOK AT FIGURE 1 FOR ARCHITECTURE OVERVIEW*
 
-Model-checker organized in two parametric layers: ***Model Frontend*** containing *Next State Generator* and *Invariant Checker* and ***Storage Backend*** that contains the *Frontier FIFO* and *Known Set*. Between the two parts is the **GLI** which mediates the dialogue from the *Frontend* to the *Controller*. The *Controller* itself is composed of the *Next Controller* (access to the **GLI**),  the *Scheduler* (forwards the newly discovered configurations) and the *Termination Checker* (monitors the progression).
+Model-checker organized in two parametric layers: ***Model Frontend*** containing *Next State Generator* and *Invariant Checker* and ***Storage Backend*** that contains the *Frontier FIFO* and *Known Set*. Between the two parts is the **GLI** which mediates the dialogue from the *Frontend* to the *Controller*. The *Controller* itself is composed of the *Next Controller* (access to the **GLI**),  the *Scheduler* (forwards the newly discovered configurations) and the *Termination Checker* (monitors the progression). 
 
-The call to `is_safe` is inlined into the `next` instruction to reduce the call cost.
+The call to `is_safe` is inlined into the `next` instruction to reduce the call cost. 
 
 *LOOK AT FIGURE 2 FOR GLI SPECS*
 
 *LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*},
- doi = {10.1109/dsd51259.2020.00022},
- groups = {VM, Verification, Hardware},
- title = {Menhir: Generic High-Speed FPGA Model-Checker},
- year = {2020}
+  doi     = {10.1109/dsd51259.2020.00022},
+  groups  = {Verification, Hardware, Read},
 }
 
 @article{Frampton2009,
@@ -512,6 +546,7 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 @article{Freudenberg2014,
  author = {Bert Freudenberg and Dan H. H. Ingalls and Tim Felgentreff and Tobias Pape and Robert Hirschfeld},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2661088.2661100},
  groups = {VM},
  journal = {DLS},
@@ -559,6 +594,7 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
  abstract = {Android is an operating system that has been used in a majority of mobile devices. Each application in Android runs in an instance of the Dalvik virtual machine, which is a register-based virtual machine (VM). Most applications for Android are developed using Java, compiled to Java bytecode and then translated to DEX bytecode using the dx tool in the Android SDK. In this work, we aim to develop a type-based method for certifying non-interference properties of DEX bytecode, following a methodology that has been developed for Java bytecode certification by Barthe et al. To this end, we develop a formal operational semantics of the Dalvik VM, a type system for DEX bytecode, and prove the soundness of the type system with respect to a notion of non-interference. We then study the translation process from Java bytecode to DEX bytecode, as implemented in the dx tool in the Android SDK. We show that an abstracted version of the translation from Java bytecode to DEX bytecode preserves the non-interference property. More precisely, we show that if the Java bytecode is typable in Barthe et al's type system (which guarantees non-interference) then its translation is typable in our type system. This result opens up the possibility to leverage existing bytecode verifiers for Java to certify non-interference properties of Android bytecode.},
  archiveprefix = {arXiv},
  author = {Hendra Gunadi and Alwen Tiu and Rajeev Gore},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  eprint = {1504.01842},
  file = {:http\://arxiv.org/pdf/1504.01842v5:PDF},
  groups = {VM},
@@ -570,18 +606,71 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
  year = {2015}
 }
 
-@article{Hoelzle,
- author = {Urs Hölzle and Craig Chambers and David Ungar},
- doi = {10.1007/bfb0057013},
- groups = {VM},
- journal = {ECCOP Proceedings},
- pages = {21-38},
- title = {Optimizing dynamically-typed object-oriented languages with polymorphic inline caches},
- year = {1991}
+@Article{Hoelzle,
+  author  = {Urs Hölzle and Craig Chambers and David Ungar},
+  journal = {ECCOP Proceedings},
+  title   = {Optimizing dynamically-typed object-oriented languages with polymorphic inline caches},
+  year    = {1991},
+  pages   = {21-38},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[08/12/2020]:*
+
+Historically, dynamically-typed object-oriented languages have run much slower than statically-typed languages. Techniques such as **type analysis**
+
+[^1]: The compiler can "predict" the type of the receiver based on the message name and insert a runtime check before the message. It usually allows for later inlining based on the most frequent type. The type can be propagated through the control flow graph and can use type casing with several branches corresponding to the possible types and their version of the inlined method. 
+
+, **customization**
+
+[^2]: Extends dynamic compilation by exploiting the fact that many messages within a method are sent to `self`. The compiler creates a separate compiled version of a given source method for each receiver type. This duplication allows for customization. In particular, knowing the type of `self` at compile time allows all `self` sends to be inlined without any type tests. Customization can also be applied to global variable, instance variable for example.
+
+, and **splitting** 
+
+[^3]: Turns a polymorphic message into several separate monomorphic messages and avoids tests by copying parts of the control flow graph.
+
+ have been shown to be very effective in reducing this disparity.
+
+A new acceleration approach is presented: ***Polymorphic Inline Caches (PICs)*** that provide both an improvement of the efficiency of message sends and valuable type information that can be reused to conduct by the compiler to produce other optimizations.
+
+Smalltalk code is dynamically compiled and machine code is cached. Method lookup is responsible for a substantial part of the execution time. **Lookup caches** reduce the overhead by mapping (Receiver types - Message name) pairs to methods and holding to the most recently used result. **Inline caches** use the fact that the type of the receiver at a given call site rarely varies and caches the looked-up method address at the call site, overwriting the call instruction.
+
+Polymorphic sends have to be handled differently because using a simple inline cache would result in a permanent overwriting of the method address (due to the changing type) and therefore an additional call to the expensive lookup method. 
+
+Sends are either:
+
+- ***Monomorphic:*** one receiver type (1)
+- ***Polymorphic:*** a few receiver types (2-10)
+- ***Megamorphic:*** a lot of receiver types (10+)
+
+A ***PIC*** will cache ALL lookup results for a given polymorphic call-site in a specially-generated stub routine that looks like the following after few calls of the method on different receiver types:
+
+```pseudocode
+if type = type1:						   |  Check receiver type
+	jump to method     ___________________ | _______________________
+										   | Code to apply on type 1
+										   
+if type = type2:                           | Check receiver type
+	jump to method     ___________________ | _______________________
+										   | Code to apply on type 2
+	
+call lookup            ___________________ | Fallback: call expensive lookup
+```
+
+A ***PIC*** is therefore an *extensible cache with no cache in which no cache item is ever displaced by another (newer) item*.
+
+Remaining problems and possible solutions:
+
+- **Megamorphic sends handling:** The inline cache miss handler should not extend the ***PIC*** beyond a certain number of type cases. It should mark the call-site as megamorphic and adopt a fallback strategy.
+- **Linear search improvement:** If the dynamic usage frequency of each type were available, ***PICs*** could be reordered periodically to move the most frequently occurring types on top.
+- **Short methods inlining:** Many methods are very small (*e.g*. output one of the receiver's instance variable). Such methods could be integrated into the ***PIC*** directly rather than being called by it.
+- **Space efficiency improvement:** If the system runs on tight space, call sites with identical message names could share a common ***PIC*** to reduce the space overhead.},
+  doi     = {10.1007/bfb0057013},
+  groups  = {VM, Read},
 }
 
 @article{Hoelzle1992,
  author = {Urs Hölzle and Craig Chambers and David Ungar},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/143095.143114},
  groups = {VM},
  journal = {ACM},
@@ -590,36 +679,39 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
  year = {1992}
 }
 
-@Article{Hoelzle1994,
-  author  = {Urs Hölzle and David Ungar},
-  journal = {OOPSLA},
-  title   = {A third-generation SELF implementation: reconciling responsiveness with performance},
-  year    = {1994},
-  issn    = {0362-1340},
-  pages   = {229-243},
-  volume  = {29},
-  doi     = {10.1145/191081.191116},
-  groups  = {VM},
+@article{Hoelzle1994,
+ author = {Urs Hölzle and David Ungar},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/191081.191116},
+ groups = {VM},
+ issn = {0362-1340},
+ journal = {OOPSLA},
+ pages = {229-243},
+ title = {A third-generation SELF implementation: reconciling responsiveness with performance},
+ volume = {29},
+ year = {1994}
 }
 
 @phdthesis{Hoelzle1994a,
  author = {Urs Hölzle},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  groups = {VM},
  title = {Adaptive Optimization for Self: Reconciling High Performance with Exploratory Programming},
  type = {phdthesis},
  year = {1994}
 }
 
-@article{Humer2015,
- author = {Christian Humer and Christian Wimmer and Christian Wirth and Andreas Wöß and Thomas Würthinger},
- doi = {10.1145/2775053.2658776},
- groups = {VM},
- issn = {0362-1340},
- journal = {GPCE},
- pages = {123-132},
- title = {A domain-specific language for building self-optimizing AST interpreters},
- volume = {50},
- year = {2015}
+@Article{Humer2015,
+  author  = {Christian Humer and Christian Wimmer and Christian Wirth and Andreas Wöß and Thomas Würthinger},
+  journal = {GPCE},
+  title   = {A domain-specific language for building self-optimizing AST interpreters},
+  year    = {2015},
+  issn    = {0362-1340},
+  pages   = {123-132},
+  volume  = {50},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+  doi     = {10.1145/2775053.2658776},
+  groups  = {VM, Read},
 }
 
 @article{Hussein2015,
@@ -634,6 +726,7 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 @article{Hussein2015a,
  author = {Ahmed Hussein and Mathias Payer and Antony Hosking and Christopher A. Vick},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2757667.2757674},
  groups = {VM},
  journal = {SYSTOR},
@@ -643,6 +736,7 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 @article{Ingalls1997,
  author = {Dan Ingalls and Ted Kaehler and John Maloney and Scott Wallace and Alan Kay},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/263698.263754},
  groups = {VM},
  journal = {OOPSLA},
@@ -730,6 +824,7 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 @article{Rohou2012,
  author = {Erven Rohou},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1109/icppw.2012.58},
  groups = {VM},
  journal = {41st International Conference on Parallel Processing Workshops.},
@@ -737,14 +832,14 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
  year = {2012}
 }
 
-@Article{Rohou2015,
-  author  = {Erven Rohou and Bharath Narasimha Swamy and Andre Seznec},
-  journal = {CGO},
-  title   = {Branch prediction and the performance of interpreters, Don't trust folklore},
-  year    = {2015},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi     = {10.1109/cgo.2015.7054191},
-  groups  = {VM},
+@article{Rohou2015,
+ author = {Erven Rohou and Bharath Narasimha Swamy and Andre Seznec},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1109/cgo.2015.7054191},
+ groups = {VM},
+ journal = {CGO},
+ title = {Branch prediction and the performance of interpreters, Don't trust folklore},
+ year = {2015}
 }
 
 @inproceedings{Russell2006,
@@ -792,9 +887,12 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
  year = {2014}
 }
 
-@article{Shaylor2003,
- author = {Nik Shaylor and Douglas N. Simon and William R. Bush},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@Article{Shaylor2003,
+  author  = {Nik Shaylor and Douglas N. Simon and William R. Bush},
+  journal = {LCTES},
+  title   = {A java virtual machine architecture for very small devices},
+  year    = {2003},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 **The size of Java classfiles** has long been recognized as an issue, especially for embedded devices. Several methods exist to reduce the size, both as a transmission format and as an execution format. Some methods try to perturb the Java execution engine as little as possible while the **Java Card Paradigm introduces a muscular transformer between classfiles and interpreter.**
 
@@ -841,15 +939,12 @@ Garbage collection is performed when the `interpret` method fails and outputs an
 
 ```java
 for (;;) {
-interpret(result);
-result = gc();
+	interpret(result);
+	result = gc();
 }
 ```},
- doi = {10.1145/780732.780738},
- groups = {VM, Read},
- journal = {LCTES},
- title = {A java virtual machine architecture for very small devices},
- year = {2003}
+  doi     = {10.1145/780732.780738},
+  groups  = {VM, Read},
 }
 
 @article{Simon2015,
@@ -888,21 +983,22 @@ result = gc();
  year = {2014}
 }
 
-@article{Ungar1984,
- author = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
- doi = {10.1145/773453.808182},
- groups = {VM, Read},
- issn = {0163-5964},
- journal = {IEEE},
- pages = {188-197},
- title = {Architecture of SOAR: Smalltalk on a RISC},
- volume = {12},
- year = {1984}
+@Article{Ungar1984,
+  author  = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
+  journal = {IEEE},
+  title   = {Architecture of SOAR: Smalltalk on a RISC},
+  year    = {1984},
+  issn    = {0163-5964},
+  pages   = {188-197},
+  volume  = {12},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+  doi     = {10.1145/773453.808182},
+  groups  = {VM},
 }
 
 @article{Ungar1984a,
  author = {David Ungar},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/390010.808261},
  groups = {VM},
  issn = {0163-5948},
@@ -915,6 +1011,7 @@ result = gc();
 
 @article{Ungar1987,
  author = {David Ungar and Randall B. Smith},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/38765.38828},
  groups = {VM},
  journal = {ACM},
@@ -949,6 +1046,7 @@ result = gc();
 
 @article{Vanter2015,
  author = {Michael L. Van De Vanter},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2843915.2843917},
  groups = {VM},
  journal = {ICOOOLPS},
@@ -970,6 +1068,7 @@ result = gc();
 
 @article{Wimmer2013,
  author = {Christian Wimmer and Michael Haupt and Michael L. Van De Vanter and Mick Jordan and Laurent Daynès and Douglas Simon},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2400682.2400689},
  groups = {VM},
  issn = {1544-3566},
@@ -993,18 +1092,19 @@ result = gc();
 @inproceedings{wolczko1996self,
  author = {Wolczko, Mario},
  booktitle = {Workshop on Prototype-Based Languages, ECOOP ‘96, Linz, Austria},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  groups = {VM},
  title = {self includes: Smalltalk},
  year = {1996}
 }
 
-@Article{Wuerthinger2012,
-  author  = {Thomas Würthinger and Andreas Wöß and Lukas Stadler and Gilles Duboscq and Doug Simon and Christian Wimmer},
-  journal = {DLS},
-  title   = {Self-optimizing AST interpreters},
-  year    = {2012},
-  doi     = {10.1145/2384577.2384587},
-  groups  = {VM},
+@article{Wuerthinger2012,
+ author = {Thomas Würthinger and Andreas Wöß and Lukas Stadler and Gilles Duboscq and Doug Simon and Christian Wimmer},
+ doi = {10.1145/2384577.2384587},
+ groups = {VM},
+ journal = {DLS},
+ title = {Self-optimizing AST interpreters},
+ year = {2012}
 }
 
 @inproceedings{Wuerthinger2013,
@@ -1012,6 +1112,7 @@ result = gc();
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/oopsla/WurthingerWWSDHRSW13.bib},
  booktitle = {{ACM} Symposium on New Ideas in Programming and Reflections on Software, Onward! 2013, part of {SPLASH} '13, Indianapolis, IN, USA, October 26-31, 2013},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/2509578.2509581},
  editor = {Antony L. Hosking and Patrick Th. Eugster and Robert Hirschfeld},
  groups = {VM},
@@ -1021,13 +1122,74 @@ result = gc();
  year = {2013}
 }
 
-@Misc{Yoshihiko1999,
-  author  = {Futamura Yoshihiko},
-  title   = {Partial Evaluation of Computation Process: an Approach to a Compiler-compiler},
-  year    = {1999},
-  doi     = {10.1.1.10.2747},
-  groups  = {VM},
-  journal = {SYSTEMS COMPUTERS CONTROLS},
+@misc{Yoshihiko1999,
+ author = {Futamura Yoshihiko},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1.1.10.2747},
+ groups = {VM},
+ journal = {SYSTEMS COMPUTERS CONTROLS},
+ title = {Partial Evaluation of Computation Process: an Approach to a Compiler-compiler},
+ year = {1999}
+}
+
+@Article{Zandberg2020,
+  author        = {Koen Zandberg and Emmanuel Baccelli},
+  journal       = {CoRR},
+  title         = {Minimal Virtual Machines on IoT Microcontrollers: The Case of Berkeley Packet Filters with rBPF},
+  year          = {2020},
+  volume        = {abs/2011.12047},
+  archiveprefix = {arXiv},
+  bibsource     = {dblp computer science bibliography, https://dblp.org},
+  biburl        = {https://dblp.org/rec/journals/corr/abs-2011-12047.bib},
+  comment       = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[15/12/2020]*
+
+Enhancing the security of low-power low-memory devices can take the form of **process isolation**. This isolation can be conducted either:
+
+	- By isolating **high-level business** logic, updatable on-demand remotely over the low-power network *(long-lived, non-real-time timing requirements)*
+	- By isolating **debug/monitoring** code snippets at low-level, inserted and removed on-demand, remotely over the network *(short-lived, strict timing requirements)*
+
+Concretely performing the isolation can be performed through a *modification of the hardware architecture* to add mechanisms to guarantee process isolation. This is the path taken by the **TrustZone on Arm Cortex-M**, **Sanctum on RISC-V** or **Sancus2.0 on MSP430**.
+
+On the other hand, software-only equivalent can be achieved to perform process isolation:
+
+-  **Small VMs:** *Darjeeling*, a subset of the JVM using a 16-bit architectures. *Wasm*, a VM specification designed for process isolation in web browsers. *JavaCard*, a small JVM running on smart cards. *eBPF* small VM hosting and isolating debug and inspection code in the Linux kernel at runtime.
+- **Scripted Logic Interpreters:** *Small JavaScript run-time container* hosting business logic interpreted aboard a microcontroller, glued atop a real-time OS (*RIOT*).
+- **OS-Level Mechanisms:** *Tock* is an OS written in Rust that offers strong isolation between its kernel and application logic processes. However it requires a memory protection unit (MPU).
+
+
+
+Comparison of two VMs:
+
+- **WebAssembly (Wasm):** Stack-based VM that uses a heap and memory allocations in chunks of 64KiB (pages). Wasm uses the LLVM compiler and once  binary is created, it is transferred to the IoT device on which it is interpreted and executed. Several interpreters exist and WASM3, for example, transpiles the loaded application to an optimized executable that can then be executed in the interpreter.
+- **Extended Berkeley Packet Filters (eBPF):** Small in-kernel VM available on Unix-like OS. Original purpose was packet filtering but got rebranded to other purposes. 64-bit register-based VM with a fixed 512B stack. No heap is presented in the specification but an interface to key-value maps is used as an alternative for persistent storage between invocations.
+
+
+
+Design of **rBPF**, a variant of the eBPF VM designed to be ISA-compatible. It extends the bindings to be able to access the OS facilities and events. The VM is integrated in the **RIOT OS** and scheduled as a regular thread. The VM can interact with multiple OS event sources. Tehe VM is based on an iterative loop design over the application instructions. Depending on the instruction, **different protection mechanisms are activated**. (1) Host address space isolated from the sandbox by policies loaded in the VM. (2) Protections on the code executed ensure the VM does not start executing code outside the supplied application. Note that the eBPF ISA *does not support indirect jump instructions and no pc register is available*. This means the virtual program counter can only be modified via the guarded direct branch and jump instructions.
+
+
+
+VM adds overhead that has an impact on execution time and a measurable additional size. While the Wasm VM requires too much RAM and ROM, rBPF looks like a good compromise between security through process isolation and memory and time overhead.},
+  eprint        = {2011.12047},
+  groups        = {VM, Hardware, Security, Read},
+  url           = {https://arxiv.org/abs/2011.12047},
+}
+
+@Article{Lima2020a,
+  author        = {Igor Lima and Jefferson Silva and Breno Miranda and Gustavo Pinto and Marcelo d'Amorim},
+  journal       = {Software Quality Journal 2021},
+  title         = {Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing},
+  year          = {2020},
+  month         = dec,
+  abstract      = {Context. JavaScript is a popular programming language today with several implementations competing for market dominance. Although a specification document and a conformance test suite exist to guide engine development, bugs occur and have important practical consequences. Implementing correct engines is challenging because the spec is intentionally incomplete and evolves frequently. Objective. This paper investigates the use of test transplantation and differential testing for revealing functional bugs in JavaScript engines. The former technique runs the regression test suite of a given engine on another engine. The latter technique fuzzes existing inputs and then compares the output produced by different engines with a differential oracle. Method. We conducted experiments with engines from five major players-Apple, Facebook, Google, Microsoft, and Mozilla-to assess the effectiveness of test transplantation and differential testing. Results. Our results indicate that both techniques revealed several bugs, many of which confirmed by developers. We reported 35 bugs with test transplantation (23 of these bugs confirmed and 19 fixed) and reported 24 bugs with differential testing (17 of these confirmed and 10 fixed). Results indicate that most of these bugs affected two engines-Apple's JSC and Microsoft's ChakraCore (24 and 26 bugs, respectively). To summarize, our results show that test transplantation and differential testing are easy to apply and very effective in finding bugs in complex software, such as JavaScript engines.},
+  archiveprefix = {arXiv},
+  eprint        = {2012.03759},
+  file          = {:http\://arxiv.org/pdf/2012.03759v1:PDF},
+  groups        = {VM, Testing},
+  keywords      = {cs.SE},
+  primaryclass  = {cs.SE},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
@@ -1035,9 +1197,10 @@ result = gc();
 @Comment{jabref-meta: grouping:
 0 AllEntriesGroup:;
 1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
-1 StaticGroup:Security\;0\;1\;0x8066ccff\;\;\;;
-1 StaticGroup:Quantization\;0\;1\;0x8066ccff\;\;\;;
+1 StaticGroup:Security\;0\;1\;0xe6e64dff\;\;\;;
+1 StaticGroup:Quantization\;0\;1\;0xe6b34dff\;\;\;;
 1 StaticGroup:Verification\;0\;1\;0xcc8099ff\;\;\;;
 1 StaticGroup:Hardware\;0\;1\;0x8099ffff\;\;\;;
 1 StaticGroup:Read\;0\;1\;0x00ff00ff\;\;\;;
+1 StaticGroup:Testing\;0\;1\;0x994d66ff\;\;\;;
 }

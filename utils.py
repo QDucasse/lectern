@@ -106,10 +106,16 @@ def extract_bib_without_comments():
 
     # Remove the comment entry
     for entry in bib_database.entries:
+        # Remove comments
         try:
             del entry['comment']
         except KeyError:
             print("No comment found for that entry, skipping.")
+        # Remove groups
+        try:
+            del entry['groups']
+        except KeyError:
+            print("No group found for that entry, skipping.")
 
     with open('Bibliography/VM_NoComments.bib', 'w') as bibtex_file:
         bibtexparser.dump(bib_database, bibtex_file)
@@ -132,6 +138,7 @@ def process_pdf_articles():
         with open("Articles/"+ article_name + "/notes.md", "w") as f:
             f.write("<!-- Please prefix the notes with the date as in [22/12/2020] -->")
         os.rename("Articles/TO_PROCESS/" + article, "Articles/"+ article_name + "/" + article_name + ".pdf")
+        print("Article processed: " + article_name)
 
 def generate_readme():
     '''

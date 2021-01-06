@@ -1,5 +1,17 @@
-% Encoding: UTF-8
+@comment{% Encoding: UTF-8}
 
+@comment{jabref-meta: databaseType:bibtex;}
+
+@comment{jabref-meta: grouping:
+0 AllEntriesGroup:;
+1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
+1 StaticGroup:Security\;0\;1\;0xe6e64dff\;\;\;;
+1 StaticGroup:Quantization\;0\;1\;0xe6b34dff\;\;\;;
+1 StaticGroup:Verification\;0\;1\;0xcc8099ff\;\;\;;
+1 StaticGroup:Hardware\;0\;1\;0x8099ffff\;\;\;;
+1 StaticGroup:Read\;0\;1\;0x00ff00ff\;\;\;;
+1 StaticGroup:Testing\;0\;1\;0x994d66ff\;\;\;;
+}
 
 @phdthesis{1987,
  author = {David Ungar},
@@ -266,14 +278,14 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2003}
 }
 
-@Article{Deutsch1984,
-  author  = {L. Peter Deutsch and Allan M. Schiffman},
-  journal = {ACM},
-  title   = {Efficient implementation of the smalltalk-80 system},
-  year    = {1984},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi     = {10.1145/800017.800542},
-  groups  = {VM},
+@article{Deutsch1984,
+ author = {L. Peter Deutsch and Allan M. Schiffman},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/800017.800542},
+ groups = {VM},
+ journal = {ACM},
+ title = {Efficient implementation of the smalltalk-80 system},
+ year = {1984}
 }
 
 @article{Dewar1975,
@@ -312,11 +324,9 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2014}
 }
 
-@Misc{Eckert2013,
-  author  = {Marcel Eckert and Igor Podebrad and Bernd Klauer},
-  title   = {Hardware Based Security Enhanced Direct Memory Access},
-  year    = {2013},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@misc{Eckert2013,
+ author = {Marcel Eckert and Igor Podebrad and Bernd Klauer},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[15/12/2020]*
 
@@ -338,11 +348,15 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 *DESCRIPTION AND FIGURE*
 
-**Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.},
-  doi     = {10.1007/978-3-642-40779-6_12},
-  groups  = {Hardware, Security, Read},
-  issn    = {0302-9743},
-  pages   = {145-151},
+**Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.
+
+},
+ doi = {10.1007/978-3-642-40779-6_12},
+ groups = {Hardware, Security, Read},
+ issn = {0302-9743},
+ pages = {145-151},
+ title = {Hardware Based Security Enhanced Direct Memory Access},
+ year = {2013}
 }
 
 @phdthesis{Eckert2014,
@@ -359,7 +373,31 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 @article{Ertl1995,
  author = {M. Anton Ertl},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[15/12/2020]*
+
+While interpreters are used for their *simplicity* and *portability*, the question of *performance* rises and along it the question of the stack vs register architecture.
+
+The **interpretation of a virtual machine instruction** consists of three parts: (1) **access the arguments** of the instruction, (2) **perform the function** of the instruction and (3) **dispatch (fetch, decode and start) the next instruction**. The *first* and *third* parts constitute the interpreter overhead.
+
+The most efficient method for fetching, decoding and starting the next instruction is **direct threading**: instructions are represented by the *addresses of the routine* that implements them, and *instruction dispatch consists of fetching that address and jumping to the routine*. However, direct threading cannot be implemented in ANSI C but are replaced by either a **giant switch** or **calls**. The overhead induced by the two methods is due to the [range check/table lookup/jump] routine of the *switch method* and the fact that every virtual machine register (instruction and stack pointers) have to be kept in global or static variables for the *call method*. In the *switch method*, the virtual registers can be kept as local variables.
+
+If the instructions are of constant length, the **dispatch of the next instruction can be performed in parallel with the processing of the current instruction**.  In addition, the overhead can also be reduced by **reducing the number of primitives executed**, i.e. by *increasing the semantic content of each instruction*. Combining often-used instruction sequences into one instruction or specializing an instruction for a frequent constant argument are well-known techniques.
+
+While on the hardware side the contest between stack and registers is won by registers, the discussion is different for interpreters. **Data flow analysis** to perform the best register allocation is expensive and the **spill** are much more time consuming than in hardware. Moreover, in hardware the register numbers are decoded in parallel whereas a simple software implementation has to fetch and/or decode the register numbers using separate instructions.
+
+**If there are enough registers, the number of operands fetches and stores can  be reduced by keeping n top-of-the-stack values in registers**.
+
+Mapping a constant number of items in registers is simple but unnecessary. It would be better to keep a *varying number of items in registers*, on an on-demand basis (like a **cache**).
+
+Every allowed mapping of stack items to machine registers constitutes a **cache state**. Many stack pointer updates can be optimized: the cache state can hold the information on how much the contents of the stack pointer vary from the actual value of the stack pointer (this difference can correspond to the number of stack items in the cache). This means the stack pointer does not need to be updated when an instruction can access all stack items in registers.
+
+There should be one state for every number of stack items in registers. The bottom of the cached stack items should be in all states and the other stack items allocated similarly. This avoids the need to move stack items around the bottom of the cache when something on the top changes. 
+
+
+
+},
  doi = {10.1145/207110.207165},
  groups = {VM},
  journal = {SIGPLAN},
@@ -415,12 +453,9 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
  year = {2005}
 }
 
-@Article{Faes,
-  author  = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
-  journal = {IEEE},
-  title   = {FPGA-aware garbage collection in Java},
-  year    = {2005},
-  comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
+@article{Faes,
+ author = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
+ comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
 
 *[08/12/2020]:*
 
@@ -446,9 +481,16 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 
 
-***Results:*** Impact of GC is limited to an additional 2.32% execution time},
-  doi     = {10.1109/fpl.2005.1515811},
-  groups  = {VM, Read},
+***Results:*** Impact of GC is limited to an additional 2.32% execution time 
+
+ 
+
+},
+ doi = {10.1109/fpl.2005.1515811},
+ groups = {VM, Read},
+ journal = {IEEE},
+ title = {FPGA-aware garbage collection in Java},
+ year = {2005}
 }
 
 @inproceedings{Fink2003,
@@ -466,11 +508,9 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  year = {2003}
 }
 
-@Article{Fournier2020,
-  author  = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
-  title   = {Menhir: Generic High-Speed FPGA Model-Checker},
-  year    = {2020},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@article{Fournier2020,
+ author = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[08/12/2020]*
 
@@ -516,9 +556,13 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 *LOOK AT FIGURE 2 FOR GLI SPECS*
 
-*LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*},
-  doi     = {10.1109/dsd51259.2020.00022},
-  groups  = {Verification, Hardware, Read},
+*LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*
+
+},
+ doi = {10.1109/dsd51259.2020.00022},
+ groups = {Verification, Hardware, Read},
+ title = {Menhir: Generic High-Speed FPGA Model-Checker},
+ year = {2020}
 }
 
 @article{Frampton2009,
@@ -566,7 +610,26 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 @article{Gosling1995,
  author = {James Gosling},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[06/01/2021]*
+
+Java emerged from its divergences with C++ by using a compiler to generate byte coded machine independent instructions. While this type of method is usually unsuitable for higher-level manipulation, some twists are used: unusual amount of **type information**, **restrictions on the use of the operand stack** and heavy reliance on **symbolic references** and **on-the-fly code rewriting**. 
+
+Instruction definitions follow this inductive property: *Given only the type state before the execution of the instruction, the type state afterwards is determined*.  Smalltalk or PostScript stack-based codes do not have this property. The main idea behind this specification is **simplicity**.
+
+In conjunction, instructions follow the property: *When there are two execution paths into the same point, they must arrive there with exactly the same type state*. This means that bytecode generators cannot write loops that iterate through arrays copying each element on the stack. Since all paths to a point are required to arrive with the same type state, then the type state from any incoming path can be used to do further manipulations.
+
+These restrictions allow a number of important consequences:
+
+- **Static checkability**: The last phase of the bytecode loader is the **verifier**, it traverses the bytecode, constructs type state information and verifies the type parameters of all opcodes. Once the **verifier** finishes, it is guaranteed that: there are no operand stack overflows or underflows, the types of the parameters of opcodes is correct, no illegal data conversions are done and object field accesses are legal. It helps the interpreter and provides a secure environment (no pointer can be forged, access restrictions are enforced, etc.).
+- **Fragile Superclasses**: Java uses symbolic references to answer the issue. For example, the `getfield` opcode does not use an offset into the object but rather an index into the symbol table. Once the class is loaded, the offset into the object does not change. When the `getfield` opcode is executed, the interpreter looks up the symbol, finds its offset then rewrites the instruction to be a quick `getfield` with the exact offset.
+- **Portability**: Compiled programs are portable given the end device has an interpreter.
+- **Translation to machine code**: The static nature of the type states enable simple on-the-fly translation of bytecodes into machine code (no dynamic checks or inferences).
+
+
+
+A deterministic stack type-state restriction and a bytecode IR allow the bytecoded program to be compact then directly interpreted or translated to machine code. The implementation of these manipulations can be simple, fast and small.},
  doi = {10.1145/202529.202541},
  groups = {VM},
  journal = {ACM SIGPLAN Workshop onIntermediate Representations},
@@ -606,13 +669,9 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
  year = {2015}
 }
 
-@Article{Hoelzle,
-  author  = {Urs Hölzle and Craig Chambers and David Ungar},
-  journal = {ECCOP Proceedings},
-  title   = {Optimizing dynamically-typed object-oriented languages with polymorphic inline caches},
-  year    = {1991},
-  pages   = {21-38},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@article{Hoelzle,
+ author = {Urs Hölzle and Craig Chambers and David Ungar},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[08/12/2020]:*
 
@@ -664,8 +723,12 @@ Remaining problems and possible solutions:
 - **Linear search improvement:** If the dynamic usage frequency of each type were available, ***PICs*** could be reordered periodically to move the most frequently occurring types on top.
 - **Short methods inlining:** Many methods are very small (*e.g*. output one of the receiver's instance variable). Such methods could be integrated into the ***PIC*** directly rather than being called by it.
 - **Space efficiency improvement:** If the system runs on tight space, call sites with identical message names could share a common ***PIC*** to reduce the space overhead.},
-  doi     = {10.1007/bfb0057013},
-  groups  = {VM, Read},
+ doi = {10.1007/bfb0057013},
+ groups = {VM, Read},
+ journal = {ECCOP Proceedings},
+ pages = {21-38},
+ title = {Optimizing dynamically-typed object-oriented languages with polymorphic inline caches},
+ year = {1991}
 }
 
 @article{Hoelzle1992,
@@ -701,17 +764,17 @@ Remaining problems and possible solutions:
  year = {1994}
 }
 
-@Article{Humer2015,
-  author  = {Christian Humer and Christian Wimmer and Christian Wirth and Andreas Wöß and Thomas Würthinger},
-  journal = {GPCE},
-  title   = {A domain-specific language for building self-optimizing AST interpreters},
-  year    = {2015},
-  issn    = {0362-1340},
-  pages   = {123-132},
-  volume  = {50},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi     = {10.1145/2775053.2658776},
-  groups  = {VM, Read},
+@article{Humer2015,
+ author = {Christian Humer and Christian Wimmer and Christian Wirth and Andreas Wöß and Thomas Würthinger},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/2775053.2658776},
+ groups = {VM, Read},
+ issn = {0362-1340},
+ journal = {GPCE},
+ pages = {123-132},
+ title = {A domain-specific language for building self-optimizing AST interpreters},
+ volume = {50},
+ year = {2015}
 }
 
 @article{Hussein2015,
@@ -765,6 +828,21 @@ Remaining problems and possible solutions:
  journal = {CGO},
  title = {Automatic construction of inlining heuristics using machine learning},
  year = {2013}
+}
+
+@article{Lima2020a,
+ abstract = {Context. JavaScript is a popular programming language today with several implementations competing for market dominance. Although a specification document and a conformance test suite exist to guide engine development, bugs occur and have important practical consequences. Implementing correct engines is challenging because the spec is intentionally incomplete and evolves frequently. Objective. This paper investigates the use of test transplantation and differential testing for revealing functional bugs in JavaScript engines. The former technique runs the regression test suite of a given engine on another engine. The latter technique fuzzes existing inputs and then compares the output produced by different engines with a differential oracle. Method. We conducted experiments with engines from five major players-Apple, Facebook, Google, Microsoft, and Mozilla-to assess the effectiveness of test transplantation and differential testing. Results. Our results indicate that both techniques revealed several bugs, many of which confirmed by developers. We reported 35 bugs with test transplantation (23 of these bugs confirmed and 19 fixed) and reported 24 bugs with differential testing (17 of these confirmed and 10 fixed). Results indicate that most of these bugs affected two engines-Apple's JSC and Microsoft's ChakraCore (24 and 26 bugs, respectively). To summarize, our results show that test transplantation and differential testing are easy to apply and very effective in finding bugs in complex software, such as JavaScript engines.},
+ archiveprefix = {arXiv},
+ author = {Igor Lima and Jefferson Silva and Breno Miranda and Gustavo Pinto and Marcelo d'Amorim},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ eprint = {2012.03759},
+ file = {:http\://arxiv.org/pdf/2012.03759v1:PDF},
+ groups = {VM, Testing},
+ journal = {Software Quality Journal 2021},
+ keywords = {cs.SE},
+ primaryclass = {cs.SE},
+ title = {Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing},
+ year = {2020}
 }
 
 @inproceedings{Paleczny2001,
@@ -887,12 +965,9 @@ Remaining problems and possible solutions:
  year = {2014}
 }
 
-@Article{Shaylor2003,
-  author  = {Nik Shaylor and Douglas N. Simon and William R. Bush},
-  journal = {LCTES},
-  title   = {A java virtual machine architecture for very small devices},
-  year    = {2003},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@article{Shaylor2003,
+ author = {Nik Shaylor and Douglas N. Simon and William R. Bush},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 **The size of Java classfiles** has long been recognized as an issue, especially for embedded devices. Several methods exist to reduce the size, both as a transmission format and as an execution format. Some methods try to perturb the Java execution engine as little as possible while the **Java Card Paradigm introduces a muscular transformer between classfiles and interpreter.**
 
@@ -942,9 +1017,16 @@ for (;;) {
 	interpret(result);
 	result = gc();
 }
-```},
-  doi     = {10.1145/780732.780738},
-  groups  = {VM, Read},
+```
+
+
+
+},
+ doi = {10.1145/780732.780738},
+ groups = {VM, Read},
+ journal = {LCTES},
+ title = {A java virtual machine architecture for very small devices},
+ year = {2003}
 }
 
 @article{Simon2015,
@@ -983,17 +1065,17 @@ for (;;) {
  year = {2014}
 }
 
-@Article{Ungar1984,
-  author  = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
-  journal = {IEEE},
-  title   = {Architecture of SOAR: Smalltalk on a RISC},
-  year    = {1984},
-  issn    = {0163-5964},
-  pages   = {188-197},
-  volume  = {12},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
-  doi     = {10.1145/773453.808182},
-  groups  = {VM},
+@article{Ungar1984,
+ author = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/773453.808182},
+ groups = {VM},
+ issn = {0163-5964},
+ journal = {IEEE},
+ pages = {188-197},
+ title = {Architecture of SOAR: Smalltalk on a RISC},
+ volume = {12},
+ year = {1984}
 }
 
 @article{Ungar1984a,
@@ -1132,16 +1214,12 @@ for (;;) {
  year = {1999}
 }
 
-@Article{Zandberg2020,
-  author        = {Koen Zandberg and Emmanuel Baccelli},
-  journal       = {CoRR},
-  title         = {Minimal Virtual Machines on IoT Microcontrollers: The Case of Berkeley Packet Filters with rBPF},
-  year          = {2020},
-  volume        = {abs/2011.12047},
-  archiveprefix = {arXiv},
-  bibsource     = {dblp computer science bibliography, https://dblp.org},
-  biburl        = {https://dblp.org/rec/journals/corr/abs-2011-12047.bib},
-  comment       = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@article{Zandberg2020,
+ archiveprefix = {arXiv},
+ author = {Koen Zandberg and Emmanuel Baccelli},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/journals/corr/abs-2011-12047.bib},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[15/12/2020]*
 
@@ -1172,35 +1250,12 @@ Design of **rBPF**, a variant of the eBPF VM designed to be ISA-compatible. It e
 
 
 VM adds overhead that has an impact on execution time and a measurable additional size. While the Wasm VM requires too much RAM and ROM, rBPF looks like a good compromise between security through process isolation and memory and time overhead.},
-  eprint        = {2011.12047},
-  groups        = {VM, Hardware, Security, Read},
-  url           = {https://arxiv.org/abs/2011.12047},
+ eprint = {2011.12047},
+ groups = {VM, Hardware, Security, Read},
+ journal = {CoRR},
+ title = {Minimal Virtual Machines on IoT Microcontrollers: The Case of Berkeley Packet Filters with rBPF},
+ url = {https://arxiv.org/abs/2011.12047},
+ volume = {abs/2011.12047},
+ year = {2020}
 }
 
-@Article{Lima2020a,
-  author        = {Igor Lima and Jefferson Silva and Breno Miranda and Gustavo Pinto and Marcelo d'Amorim},
-  journal       = {Software Quality Journal 2021},
-  title         = {Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing},
-  year          = {2020},
-  month         = dec,
-  abstract      = {Context. JavaScript is a popular programming language today with several implementations competing for market dominance. Although a specification document and a conformance test suite exist to guide engine development, bugs occur and have important practical consequences. Implementing correct engines is challenging because the spec is intentionally incomplete and evolves frequently. Objective. This paper investigates the use of test transplantation and differential testing for revealing functional bugs in JavaScript engines. The former technique runs the regression test suite of a given engine on another engine. The latter technique fuzzes existing inputs and then compares the output produced by different engines with a differential oracle. Method. We conducted experiments with engines from five major players-Apple, Facebook, Google, Microsoft, and Mozilla-to assess the effectiveness of test transplantation and differential testing. Results. Our results indicate that both techniques revealed several bugs, many of which confirmed by developers. We reported 35 bugs with test transplantation (23 of these bugs confirmed and 19 fixed) and reported 24 bugs with differential testing (17 of these confirmed and 10 fixed). Results indicate that most of these bugs affected two engines-Apple's JSC and Microsoft's ChakraCore (24 and 26 bugs, respectively). To summarize, our results show that test transplantation and differential testing are easy to apply and very effective in finding bugs in complex software, such as JavaScript engines.},
-  archiveprefix = {arXiv},
-  eprint        = {2012.03759},
-  file          = {:http\://arxiv.org/pdf/2012.03759v1:PDF},
-  groups        = {VM, Testing},
-  keywords      = {cs.SE},
-  primaryclass  = {cs.SE},
-}
-
-@Comment{jabref-meta: databaseType:bibtex;}
-
-@Comment{jabref-meta: grouping:
-0 AllEntriesGroup:;
-1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
-1 StaticGroup:Security\;0\;1\;0xe6e64dff\;\;\;;
-1 StaticGroup:Quantization\;0\;1\;0xe6b34dff\;\;\;;
-1 StaticGroup:Verification\;0\;1\;0xcc8099ff\;\;\;;
-1 StaticGroup:Hardware\;0\;1\;0x8099ffff\;\;\;;
-1 StaticGroup:Read\;0\;1\;0x00ff00ff\;\;\;;
-1 StaticGroup:Testing\;0\;1\;0x994d66ff\;\;\;;
-}

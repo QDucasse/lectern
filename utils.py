@@ -2,6 +2,8 @@ import glob
 import os
 import bibtexparser
 
+bib_name = "biblio.bib"
+bib_name_no_comments = "biblio_nocomments.bib"
 
 def find_entry(author, year, title, database):
     unwanted_characters = [",", ".", ":", "{", "}", '"', "'", "+", "`", "^", "&", "*", "?", "!", "\\", "/", "™"]
@@ -31,7 +33,7 @@ def propagate_notes():
     # Filter out the md files other than notes
     notes = [note for note in notes if note.endswith("notes.md")]
     # Open the bibliography
-    with open("Bibliography/VM.bib") as bibtex_file:
+    with open("Bibliography/" + bib_name) as bibtex_file:
         bib_database = bibtexparser.load(bibtex_file)
 
     for note in notes:
@@ -49,7 +51,7 @@ def propagate_notes():
             entry['comment'] = str(content)
 
         # Write down the bibliography
-    with open('Bibliography/VM.bib', 'w') as bibtex_file:
+    with open('Bibliography/' + bib_name, 'w') as bibtex_file:
         bibtexparser.dump(bib_database, bibtex_file)
 
 def compare_bib_physical():
@@ -60,7 +62,7 @@ def compare_bib_physical():
     articles = os.listdir("Articles/")
     articles.remove("TO_PROCESS")
     # Open the bibliography
-    with open("Bibliography/VM.bib") as bibtex_file:
+    with open("Bibliography/biblio.bib") as bibtex_file:
         bib_database = bibtexparser.load(bibtex_file)
     for entry in bib_database.entries:
         entry['found'] = 'false'
@@ -101,7 +103,7 @@ def extract_bib_without_comments():
     Creates a bibliography version with no comments
     '''
     # Open initial bibtex file
-    with open("Bibliography/VM.bib") as bibtex_file:
+    with open("Bibliography/"+bib_name) as bibtex_file:
         bib_database = bibtexparser.load(bibtex_file)
 
     # Remove the comment entry
@@ -117,7 +119,7 @@ def extract_bib_without_comments():
         except KeyError:
             print("No group found for that entry, skipping.")
 
-    with open('Bibliography/VM_NoComments.bib', 'w') as bibtex_file:
+    with open('Bibliography/'+bib_name_no_comments, 'w') as bibtex_file:
         bibtexparser.dump(bib_database, bibtex_file)
 
 def process_pdf_articles():
@@ -194,20 +196,32 @@ if __name__ == "__main__":
     import argparse
     import sys
     parser = argparse.ArgumentParser(description="Helper for Bibliography handling")
-    parser.add_argument("--nocomments", action="store_true",  help="Flag to output a bibliography without comments.")
-    parser.add_argument("--propagate", action="store_true", help="Propagate the markdown notes to the comment field of the corresponding bib entry")
-    parser.add_argument("--process", action="store_true", help="Create a folder and a blank note file for each pdf article in TO_PROCESS")
-    parser.add_argument("--generate", action="store_true", help="Modify the README with the different notes from the articles")
-    parser.add_argument("--compare", action="store_true", help="Compare the physical bibliography structure with the bib file and notes the differences")
+    parser.add_argument("-n","--nocomments", action="store_true",  help="Flag to output a bibliography without comments.")
+    parser.add_argument("-p","--propagate", action="store_true", help="Propagate the markdown notes to the comment field of the corresponding bib entry")
+    parser.add_argument("-P","--process", action="store_true", help="Create a folder and a blank note file for each pdf article in TO_PROCESS")
+    parser.add_argument("-g","--generate", action="store_true", help="Modify the README with the different notes from the articles")
+    parser.add_argument("-c","--compare", action="store_true", help="Compare the physical bibliography structure with the bib file and notes the differences")
     args = parser.parse_args(sys.argv[1:])
-
+    no_args = True
     if args.propagate:
+        no_args = False
         propagate_notes()
+        print("Notes propagated into the bibliography!")
     if args.nocomments:
+        no_args = False
         extract_bib_without_comments()
+        print("Bibliography with no comments generated!")
     if args.process:
+        no_args = False
         process_pdf_articles()
+        print("Articles in TO_PROCESS have their dedicated folder!")
     if args.generate:
+        no_args = False
         generate_readme()
+        print("Notes propagated into the main README!")
     if args.compare:
+        no_args = False
         compare_bib_physical()
+        print("Differences checked between physical resources and the bibliography!")
+    if no_args:
+        parser.print_help()

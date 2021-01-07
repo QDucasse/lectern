@@ -1067,7 +1067,22 @@ for (;;) {
 
 @article{Ungar1984,
  author = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[06/01/2021]*
+
+The **Smalltalk on a RISC (SOAR)** is a simple Von Neumann computer designed to execute the **Smalltalk-80** system extremely fast. Several features of **Smalltalk-80** slow down the compiler and execution routine for the programmer's benefit: *no need to specify the types of variables, linking subroutines on the fly or automatically managing dynamically varying data structures*. This requires a lot of performance to: **check type** on demand to perform arithmetic operations, **handle a lot of expensive procedure calls** (Smalltalk nature + types of operands with a table lookup), **handle frequent call to storage reclamation**.
+
+The **Reduced Instruction Set Computer (RISC)** is designed from a simple register-based instruction set, identify the time-consuming operations and simplify instruction execution by dedicating hardware components to perform their execution directly.
+
+The main obstacle in the making of SOAR are:
+
+- **Type Checking**: Operand types for an operation have to be checked at runtime. SOAR adds tags to the data types. Their purpose is to improve performance by *guessing the types of the data and beginning the operation immediately*, while **simultaneously** *checking the tags to confirm the guess*. The basis of type-checking is a one-bit tag that indicates whether the piece of data is an integer or a pointer to another data structure. Both operands are supposed to be integers and if that is not the case, SOAR aborts the operation and traps to routines. To reduce the cost of *trapping*, SOAR exploits *shadow registers* to catch the operands of the trapping instruction. *Conditional branches* are usually handled using explicit comparison instructions or condition code based branches. In SOAR, there are *compare-and-skip* instructions that quickly perform integer comparison. Attempts to compare non-integer objects cause a trap to invoke a routine to perform the correct comparison.
+- **Interpretation**: The Dorado Smalltalk-80 implementation uses a stack-based VM with bytecodes. They allow a simple correspondence between source and object code that simplifies the compiler and debugger. Smalltalk can be ported to a new machine by writing the VM emulator. However, decoding dense bytecode instruction takes either substantial hardware or substantial time. Moreover, several high-level instructions require many micro-cycles to execute, which have to be controlled by a dedicated control unit. A new ISA is designed that results in larger object code but a gain in speed. Each instruction occupies a 32-bit word and takes one cycle to execute (except `load`, `store` and `return` ). SOAR does not need *byte-addressing* because they do not exist as individually addressable entities in Smalltalk (time penalty due to alignment).
+- **Procedure Calls**: Smalltalk stresses program modularity and relies on subroutines. This means that there are a lot more procedure calls in Smalltalk than other languages. Calls are expensive because Smalltalk-80 initializes all local variables on each call and the destination of a call is recomputed from the type of the first argument with a table lookup each time the call is executed. Most Smalltalk implementations spend half of their time on calls and returns. SOAR avoids saving registers on each call by **having many sets of registers reside on chip**. Each register window has 8 registers separated in four regions. SOAR eliminates the delay of local variable initialization by **initializing all registers of a window in parallel** (VLSI). Moreover, SOAR reduces subroutine overhead by **caching the result of the destination address table lookup in the instruction stream**.
+- **Object-oriented Storage Management**: In Smalltalk-80, the data structures are small and volatile. This becomes a challenge for **automatic storage reclamation**, **virtual memory** and **object-relative addressing**. SOAR supports Generation Scavenging (objects either die young or live forever). The algorithm requires that a table be updated whenever a pointer to a new object is stored in a memory location within an old object.
+
+},
  doi = {10.1145/773453.808182},
  groups = {VM},
  issn = {0163-5964},

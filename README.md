@@ -123,7 +123,11 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor](#2010---Agesen-The-Evolution-of-an-X86-Virtual-Machine-Monitor)
 
+[2010 - Reynolds, Lightweight Modeling of Java Virtual Machine](#2010---Reynolds-Lightweight-Modeling-of-Java-Virtual-Machine)
+
 [2010 - Rizzo, Practical Padding Oracle Attacks](#2010---Rizzo-Practical-Padding-Oracle-Attacks)
+
+[2010 - Siefers, Robusta Taming the Native Beast of the JVM](#2010---Siefers-Robusta-Taming-the-Native-Beast-of-the-JVM)
 
 [2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages](#2011---Bolz-Runtime-Feedback-in-a-Meta-Tracing-JIT-for-Efficient-Dynamic-Languages)
 
@@ -146,6 +150,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2014 - Freundenberg, SqueakJS a Modern and Practical Smalltalk that Runs in any Browser](#2014---Freundenberg-SqueakJS-a-Modern-and-Practical-Smalltalk-that-Runs-in-any-Browser)
 
 [2014 - Humer, A Domain-Specific Language for Building Self-Optimizing AST Interpreters](#2014---Humer-A-Domain-Specific-Language-for-Building-Self-Optimizing-AST-Interpreters)
+
+[2014 - Lin, A Security PaaS Container with a Customized JVM](#2014---Lin-A-Security-PaaS-Container-with-a-Customized-JVM)
 
 [2014 - Seaton, Debugging at Full Speed](#2014---Seaton-Debugging-at-Full-Speed)
 
@@ -182,6 +188,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2019 - Schwarz, ZombieLoad Cross-Privilege-Boundary Data Sampling](#2019---Schwarz-ZombieLoad-Cross-Privilege-Boundary-Data-Sampling)
 
 [2019 - Varoumas, High-level programming models for microcontrollers with scarce resources](#2019---Varoumas-High-level-programming-models-for-microcontrollers-with-scarce-resources)
+
+[2020 - Agache, Firecracker Lightweight Virtualization for Serverless Applications](#2020---Agache-Firecracker-Lightweight-Virtualization-for-Serverless-Applications)
 
 [2020 - Fournier, Menhir Generic High-Speed FPGA Model-Checker](#2020---Fournier-Menhir-Generic-High-Speed-FPGA-Model-Checker)
 
@@ -710,8 +718,41 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 ---
 
 
+### 2010 - Reynolds, Lightweight Modeling of Java Virtual Machine
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2010 - Rizzo, Practical Padding Oracle Attacks
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2010 - Siefers, Robusta Taming the Native Beast of the JVM
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[26/01/2021]*
+
+Security for native code in Java applications. Based on **software-based fault isolation (SFI)**, Robusta isolates native code into a sandbox where **dynamic linking/loading of libraries** is supported and **unsafe system modification and confidentiality violations are prevented**.
+
+The introduction of native functions in Java applications is done with the use of the **Java Native Interface (JNI)** along with the keyword `native`. Native code resides in the **same address space** as Java code but is not constrained by the **Java Security Model**. Native code can therefore **read/write any memory location** or cause **integrity and confidentiality violations** (e.g. *type-confusion attacks*).
+
+Robusta defends with **SFI to isolate untrusted native code from the rest of the JVM** (done with Google's NaCl). Next, all JNI calls are redirected to **JNI trampolines** using "fake" interface pointers to untrusted native code. Those trampolines are the *only* way native code can escape the sandbox. They invoke trusted JNI wrappers outside of the sandbox to perform some safety checks. Robusta also prevents the JNI from using direct pointers to Java primitive arrays and native code from calling Java methods. Finally, Robusta connects to Java's Security Manager to mediate native system calls.
+
+JVM **integrity** is ensured by the following definition: *Suppose one execution step in native code brings a state (s, h, w) (JVM stack, JVM heap, native world) to (s', h', w'). The integrity is respected if s is equal to s' and h is included in h'*. JVM **confidentiality** is respected if native code accesses **only objects reachable by the references set by the JVM** and if the **access-control modifiers** (e.g. `private`) **of fields and methods are respected**. Next, the system calls have to follow given policies.
+
+Native code isolation:
+
+- **Google's Native Client (NaCl)** and the use of **trampolines** (from untrusted to trusted) and **springboards** (reverse).
+- **Secure Dynamic Linking/Loading:** the address space is separated into a code space (cs) and a data space (ds) and an address is interpreted differently whether it is used as a code or a data address. The usage of a dynamic library is guarded by a specific routine. 
+
+**NaCl JVM integration:** When the JVM starts, Robusta constructs an NaCl sandbox, reserves a memory region for the NaCl address space and sets up a code and a data region. Page protection is configured so that the **code region is readable and executable** while the **data region is readable and writable**. **Trusted trampolines** are installed in the code region. Finally the dynamic linker/loader is loaded into the NaCl address space.
+
+**Sandbox of JNI calls:** Native methods access JNI through an interface pointer. This pointer usually goes through the JNI methods however they are here outside of the sandbox. Robusta duplicates the function table with pointers to JNI trampolines so that the native function can access the outside of the sandbox if authorized. The JNI checks includes several safety checks (type, signature, etc.). JNI allows efficient access to primitive arrays however direct access to the heap is dangerous to provide to native functions. Robusta performs a copy-in/copy-out.
+
+**Native Code Security:** The regulation of native system calls goes through the Java's Security Manager. It accepts or denies a system call based on a security policy. A security policy can grant two kinds of permissions: **mode permissions** and **system-access permissions**. Mode permissions specify whether a library can be loaded into the JVM and whether it should be sandboxed. The mode policy is enforced during library-loading.
 
 ---
 
@@ -832,6 +873,12 @@ Several optimizations are enabled:
 ---
 
 
+### 2014 - Lin, A Security PaaS Container with a Customized JVM
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2014 - Seaton, Debugging at Full Speed
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -906,6 +953,10 @@ Several optimizations are enabled:
 
 ### 2018 - Lipp, Meltdown Reading Kernel Memory from User Space
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[13/01/2021]*
+
+A central security feature of operating systems is **memory isolation**. It ensures programs cannot access each other's or kernel's memory. It allows running multiple operations at the same time. This isolation is usually performed by a **supervisor bit** of the processor that defines whether a memory page of the kernel can be accessed or not . This bit can only be set when entering kernel code and is cleared when switching to user processes. This hardware feature **allows operating system to map the kernel into the address space of every process** and have efficient transitions from user processes to the kernel.
 
 ---
 
@@ -983,6 +1034,12 @@ To obtain high throughput, each **pipeline must have access to its own BRAMs con
 
 
 ### 2019 - Varoumas, High-level programming models for microcontrollers with scarce resources
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Agache, Firecracker Lightweight Virtualization for Serverless Applications
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---

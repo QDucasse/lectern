@@ -1,17 +1,5 @@
-@comment{% Encoding: UTF-8}
+% Encoding: UTF-8
 
-@comment{jabref-meta: databaseType:bibtex;}
-
-@comment{jabref-meta: grouping:
-0 AllEntriesGroup:;
-1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
-1 StaticGroup:Security\;0\;1\;0xe6e64dff\;\;\;;
-1 StaticGroup:Quantization\;0\;1\;0xe6b34dff\;\;\;;
-1 StaticGroup:Verification\;0\;1\;0xcc8099ff\;\;\;;
-1 StaticGroup:Hardware\;0\;1\;0x8099ffff\;\;\;;
-1 StaticGroup:Read\;0\;1\;0x00ff00ff\;\;\;;
-1 StaticGroup:Testing\;0\;1\;0x994d66ff\;\;\;;
-}
 
 @phdthesis{1987,
  author = {David Ungar},
@@ -324,9 +312,11 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2014}
 }
 
-@misc{Eckert2013,
- author = {Marcel Eckert and Igor Podebrad and Bernd Klauer},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@Misc{Eckert2013,
+  author  = {Marcel Eckert and Igor Podebrad and Bernd Klauer},
+  title   = {Hardware Based Security Enhanced Direct Memory Access},
+  year    = {2013},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[15/12/2020]*
 
@@ -348,15 +338,11 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 *DESCRIPTION AND FIGURE*
 
-**Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.
-
-},
- doi = {10.1007/978-3-642-40779-6_12},
- groups = {Hardware, Security, Read},
- issn = {0302-9743},
- pages = {145-151},
- title = {Hardware Based Security Enhanced Direct Memory Access},
- year = {2013}
+**Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.},
+  doi     = {10.1007/978-3-642-40779-6_12},
+  groups  = {Hardware, Security, Read},
+  issn    = {0302-9743},
+  pages   = {145-151},
 }
 
 @phdthesis{Eckert2014,
@@ -371,9 +357,12 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
  year = {2014}
 }
 
-@article{Ertl1995,
- author = {M. Anton Ertl},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@Article{Ertl1995,
+  author  = {M. Anton Ertl},
+  journal = {SIGPLAN},
+  title   = {Stack caching for interpreters},
+  year    = {1995},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[15/12/2020]*
 
@@ -393,16 +382,9 @@ Mapping a constant number of items in registers is simple but unnecessary. It wo
 
 Every allowed mapping of stack items to machine registers constitutes a **cache state**. Many stack pointer updates can be optimized: the cache state can hold the information on how much the contents of the stack pointer vary from the actual value of the stack pointer (this difference can correspond to the number of stack items in the cache). This means the stack pointer does not need to be updated when an instruction can access all stack items in registers.
 
-There should be one state for every number of stack items in registers. The bottom of the cached stack items should be in all states and the other stack items allocated similarly. This avoids the need to move stack items around the bottom of the cache when something on the top changes. 
-
-
-
-},
- doi = {10.1145/207110.207165},
- groups = {VM},
- journal = {SIGPLAN},
- title = {Stack caching for interpreters},
- year = {1995}
+There should be one state for every number of stack items in registers. The bottom of the cached stack items should be in all states and the other stack items allocated similarly. This avoids the need to move stack items around the bottom of the cache when something on the top changes.},
+  doi     = {10.1145/207110.207165},
+  groups  = {VM},
 }
 
 @article{Ertl2002,
@@ -453,9 +435,12 @@ There should be one state for every number of stack items in registers. The bott
  year = {2005}
 }
 
-@article{Faes,
- author = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
- comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
+@Article{Faes,
+  author  = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
+  journal = {IEEE},
+  title   = {FPGA-aware garbage collection in Java},
+  year    = {2005},
+  comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
 
 *[08/12/2020]:*
 
@@ -481,16 +466,9 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 
 
-***Results:*** Impact of GC is limited to an additional 2.32% execution time 
-
- 
-
-},
- doi = {10.1109/fpl.2005.1515811},
- groups = {VM, Read},
- journal = {IEEE},
- title = {FPGA-aware garbage collection in Java},
- year = {2005}
+***Results:*** Impact of GC is limited to an additional 2.32% execution time},
+  doi     = {10.1109/fpl.2005.1515811},
+  groups  = {VM, Read},
 }
 
 @inproceedings{Fink2003,
@@ -508,9 +486,11 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  year = {2003}
 }
 
-@article{Fournier2020,
- author = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@Article{Fournier2020,
+  author  = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
+  title   = {Menhir: Generic High-Speed FPGA Model-Checker},
+  year    = {2020},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[08/12/2020]*
 
@@ -556,13 +536,9 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 *LOOK AT FIGURE 2 FOR GLI SPECS*
 
-*LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*
-
-},
- doi = {10.1109/dsd51259.2020.00022},
- groups = {Verification, Hardware, Read},
- title = {Menhir: Generic High-Speed FPGA Model-Checker},
- year = {2020}
+*LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*},
+  doi     = {10.1109/dsd51259.2020.00022},
+  groups  = {Verification, Hardware, Read},
 }
 
 @article{Frampton2009,
@@ -965,9 +941,12 @@ Remaining problems and possible solutions:
  year = {2014}
 }
 
-@article{Shaylor2003,
- author = {Nik Shaylor and Douglas N. Simon and William R. Bush},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@Article{Shaylor2003,
+  author  = {Nik Shaylor and Douglas N. Simon and William R. Bush},
+  journal = {LCTES},
+  title   = {A java virtual machine architecture for very small devices},
+  year    = {2003},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 **The size of Java classfiles** has long been recognized as an issue, especially for embedded devices. Several methods exist to reduce the size, both as a transmission format and as an execution format. Some methods try to perturb the Java execution engine as little as possible while the **Java Card Paradigm introduces a muscular transformer between classfiles and interpreter.**
 
@@ -1017,16 +996,9 @@ for (;;) {
 	interpret(result);
 	result = gc();
 }
-```
-
-
-
-},
- doi = {10.1145/780732.780738},
- groups = {VM, Read},
- journal = {LCTES},
- title = {A java virtual machine architecture for very small devices},
- year = {2003}
+```},
+  doi     = {10.1145/780732.780738},
+  groups  = {VM, Read},
 }
 
 @article{Simon2015,
@@ -1065,9 +1037,15 @@ for (;;) {
  year = {2014}
 }
 
-@article{Ungar1984,
- author = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@Article{Ungar1984,
+  author  = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
+  journal = {IEEE},
+  title   = {Architecture of SOAR: Smalltalk on a RISC},
+  year    = {1984},
+  issn    = {0163-5964},
+  pages   = {188-197},
+  volume  = {12},
+  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[06/01/2021]*
 
@@ -1080,17 +1058,9 @@ The main obstacle in the making of SOAR are:
 - **Type Checking**: Operand types for an operation have to be checked at runtime. SOAR adds tags to the data types. Their purpose is to improve performance by *guessing the types of the data and beginning the operation immediately*, while **simultaneously** *checking the tags to confirm the guess*. The basis of type-checking is a one-bit tag that indicates whether the piece of data is an integer or a pointer to another data structure. Both operands are supposed to be integers and if that is not the case, SOAR aborts the operation and traps to routines. To reduce the cost of *trapping*, SOAR exploits *shadow registers* to catch the operands of the trapping instruction. *Conditional branches* are usually handled using explicit comparison instructions or condition code based branches. In SOAR, there are *compare-and-skip* instructions that quickly perform integer comparison. Attempts to compare non-integer objects cause a trap to invoke a routine to perform the correct comparison.
 - **Interpretation**: The Dorado Smalltalk-80 implementation uses a stack-based VM with bytecodes. They allow a simple correspondence between source and object code that simplifies the compiler and debugger. Smalltalk can be ported to a new machine by writing the VM emulator. However, decoding dense bytecode instruction takes either substantial hardware or substantial time. Moreover, several high-level instructions require many micro-cycles to execute, which have to be controlled by a dedicated control unit. A new ISA is designed that results in larger object code but a gain in speed. Each instruction occupies a 32-bit word and takes one cycle to execute (except `load`, `store` and `return` ). SOAR does not need *byte-addressing* because they do not exist as individually addressable entities in Smalltalk (time penalty due to alignment).
 - **Procedure Calls**: Smalltalk stresses program modularity and relies on subroutines. This means that there are a lot more procedure calls in Smalltalk than other languages. Calls are expensive because Smalltalk-80 initializes all local variables on each call and the destination of a call is recomputed from the type of the first argument with a table lookup each time the call is executed. Most Smalltalk implementations spend half of their time on calls and returns. SOAR avoids saving registers on each call by **having many sets of registers reside on chip**. Each register window has 8 registers separated in four regions. SOAR eliminates the delay of local variable initialization by **initializing all registers of a window in parallel** (VLSI). Moreover, SOAR reduces subroutine overhead by **caching the result of the destination address table lookup in the instruction stream**.
-- **Object-oriented Storage Management**: In Smalltalk-80, the data structures are small and volatile. This becomes a challenge for **automatic storage reclamation**, **virtual memory** and **object-relative addressing**. SOAR supports Generation Scavenging (objects either die young or live forever). The algorithm requires that a table be updated whenever a pointer to a new object is stored in a memory location within an old object.
-
-},
- doi = {10.1145/773453.808182},
- groups = {VM},
- issn = {0163-5964},
- journal = {IEEE},
- pages = {188-197},
- title = {Architecture of SOAR: Smalltalk on a RISC},
- volume = {12},
- year = {1984}
+- **Object-oriented Storage Management**: In Smalltalk-80, the data structures are small and volatile. This becomes a challenge for **automatic storage reclamation**, **virtual memory** and **object-relative addressing**. SOAR supports Generation Scavenging (objects either die young or live forever). The algorithm requires that a table be updated whenever a pointer to a new object is stored in a memory location within an old object.},
+  doi     = {10.1145/773453.808182},
+  groups  = {VM},
 }
 
 @article{Ungar1984a,
@@ -1274,3 +1244,15 @@ VM adds overhead that has an impact on execution time and a measurable additiona
  year = {2020}
 }
 
+@Comment{jabref-meta: databaseType:bibtex;}
+
+@Comment{jabref-meta: grouping:
+0 AllEntriesGroup:;
+1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
+1 StaticGroup:Security\;0\;1\;0xe6e64dff\;\;\;;
+1 StaticGroup:Quantization\;0\;1\;0xe6b34dff\;\;\;;
+1 StaticGroup:Verification\;0\;1\;0xcc8099ff\;\;\;;
+1 StaticGroup:Hardware\;0\;1\;0x8099ffff\;\;\;;
+1 StaticGroup:Read\;0\;1\;0x00ff00ff\;\;\;;
+1 StaticGroup:Testing\;0\;1\;0x994d66ff\;\;\;;
+}

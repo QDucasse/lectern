@@ -1,17 +1,30 @@
-% Encoding: UTF-8
+@comment{% Encoding: UTF-8}
 
+@comment{jabref-meta: databaseType:bibtex;}
 
-@phdthesis{1987,
- author = {David Ungar},
+@comment{jabref-meta: grouping:
+0 AllEntriesGroup:;
+1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
+1 StaticGroup:Security\;0\;1\;0xe6e64dff\;\;\;;
+1 StaticGroup:Quantization\;0\;1\;0xe6b34dff\;\;\;;
+1 StaticGroup:Verification\;0\;1\;0xcc8099ff\;\;\;;
+1 StaticGroup:Hardware\;0\;1\;0x8099ffff\;\;\;;
+1 StaticGroup:Read\;0\;1\;0x00ff00ff\;\;\;;
+1 StaticGroup:Testing\;0\;1\;0x994d66ff\;\;\;;
+}
+
+@inproceedings{Agache2020,
+ author = {Alexandru Agache and Marc Brooker and Alexandra Iordache and Anthony Liguori and Rolf Neugebauer and Phil Piwonka and Diana{-}Maria Popa},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/nsdi/AgacheBILNPP20.bib},
+ booktitle = {17th {USENIX} Symposium on Networked Systems Design and Implementation, {NSDI} 2020, Santa Clara, CA, USA, February 25-27, 2020},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
- doi = {10.1016/0141-9331(87)90466-2},
- groups = {VM},
- issn = {0141-9331},
- journal = {ACM},
- pages = {562},
- title = {The design and evaluation of a high performance Smalltalk system},
- volume = {11},
- year = {1987}
+ editor = {Ranjita Bhagwan and George Porter},
+ pages = {419--434},
+ publisher = {{USENIX} Association},
+ title = {Firecracker: Lightweight Virtualization for Serverless Applications},
+ url = {https://www.usenix.org/conference/nsdi20/presentation/agache},
+ year = {2020}
 }
 
 @article{Agesen1997,
@@ -73,6 +86,34 @@
  year = {1996}
 }
 
+@article{Bala2000,
+ address = {New York, NY, USA},
+ author = {Bala, Vasanth and Duesterwald, Evelyn and Banerjia, Sanjeev},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/358438.349303},
+ issn = {0362-1340},
+ issue_date = {May 2000},
+ month = {may},
+ number = {5},
+ numpages = {12},
+ pages = {1–12},
+ publisher = {Association for Computing Machinery},
+ title = {Dynamo: A Transparent Dynamic Optimization System},
+ url = {https://doi.org/10.1145/358438.349303},
+ volume = {35},
+ year = {2000}
+}
+
+@misc{Barbu2012,
+ author = {Guillaume Barbu and Philippe Hoogvorst and Guillaume Duc},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1007/978-3-642-28166-2_1},
+ issn = {0302-9743},
+ pages = {1-13},
+ title = {Application-Replay Attack on Java Cards: When the Garbage Collector Gets Confused},
+ year = {2012}
+}
+
 @article{Bell1973,
  author = {James R. Bell},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -91,7 +132,36 @@
  bibsource = {dblp computer science bibliography, https://dblp.org},
  biburl = {https://dblp.org/rec/conf/icse/BlackburnCM04.bib},
  booktitle = {26th International Conference on Software Engineering {(ICSE} 2004), 23-28 May 2004, Edinburgh, United Kingdom},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[28/04/2021]
+
+**Memory Management Toolkit (MMTk)** is written in and for Java. It addresses th tension between flexibility and performance with a combination of design features: 1) **Java** as a systems language 2) **Design patterns** 3) Clean **interface between the VM and MMTk** 4) Composition of **policies and mechanisms to define collectors**.
+
+MMTk groups regions of memory into spaces and implements garbage collection algorithms with a policy that couples a space with an allocation and collection mechanism. *Whole heap* collectors use one policy for most objects while *generational collectors* use one or more. A *write barrier* remembers pointers into independently collected spaces. For every pointer store, the compiler inserts write-barrier code. At execution time, the write-barrier conditionally records pointers between independently collected spaces.
+
+MMTk implements **allocation and collection mechanisms** (*Bump Pointer, Free-List, Tracing, Reference Counting*) and forms **policies** with the implementations (define *Copy Space MarkSweep Space,* etc.) in order to create collectors (*SemiSpace, MarkSweep, RefCount,* etc.).
+
+MMTk design is based on *flexibility* and *performance* and uses for that:
+
+**1) Java as a systems language:**
+
+ MMTk uses the extension defined by and for Jikes RVM that defines special types for unsafe operations: `VM_Offset` (distance between two addresses), `VM_Word` (value returned by dereferencing an address) and `VM_Address`. These **unboxed types** (operations on them never result in allocation) help use pointer arithmetic, casts as well as memory reads and writes. Compiler **pragmas** are used to control *inlining* and *interruptibility*. Control over inlining helps improve efficiency for system-level code written in an object-oriented style. By executing in its own heap, the collector must not scavenge itself and *pre-copies* any GC-related  instances and 
+
+**2) Design Patterns:**
+
+MMTk uses patterns for efficiency and reuse (*TriColor, RootSet, Adapter, Facade, Iterator* and *Proxy*). They are here used for several reasons:
+
+- **Hot and Cold Paths:** MMTk marks the *hot path* (used frequently and lightweight) with `PragmaInline` and the *cold path* (used rarely and heavyweight) with `PragmaNoInline`. This is the case of a copying nursery (copy pointers *-hot-* then acquire new memory *-cold-*).
+- **Local and Global Scopes:** Multi-threaded memory manager performance and correctness depends on a scalable division of local and global context. This is done through the **use of classes in MMTk**, it uses an instance with each thread and uses the class to reflect the global state. Instance methods operate over heir data without syncronization and access shared state through synchronized global class methods. MMTk provides 'local' and 'global' variants of a class,  with N instances of the global class and N x P instances of the local class, each mapped to one global instance. 
+- **Prepare and Release Phases:** MMTk uses a high level algorithm to perform the stop-the-world collectors (*prepare, process all work* and *release*). The phase are split in global and local steps: `prepareGlobal`,  `prepareLocal`,  **`processAllWork`** , `releaseLocal` and  `releaseGlobal`. The `processAllWork` is common to all collectors and consists of processing a collection work queue. Each new collector only implements a prepare and release phase.
+- **Multiplexed Delegation:** When the memory manager allocates or traces an *object*, it invokes the corresponding method in the *plan*, which then delegates responsibility to the appropriate *policy*. 
+
+**3) Interface VM/MMTk:**  The interface between the VM and the MMis bidirectional and each side contains ***requirements*** and *features*. The key requirements of the MM include *identifying source of pointers*, *providing access to per-object GC  state*, etc.  On the other side, the VM requires that the MM provide allocation, finalization write barrier implementations, soft/weak/phantom references and statistics such as heap size and GC count.
+
+**4) Composition (Mechanisms, Policies, Plans):** Mechanisms are **collector-neutral**, **highly-tuned** mechanisms include *bump-pointer, free list, large object allocations*. Policies implements five policies: *immortal allocation, copying collection, mark-sweep collection, reference counting collection* and *treadmill collection*. MMTk maps policies to spaces which are contiguous regions of virtual memory managed by a single policy. Each policy follows a local/global pattern. A plan is MMTk's highest level of composition, defining the rules by which policies are composed (collection and allocation policy for each object for example).
+
+},
  doi = {10.1109/ICSE.2004.1317436},
  editor = {Anthony Finkelstein and Jacky Estublier and David S. Rosenblum},
  groups = {VM},
@@ -133,23 +203,7 @@
 
 @article{Bush1987,
  author = {William R. Bush and A. Dain Samples and David Ungar and Paul N. Hilfinger},
- comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
-*[08/12/2020]:*
-
-Goal of SOAR (Smalltalk On A RISC) is to produce a high-performance Smalltalk-80 execution language. It can attain high performance on a modified reduced instruction set architecture. The most important optimization is the removal of a layer of interpretation, compiling the bytecoded virtual machine instructions into low-level, register-based hardware instructions.
-
-The Smalltalk-80 virtual machines executes *stack-based instructions* called **bytecodes**. An alternative is to compile **bytecodes** to native machine instructions directly. The SOAR approach consists of compiling all methods from *bytecodes* into **SOAR instructions**, therefor discarding the *bytecodes*. 
-
-The basic task of the compiler is to translate *stack-oriented bytecodes* into **RISC-style loads, stores, and other register-based instructions**. It does this by *assigning Smalltalk variables and stack locations to registers and memory locations*, and then *simulating at compile time the bytecode stack operations on a symbolic stack*, converting the operations into SOAR instructions.
-
-The RISC architecture presents a register file of overlapping register windows, each window corresponding to a procedure activation frame allocated in a stack discipline. The SOAR hardware uses a **window size of 16 registers with 8-register overlap**. Each window is divided into two identical sets of 8 registers, a **high set** (15-8) and a **low set** (7-0). Each set contains **6 general purpose registers and 2 dedicated registers** used for **return addresses** (15 and 7) and **return values** (14 and 6).
-
-*FIGURE 2 PROVIDES A VERY GOOD INSIGHT*
-
-When more registers are required than available, **spilling** is necessary. Spilling comes with two rules: (1) **Entire categories of variables are spilled if necessary** (arguments for example) (2) **A variable cannot be moved once it has been allocated a location**. These rules are not optimized in terms of register space usage but are simple and spilling is *minimized at reasonable cost*. Spills can either be *allocated from a common spill pool* or a separate *spill object can be allocated for each activation frame that spills*.
-
-SOAR takes advantage of the fact that all simple arithmetic operations are performed only on integers. If incorrect, the hardware will **trap** and transfer to a handler that will **look-up** the correct method. The compiler also takes advantage of hardware that **maps registers to memory addresses** and allows **pointers to registers**.},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
  doi = {10.1145/36205.36192},
  groups = {VM, Read},
  issn = {0362-1340},
@@ -210,6 +264,19 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2001}
 }
 
+@inproceedings{Cho2018,
+ author = {Shenghsun Cho and Michael Ferdman and Peter A. Milder},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/fpl/ChoFM18.bib},
+ booktitle = {28th International Conference on Field Programmable Logic and Applications, {FPL} 2018, Dublin, Ireland, August 27-31, 2018},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1109/FPL.2018.00080},
+ pages = {435--442},
+ publisher = {{IEEE} Computer Society},
+ title = {FPGASwarm: High Throughput Model Checking on FPGAs},
+ year = {2018}
+}
+
 @article{Click1995,
  author = {Cliff Click and Michael Paleczny},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -238,6 +305,20 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  journal = {VEE},
  title = {The pauseless GC algorithm},
  year = {2005}
+}
+
+@article{Cointe1987,
+ author = {Pierre Cointe},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/oopsla/Cointe87.bib},
+ booktitle = {Conference on Object-Oriented Programming Systems, Languages, and Applications (OOPSLA'87), Orlando, Florida, USA, October 4-8, 1987, Proceedings},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/38765.38822},
+ editor = {Norman K. Meyrowitz},
+ pages = {156--167},
+ publisher = {{ACM}},
+ title = {Metaclasses are First Class: the ObjVlisp Model},
+ year = {1987}
 }
 
 @article{Dean,
@@ -302,6 +383,23 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2000}
 }
 
+@inproceedings{Du2019,
+ address = {New York, NY, USA},
+ author = {Du, Dong and Hua, Zhichao and Xia, Yubin and Zang, Binyu and Chen, Haibo},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/3307650.3322218},
+ isbn = {9781450366694},
+ keywords = {accelerators, operating system, inter-process communication, microkernel},
+ location = {Phoenix, Arizona},
+ numpages = {14},
+ pages = {671–684},
+ publisher = {Association for Computing Machinery},
+ series = {ISCA '19},
+ title = {XPC: Architectural Support for Secure and Efficient Cross Process Call},
+ url = {https://doi.org/10.1145/3307650.3322218},
+ year = {2019}
+}
+
 @article{Duboscq2014,
  author = {Gilles Duboscq and Thomas Würthinger and Hanspeter Mössenböck},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -312,11 +410,9 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
  year = {2014}
 }
 
-@Misc{Eckert2013,
-  author  = {Marcel Eckert and Igor Podebrad and Bernd Klauer},
-  title   = {Hardware Based Security Enhanced Direct Memory Access},
-  year    = {2013},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@misc{Eckert2013,
+ author = {Marcel Eckert and Igor Podebrad and Bernd Klauer},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[15/12/2020]*
 
@@ -338,11 +434,15 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 *DESCRIPTION AND FIGURE*
 
-**Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.},
-  doi     = {10.1007/978-3-642-40779-6_12},
-  groups  = {Hardware, Security, Read},
-  issn    = {0302-9743},
-  pages   = {145-151},
+**Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.
+
+},
+ doi = {10.1007/978-3-642-40779-6_12},
+ groups = {Hardware, Security, Read},
+ issn = {0302-9743},
+ pages = {145-151},
+ title = {Hardware Based Security Enhanced Direct Memory Access},
+ year = {2013}
 }
 
 @phdthesis{Eckert2014,
@@ -357,12 +457,35 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
  year = {2014}
 }
 
-@Article{Ertl1995,
-  author  = {M. Anton Ertl},
-  journal = {SIGPLAN},
-  title   = {Stack caching for interpreters},
-  year    = {1995},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@article{Ehringer2010,
+ author = {Ehringer, David},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[22/04/2021]
+
+Java aims at portability with the **Java Virtual Machine**. It consists of a supposedly stable ecosystem for desktop application through the **JSE platform** and **JEE server**. However the **mobile ecosystem JME** is more fragmented. Google abandonned both the JVM and JME with the **Dalvik virtual machine** along with **limited implementation of standard Java libraries**.
+
+Android runtime must support: **limited processor speed, limited RAM, no swap space, battery powered, sandboxed application runtime, diverse set of devices**. In order to answer those requirements, each Android application runs in its own process with its own Dalvik VM (a register-based VM) that executes a Dalvik Executable file (`.dex`). The Dalvik VM relies on the Linux kernel for threading and low-memory management.
+
+**DEX File Format:** For each class in Java source code, a `.class` file is generated (`javac`) with the corresponding bytecode. The corresponding `.dex` file is generated from those `.class` files (using `dx`). This file format uses specific constant pools for strings, type/class, fields or methods. These pools are shared among all classes. These memory optimizations brings more complexity to the GC because it is independent from applications. Mark bits are separated from other heap memory in order to keep the memory sharing.
+
+**Zygote:** The Zygote enable fast startup time for new instances as well as sharing of code. It assumes a significant number of core libraries are used among multiple applications and often in read-only mode. The Zygote is a VM process that starts at system boot time, preloads core libraries and waits for socket request to fork a new VM.
+
+
+
+
+
+},
+ journal = {Techn. report (March 2010)},
+ number = {8},
+ title = {The Dalvik Virtual Machine Architecture},
+ volume = {4},
+ year = {2010}
+}
+
+@article{Ertl1995,
+ author = {M. Anton Ertl},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[15/12/2020]*
 
@@ -382,9 +505,16 @@ Mapping a constant number of items in registers is simple but unnecessary. It wo
 
 Every allowed mapping of stack items to machine registers constitutes a **cache state**. Many stack pointer updates can be optimized: the cache state can hold the information on how much the contents of the stack pointer vary from the actual value of the stack pointer (this difference can correspond to the number of stack items in the cache). This means the stack pointer does not need to be updated when an instruction can access all stack items in registers.
 
-There should be one state for every number of stack items in registers. The bottom of the cached stack items should be in all states and the other stack items allocated similarly. This avoids the need to move stack items around the bottom of the cache when something on the top changes.},
-  doi     = {10.1145/207110.207165},
-  groups  = {VM},
+There should be one state for every number of stack items in registers. The bottom of the cached stack items should be in all states and the other stack items allocated similarly. This avoids the need to move stack items around the bottom of the cache when something on the top changes. 
+
+
+
+},
+ doi = {10.1145/207110.207165},
+ groups = {VM},
+ journal = {SIGPLAN},
+ title = {Stack caching for interpreters},
+ year = {1995}
 }
 
 @article{Ertl2002,
@@ -412,6 +542,17 @@ There should be one state for every number of stack items in registers. The bott
  year = {2003}
 }
 
+@article{Ertl2003a,
+ author = {M. Anton Ertl and David Gregg},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/journals/jilp/ErtlG03.bib},
+ journal = {J. Instr. Level Parallelism},
+ title = {The Structure and Performance of Efficient Interpreters},
+ url = {http://www.jilp.org/vol5/v5paper12.pdf},
+ volume = {5},
+ year = {2003}
+}
+
 @article{Ertl2004,
  author = {M. Anton Ertl and David Gregg},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -435,12 +576,9 @@ There should be one state for every number of stack items in registers. The bott
  year = {2005}
 }
 
-@Article{Faes,
-  author  = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
-  journal = {IEEE},
-  title   = {FPGA-aware garbage collection in Java},
-  year    = {2005},
-  comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
+@article{Faes,
+ author = {P. Faes and M. Christiaens and D. Buytaert and D. Stroobandt},
+ comment = {<!-- Please prefix the notes with the date as in "[22/12/2020]:" -->
 
 *[08/12/2020]:*
 
@@ -466,9 +604,16 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 
 
-***Results:*** Impact of GC is limited to an additional 2.32% execution time},
-  doi     = {10.1109/fpl.2005.1515811},
-  groups  = {VM, Read},
+***Results:*** Impact of GC is limited to an additional 2.32% execution time 
+
+ 
+
+},
+ doi = {10.1109/fpl.2005.1515811},
+ groups = {VM, Read},
+ journal = {IEEE},
+ title = {FPGA-aware garbage collection in Java},
+ year = {2005}
 }
 
 @inproceedings{Fink2003,
@@ -486,11 +631,23 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
  year = {2003}
 }
 
-@Article{Fournier2020,
-  author  = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
-  title   = {Menhir: Generic High-Speed FPGA Model-Checker},
-  year    = {2020},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@inproceedings{Fournet2013,
+ author = {C{\'{e}}dric Fournet and Nikhil Swamy and Juan Chen and Pierre{-}{\'{E}}variste Dagand and Pierre{-}Yves Strub and Benjamin Livshits},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/popl/FournetSCDSL13.bib},
+ booktitle = {The 40th Annual {ACM} {SIGPLAN-SIGACT} Symposium on Principles of Programming Languages, {POPL} '13, Rome, Italy - January 23 - 25, 2013},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/2429069.2429114},
+ editor = {Roberto Giacobazzi and Radhia Cousot},
+ pages = {371--384},
+ publisher = {{ACM}},
+ title = {Fully abstract compilation to JavaScript},
+ year = {2013}
+}
+
+@article{Fournier2020,
+ author = {Emilien Fournier and Ciprian Teodorov and Loic Lagadec},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 *[08/12/2020]*
 
@@ -536,9 +693,13 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 *LOOK AT FIGURE 2 FOR GLI SPECS*
 
-*LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*},
-  doi     = {10.1109/dsd51259.2020.00022},
-  groups  = {Verification, Hardware, Read},
+*LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*
+
+},
+ doi = {10.1109/dsd51259.2020.00022},
+ groups = {Verification, Hardware, Read},
+ title = {Menhir: Generic High-Speed FPGA Model-Checker},
+ year = {2020}
 }
 
 @article{Frampton2009,
@@ -572,6 +733,20 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
  journal = {DLS},
  title = {SqueakJS: a modern and practical smalltalk that runs in any browser},
  year = {2014}
+}
+
+@inproceedings{Fuess2008,
+ author = {Mary Ellen Fuess and Miriam Leeser and Tim Leonard},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/fccm/FuessLL08.bib},
+ booktitle = {16th {IEEE} International Symposium on Field-Programmable Custom Computing Machines, {FCCM} 2008, 14-15 April 2008, Stanford, Palo Alto, California, {USA}},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1109/FCCM.2008.36},
+ editor = {Kenneth L. Pocek and Duncan A. Buell},
+ pages = {119--126},
+ publisher = {{IEEE} Computer Society},
+ title = {An {FPGA} Implementation of Explicit-State Model Checking},
+ year = {2008}
 }
 
 @article{Gal2006,
@@ -614,6 +789,19 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
  year = {1995}
 }
 
+@inproceedings{Govindavajhala2003,
+ author = {Sudhakar Govindavajhala and Andrew W. Appel},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/sp/GovindavajhalaA03.bib},
+ booktitle = {2003 {IEEE} Symposium on Security and Privacy (S{\&}P 2003), 11-14 May 2003, Berkeley, CA, {USA}},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1109/SECPRI.2003.1199334},
+ pages = {154--165},
+ publisher = {{IEEE} Computer Society},
+ title = {Using Memory Errors to Attack a Virtual Machine},
+ year = {2003}
+}
+
 @inproceedings{Grimmer2015,
  author = {Matthias Grimmer and Chris Seaton and Thomas W{\"{u}}rthinger and Hanspeter M{\"{o}}ssenb{\"{o}}ck},
  bibsource = {dblp computer science bibliography, https://dblp.org},
@@ -643,6 +831,35 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
  primaryclass = {cs.PL},
  title = {Formal Certification of Android Bytecode},
  year = {2015}
+}
+
+@techreport{Haupt2011,
+ address = {Am Neuen Palais 10, 14469 Potsdam},
+ author = {Haupt, Michael and Marr, Stefan and Hirschfeld, Robert},
+ biburl = {https://www.bibsonomy.org/bibtex/26ce830821a88a512aa679299a493dc8d/gron},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[27/04/2021]
+
+Application of **MDSOC** (multi-dimensional separation of concerns) and **SPL** (software product line) principles to high-level language virtual machines. Modularisation of **CSOM** using **VMADL** (virtual machine architecture description language). VMs are intricate pieces of software, and modularisation can help dealing with their understanding and overall maintainability. The notion of **service module** helps untangling the complexity of VMs. It consists of a module with *bidirectional interface* that can receive requests and exhibit internal situations to the outside.
+
+CSOM is a SmallTalk Virtual Machine written in C. It does not support images but rather SmallTalk code written in text files. Two threading possibilities are used: the system `pthreads` or threads from within the VM itself. The GC is a mark/sweep collector. a Threaded-interpreter, additional integral representation and snapshots have been developed as extension.
+
+**VMADL**: system architectures need to be supported at source code level and uses **service modules** with signals linking each other called *exposed join points*. It provides a frame in which an **implementation language** and an **aspect language**. Here the implementation language is C and the aspect language is **AspectC++**. In **AspectC++**, the `services` are defined and can use `require` and `expose` to link them between each other. A construct used to implement module interactions is a `combiner`.
+
+An extension of C called ClassDL is used to help with OOP mechanisms. The combination of all the different elements create a toolchain generating a modular VM on demand.},
+ day = {18},
+ institution = {Hasso Plattner Institute},
+ keywords = {AOP Architecture ArchitectureLanguage CSOM MasterThesis MeMyPublication Modularization Productline VirtualMachine aspect-oriented myown services},
+ month = {April},
+ number = {48},
+ pages = {26},
+ publisher = {Universitätsverlag Potsdam},
+ series = {HPI TR},
+ timestamp = {2018-08-26T17:40:07.000+0200},
+ title = {CSOM/PL: A Virtual Machine Product Line*},
+ url = {http://www.amazon.de/CSOM-PL-virtual-machine-product/dp/3869561343},
+ year = {2011}
 }
 
 @article{Hoelzle,
@@ -773,6 +990,50 @@ Remaining problems and possible solutions:
  year = {2015}
 }
 
+@article{Ierusalimschy2005,
+ author = {Ierusalimschy, Roberto and De Figueiredo, Luiz Henrique and Celes Filho, Waldemar},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[22/04/2021]
+
+Main objectives of Lua: *simplicity* (simple language for simple C code), efficiency (fast one-pass compiler and VM), *portability* (clean ANSI C implementation), *embeddability* (simple C API), *low embedding cost* (small Lua core and extension as user libraries).
+
+Hand-written compiler (YACC too slow) with scanner and recursive descent parser. No intermediate representation, instructions for the VM emitted on the fly. Fastest language implementation of interpreted and dynamically-typed languages. 
+
+**Values representation:** Eight basic types (*nil, boolean, number, string, table, function, userdata, thread*). Tables are associative arrays with index. Userdata consists of pointers to memory blocks (*heavy* allocated by Lua and GCd or *light* allocated and freed by the user). Values of **all types are first class values**, they can be stored in globals, locals and table fields, passed as arguments etc. Value types are stored as a C union:
+
+```c
+typedef union {
+	GCObject *gc; // strings tables etc.
+	void p*;      // light userdata
+	lua_Number n; // double
+	int b;        // integer
+} Value;
+```
+
+This solution is expensive to copy values but ensures portability. Strings are immutable and internalized in a hash table
+
+
+
+**Tables:** The only data structures in Lua are tables, or **associative arrays**. They can be indexed by any value and hold values of any type. They are dynamic because they grow or shrink accordingly. Only one set of operators is needed to perform operations on tables or arrays. Tables are implemented as **hybrid data structures** (**array part** with implicit integer index and **hash part** with other indexes). The load factor is balanced by testing both parts and choosing an n such as at least half the slots between 1 and n are used and that at least one is used between n/2+1 and n. The hash part uses a mix of  *chained scatter table with Brent's variation*.
+
+**Functions and Closures:** **Upvalues** are used to implement closures. Any outer local variable is accessed indirectly through an upvalue. **The upvalue originally points to the stack slot wherein the variable lives. When it goes out of scope, the value migrates into a slot in the upvalue itself**. The migration is transparent to all the users. To ensure the uniqueness, a linked list of all open upvalues is kept. When a new closure is created, all outer local variables are gone through and if an open value is found, it uses this one, otherwise it creates and links it. **Flat closures** allows to pour outer variables into inner closures.
+
+**Threads and Coroutines:** Asymmetric coroutines are supported by the functions `create`, `resume` and `yield`. Each coroutine has its own stack and are stackful (it can be suspended from inside any number of nested calls). Combination of stackfulness and first-class status makes coroutines equivalent to one-shot continuations.
+
+**The VM itself:** For each function that Lua compiles it creates a prototype which contains an array with the opcodes for the function and an array of Lua values with all constants used by the function. Register-based VM allows for less instructions and a single fetch time because operands are inside the instruction. Instructions are 32 bits long divided into three or four fields: OP|A|B|C or OP|A|Bx or OP|A|sBx where A is the destination, B and C registers, Bx an unsigned value and sBx a signed value. Branch instructions are decoupled in a test and a jump instruction. If the test is not verified, the next instruction is skipped. Each function (and coroutine) holds two stacks, the activation records of the other functions and a large array of temporary values corresponding to a given function.
+
+
+
+},
+ journal = {J. UCS},
+ number = {7},
+ pages = {1159--1176},
+ title = {The Implementation of Lua 5.0.},
+ volume = {11},
+ year = {2005}
+}
+
 @article{Ingalls1997,
  author = {Dan Ingalls and Ted Kaehler and John Maloney and Scott Wallace and Alan Kay},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -781,6 +1042,98 @@ Remaining problems and possible solutions:
  journal = {OOPSLA},
  title = {Back to the future: the story of Squeak, a practical Smalltalk written in itself},
  year = {1997}
+}
+
+@inproceedings{Jain2014,
+ author = {Bhushan Jain and Mirza Basim Baig and Dongli Zhang and Donald E. Porter and Radu Sion},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/sp/JainBZPS14.bib},
+ booktitle = {2014 {IEEE} Symposium on Security and Privacy, {SP} 2014, Berkeley, CA, USA, May 18-21, 2014},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[27/04/2021]
+
+The goals of **Virtual Machine Introspection (VMI)** is to identify if the guest OS has been compromised, if malicious applications are running on the system or if sensitive file have uncompromised secrecy or integrity. A *semantic gap* occurs when using a hypervisor to look into VM behavior as the abstractions used by the hypervisor policies are higher-level than what he can actually see (registers and cpu state). Most of VMI development goes into reconstructing high-level semantic from low-level sources.
+
+To close this semantic gap, the **reconstruction** of data models is essential. A **learning phase** is used to extract information related to data structures (**signature**). A **search phase** can then look for instances of this data structure. Signatures are either handcrafted (`memparser`, `kntlist`  or `grepexec`), extracted from source analysis (`siggraph`, `kop` or `mas`)  and dynamic learning by studying a trusted OS behavior.
+
+Other methods allow to bridge the gap , such as *code implanting* where the objective is to inject code into the guest OS that reports information back to the hypervisor, *process outgrafting*  that relocates the monitoring process from an untrusted VM to a second, trusted one or *kernel executable integrity* enforces the fact that the executable of the kernel has not been modified. This can be enforced by:  1) the W+X principle where a memory page can either be *writable* or *executable* but not both at the same time, 2) *whitelisting portions of code*.
+
+- Current VMI systems face fundamental trade-offs between performance and risk, often making fragile assumptions about the guest OS
+
+  },
+ doi = {10.1109/SP.2014.45},
+ pages = {605--620},
+ publisher = {{IEEE} Computer Society},
+ title = {SoK: Introspections on Trust and the Semantic Gap},
+ year = {2014}
+}
+
+@inproceedings{Jain2014,
+ author = {Jain, Bhushan and Baig, Mirza Basim and Zhang, Dongli and Porter, Donald E. and Sion, Radu},
+ booktitle = {2014 IEEE Symposium on Security and Privacy},
+ doi = {10.1109/SP.2014.45},
+ number = {},
+ pages = {605-620},
+ title = {SoK: Introspections on Trust and the Semantic Gap},
+ volume = {},
+ year = {2014}
+}
+
+@inproceedings{Kermarrec2019,
+ author = {Kermarrec, Florent and Bourdeauducq, S{\'e}bastien and Badier, Hannah and Le Lann, Jean-Christophe},
+ booktitle = {OSDA 2019, colocated with DATE 2019 Design Automation and Test in Europe},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ title = {LiteX: an Open-Source SoC builder and library based on Migen Python DSL},
+ year = {2019}
+}
+
+@article{Kermarrec2020,
+ archiveprefix = {arXiv},
+ author = {Florent Kermarrec and Sébastien Bourdeauducq and Jean-Christophe Le Lann and Hannah Badier},
+ eprint = {2005.02506},
+ file = {:http\://arxiv.org/pdf/2005.02506v1:PDF},
+ keywords = {cs.AR},
+ month = {may},
+ primaryclass = {cs.AR},
+ title = {LiteX: an open-source SoC builder and library based on Migen Python DSL},
+ year = {2020}
+}
+
+@article{Kocher2018,
+ abstract = {Modern processors use branch prediction and speculative execution to maximize performance. For example, if the destination of a branch depends on a memory value that is in the process of being read, CPUs will try guess the destination and attempt to execute ahead. When the memory value finally arrives, the CPU either discards or commits the speculative computation. Speculative logic is unfaithful in how it executes, can access to the victim's memory and registers, and can perform operations with measurable side effects. Spectre attacks involve inducing a victim to speculatively perform operations that would not occur during correct program execution and which leak the victim's confidential information via a side channel to the adversary. This paper describes practical attacks that combine methodology from side channel attacks, fault attacks, and return-oriented programming that can read arbitrary memory from the victim's process. More broadly, the paper shows that speculative execution implementations violate the security assumptions underpinning numerous software security mechanisms, including operating system process separation, static analysis, containerization, just-in-time (JIT) compilation, and countermeasures to cache timing/side-channel attacks. These attacks represent a serious threat to actual systems, since vulnerable speculative execution capabilities are found in microprocessors from Intel, AMD, and ARM that are used in billions of devices. While makeshift processor-specific countermeasures are possible in some cases, sound solutions will require fixes to processor designs as well as updates to instruction set architectures (ISAs) to give hardware architects and software developers a common understanding as to what computation state CPU implementations are (and are not) permitted to leak.},
+ archiveprefix = {arXiv},
+ author = {Paul Kocher and Daniel Genkin and Daniel Gruss and Werner Haas and Mike Hamburg and Moritz Lipp and Stefan Mangard and Thomas Prescher and Michael Schwarz and Yuval Yarom},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[13/01/2021]*
+
+A central security feature of operating systems is **memory isolation**. It ensures programs cannot access each other's or kernel's memory. It allows running multiple operations at the same time. This isolation is usually performed by a **supervisor bit** of the processor that defines whether a memory page of the kernel can be accessed or not . This bit can only be set when entering kernel code and is cleared when switching to user processes. This hardware feature **allows operating system to map the kernel into the address space of every process** and have efficient transitions from user processes to the kernel.},
+ eprint = {1801.01203},
+ file = {:http\://arxiv.org/pdf/1801.01203v1:PDF},
+ keywords = {cs.CR},
+ month = {jan},
+ primaryclass = {cs.CR},
+ title = {Spectre Attacks: Exploiting Speculative Execution},
+ year = {2018}
+}
+
+@inproceedings{Kotselidis2017,
+ address = {New York, NY, USA},
+ author = {Kotselidis, Christos and Nisbet, Andy and Zakkak, Foivos S. and Foutris, Nikos},
+ booktitle = {Proceedings of the 9th ACM SIGPLAN International Workshop on Virtual Machines and Intermediate Languages},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/3141871.3141872},
+ isbn = {9781450355193},
+ keywords = {cross-isa, debug, just-in-time compilation, metacircular, maxine vm, qemu},
+ location = {Vancouver, BC, Canada},
+ numpages = {9},
+ pages = {1–9},
+ publisher = {Association for Computing Machinery},
+ series = {VMIL 2017},
+ title = {Cross-ISA Debugging in Meta-Circular VMs},
+ url = {https://doi.org/10.1145/3141871.3141872},
+ year = {2017}
 }
 
 @article{Kotzmann2008,
@@ -796,6 +1149,18 @@ Remaining problems and possible solutions:
  year = {2008}
 }
 
+@misc{Krasner1983,
+ author = {Glenn {Krasner}},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ editor = {Glenn {Krasner}},
+ howpublished = {{Addison-Wesley Series in Computer Science. Reading, Massachusetts, etc.: Addison-Wesley Publishing Company. VIII, 344 p. (1983).}},
+ keywords = {68-02 68N99},
+ language = {English},
+ title = {Smalltalk-80. Bits of history, words of advice},
+ year = {1983},
+ zbl = {0537.68008}
+}
+
 @article{Kulkarni2013,
  author = {S. Kulkarni and J. Cavazos and C. Wimmer and D. Simon},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -806,8 +1171,34 @@ Remaining problems and possible solutions:
  year = {2013}
 }
 
+@misc{Lee2006,
+ author = {Keunwoo Lee and Craig Chambers},
+ doi = {10.1007/11785477_21},
+ issn = {0302-9743},
+ pages = {353-378},
+ title = {Parameterized Modules for Classes and Extensible Functions},
+ year = {2006}
+}
+
+@inproceedings{Leroy2006,
+ address = {New York, NY, USA},
+ author = {Leroy, Xavier},
+ booktitle = {Conference Record of the 33rd ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/1111037.1111042},
+ isbn = {1595930272},
+ keywords = {the Coq theorem prover, program proof, certified compilation, semantic preservation, compiler transformations and optimizations},
+ location = {Charleston, South Carolina, USA},
+ numpages = {13},
+ pages = {42–54},
+ publisher = {Association for Computing Machinery},
+ series = {POPL '06},
+ title = {Formal Certification of a Compiler Back-End or: Programming a Compiler with a Proof Assistant},
+ url = {https://doi.org/10.1145/1111037.1111042},
+ year = {2006}
+}
+
 @article{Lima2020a,
- abstract = {Context. JavaScript is a popular programming language today with several implementations competing for market dominance. Although a specification document and a conformance test suite exist to guide engine development, bugs occur and have important practical consequences. Implementing correct engines is challenging because the spec is intentionally incomplete and evolves frequently. Objective. This paper investigates the use of test transplantation and differential testing for revealing functional bugs in JavaScript engines. The former technique runs the regression test suite of a given engine on another engine. The latter technique fuzzes existing inputs and then compares the output produced by different engines with a differential oracle. Method. We conducted experiments with engines from five major players-Apple, Facebook, Google, Microsoft, and Mozilla-to assess the effectiveness of test transplantation and differential testing. Results. Our results indicate that both techniques revealed several bugs, many of which confirmed by developers. We reported 35 bugs with test transplantation (23 of these bugs confirmed and 19 fixed) and reported 24 bugs with differential testing (17 of these confirmed and 10 fixed). Results indicate that most of these bugs affected two engines-Apple's JSC and Microsoft's ChakraCore (24 and 26 bugs, respectively). To summarize, our results show that test transplantation and differential testing are easy to apply and very effective in finding bugs in complex software, such as JavaScript engines.},
  archiveprefix = {arXiv},
  author = {Igor Lima and Jefferson Silva and Breno Miranda and Gustavo Pinto and Marcelo d'Amorim},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -819,6 +1210,58 @@ Remaining problems and possible solutions:
  primaryclass = {cs.SE},
  title = {Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing},
  year = {2020}
+}
+
+@inproceedings{Lin2014,
+ author = {Rongheng Lin and Budan Wu and Sen Su and Peng Xu and Shasha Yang and Yao Zhao},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/IEEEcloud/LinWSXYZ14.bib},
+ booktitle = {2014 {IEEE} 7th International Conference on Cloud Computing, Anchorage, AK, USA, June 27 - July 2, 2014},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1109/CLOUD.2014.142},
+ pages = {960--961},
+ publisher = {{IEEE} Computer Society},
+ title = {A Security PaaS Container with a Customized {JVM}},
+ year = {2014}
+}
+
+@inproceedings{Lin2016,
+ author = {Yi Lin and Stephen M. Blackburn and Antony L. Hosking and Michael Norrish},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/iwmm/LinBHN16.bib},
+ booktitle = {Proceedings of the 2016 {ACM} {SIGPLAN} International Symposium on Memory Management, Santa Barbara, CA, USA, June 14 - 14, 2016},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/2926697.2926707},
+ editor = {Christine H. Flood and Eddy Zheng Zhang},
+ pages = {89--98},
+ publisher = {{ACM}},
+ title = {Rust as a language for high performance {GC} implementation},
+ year = {2016}
+}
+
+@inproceedings{Lipp2018,
+ author = {Moritz Lipp and Michael Schwarz and Daniel Gruss and Thomas Prescher and Werner Haas and Anders Fogh and Jann Horn and Stefan Mangard and Paul Kocher and Daniel Genkin and Yuval Yarom and Mike Hamburg},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/uss/Lipp0G0HFHMKGYH18.bib},
+ booktitle = {27th {USENIX} Security Symposium, {USENIX} Security 2018, Baltimore, MD, USA, August 15-17, 2018},
+ editor = {William Enck and Adrienne Porter Felt},
+ pages = {973--990},
+ publisher = {{USENIX} Association},
+ title = {Meltdown: Reading Kernel Memory from User Space},
+ url = {https://www.usenix.org/conference/usenixsecurity18/presentation/lipp},
+ year = {2018}
+}
+
+@unpublished{Marr2017,
+ address = {Pleinlaan 2, B-1050 Brussels, Belgium},
+ author = {Stefan Marr},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ note = {ISBN 9789057182563},
+ publisher = {VUBPress},
+ school = {Software Languages Lab, Vrije Universiteit Brussel},
+ title = {Supporting Concurrency Abstractions in High-level Language Virtual Machines},
+ url = {https://kar.kent.ac.uk/63836/},
+ year = {2017}
 }
 
 @inproceedings{Paleczny2001,
@@ -835,6 +1278,33 @@ Remaining problems and possible solutions:
  year = {2001}
 }
 
+@inproceedings{Patel2019,
+ author = {Mrunal Patel and Shenghsun Cho and Michael Ferdman and Peter A. Milder},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/fpl/PatelCFM19.bib},
+ booktitle = {29th International Conference on Field Programmable Logic and Applications, {FPL} 2019, Barcelona, Spain, September 8-12, 2019},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1109/FPL.2019.00018},
+ editor = {Ioannis Sourdis and Christos{-}Savvas Bouganis and Carlos {\'{A}}lvarez and Leonel Antonio Toledo D{\'{\i}}az and Pedro Valero{-}Lara and Xavier Martorell},
+ pages = {51--58},
+ publisher = {{IEEE}},
+ title = {Runtime-Programmable Pipelines for Model Checkers on FPGAs},
+ year = {2019}
+}
+
+@inproceedings{Pedersen2017,
+ author = {Mathias V. Pedersen and Aslan Askarov},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/sp/PedersenA17.bib},
+ booktitle = {2017 {IEEE} Symposium on Security and Privacy, {SP} 2017, San Jose, CA, USA, May 22-26, 2017},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1109/SP.2017.64},
+ pages = {693--709},
+ publisher = {{IEEE} Computer Society},
+ title = {From Trash to Treasure: Timing-Sensitive Garbage Collection},
+ year = {2017}
+}
+
 @article{Piumarta1998,
  author = {Ian Piumarta and Fabio Riccardi},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -846,6 +1316,16 @@ Remaining problems and possible solutions:
  title = {Optimizing direct threaded code by selective inlining},
  volume = {33},
  year = {1998}
+}
+
+@misc{Piumarta2008,
+ author = {Ian Piumarta and Alessandro Warth},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1007/978-3-540-89275-5_1},
+ issn = {0302-9743},
+ pages = {1-30},
+ title = {Open, Extensible Object Models},
+ year = {2008}
 }
 
 @article{Popek1974,
@@ -861,6 +1341,35 @@ Remaining problems and possible solutions:
  year = {1974}
 }
 
+@inproceedings{Reynolds2010,
+ author = {Mark C. Reynolds},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/asm/Reynolds10.bib},
+ booktitle = {Abstract State Machines, Alloy, {B} and Z, Second International Conference, {ABZ} 2010, Orford, QC, Canada, February 22-25, 2010. Proceedings},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[02/02/2021]*
+
+Java Security is enforced in three ways:
+
+- The **Java** **compiler** has a large number of **rules** that it enforces in order to ensure that the **syntax and semantics of the Java language are satisfied** but also to prohibit actions that are known to be malicious (e.g. uninitialized variables).
+- The **Java** **class loader**, is used to port a classfile into the Java execution environment. When class loading is performed, the **Java Bytecode Verifier** is used to assert the bytecode are of correct form and types.
+- The **Java Runtime** performs array bounds checking, type conversion checkings, etc. 
+
+
+
+Almost all Java exploits use weaknesses in the **Bytecode Verifier**. The verifier uses a constraints-based approach to perform its analysis. The objective is to (1) provide an extensible framework for modeling security constraints and (2) provide a concrete model for meaningful, high value security constraints.},
+ doi = {10.1007/978-3-642-11811-1\_12},
+ editor = {Marc Frappier and Uwe Gl{\"{a}}sser and Sarfraz Khurshid and R{\'{e}}gine Laleau and Steve Reeves},
+ pages = {146--159},
+ publisher = {Springer},
+ series = {Lecture Notes in Computer Science},
+ title = {Lightweight Modeling of Java Virtual Machine Security Constraints},
+ url = {https://doi.org/10.1007/978-3-642-11811-1_12},
+ volume = {5977},
+ year = {2010}
+}
+
 @inproceedings{Rigo2006,
  author = {Armin Rigo and Samuele Pedroni},
  bibsource = {dblp computer science bibliography, https://dblp.org},
@@ -874,6 +1383,19 @@ Remaining problems and possible solutions:
  publisher = {{ACM}},
  title = {PyPy's approach to virtual machine construction},
  year = {2006}
+}
+
+@inproceedings{Rizzo2010,
+ author = {Juliano Rizzo and Thai Duong},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/woot/RizzoD10.bib},
+ booktitle = {4th {USENIX} Workshop on Offensive Technologies, {WOOT} '10, Washington, D.C., USA, August 9, 2010},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10/practical},
+ editor = {Charlie Miller and Hovav Shacham},
+ publisher = {{USENIX} Association},
+ title = {Practical Padding Oracle Attacks},
+ year = {2010}
 }
 
 @article{Rohou2012,
@@ -931,6 +1453,57 @@ Remaining problems and possible solutions:
  year = {1986}
 }
 
+@inproceedings{Schrammel2020,
+ author = {David Schrammel and Samuel Weiser and Stefan Steinegger and Martin Schwarzl and Michael Schwarz and Stefan Mangard and Daniel Gruss},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/uss/SchrammelWSS0MG20.bib},
+ booktitle = {29th {USENIX} Security Symposium, {USENIX} Security 2020, August 12-14, 2020},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[22/04/2021]
+
+Need for memory isolation to secure any system. This can be applied to any layer of the software stack (e.g. process isolation, separate address spaces, etc.). Donky consists of a **hardware-software co-design providing strong in-process isolation guarantees based on memory protection keys**. It also offers **pure userspace policy management with negligible overhead and full backward-compatibility**.
+
+RISC-V comprises the unprivileged ISA and privileged ISA. Control and Status Registers (CSR) allows configuring the CPU , access performance metrics and additional exception handling. They are prefixed with `m` (machine), `s` (supervisor) or `u` (user). To handle exceptions,  the CPU switches to machine mode and jumps to the address specified in the trap-vector base-address register (`mtvec`). RISC-V specifies a "Standard Extension for User-Level Interrupts" as **N extension**.
+
+Modern CPUs support virtual address spaces for process isolation. For virtual-to-physical translation, address spaces are mapped in blocks of pages (4KiB). Their entries are cached in the translation-lookaside buffer (TLB). Page-table entries (PTE) help manage permissions per page such that the same physical page can be mapped in multiple virtual address spaces. Kernel level switches are required to update permissions, switch address space, etc.  An extension to page-based memory is enabled with memory protection keys. PTE are tagged with a protection key but the permissions are stored separately. Keys are associated with a protection domain and each memory region can have one associated key. Example: Intel MPK, ARM Memory Domains, IBM Power, etc.
+
+JavaScript is **jitted** and sandboxed through browsers to enforce security. The source code is dynamically first compiled into an intermediate representation which is then interpreted and executed. Another component analyses the runtime and further optimizes the bytecode directly into machine code. This requires the code region to be both writable and executable. In V8, an ***Isolate*** is an independent copy of the entire JavaScript runtime environment (*code cache, gc and call stack*). As sandbox escapes are still possible, an additional security uses process isolation.
+
+**Software design:** the Donky Monitor is the **trusted handler in charge of managing in-process access policies and securing domains from each other**. Any operation on domains or protection keys will invoke the Donky Monitor. Domain switches guarded with `dcalls`, tampering guarded with memory encapsulation in a separate domain, security enforced by a hardware call-gate mechanism that enforces the entry point. The Donky API expands the **POSIX** interface. It allows to manage domains, protection keys and associated memory, and share keys with other domains.
+
+**Hardware design:** Memory protection keys are configured in the PTE of a process (upmost 10 bits). The userspace register (`DKRU`) can load **4 different protection keys simultaneously**. Each loaded key **enables the read/write of the corresponding PTE**. Additionally, each slot has a specific bit to enforce read-only mode. The monitor bit (upmost of `DKRU`) can be cleared to prevent unauthorized alteration of the protection key policy. A new exception is raised when a security violation is detected while the monitor bit in `DKRU` is cleared. The MMU is extended to verify that for any data access the protection key in the PTE matches at least one loaded in `DKRU`.
+
+**Security Evaluation:** *Hardware call gates* prevent code-reuse attacks on Donky Monitor. *System calls and signals* are interposed by Donky by redirecting them to the Monitor. The *Donky Monitor* itself validates all inputs in the *Donky API*.
+
+},
+ editor = {Srdjan Capkun and Franziska Roesner},
+ pages = {1677--1694},
+ publisher = {{USENIX} Association},
+ title = {Donky: Domain Keys - Efficient In-Process Isolation for {RISC-V} and x86},
+ url = {https://www.usenix.org/conference/usenixsecurity20/presentation/schrammel},
+ year = {2020}
+}
+
+@inproceedings{Schwarz2019,
+ abstract = {In early 2018, Meltdown first showed how to read arbitrary kernel memory from user space by exploiting side-effects from transient instructions. While this attack has been mitigated through stronger isolation boundaries between user and kernel space, Meltdown inspired an entirely new class of fault-driven transient-execution attacks. Particularly, over the past year, Meltdown-type attacks have been extended to not only leak data from the L1 cache but also from various other microarchitectural structures, including the FPU register file and store buffer.In this paper, we present the ZombieLoad attack which uncovers a novel Meltdown-type effect in the processor's fill-buffer logic. Our analysis shows that faulting load instructions (i.e., loads that have to be re-issued) may transiently dereference unauthorized destinations previously brought into the fill buffer by the current or a sibling logical CPU. In contrast to concurrent attacks on the fill buffer, we are the first to report data leakage of recently loaded and stored stale values across logical cores even on Meltdown- and MDS-resistant processors. Hence, despite Intel's claims, we show that the hardware fixes in new CPUs are not sufficient. We demonstrate ZombieLoad's effectiveness in a multitude of practical attack scenarios across CPU privilege rings, OS processes, virtual machines, and SGX enclaves. We discuss both short and long-term mitigation approaches and arrive at the conclusion that disabling hyperthreading is the only possible workaround to prevent at least the most-powerful cross-hyperthread attack scenarios on current processors, as Intel's software fixes are incomplete.},
+ address = {New York, NY, USA},
+ author = {Schwarz, Michael and Lipp, Moritz and Moghimi, Daniel and Van Bulck, Jo and Stecklina, Julian and Prescher, Thomas and Gruss, Daniel},
+ booktitle = {Proceedings of the 2019 ACM SIGSAC Conference on Computer and Communications Security},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/3319535.3354252},
+ isbn = {9781450367479},
+ keywords = {side-channel attack, meltdown, transient execution, fill buffer},
+ location = {London, United Kingdom},
+ numpages = {16},
+ pages = {753–768},
+ publisher = {Association for Computing Machinery},
+ series = {CCS '19},
+ title = {ZombieLoad: Cross-Privilege-Boundary Data Sampling},
+ url = {https://doi.org/10.1145/3319535.3354252},
+ year = {2019}
+}
+
 @article{Seaton2014,
  author = {Chris Seaton and Michael L. Van De Vanter and Michael Haupt},
  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
@@ -941,12 +1514,9 @@ Remaining problems and possible solutions:
  year = {2014}
 }
 
-@Article{Shaylor2003,
-  author  = {Nik Shaylor and Douglas N. Simon and William R. Bush},
-  journal = {LCTES},
-  title   = {A java virtual machine architecture for very small devices},
-  year    = {2003},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+@article{Shaylor2003,
+ author = {Nik Shaylor and Douglas N. Simon and William R. Bush},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 **The size of Java classfiles** has long been recognized as an issue, especially for embedded devices. Several methods exist to reduce the size, both as a transmission format and as an execution format. Some methods try to perturb the Java execution engine as little as possible while the **Java Card Paradigm introduces a muscular transformer between classfiles and interpreter.**
 
@@ -996,9 +1566,53 @@ for (;;) {
 	interpret(result);
 	result = gc();
 }
-```},
-  doi     = {10.1145/780732.780738},
-  groups  = {VM, Read},
+```
+
+
+
+},
+ doi = {10.1145/780732.780738},
+ groups = {VM, Read},
+ journal = {LCTES},
+ title = {A java virtual machine architecture for very small devices},
+ year = {2003}
+}
+
+@article{Siefers2010,
+ author = {Joseph Siefers and Gang Tan and Greg Morrisett},
+ bibsource = {dblp computer science bibliography, https://dblp.org},
+ biburl = {https://dblp.org/rec/conf/ccs/SiefersTM10.bib},
+ booktitle = {Proceedings of the 17th {ACM} Conference on Computer and Communications Security, {CCS} 2010, Chicago, Illinois, USA, October 4-8, 2010},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[26/01/2021]*
+
+Security for native code in Java applications. Based on **software-based fault isolation (SFI)**, Robusta isolates native code into a sandbox where **dynamic linking/loading of libraries** is supported and **unsafe system modification and confidentiality violations are prevented**.
+
+The introduction of native functions in Java applications is done with the use of the **Java Native Interface (JNI)** along with the keyword `native`. Native code resides in the **same address space** as Java code but is not constrained by the **Java Security Model**. Native code can therefore **read/write any memory location** or cause **integrity and confidentiality violations** (e.g. *type-confusion attacks*).
+
+Robusta defends with **SFI to isolate untrusted native code from the rest of the JVM** (done with Google's NaCl). Next, all JNI calls are redirected to **JNI trampolines** using "fake" interface pointers to untrusted native code. Those trampolines are the *only* way native code can escape the sandbox. They invoke trusted JNI wrappers outside of the sandbox to perform some safety checks. Robusta also prevents the JNI from using direct pointers to Java primitive arrays and native code from calling Java methods. Finally, Robusta connects to Java's Security Manager to mediate native system calls.
+
+JVM **integrity** is ensured by the following definition: *Suppose one execution step in native code brings a state (s, h, w) (JVM stack, JVM heap, native world) to (s', h', w'). The integrity is respected if s is equal to s' and h is included in h'*. JVM **confidentiality** is respected if native code accesses **only objects reachable by the references set by the JVM** and if the **access-control modifiers** (e.g. `private`) **of fields and methods are respected**. Next, the system calls have to follow given policies.
+
+Native code isolation:
+
+- **Google's Native Client (NaCl)** and the use of **trampolines** (from untrusted to trusted) and **springboards** (reverse).
+- **Secure Dynamic Linking/Loading:** the address space is separated into a code space (cs) and a data space (ds) and an address is interpreted differently whether it is used as a code or a data address. The usage of a dynamic library is guarded by a specific routine. 
+
+**NaCl JVM integration:** When the JVM starts, Robusta constructs an NaCl sandbox, reserves a memory region for the NaCl address space and sets up a code and a data region. Page protection is configured so that the **code region is readable and executable** while the **data region is readable and writable**. **Trusted trampolines** are installed in the code region. Finally the dynamic linker/loader is loaded into the NaCl address space.
+
+**Sandbox of JNI calls:** Native methods access JNI through an interface pointer. This pointer usually goes through the JNI methods however they are here outside of the sandbox. Robusta duplicates the function table with pointers to JNI trampolines so that the native function can access the outside of the sandbox if authorized. The JNI checks includes several safety checks (type, signature, etc.). JNI allows efficient access to primitive arrays however direct access to the heap is dangerous to provide to native functions. Robusta performs a copy-in/copy-out.
+
+**Native Code Security:** The regulation of native system calls goes through the Java's Security Manager. It accepts or denies a system call based on a security policy. A security policy can grant two kinds of permissions: **mode permissions** and **system-access permissions**. **Mode permissions** specify whether a library can be loaded into the JVM and whether it should be sandboxed. The mode policy is enforced during library-loading. **System-access permissions** define what an application is allowed to perform (e.g. read or write files).
+
+},
+ doi = {10.1145/1866307.1866331},
+ editor = {Ehab Al{-}Shaer and Angelos D. Keromytis and Vitaly Shmatikov},
+ pages = {201--211},
+ publisher = {{ACM}},
+ title = {Robusta: taming the native beast of the {JVM}},
+ year = {2010}
 }
 
 @article{Simon2015,
@@ -1037,30 +1651,17 @@ for (;;) {
  year = {2014}
 }
 
-@Article{Ungar1984,
-  author  = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
-  journal = {IEEE},
-  title   = {Architecture of SOAR: Smalltalk on a RISC},
-  year    = {1984},
-  issn    = {0163-5964},
-  pages   = {188-197},
-  volume  = {12},
-  comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
-*[06/01/2021]*
-
-The **Smalltalk on a RISC (SOAR)** is a simple Von Neumann computer designed to execute the **Smalltalk-80** system extremely fast. Several features of **Smalltalk-80** slow down the compiler and execution routine for the programmer's benefit: *no need to specify the types of variables, linking subroutines on the fly or automatically managing dynamically varying data structures*. This requires a lot of performance to: **check type** on demand to perform arithmetic operations, **handle a lot of expensive procedure calls** (Smalltalk nature + types of operands with a table lookup), **handle frequent call to storage reclamation**.
-
-The **Reduced Instruction Set Computer (RISC)** is designed from a simple register-based instruction set, identify the time-consuming operations and simplify instruction execution by dedicating hardware components to perform their execution directly.
-
-The main obstacle in the making of SOAR are:
-
-- **Type Checking**: Operand types for an operation have to be checked at runtime. SOAR adds tags to the data types. Their purpose is to improve performance by *guessing the types of the data and beginning the operation immediately*, while **simultaneously** *checking the tags to confirm the guess*. The basis of type-checking is a one-bit tag that indicates whether the piece of data is an integer or a pointer to another data structure. Both operands are supposed to be integers and if that is not the case, SOAR aborts the operation and traps to routines. To reduce the cost of *trapping*, SOAR exploits *shadow registers* to catch the operands of the trapping instruction. *Conditional branches* are usually handled using explicit comparison instructions or condition code based branches. In SOAR, there are *compare-and-skip* instructions that quickly perform integer comparison. Attempts to compare non-integer objects cause a trap to invoke a routine to perform the correct comparison.
-- **Interpretation**: The Dorado Smalltalk-80 implementation uses a stack-based VM with bytecodes. They allow a simple correspondence between source and object code that simplifies the compiler and debugger. Smalltalk can be ported to a new machine by writing the VM emulator. However, decoding dense bytecode instruction takes either substantial hardware or substantial time. Moreover, several high-level instructions require many micro-cycles to execute, which have to be controlled by a dedicated control unit. A new ISA is designed that results in larger object code but a gain in speed. Each instruction occupies a 32-bit word and takes one cycle to execute (except `load`, `store` and `return` ). SOAR does not need *byte-addressing* because they do not exist as individually addressable entities in Smalltalk (time penalty due to alignment).
-- **Procedure Calls**: Smalltalk stresses program modularity and relies on subroutines. This means that there are a lot more procedure calls in Smalltalk than other languages. Calls are expensive because Smalltalk-80 initializes all local variables on each call and the destination of a call is recomputed from the type of the first argument with a table lookup each time the call is executed. Most Smalltalk implementations spend half of their time on calls and returns. SOAR avoids saving registers on each call by **having many sets of registers reside on chip**. Each register window has 8 registers separated in four regions. SOAR eliminates the delay of local variable initialization by **initializing all registers of a window in parallel** (VLSI). Moreover, SOAR reduces subroutine overhead by **caching the result of the destination address table lookup in the instruction stream**.
-- **Object-oriented Storage Management**: In Smalltalk-80, the data structures are small and volatile. This becomes a challenge for **automatic storage reclamation**, **virtual memory** and **object-relative addressing**. SOAR supports Generation Scavenging (objects either die young or live forever). The algorithm requires that a table be updated whenever a pointer to a new object is stored in a memory location within an old object.},
-  doi     = {10.1145/773453.808182},
-  groups  = {VM},
+@article{Ungar1984,
+ author = {David Ungar and Ricki Blau and Peter Foley and Dain Samples and David Patterson},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1145/773453.808182},
+ groups = {VM},
+ issn = {0163-5964},
+ journal = {IEEE},
+ pages = {188-197},
+ title = {Architecture of SOAR: Smalltalk on a RISC},
+ volume = {12},
+ year = {1984}
 }
 
 @article{Ungar1984a,
@@ -1098,6 +1699,19 @@ The main obstacle in the making of SOAR are:
  pages = {67--74},
  title = {What Price Smalltalk?},
  volume = {20},
+ year = {1987}
+}
+
+@phdthesis{Ungar1987c,
+ author = {David Ungar},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->},
+ doi = {10.1016/0141-9331(87)90466-2},
+ groups = {VM},
+ issn = {0141-9331},
+ journal = {ACM},
+ pages = {562},
+ title = {The design and evaluation of a high performance Smalltalk system},
+ volume = {11},
  year = {1987}
 }
 
@@ -1163,6 +1777,34 @@ The main obstacle in the making of SOAR are:
  groups = {VM},
  title = {self includes: Smalltalk},
  year = {1996}
+}
+
+@inproceedings{Wu2018,
+ address = {Boston, MA},
+ author = {Xiaofeng Wu and Kun Suo and Yong Zhao and Jia Rao},
+ booktitle = {10th {USENIX} Workshop on Hot Topics in Cloud Computing (HotCloud 18)},
+ comment = {<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[13/01/2021]*
+
+**CPU time-multiplexing** is a common practice in multitenant systems to improve system utilization. However, the sharing of CPU and a single system clock makes it difficult for programs to accurately measure the length of an operation. **Applications employing time-based resource management face a potential security threat of time manipulation** (through dilation). 
+
+HotSpot (JVM) relies on timing **garbage-collections to infer a heap size**. A side-channel attack exploits time dilation to break the heap sizing algorithm and causes any program to raise an out-of-memory error. It can be configured with an initial `-Xms` and maximal `-Xmx` heap size. during runtime, the JVM adjusts the size based on statistics from GC. In general, the heap is **shrunk** if each individual GC takes too long and **violates a user-defined pause-time target**. It is also **expanded** if GC is frequently performed and the total GC time constitutes a significant portion of the total execution time (**violates throughput target**). If **both targets** are met, the JVM **gradually shrinks the heap to save memory**. Most Java heap sizing algorithm use measured GC time, which is based on **wall-clock time**.
+
+**Adaptive-sizing in Parallel-Scavenge (PS):** Stop-the-world throughput-oriented algorithm that uses multiple GC threads to scan the heap and is expected to meet two goals, **pause-time** and **throughput** that are both user-defined. PS divides the heap into multiple generations: *young, old* and *metaspace*. The *young* space is divided into one *eden* and two survivor spaces, the *from-space* and the *to-space*. New objects are put in the *eden* which, once filled, will perform a minor GC where referenced objects from the *eden* and *from-space* are moved to the *to-space*. The *eden* and *from-space* are then cleared and object in the *to-space* get their age increased. After surviving several generations, the objects in the *to-space* are moved in the *old* generation. 
+
+**An Out-of-Memory (OOM)** error occurs when the JVM does not have space to allocate a new object in the heap. The PS algorithm tries to allocate an object in 5 tries before raising the error: (1) minor GC on young generation, (2) major GC in old and move mature objects from young to old, (3) allocate directly in the old generation, (4) major GC with soft references in the young generation and (5) another try to allocate directly in the old generation.
+
+The GC cost is a metric used in adaptive heap sizing. The cost of a particular GC (major or minor) corresponds to the *time of the GC* / *(time since last GC + time of the GC)*. Note that it might include the time spent in another GC. All time measurement are based on wall-clock time (`gettimeofday`). Several adjustment mechanisms exist for each of the different spaces and given a main goal (pause-time or throughput).
+
+**Time Dilation in Multi-tenant Systems:** The *Time-stamp Counter* is commonly used for timekeeping as it is an **auto-incremented register on CPU at the clock rate**. Timing utilities such as `gettimeofday` use this register to keep track of time. Leaving the control of time keeping utilities to an external tool can allow other programs to run between the meantime and dilate the time spent performing an action.
+
+},
+ month = {jul},
+ publisher = {{USENIX} Association},
+ title = {A Side-channel Attack on HotSpot Heap Management},
+ url = {https://www.usenix.org/conference/hotcloud18/presentation/wu},
+ year = {2018}
 }
 
 @article{Wuerthinger2012,
@@ -1244,15 +1886,3 @@ VM adds overhead that has an impact on execution time and a measurable additiona
  year = {2020}
 }
 
-@Comment{jabref-meta: databaseType:bibtex;}
-
-@Comment{jabref-meta: grouping:
-0 AllEntriesGroup:;
-1 StaticGroup:VM\;0\;1\;0x8066ccff\;\;\;;
-1 StaticGroup:Security\;0\;1\;0xe6e64dff\;\;\;;
-1 StaticGroup:Quantization\;0\;1\;0xe6b34dff\;\;\;;
-1 StaticGroup:Verification\;0\;1\;0xcc8099ff\;\;\;;
-1 StaticGroup:Hardware\;0\;1\;0x8099ffff\;\;\;;
-1 StaticGroup:Read\;0\;1\;0x00ff00ff\;\;\;;
-1 StaticGroup:Testing\;0\;1\;0x994d66ff\;\;\;;
-}

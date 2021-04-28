@@ -5,12 +5,16 @@ import bibtexparser
 bib_name = "biblio.bib"
 bib_name_no_comments = "biblio_nocomments.bib"
 
-def find_entry(author, year, title, database):
+def find_entry(year, author, title, database):
     unwanted_characters = [",", ".", ":", "{", "}", '"', "'", "+", "`", "^", "&", "*", "?", "!", "\\", "/", "™"]
     for entry in database.entries:
         # Process unwanted characters
-        modified_title = entry['title'].strip()
-        modified_author = entry['author'].strip()
+        try:
+            modified_title = entry['title'].strip()
+            modified_author = entry['author'].strip()
+        except KeyError:
+            print(entry)
+            print("Error when processing: " +title)
         for char in unwanted_characters:
             modified_title =   modified_title.replace(char, "")
             modified_author = modified_author.replace(char, " ")
@@ -71,6 +75,7 @@ def compare_bib_physical():
     not_found_in_bib = []
     for article in articles:
         # Process filename
+        # print(article)
         year, author, title = article.split("_")
         entry = find_entry(year, author, title, bib_database)
         if entry == "Entry not found!":
@@ -112,12 +117,12 @@ def extract_bib_without_comments():
         try:
             del entry['comment']
         except KeyError:
-            print("No comment found for that entry, skipping.")
+            print(entry['title'] + ": No comment found for that entry, skipping.")
         # Remove groups
         try:
             del entry['groups']
         except KeyError:
-            print("No group found for that entry, skipping.")
+            print(entry['title'] + ": No group found for that entry, skipping.")
 
     with open('Bibliography/'+bib_name_no_comments, 'w') as bibtex_file:
         bibtexparser.dump(bib_database, bibtex_file)

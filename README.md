@@ -33,6 +33,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [1987 - Bush, Compiling Smalltalk-80 to a RISC](#1987---Bush-Compiling-Smalltalk-80-to-a-RISC)
 
+[1987 - Cointe, Metaclasses are First Class the ObjVlisp Model ](#1987---Cointe-Metaclasses-are-First-Class-the-ObjVlisp-Model-)
+
 [1987 - Ungar, What Price Smalltalk](#1987---Ungar-What-Price-Smalltalk)
 
 [1989 - Chambers, Customization Optimizing Compiler Technology for SELF a Dynamically-Typed Object-Oriented Programming Language](#1989---Chambers-Customization-Optimizing-Compiler-Technology-for-SELF-a-Dynamically-Typed-Object-Oriented-Programming-Language)
@@ -79,8 +81,6 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2001 - Paleczny, The Java HotSpot Server Compiler](#2001---Paleczny-The-Java-HotSpot-Server-Compiler)
 
-[2002 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused](#2002---Barbu-Application-Replay-Attack-on-Java-Cards-When-the-Garbage-Collector-Gets-Confused)
-
 [2002 - Click, Fast Subtype Checking in the HotSpot JVM](#2002---Click-Fast-Subtype-Checking-in-the-HotSpot-JVM)
 
 [2002 - Ertl, Vmgen a Generator of Efficient Virtual Machine Interpreters](#2002---Ertl-Vmgen-a-Generator-of-Efficient-Virtual-Machine-Interpreters)
@@ -90,6 +90,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2003 - Ertl, The Structure and Performance of Efficient Interpreters](#2003---Ertl-The-Structure-and-Performance-of-Efficient-Interpreters)
 
 [2003 - Fink, Design Implementation and Evaluation of Adaptive Recompilation with On-Stack Replacement](#2003---Fink-Design-Implementation-and-Evaluation-of-Adaptive-Recompilation-with-On-Stack-Replacement)
+
+[2003 - Govindavajhala, Using Memory Errors to Attack a Virtual Machine](#2003---Govindavajhala-Using-Memory-Errors-to-Attack-a-Virtual-Machine)
 
 [2003 - Shaylor, A Java Virtual Machine Architecture for Very Small Devices](#2003---Shaylor-A-Java-Virtual-Machine-Architecture-for-Very-Small-Devices)
 
@@ -107,13 +109,21 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2005 - Faes, FPGA-Aware Garbage Collection in Java](#2005---Faes-FPGA-Aware-Garbage-Collection-in-Java)
 
+[2005 - Ierusalimschy, The Implementation of LUA5](#2005---Ierusalimschy-The-Implementation-of-LUA5)
+
 [2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment](#2005---Ungar-Constructing-a-Metacircular-Virtual-Machine-in-an-Exploratory-Programming-Environment)
 
 [2006 - Gal, HotpathVM An Effective JIT Compiler for Resource-Constrained Devices](#2006---Gal-HotpathVM-An-Effective-JIT-Compiler-for-Resource-Constrained-Devices)
 
+[2006 - Leroy, Formal Certification of a Compiler Backend](#2006---Leroy-Formal-Certification-of-a-Compiler-Backend)
+
+[2006 - Piumarta, Open extensible object models](#2006---Piumarta-Open-extensible-object-models)
+
 [2006 - Rigo, PyPys Approach to Virtual Machine Construction](#2006---Rigo-PyPys-Approach-to-Virtual-Machine-Construction)
 
 [2006 - Russell, Eliminating Synchronization-Related Atomic Operations with Biased Locking and Bulk Rebiasing](#2006---Russell-Eliminating-Synchronization-Related-Atomic-Operations-with-Biased-Locking-and-Bulk-Rebiasing)
+
+[2008 - Fuess, An FPGA Implementation of Explicit-State Model Checking](#2008---Fuess-An-FPGA-Implementation-of-Explicit-State-Model-Checking)
 
 [2008 - Kotzmann, Design of the Java HotSpot Client Compiler for Java 6](#2008---Kotzmann-Design-of-the-Java-HotSpot-Client-Compiler-for-Java-6)
 
@@ -123,6 +133,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor](#2010---Agesen-The-Evolution-of-an-X86-Virtual-Machine-Monitor)
 
+[2010 - Ehringer, The Dalvik Virtual Machine Architecture](#2010---Ehringer-The-Dalvik-Virtual-Machine-Architecture)
+
 [2010 - Reynolds, Lightweight Modeling of Java Virtual Machine](#2010---Reynolds-Lightweight-Modeling-of-Java-Virtual-Machine)
 
 [2010 - Rizzo, Practical Padding Oracle Attacks](#2010---Rizzo-Practical-Padding-Oracle-Attacks)
@@ -131,13 +143,21 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages](#2011---Bolz-Runtime-Feedback-in-a-Meta-Tracing-JIT-for-Efficient-Dynamic-Languages)
 
+[2011 - Haupt, CSOMPL a virtual machine product line](#2011---Haupt-CSOMPL-a-virtual-machine-product-line)
+
+[2012 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused](#2012---Barbu-Application-Replay-Attack-on-Java-Cards-When-the-Garbage-Collector-Gets-Confused)
+
 [2012 - Rohou, Tiptop Hardware Performance Counters for the Masses](#2012---Rohou-Tiptop-Hardware-Performance-Counters-for-the-Masses)
 
 [2012 - Wuerthinger, Self-optimizing AST interpreters](#2012---Wuerthinger-Self-optimizing-AST-interpreters)
 
 [2013 - Eckert, Hardware Based Security Enhanced Direct Memory Access](#2013---Eckert-Hardware-Based-Security-Enhanced-Direct-Memory-Access)
 
+[2013 - Fournet, Fully Abstract Compilation to Javascript](#2013---Fournet-Fully-Abstract-Compilation-to-Javascript)
+
 [2013 - Kulkarni, Automatic Construction of Inlining Heuristics using Machine Learning](#2013---Kulkarni-Automatic-Construction-of-Inlining-Heuristics-using-Machine-Learning)
+
+[2013 - Marr, Supporting Concurrency Abstractions in High-level Language Virtual Machines](#2013---Marr-Supporting-Concurrency-Abstractions-in-High-level-Language-Virtual-Machines)
 
 [2013 - Wimmer, Maxine an Approachable Virtual Machine for and in Java](#2013---Wimmer-Maxine-an-Approachable-Virtual-Machine-for-and-in-Java)
 
@@ -151,6 +171,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2014 - Humer, A Domain-Specific Language for Building Self-Optimizing AST Interpreters](#2014---Humer-A-Domain-Specific-Language-for-Building-Self-Optimizing-AST-Interpreters)
 
+[2014 - Jain, Sok Introspections on Trust and the Semantic Gap](#2014---Jain-Sok-Introspections-on-Trust-and-the-Semantic-Gap)
+
 [2014 - Lin, A Security PaaS Container with a Customized JVM](#2014---Lin-A-Security-PaaS-Container-with-a-Customized-JVM)
 
 [2014 - Seaton, Debugging at Full Speed](#2014---Seaton-Debugging-at-Full-Speed)
@@ -159,15 +181,11 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2014 - Woss, An Object Storage Model for the Truffle Language Implementation Framework](#2014---Woss-An-Object-Storage-Model-for-the-Truffle-Language-Implementation-Framework)
 
-[2015 - Gosling, The Java 8 Language Specification](#2015---Gosling-The-Java-8-Language-Specification)
-
 [2015 - Grimmer, Dynamically Composing Languages in a Modular Way Supporting C Extensions for Dynamic Languages](#2015---Grimmer-Dynamically-Composing-Languages-in-a-Modular-Way-Supporting-C-Extensions-for-Dynamic-Languages)
 
 [2015 - Gunadi, Formal Certification of Android Bytecode](#2015---Gunadi-Formal-Certification-of-Android-Bytecode)
 
 [2015 - Hussein, Impact of GC Design on Power and Performance for Android](#2015---Hussein-Impact-of-GC-Design-on-Power-and-Performance-for-Android)
-
-[2015 - Lindholm, The JVM 8 Specification](#2015---Lindholm-The-JVM-8-Specification)
 
 [2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore](#2015---Rohou-Branch-Prediction-and-the-Performance-of-Interpreters-Dont-Trust-Folklore)
 
@@ -175,11 +193,21 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2015 - VanDeVanter, Building Debuggers and Other Tools We Can Have it All](#2015---VanDeVanter-Building-Debuggers-and-Other-Tools-We-Can-Have-it-All)
 
+[2016 - Lin, Rust as a Language for High Performance GC Implementation](#2016---Lin-Rust-as-a-Language-for-High-Performance-GC-Implementation)
+
+[2017 - Kotselidis, Cross-ISA Debugging in Meta-circular VMs](#2017---Kotselidis-Cross-ISA-Debugging-in-Meta-circular-VMs)
+
 [2017 - Pedersen, From Trash to Treasure Timing-Sensitive Garbage](#2017---Pedersen-From-Trash-to-Treasure-Timing-Sensitive-Garbage)
+
+[2018 - Cho, FPGASwarm High Throughput Model Checking on FPGAs](#2018---Cho-FPGASwarm-High-Throughput-Model-Checking-on-FPGAs)
 
 [2018 - Lipp, Meltdown Reading Kernel Memory from User Space](#2018---Lipp-Meltdown-Reading-Kernel-Memory-from-User-Space)
 
 [2018 - Wu, A Side-channel Attack on HotSpot Heap Management](#2018---Wu-A-Side-channel-Attack-on-HotSpot-Heap-Management)
+
+[2019 - Du, XPC Architectural Support for Secure and Efficient Cross Process Call](#2019---Du-XPC-Architectural-Support-for-Secure-and-Efficient-Cross-Process-Call)
+
+[2019 - Kermarrec, LiteX  an open-source SoC builder and library based on Migen Python DSL](#2019---Kermarrec-LiteX--an-open-source-SoC-builder-and-library-based-on-Migen-Python-DSL)
 
 [2019 - Kocher, Spectre Attacks Exploiting Speculative Execution](#2019---Kocher-Spectre-Attacks-Exploiting-Speculative-Execution)
 
@@ -194,6 +222,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2020 - Fournier, Menhir Generic High-Speed FPGA Model-Checker](#2020---Fournier-Menhir-Generic-High-Speed-FPGA-Model-Checker)
 
 [2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing](#2020---Lima-Exposing-Bugs-in-JavaScript-Engines-through-Test-Transplantation-and-Differential-Testing)
+
+[2020 - Schrammel, Donky Domain Keys - Efficient In-Process Isolation for RISC-V and x86](#2020---Schrammel-Donky-Domain-Keys---Efficient-In-Process-Isolation-for-RISC-V-and-x86)
 
 [2020 - Zandberg, Minimal Virtual Machines on IoT Microcontrollers The Case of Berkeley Packet Filters with rBPF](#2020---Zandberg-Minimal-Virtual-Machines-on-IoT-Microcontrollers-The-Case-of-Berkeley-Packet-Filters-with-rBPF)
 
@@ -266,6 +296,12 @@ The RISC architecture presents a register file of overlapping register windows, 
 When more registers are required than available, **spilling** is necessary. Spilling comes with two rules: (1) **Entire categories of variables are spilled if necessary** (arguments for example) (2) **A variable cannot be moved once it has been allocated a location**. These rules are not optimized in terms of register space usage but are simple and spilling is *minimized at reasonable cost*. Spills can either be *allocated from a common spill pool* or a separate *spill object can be allocated for each activation frame that spills*.
 
 SOAR takes advantage of the fact that all simple arithmetic operations are performed only on integers. If incorrect, the hardware will **trap** and transfer to a handler that will **look-up** the correct method. The compiler also takes advantage of hardware that **maps registers to memory addresses** and allows **pointers to registers**.
+
+---
+
+
+### 1987 - Cointe, Metaclasses are First Class the ObjVlisp Model 
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 
@@ -502,12 +538,6 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ---
 
 
-### 2002 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
----
-
-
 ### 2002 - Click, Fast Subtype Checking in the HotSpot JVM
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -533,6 +563,12 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 
 
 ### 2003 - Fink, Design Implementation and Evaluation of Adaptive Recompilation with On-Stack Replacement
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2003 - Govindavajhala, Using Memory Errors to Attack a Virtual Machine
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -600,6 +636,35 @@ for (;;) {
 
 ### 2004 - Blackburn, Oil and Water High Performance Garbage Collection in Java with MMTk
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[28/04/2021]
+
+**Memory Management Toolkit (MMTk)** is written in and for Java. It addresses th tension between flexibility and performance with a combination of design features: 1) **Java** as a systems language 2) **Design patterns** 3) Clean **interface between the VM and MMTk** 4) Composition of **policies and mechanisms to define collectors**.
+
+MMTk groups regions of memory into spaces and implements garbage collection algorithms with a policy that couples a space with an allocation and collection mechanism. *Whole heap* collectors use one policy for most objects while *generational collectors* use one or more. A *write barrier* remembers pointers into independently collected spaces. For every pointer store, the compiler inserts write-barrier code. At execution time, the write-barrier conditionally records pointers between independently collected spaces.
+
+MMTk implements **allocation and collection mechanisms** (*Bump Pointer, Free-List, Tracing, Reference Counting*) and forms **policies** with the implementations (define *Copy Space MarkSweep Space,* etc.) in order to create collectors (*SemiSpace, MarkSweep, RefCount,* etc.).
+
+MMTk design is based on *flexibility* and *performance* and uses for that:
+
+**1) Java as a systems language:**
+
+ MMTk uses the extension defined by and for Jikes RVM that defines special types for unsafe operations: `VM_Offset` (distance between two addresses), `VM_Word` (value returned by dereferencing an address) and `VM_Address`. These **unboxed types** (operations on them never result in allocation) help use pointer arithmetic, casts as well as memory reads and writes. Compiler **pragmas** are used to control *inlining* and *interruptibility*. Control over inlining helps improve efficiency for system-level code written in an object-oriented style. By executing in its own heap, the collector must not scavenge itself and *pre-copies* any GC-related  instances and 
+
+**2) Design Patterns:**
+
+MMTk uses patterns for efficiency and reuse (*TriColor, RootSet, Adapter, Facade, Iterator* and *Proxy*). They are here used for several reasons:
+
+- **Hot and Cold Paths:** MMTk marks the *hot path* (used frequently and lightweight) with `PragmaInline` and the *cold path* (used rarely and heavyweight) with `PragmaNoInline`. This is the case of a copying nursery (copy pointers *-hot-* then acquire new memory *-cold-*).
+- **Local and Global Scopes:** Multi-threaded memory manager performance and correctness depends on a scalable division of local and global context. This is done through the **use of classes in MMTk**, it uses an instance with each thread and uses the class to reflect the global state. Instance methods operate over heir data without syncronization and access shared state through synchronized global class methods. MMTk provides 'local' and 'global' variants of a class,  with N instances of the global class and N x P instances of the local class, each mapped to one global instance. 
+- **Prepare and Release Phases:** MMTk uses a high level algorithm to perform the stop-the-world collectors (*prepare, process all work* and *release*). The phase are split in global and local steps: `prepareGlobal`,  `prepareLocal`,  **`processAllWork`** , `releaseLocal` and  `releaseGlobal`. The `processAllWork` is common to all collectors and consists of processing a collection work queue. Each new collector only implements a prepare and release phase.
+- **Multiplexed Delegation:** When the memory manager allocates or traces an *object*, it invokes the corresponding method in the *plan*, which then delegates responsibility to the appropriate *policy*. 
+
+**3) Interface VM/MMTk:**  The interface between the VM and the MMis bidirectional and each side contains ***requirements*** and *features*. The key requirements of the MM include *identifying source of pointers*, *providing access to per-object GC  state*, etc.  On the other side, the VM requires that the MM provide allocation, finalization write barrier implementations, soft/weak/phantom references and statistics such as heap size and GC count.
+
+**4) Composition (Mechanisms, Policies, Plans):** Mechanisms are **collector-neutral**, **highly-tuned** mechanisms include *bump-pointer, free list, large object allocations*. Policies implements five policies: *immortal allocation, copying collection, mark-sweep collection, reference counting collection* and *treadmill collection*. MMTk maps policies to spaces which are contiguous regions of virtual memory managed by a single policy. Each policy follows a local/global pattern. A plan is MMTk's highest level of composition, defining the rules by which policies are composed (collection and allocation policy for each object for example).
+
+
 
 ---
 
@@ -670,6 +735,45 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 ---
 
 
+### 2005 - Ierusalimschy, The Implementation of LUA5
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[22/04/2021]
+
+Main objectives of Lua: *simplicity* (simple language for simple C code), efficiency (fast one-pass compiler and VM), *portability* (clean ANSI C implementation), *embeddability* (simple C API), *low embedding cost* (small Lua core and extension as user libraries).
+
+Hand-written compiler (YACC too slow) with scanner and recursive descent parser. No intermediate representation, instructions for the VM emitted on the fly. Fastest language implementation of interpreted and dynamically-typed languages. 
+
+**Values representation:** Eight basic types (*nil, boolean, number, string, table, function, userdata, thread*). Tables are associative arrays with index. Userdata consists of pointers to memory blocks (*heavy* allocated by Lua and GCd or *light* allocated and freed by the user). Values of **all types are first class values**, they can be stored in globals, locals and table fields, passed as arguments etc. Value types are stored as a C union:
+
+```c
+typedef union {
+	GCObject *gc; // strings tables etc.
+	void p*;      // light userdata
+	lua_Number n; // double
+	int b;        // integer
+} Value;
+```
+
+This solution is expensive to copy values but ensures portability. Strings are immutable and internalized in a hash table
+
+
+
+**Tables:** The only data structures in Lua are tables, or **associative arrays**. They can be indexed by any value and hold values of any type. They are dynamic because they grow or shrink accordingly. Only one set of operators is needed to perform operations on tables or arrays. Tables are implemented as **hybrid data structures** (**array part** with implicit integer index and **hash part** with other indexes). The load factor is balanced by testing both parts and choosing an n such as at least half the slots between 1 and n are used and that at least one is used between n/2+1 and n. The hash part uses a mix of  *chained scatter table with Brent's variation*.
+
+**Functions and Closures:** **Upvalues** are used to implement closures. Any outer local variable is accessed indirectly through an upvalue. **The upvalue originally points to the stack slot wherein the variable lives. When it goes out of scope, the value migrates into a slot in the upvalue itself**. The migration is transparent to all the users. To ensure the uniqueness, a linked list of all open upvalues is kept. When a new closure is created, all outer local variables are gone through and if an open value is found, it uses this one, otherwise it creates and links it. **Flat closures** allows to pour outer variables into inner closures.
+
+**Threads and Coroutines:** Asymmetric coroutines are supported by the functions `create`, `resume` and `yield`. Each coroutine has its own stack and are stackful (it can be suspended from inside any number of nested calls). Combination of stackfulness and first-class status makes coroutines equivalent to one-shot continuations.
+
+**The VM itself:** For each function that Lua compiles it creates a prototype which contains an array with the opcodes for the function and an array of Lua values with all constants used by the function. Register-based VM allows for less instructions and a single fetch time because operands are inside the instruction. Instructions are 32 bits long divided into three or four fields: OP|A|B|C or OP|A|Bx or OP|A|sBx where A is the destination, B and C registers, Bx an unsigned value and sBx a signed value. Branch instructions are decoupled in a test and a jump instruction. If the test is not verified, the next instruction is skipped. Each function (and coroutine) holds two stacks, the activation records of the other functions and a large array of temporary values corresponding to a given function.
+
+
+
+
+
+---
+
+
 ### 2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -682,6 +786,18 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 ---
 
 
+### 2006 - Leroy, Formal Certification of a Compiler Backend
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2006 - Piumarta, Open extensible object models
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2006 - Rigo, PyPys Approach to Virtual Machine Construction
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -689,6 +805,12 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
 
 ### 2006 - Russell, Eliminating Synchronization-Related Atomic Operations with Biased Locking and Bulk Rebiasing
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2008 - Fuess, An FPGA Implementation of Explicit-State Model Checking
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -718,8 +840,42 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 ---
 
 
+### 2010 - Ehringer, The Dalvik Virtual Machine Architecture
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[22/04/2021]
+
+Java aims at portability with the **Java Virtual Machine**. It consists of a supposedly stable ecosystem for desktop application through the **JSE platform** and **JEE server**. However the **mobile ecosystem JME** is more fragmented. Google abandonned both the JVM and JME with the **Dalvik virtual machine** along with **limited implementation of standard Java libraries**.
+
+Android runtime must support: **limited processor speed, limited RAM, no swap space, battery powered, sandboxed application runtime, diverse set of devices**. In order to answer those requirements, each Android application runs in its own process with its own Dalvik VM (a register-based VM) that executes a Dalvik Executable file (`.dex`). The Dalvik VM relies on the Linux kernel for threading and low-memory management.
+
+**DEX File Format:** For each class in Java source code, a `.class` file is generated (`javac`) with the corresponding bytecode. The corresponding `.dex` file is generated from those `.class` files (using `dx`). This file format uses specific constant pools for strings, type/class, fields or methods. These pools are shared among all classes. These memory optimizations brings more complexity to the GC because it is independent from applications. Mark bits are separated from other heap memory in order to keep the memory sharing.
+
+**Zygote:** The Zygote enable fast startup time for new instances as well as sharing of code. It assumes a significant number of core libraries are used among multiple applications and often in read-only mode. The Zygote is a VM process that starts at system boot time, preloads core libraries and waits for socket request to fork a new VM.
+
+
+
+
+
+
+
+---
+
+
 ### 2010 - Reynolds, Lightweight Modeling of Java Virtual Machine
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+*[02/02/2021]*
+
+Java Security is enforced in three ways:
+
+- The **Java** **compiler** has a large number of **rules** that it enforces in order to ensure that the **syntax and semantics of the Java language are satisfied** but also to prohibit actions that are known to be malicious (e.g. uninitialized variables).
+- The **Java** **class loader**, is used to port a classfile into the Java execution environment. When class loading is performed, the **Java Bytecode Verifier** is used to assert the bytecode are of correct form and types.
+- The **Java Runtime** performs array bounds checking, type conversion checkings, etc. 
+
+
+
+Almost all Java exploits use weaknesses in the **Bytecode Verifier**. The verifier uses a constraints-based approach to perform its analysis. The objective is to (1) provide an extensible framework for modeling security constraints and (2) provide a concrete model for meaningful, high value security constraints.
 
 ---
 
@@ -752,12 +908,36 @@ Native code isolation:
 
 **Sandbox of JNI calls:** Native methods access JNI through an interface pointer. This pointer usually goes through the JNI methods however they are here outside of the sandbox. Robusta duplicates the function table with pointers to JNI trampolines so that the native function can access the outside of the sandbox if authorized. The JNI checks includes several safety checks (type, signature, etc.). JNI allows efficient access to primitive arrays however direct access to the heap is dangerous to provide to native functions. Robusta performs a copy-in/copy-out.
 
-**Native Code Security:** The regulation of native system calls goes through the Java's Security Manager. It accepts or denies a system call based on a security policy. A security policy can grant two kinds of permissions: **mode permissions** and **system-access permissions**. Mode permissions specify whether a library can be loaded into the JVM and whether it should be sandboxed. The mode policy is enforced during library-loading.
+**Native Code Security:** The regulation of native system calls goes through the Java's Security Manager. It accepts or denies a system call based on a security policy. A security policy can grant two kinds of permissions: **mode permissions** and **system-access permissions**. **Mode permissions** specify whether a library can be loaded into the JVM and whether it should be sandboxed. The mode policy is enforced during library-loading. **System-access permissions** define what an application is allowed to perform (e.g. read or write files).
+
+
 
 ---
 
 
 ### 2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2011 - Haupt, CSOMPL a virtual machine product line
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[27/04/2021]
+
+Application of **MDSOC** (multi-dimensional separation of concerns) and **SPL** (software product line) principles to high-level language virtual machines. Modularisation of **CSOM** using **VMADL** (virtual machine architecture description language). VMs are intricate pieces of software, and modularisation can help dealing with their understanding and overall maintainability. The notion of **service module** helps untangling the complexity of VMs. It consists of a module with *bidirectional interface* that can receive requests and exhibit internal situations to the outside.
+
+CSOM is a SmallTalk Virtual Machine written in C. It does not support images but rather SmallTalk code written in text files. Two threading possibilities are used: the system `pthreads` or threads from within the VM itself. The GC is a mark/sweep collector. a Threaded-interpreter, additional integral representation and snapshots have been developed as extension.
+
+**VMADL**: system architectures need to be supported at source code level and uses **service modules** with signals linking each other called *exposed join points*. It provides a frame in which an **implementation language** and an **aspect language**. Here the implementation language is C and the aspect language is **AspectC++**. In **AspectC++**, the `services` are defined and can use `require` and `expose` to link them between each other. A construct used to implement module interactions is a `combiner`.
+
+An extension of C called ClassDL is used to help with OOP mechanisms. The combination of all the different elements create a toolchain generating a modular VM on demand.
+
+---
+
+
+### 2012 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -805,7 +985,19 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 ---
 
 
+### 2013 - Fournet, Fully Abstract Compilation to Javascript
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2013 - Kulkarni, Automatic Construction of Inlining Heuristics using Machine Learning
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2013 - Marr, Supporting Concurrency Abstractions in High-level Language Virtual Machines
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -873,6 +1065,24 @@ Several optimizations are enabled:
 ---
 
 
+### 2014 - Jain, Sok Introspections on Trust and the Semantic Gap
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[27/04/2021]
+
+The goals of **Virtual Machine Introspection (VMI)** is to identify if the guest OS has been compromised, if malicious applications are running on the system or if sensitive file have uncompromised secrecy or integrity. A *semantic gap* occurs when using a hypervisor to look into VM behavior as the abstractions used by the hypervisor policies are higher-level than what he can actually see (registers and cpu state). Most of VMI development goes into reconstructing high-level semantic from low-level sources.
+
+To close this semantic gap, the **reconstruction** of data models is essential. A **learning phase** is used to extract information related to data structures (**signature**). A **search phase** can then look for instances of this data structure. Signatures are either handcrafted (`memparser`, `kntlist`  or `grepexec`), extracted from source analysis (`siggraph`, `kop` or `mas`)  and dynamic learning by studying a trusted OS behavior.
+
+Other methods allow to bridge the gap , such as *code implanting* where the objective is to inject code into the guest OS that reports information back to the hypervisor, *process outgrafting*  that relocates the monitoring process from an untrusted VM to a second, trusted one or *kernel executable integrity* enforces the fact that the executable of the kernel has not been modified. This can be enforced by:  1) the W+X principle where a memory page can either be *writable* or *executable* but not both at the same time, 2) *whitelisting portions of code*.
+
+- Current VMI systems face fundamental trade-offs between performance and risk, often making fragile assumptions about the guest OS
+
+  
+
+---
+
+
 ### 2014 - Lin, A Security PaaS Container with a Customized JVM
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -897,12 +1107,6 @@ Several optimizations are enabled:
 ---
 
 
-### 2015 - Gosling, The Java 8 Language Specification
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
----
-
-
 ### 2015 - Grimmer, Dynamically Composing Languages in a Modular Way Supporting C Extensions for Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -916,12 +1120,6 @@ Several optimizations are enabled:
 
 
 ### 2015 - Hussein, Impact of GC Design on Power and Performance for Android
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
----
-
-
-### 2015 - Lindholm, The JVM 8 Specification
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -945,7 +1143,25 @@ Several optimizations are enabled:
 ---
 
 
+### 2016 - Lin, Rust as a Language for High Performance GC Implementation
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2017 - Kotselidis, Cross-ISA Debugging in Meta-circular VMs
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2017 - Pedersen, From Trash to Treasure Timing-Sensitive Garbage
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2018 - Cho, FPGASwarm High Throughput Model Checking on FPGAs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -983,6 +1199,18 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 ---
 
 
+### 2019 - Du, XPC Architectural Support for Secure and Efficient Cross Process Call
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2019 - Kermarrec, LiteX  an open-source SoC builder and library based on Migen Python DSL
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2019 - Kocher, Spectre Attacks Exploiting Speculative Execution
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -991,38 +1219,6 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 
 ### 2019 - Patel, Runtime-Programmable Pipelines for Model Checkers on FPGAs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
-
-*[08/12/2020]*
-
-Design of an efficient *instruction-driven runtime-programmable pipeline for model checkers*. This pipeline replaces the model-specific pipeline found in prior works that hardwire the target model in FPGA logic. High-throughput model checking without requiring synthesis and place-and-route on every model change.
-
-*FIGURE 1 PRESENTS THE EXPLICIT STATE MODEL CHECKING PROCESSING FLOW*
-
-The model checker needs to be (1) Fast in execution time (2) Fast in preparation time. In order to answer (1), the**FPGASwarm Verification Methodology**  has been chosen. To answer (2), an **instruction-driven runtime-programmable pipeline for the successor state generator and the state validator, which support checking different models without RTL changes.**
-
-To obtain high throughput, each **pipeline must have access to its own BRAMs containing a copy of the instructions**. The throughput of the Swarm-based FPGA model is **bound by the BRAM capacity**, a key consideration is to **minimize the footprint of the instruction memory**.
-
-
-
-***Pipeline for the Successor State Generator:*** Each stage takes a different slice of the instruction as its control bits.
-
-- **Instruction Fetch**: On each cycle, a state vector (along with a PID and ND value) is pushed on the pipeline to generate one successor state. The PID is used to get the PC out of the state vector. The address of instruction is obtained out of the concatenation of the PID, ND and PC values.
-
-- **Variable Selection and Constants**: The first slice of the instruction bits is used to load values from the state vector with the address encoded in the instruction, constants are obtained as immediate values.
-
-- **Pipeline Registers**: The pipeline registers between the variable selection stage and the final store stage have a specific arrangement. For the first one there are M registers (number of value selection units), followed by N registers (immediate values from the instruction), then several registers for storing temporary values between the multiple execution stages.
-
-- **Execute Stages**: Computation is performed by a series of execute stages, each having several parallel ALUs. The number of ALUs should be correctly sized to accommodate the target model
-
-  Each ALU has two operands and one output. The first one is fixed and the second is freely selected from the preceding state registers and four read-only constants: *PID, NUMPROC, value 1 and value 0*. Each ALU output is restricted to be stored in one of two possible locations. Not all ALUs need to load and two types of ALUs are developed: *Normal ALU* and *Load ALU*. A 4-bit OP field corresponds to one of the 16 operations available.
-
-- **Permutation Stage**: The permutation stage sets up appropriate registers for the store unit by moving the calculated values from the execute stages to the correct location for the store unit to use.
-
-- **Store Stage and PC Updating**: the store stage comprises several store units to update variables in the state vector. Each store unit has three inputs from the previous stage: *condition, value and index*. If the *condition* is non-0, the variable in the state vector with position *base + index* becomes *value*.
-
-**Pipeline for the State Validator**: All state vectors require the same validation checks. No need for separate instructions for each PID-ND-PC combination. The final output of the validator pipeline is a single value, selected from a register in the last execution stage, which indicates whether or not the input state is a **model violation**. Note that the **validator DOES NOT consume BRAMs** as it has no instruction memory footprint.
-
-
 
 ---
 
@@ -1101,6 +1297,30 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 ### 2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Schrammel, Donky Domain Keys - Efficient In-Process Isolation for RISC-V and x86
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[22/04/2021]
+
+Need for memory isolation to secure any system. This can be applied to any layer of the software stack (e.g. process isolation, separate address spaces, etc.). Donky consists of a **hardware-software co-design providing strong in-process isolation guarantees based on memory protection keys**. It also offers **pure userspace policy management with negligible overhead and full backward-compatibility**.
+
+RISC-V comprises the unprivileged ISA and privileged ISA. Control and Status Registers (CSR) allows configuring the CPU , access performance metrics and additional exception handling. They are prefixed with `m` (machine), `s` (supervisor) or `u` (user). To handle exceptions,  the CPU switches to machine mode and jumps to the address specified in the trap-vector base-address register (`mtvec`). RISC-V specifies a "Standard Extension for User-Level Interrupts" as **N extension**.
+
+Modern CPUs support virtual address spaces for process isolation. For virtual-to-physical translation, address spaces are mapped in blocks of pages (4KiB). Their entries are cached in the translation-lookaside buffer (TLB). Page-table entries (PTE) help manage permissions per page such that the same physical page can be mapped in multiple virtual address spaces. Kernel level switches are required to update permissions, switch address space, etc.  An extension to page-based memory is enabled with memory protection keys. PTE are tagged with a protection key but the permissions are stored separately. Keys are associated with a protection domain and each memory region can have one associated key. Example: Intel MPK, ARM Memory Domains, IBM Power, etc.
+
+JavaScript is **jitted** and sandboxed through browsers to enforce security. The source code is dynamically first compiled into an intermediate representation which is then interpreted and executed. Another component analyses the runtime and further optimizes the bytecode directly into machine code. This requires the code region to be both writable and executable. In V8, an ***Isolate*** is an independent copy of the entire JavaScript runtime environment (*code cache, gc and call stack*). As sandbox escapes are still possible, an additional security uses process isolation.
+
+**Software design:** the Donky Monitor is the **trusted handler in charge of managing in-process access policies and securing domains from each other**. Any operation on domains or protection keys will invoke the Donky Monitor. Domain switches guarded with `dcalls`, tampering guarded with memory encapsulation in a separate domain, security enforced by a hardware call-gate mechanism that enforces the entry point. The Donky API expands the **POSIX** interface. It allows to manage domains, protection keys and associated memory, and share keys with other domains.
+
+**Hardware design:** Memory protection keys are configured in the PTE of a process (upmost 10 bits). The userspace register (`DKRU`) can load **4 different protection keys simultaneously**. Each loaded key **enables the read/write of the corresponding PTE**. Additionally, each slot has a specific bit to enforce read-only mode. The monitor bit (upmost of `DKRU`) can be cleared to prevent unauthorized alteration of the protection key policy. A new exception is raised when a security violation is detected while the monitor bit in `DKRU` is cleared. The MMU is extended to verify that for any data access the protection key in the PTE matches at least one loaded in `DKRU`.
+
+**Security Evaluation:** *Hardware call gates* prevent code-reuse attacks on Donky Monitor. *System calls and signals* are interposed by Donky by redirecting them to the Monitor. The *Donky Monitor* itself validates all inputs in the *Donky API*.
+
+
 
 ---
 

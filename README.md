@@ -143,6 +143,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages](#2011---Bolz-Runtime-Feedback-in-a-Meta-Tracing-JIT-for-Efficient-Dynamic-Languages)
 
+[2011 - Chen, JITDefender A Defense against JIT Spraying Attacks](#2011---Chen-JITDefender-A-Defense-against-JIT-Spraying-Attacks)
+
 [2011 - Haupt, CSOMPL a virtual machine product line](#2011---Haupt-CSOMPL-a-virtual-machine-product-line)
 
 [2012 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused](#2012---Barbu-Application-Replay-Attack-on-Java-Cards-When-the-Garbage-Collector-Gets-Confused)
@@ -195,9 +197,17 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2016 - Lin, Rust as a Language for High Performance GC Implementation](#2016---Lin-Rust-as-a-Language-for-High-Performance-GC-Implementation)
 
+[2017 - Frassetto, JITGuard Hardening Just-in-time Compilers with SGX](#2017---Frassetto-JITGuard-Hardening-Just-in-time-Compilers-with-SGX)
+
+[2017 - Izraelevitz, Reusability is FIRRTL Ground Hardware Construction Languages Compiler Frameworks and Transformations](#2017---Izraelevitz-Reusability-is-FIRRTL-Ground-Hardware-Construction-Languages-Compiler-Frameworks-and-Transformations)
+
 [2017 - Kotselidis, Cross-ISA Debugging in Meta-circular VMs](#2017---Kotselidis-Cross-ISA-Debugging-in-Meta-circular-VMs)
 
 [2017 - Pedersen, From Trash to Treasure Timing-Sensitive Garbage](#2017---Pedersen-From-Trash-to-Treasure-Timing-Sensitive-Garbage)
+
+[2017 - Pridgen, Picking up the Trash Exploiting Generational GC for Memory Analysis](#2017---Pridgen-Picking-up-the-Trash-Exploiting-Generational-GC-for-Memory-Analysis)
+
+[2018 - Belleville, Automated Software Protection for the Masses Against Side-Channels Attacks](#2018---Belleville-Automated-Software-Protection-for-the-Masses-Against-Side-Channels-Attacks)
 
 [2018 - Cho, FPGASwarm High Throughput Model Checking on FPGAs](#2018---Cho-FPGASwarm-High-Throughput-Model-Checking-on-FPGAs)
 
@@ -213,19 +223,29 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2019 - Patel, Runtime-Programmable Pipelines for Model Checkers on FPGAs](#2019---Patel-Runtime-Programmable-Pipelines-for-Model-Checkers-on-FPGAs)
 
+[2019 - Polito, GildaVM a Non-Blocking IO Architecture for the Cog](#2019---Polito-GildaVM-a-Non-Blocking-IO-Architecture-for-the-Cog)
+
 [2019 - Schwarz, ZombieLoad Cross-Privilege-Boundary Data Sampling](#2019---Schwarz-ZombieLoad-Cross-Privilege-Boundary-Data-Sampling)
 
 [2019 - Varoumas, High-level programming models for microcontrollers with scarce resources](#2019---Varoumas-High-level-programming-models-for-microcontrollers-with-scarce-resources)
 
 [2020 - Agache, Firecracker Lightweight Virtualization for Serverless Applications](#2020---Agache-Firecracker-Lightweight-Virtualization-for-Serverless-Applications)
 
+[2020 - Bruant, System Verilog to Chisel Translation for Faster](#2020---Bruant-System-Verilog-to-Chisel-Translation-for-Faster)
+
 [2020 - Fournier, Menhir Generic High-Speed FPGA Model-Checker](#2020---Fournier-Menhir-Generic-High-Speed-FPGA-Model-Checker)
+
+[2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware](#2020---Fumero-Running-Parallel-Bytecode-Interpreters-on-Heterogeneous-Hardware)
 
 [2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing](#2020---Lima-Exposing-Bugs-in-JavaScript-Engines-through-Test-Transplantation-and-Differential-Testing)
 
 [2020 - Schrammel, Donky Domain Keys - Efficient In-Process Isolation for RISC-V and x86](#2020---Schrammel-Donky-Domain-Keys---Efficient-In-Process-Isolation-for-RISC-V-and-x86)
 
+[2020 - Taemin, NoJITsu Locking Down Javascript](#2020---Taemin-NoJITsu-Locking-Down-Javascript)
+
 [2020 - Zandberg, Minimal Virtual Machines on IoT Microcontrollers The Case of Berkeley Packet Filters with rBPF](#2020---Zandberg-Minimal-Virtual-Machines-on-IoT-Microcontrollers-The-Case-of-Berkeley-Packet-Filters-with-rBPF)
+
+[2021 - Dobis, Open-Source Verification with Chisel and Scala](#2021---Dobis-Open-Source-Verification-with-Chisel-and-Scala)
 
 
 
@@ -831,6 +851,18 @@ This solution is expensive to copy values but ensures portability. Strings are i
 ### 2009 - Frampton, Demystifying Magic High-Level Low-Level Programming
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+[28/04/2021]
+
+Programming at low-level using a high-level programming language is possible and brings into question the use of C as a rule rather than as an exception. To use a high-level language, there are several approaches: the language directly supports low-level coding, the language can be extended to support low-level features, low-level features could be described in another language or the language could be extended via an extensible framework.
+
+Adding low-level features to high-level languages requires three characteristics. ***Extensibility*** as programmers need to be able to reach beyond the semantics of high-level languages. An **extensible framework** for introducing and structuring low-level primitives is necessary. ***Encapsulation*** as the containment of low-level code is essential to minimize the impact on high-level language. The use of **language annotations** helps enforcing specific policies. Coarse-grained approach when lowering semantics results in both performance and semantics. ***Fine-grained lowering*** can help  but needs the programmer to reason about the undergoing low-level application.
+
+The main challenges when linking low-level and high-level programming are that the high-level language **does not allow data to be represented as required** or **does not allow behavior** that is required. In order to close the data representation gap, ***primitive types*, *compound types*** and ***unboxed types*** can help as well as the addition of references and values (pointers referencing/dereferencing) are needed. Additionally to extending the data representation, the semantics should be extended as well. This can be done through the use of **intrinsic functions** to directly reflect the required semantics or add **semantic regimes** within which certain language-imposed abstractions would be suspended.
+
+**Implementation:** **Raw Storage** allows the user to associate an empty type with a raw chunk of backing data of a specified size. This helps to create non-compound unboxed types. This can be done through the use of `@RawStorage` and`@Unboxed`. An unboxed type is only syntactically distinguished from an object and the **runtime compiler** ensures that unboxed types are never used as objects.
+
+ The framework is used by MMTk !
+
 ---
 
 
@@ -917,6 +949,32 @@ Native code isolation:
 
 ### 2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2011 - Chen, JITDefender A Defense against JIT Spraying Attacks
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[03/05/2021]
+
+Code-reuse attacks can be used instead of injecting a malicious piece of code. The different techniques consist of **ROP** (*return-oriented programming*), **BCR** (*binary code extraction*) or **Inspector** (*automatic extraction of proprietary gadgets from malware binaries*). A new attack aimed at JIT-compiled code is called **JIT spraying** that reuses code on the Flash VM's heap to construct the attack. JIT spraying can prevent the usual counter-measures sucha s **data execution prevention (DEP)** or **address space layout randomization (ASLR)**. JIT spraying consists of coercing the JIT compiler to generate native code with the malicious code on the heap of the VM, then exploits bugs in the browser to execute it.
+
+**Attack example:** By writing the objects using dynamic languages, the attacker coerces the JIT compiler to generate malicious code on the heap of the VM. It does so by writing several objects which contains many uniform statements with dedicated constructed integers. If the integer is correctly chosen, the native code may be transferred into the malicious code with one byte offset.
+
+**JIT Compilation:** The dynamic translation of source code into native code on the heap needs to mark the page containing the JIT-code as executable and reuse the code repeatedly without recompiling or interpreting in order to boost the performance. The W+X protection is turned off.
+
+**JIT Defender design:** When designing JITDefender, the two key points are the *cod compilation point* (native code generation) and the *code execution point* (native code execution by the VM). The idea is to mark the native code pages as non-executable at the first point, then executable right before the second point and finally non-executable again right after. Under this protection, if an attacker hijacks the control flow to the code snippet on the heap for JIT spraying attacks, the **access will be blocked because the pages are kept as non-executable**. **Different views of the compiled code are provided for the VM and attacker with the native code execution policy.**
+
+**Flash engine:** The source code is actionscript language. It is translated into actionscript bytecode (ABC) or ShockWave File (SWF). This code can be JIT compiled or interpreted on the flash engine. JIT compiling is done through **Machine Code IR generation** the **Machine Code generation**. The native code is stored in the newly allocated heap memory. The JIT then provides a **Native Code Execution Controller** to control whether the compiled code is on the heap or not.
+
+**Implementation in Flash engine:** The class `MethodInfo` holds the information needed of the functions that can be executed by the VM. The class `CodeMgr` is the one responsible to manage memory of compiled code. Adding a reference to this instance from the class `MethodInfo` allows to modify some attributes later on. The stored compiled function is defined as non-executable and before entering it through the function `coerceEnter` defined in the VM, it is set as executable then non-executable again when `endCoerce` is called.
+
+**Implementation in Javascript engine:** In V8, Native code is stored as `SharedFunctionInfo`. At the end of `Compiler::Compile`, the page is set as non-executable. Before `Execution::call`, it is set as executable then non-executable again after the execution. In Safari's engine, the same idea is used: non-executable after `JIT::compile`, executable before `JITStubCall::call` then non-executable again.
+
+ 
+
+
 
 ---
 
@@ -1146,16 +1204,98 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 ### 2016 - Lin, Rust as a Language for High Performance GC Implementation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+[30/04/2021]
+
+The imperative of **performance and access to low-level programming** encourage use of C or C++ when dealing with memory manager. Rust promises *a systems programming language that runs blazingly fast, prevents segfaults, and guarantees thread safety*.
+
+Rust presents several important aspects such as. **Ownership**, where variable binding grants a variable unique ownership of the value it is bound to. Unbound variables are not allowed and rebinding consists of transferring variables ownership. When a variable goes out of scope, the associated ownership expires and resources are reclaimed. **References** are borrowed in Rust and it allows one or more co-existing *immutable* references to an object and exactly one *mutable* reference with no immutable references. The ownership cannot be moved when the reference is borrowed. This eliminates data races altogether. **Data Guarantees (Wrapper Types)** are provided with different guarantees and tradeoffs. Plain references guarantee read-write lock for single-threaded code. `Box<T>` represents a pointer which uniquely owns a piece of heap-allocated data, `Arc<T>` provides an atomically-counted reference-counted shared pointer to data and guarantees it stays available until `Arc<T>` goes out of scope. **Unsafe** operations (raw pointers, sharing data across threads) are allowed in Rust but need to be declared within a marked block.
+
+Building a GC in Rust brought up the following challenges:
+
+- **Encapsulating address type:** a difference needs to be made between an *address* (arbitrary location in the memory space) and an *object reference* (language-level object that points to a memory piece with added meta-data). Object reference to address is always safe while the other way around is not. A single-field `tuple struct` is used for abstracting both other the word-width integer `usize`. The `Address`s can be created from raw pointers or derived from an existing `Address` but cannot be created from an arbitrary number (except 0 to avoid a `None` initialization overhead).
+- **Ownership of memory blocks:** Thread-local allocation is an essential element of high performance memory management for multi-threaded languages. The usual approach is to maintain a global pool of raw memory regions from which thread-local allocators take memory as they need and to which thread-local collectors push memory as they recover it. `Blocks` objects are created to be in a coherent state among *usable*, *used* or *being allocated into by a unique thread*. The global memory owns the block and arranges them into a list of usable and used `Blocks` . The Rust's ownership model ensures that allocation will not happen unless the allocator *owns* the `Block`. Therefore every `Block` is either: owned by the global space as usable, owned by a single allocator and being allocated into or owned by the global space are used.
+- **Globally accessible per-thread state:** A thread-local allocator avoids costly synchronization on the allocation fast path. However allocators might be told to yield by a collector and need to provide some access to their state. Every `Allocator` is broken up in two pieces, a *local* and a *global* one.
+
+- **Library-supported parallelism:** The efficiency of the collector depends critically on the implementation of fast, correct, parallel work queues. Those are coming from `std::sync::mpsc` (multiple-producers single-consumer FIFO) and `crossbeam::sync::chase_lev` (lock-free Chase-Lev work stealing deque). 
+
+Some **abuses** of Rust had to be performed to improve performance. To represent collections state, memory managers often use bit maps (or byte maps). Examples include **card tables** (remember modified memory regions) and **mark tables** (remember marked objects). Concurrent writing is needed in an array but forbidden by Rust. 
+
+
+
+---
+
+
+### 2017 - Frassetto, JITGuard Hardening Just-in-time Compilers with SGX
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2017 - Izraelevitz, Reusability is FIRRTL Ground Hardware Construction Languages Compiler Frameworks and Transformations
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
 ---
 
 
 ### 2017 - Kotselidis, Cross-ISA Debugging in Meta-circular VMs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+[30/04/2021]
+
+Maxine VM is a meta-circular VM for Java written in Java. It adopts a modular approach in *schemes* that comprises the VM. The transition to a new ISA (x86_64 to ARMv7 32) brought several challenges.
+
+Maxine VM offers three compilers: **T1X** (fast template compiler similar to an interpreter), **C1X** (JIT optimizing compiler based on statistics gathered by T1X) and **Graal** (aggressive JIT optimizing compiler). The fact that it is meta-circular makes the port to a new ISA complicated. The VM's bootimage is ahead-of-time compiled by one of its runtime compiler.  The 64 to 32-bits transition brings issues to the **object identification** (hashcode is 32-bits long and leaves no place for metadata) and **register allocation** (need for efficient 32 bits register allocations).
+
+A **QEMU-based toolchain** is developed to be able to debug the whole flow of the Maxine VM port:
+
+1. **`MaxineTester` Initialization:** Every unit test invokes the `MaxineTester` which resets all internal states and QEMU output files. Once the initialization is complete, a code buffer is returned to the unit tests which serves as placeholder for the generated assembly code.
+2. **Unit Test Generation:** Depending on the nature of the unit test (assmbly instruction, T1X, C1X, ...) the code buffer is filled differently. When filled, it is passed to the `MaxineTester` for emulation.
+3. **QEMU Binary Composition:** The `MaxineTester` assembles the binary that will be passed to QEMU for emulation. First, the assembly code of two helpers (`asm_startup.s` and `entry.s`) are linked together with the binary code of the unit test. The code buffer is inlined to a C file and a function pointer to its first entry is installed. Finally, the actual test that links the code buffer and the two assembly files is compiled and the binary is generated.
+4. **QEMU Emulation:** The corresponding processor is simulated and the binary generated before is emulated. Upon completion, the register file is dumped to an output file defined in the `MaxineTester` class.
+5. **Output Validation:** The dump file is validated against the expected values as set in the unit test definition.
+
+Three kinds of unit tests can be ran into the toolchain: individual assembly instructions, T1X compiled methods and C1X compiled methods.
+
+Then, tracking faulty methods at runtime is comple as bootstraping a meta-circular VM in a new ISA holds many parts that are untested. A unique identifier called `MethodID` was injected during compilation to keep track execution. Another approach would be to check the address of the faulty instructions through the PC, against the code cache to find the boundaries of the faulty method. Inlined methods would not be taken in consideration so a dedicated `MethodIDNode` is attached to the IR graph before the inlined code to overcome this issue.
+
 ---
 
 
 ### 2017 - Pedersen, From Trash to Treasure Timing-Sensitive Garbage
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[29/04/2021]
+
+Timing garbage-collection can make internals of a program become clear outputs for an attacker. Authors bring the **first amplifiable covert channel via automatic memory management**. They observe that **garbage collection creates a bidirectional information channel** and design and demonstrate a **secure garbage collector using traditional information flow analysis**.
+
+A garbage collector determines which parts of the heap contain objects that will not be accessed anymore and reclaims the memory occupied by these objects. The three GC strategies looked upon are ***mark-and-sweep*** (marking phase -cost = linear in reachable objects- and sweep phase -cost=linear in heap size-), ***copy collection*** (partition the heap in two pieces and copies only used objects) and ***generational collection*** (young and old generation with different GC frequencies).
+
+To attack the JVM and V8, two amplifiable attacks are possible:
+
+- **High dependency in low context:** During evacuation from *from-space* to *to-space*, the amount of bytes copied depends on the reachable nodes at the current point in the program. Creating a sufficiently large difference in reachable and unreachable nodes makes the time required to perform a minor/major GC observable. *(DETAILS OF THE ATTACK FIG.2)*
+
+  Example:
+
+- **Low modification in high context:** GC of public information in a sensitive context leads to a covert channel. Knowing whether or not a GC occurs leaks one bit of information. *(DETAILS OF THE ATTACK FIG.3)*
+
+  Example:
+
+The attack can be amplified to leak more bits (i.e. 32-bits `int` here).**First**, it is repeated sufficient (10/20) times where each trial is timed and stored if the duration is larger than some threshold. **Second**, instead of allocating one array when filling up the memory, K (<10) arrays are allocated. There is then a time/precision trade-off. **Third**, the average allocation time for each trial *that invoked the GC* is computed. If it is above some *DELTA* it is considered a `1`, else a `0`.
+
+Example:
+
+Semantics for secure garbage collection
+
+---
+
+
+### 2017 - Pridgen, Picking up the Trash Exploiting Generational GC for Memory Analysis
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2018 - Belleville, Automated Software Protection for the Masses Against Side-Channels Attacks
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -1223,6 +1363,12 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 ---
 
 
+### 2019 - Polito, GildaVM a Non-Blocking IO Architecture for the Cog
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2019 - Schwarz, ZombieLoad Cross-Privilege-Boundary Data Sampling
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1236,6 +1382,12 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 
 
 ### 2020 - Agache, Firecracker Lightweight Virtualization for Serverless Applications
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Bruant, System Verilog to Chisel Translation for Faster
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -1295,6 +1447,12 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 ---
 
 
+### 2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1321,6 +1479,12 @@ JavaScript is **jitted** and sandboxed through browsers to enforce security. The
 **Security Evaluation:** *Hardware call gates* prevent code-reuse attacks on Donky Monitor. *System calls and signals* are interposed by Donky by redirecting them to the Monitor. The *Donky Monitor* itself validates all inputs in the *Donky API*.
 
 
+
+---
+
+
+### 2020 - Taemin, NoJITsu Locking Down Javascript
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 
@@ -1357,6 +1521,12 @@ Design of **rBPF**, a variant of the eBPF VM designed to be ISA-compatible. It e
 
 
 VM adds overhead that has an impact on execution time and a measurable additional size. While the Wasm VM requires too much RAM and ROM, rBPF looks like a good compromise between security through process isolation and memory and time overhead.
+
+---
+
+
+### 2021 - Dobis, Open-Source Verification with Chisel and Scala
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 

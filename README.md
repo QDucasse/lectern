@@ -189,6 +189,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2015 - Hussein, Impact of GC Design on Power and Performance for Android](#2015---Hussein-Impact-of-GC-Design-on-Power-and-Performance-for-Android)
 
+[2015 - Lam, Numba](#2015---Lam-Numba)
+
 [2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore](#2015---Rohou-Branch-Prediction-and-the-Performance-of-Interpreters-Dont-Trust-Folklore)
 
 [2015 - Simon, Snippets Taking the High Road to a Low Level](#2015---Simon-Snippets-Taking-the-High-Road-to-a-Low-Level)
@@ -196,6 +198,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2015 - VanDeVanter, Building Debuggers and Other Tools We Can Have it All](#2015---VanDeVanter-Building-Debuggers-and-Other-Tools-We-Can-Have-it-All)
 
 [2016 - Lin, Rust as a Language for High Performance GC Implementation](#2016---Lin-Rust-as-a-Language-for-High-Performance-GC-Implementation)
+
+[2016 - Maas, Grail Quest A New Proposal for Hardware-assisted Garbage Collection](#2016---Maas-Grail-Quest-A-New-Proposal-for-Hardware-assisted-Garbage-Collection)
 
 [2017 - Frassetto, JITGuard Hardening Just-in-time Compilers with SGX](#2017---Frassetto-JITGuard-Hardening-Just-in-time-Compilers-with-SGX)
 
@@ -1183,6 +1187,12 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 ---
 
 
+### 2015 - Lam, Numba
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1225,8 +1235,34 @@ Some **abuses** of Rust had to be performed to improve performance. To represent
 ---
 
 
+### 2016 - Maas, Grail Quest A New Proposal for Hardware-assisted Garbage Collection
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2017 - Frassetto, JITGuard Hardening Just-in-time Compilers with SGX
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[03/05/2021]
+
+**SGX:** *Software Guard Extension (SGX)* is a hardware extension that enables isolated execution environments named **enclaves**. Enclaves are created within a user-mode process and cannot be accessed by any system entity. This is enforced by the CPU through access control. The memory of an enclave can only be accessed by the code executed within it/ This policy is enforced if the code is within a CPU cache. If it is outside however, it is encrypted and integrity-protected with an enclave-specific key.
+
+**JIT:** JIT engines consist of an *interpreter*, a *JIT compiler* and a *garbage collector*. The *interpreter* executes unaltered bytecode (cold paths usually) while the *JIT compiler* outputs highly performant machine code from a succession of bytecodes. It first transforms the bytecodes in an IR which is then compiled to native code. The emitted JIT'd code is limited to basic instructions and cannot access arbitrary memory. While JIT'd code was initially placed in a read/write/execute memory space, it is now constrained to writable and non-executable when written. Finally, the *GC* is the memory manager and  takes care of allocations and collections.
+
+**JIT Attacks:** Read-write-executable exploits are used against JITs. Payload into JIT memory (pwn2own Gong et al.) prevented later on by using W+X to JIT'd code as well. However the small time window during which the JIT code page is writable can be exploited. Code-reuse attacks chain existing pieces of code together to execute arbitrary malicious code. `call` and `return` are needed by exploits but forbidden by the JIT generator. However, it is possible to pass instructions through numerical constants and by forcing the control flow, execute arbitrary code. This can be mitigated by constant blinding, XORing  the constant at compile time with a random value then XORing it again before using it in the JIT compiler. Code randomization can also mitigate JIT spraying.
+
+**DOJITA:** Data-Only JIT Attack manipulates the IR to trick the JIT compiler into generating arbitrary malicious payloads. The attacker **(1)** exploits a memory-corruption vulnerability to read and write arbitrary data memory **(2)** identifies a hot function which will be compiled to native code **(3)** during the compilation of F the JIT compiler will generate the corresponding IR, the attacker discloses the memory adress of the IR in memory which is commonly composed of C++ objects **(4)** injects crafted C++ objects into the IR **(5)** the JIT compiler uses the IR to generate native code and **(6)** the payload is now executed at each call of the initial function.
+
+**Threat model:** The model excludes attacks on static code by supposing that ***static code is protected*** by either DEP, randomization-based solutions or (hardware-assisted) control-flow integrity, ***data randomization*** is in place through ASLR, a ***secure initialization*** can be performed, a ***memory-corruption vulnerability***  can be exploited and the access to a ***scripting engine*** is possible.
+
+**JITGuard:** **(1)** SGX is used to isolate the JIT compiler and its data from the rest of the application. The attacker can no longer exploit memory-corruption vulnerabilities in the host process. **(2)** The JIT code and JIT stack memory addresses are randomized to protect against code-injection and code-reuse attacks. **(3)** An indirection layer is used through trampolines which contain `jump` instructions that obtain the address of the JIT code using an offset from a segmentation register. The compiler needs to be able to efficiently update the indirection layer without using read-write-executable permissions. A ***double mapping*** of the trampolines help prevent this issue. The same region in physical memory is mapped twice in the virtual address space of the process. The first part is executable but not writable while the second is writable but not executable, and its address is protected through randomization. The compiler uses the second mapping to update the trampolines (e.g. when a new function is compiled) and the indirection layer, while the (potentially vulnerable) static code uses the executable trampoline.
+
+**Implementation:** Instead of using SGX to isolate the full JIT engine, it is used to isolate security-critical components (JIT Compiler) and securely store the randomization secret. It is done his way because a context switch is needed to execute code outside of the enclave and would add a consequent overhead. Initialization comes through a component that allocates two memory regions, the trampoline and the JITGuard Region, and then starts the enclave. The JITGuard Region is used to store the JIT code, the JIT stack and the writable mapping of the trampolines. (additional runtime modifications).
+
+***Control Flow transfer:*** To cleanly isolate randomized JIT code from static code, a separate stack is provided which is hidden inside the randomized region. This way, it can be used safely during JIT execution and an adversary cannot recover a return pointer to the JIT code from the native stack. **To call JIT code**, **(1)** the static code initiates the switch by calling a trampoline. Each trampoline targets a single JIT code function. **(2)** The trampoline fetches the address of the function inside the randomized segment. A trampoline consists of a single `jump` instruction that retrieves the address using a constant offset in the segment. The jump table is located inside the randomized region. **(3)** The JIT code switches from the native stack to the randomized stack and starts executing its code. When the JIT-compiled function returns, the randomization code restores the old values for the registers so they point to the normal stack again and returns execution to the static code. **To call static code,** **(1)** the JIT code stores the return address to the JIT code in a jump table, switches the stack pointer to the native stack, save the offset between the two stacks in the randomized segment and set the return address on the native stack to point to the return trampoline. **(2)** the JIT code issues the static code function code until it returns. **(3)** It then retrieves the original return address using the segment register and an offset into the jimp table.
+
+**Security analysis and performance evaluation: ...**
 
 ---
 
@@ -1485,6 +1521,12 @@ JavaScript is **jitted** and sandboxed through browsers to enforce security. The
 
 ### 2020 - Taemin, NoJITsu Locking Down Javascript
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[04/05/2021]
+
+Initially JIT compilers wrote all run-time generated code onto memory pages that were simultaneously writable and executable throughout the execution of the script. This led to **code-injection** attacks. Later JIT engines added support for **W+X policies** by doubly-mapping JIT pages instead. This meant that JIT code could no longer be found on memory pages that were simultaneously writable and executable. **JIT spraying** attacks still made their way through injecting instructions without writing directly to the pages. This led to the use of **constant blinding**, **constant elimination and code obfuscation**, **code randomization** or **control-flow integrity**. Successfully defending against **code-reuse** is more challenging since an attacker can traverse and disassemble ode pages to dynamically generate a **ROP chain** at run-time. **Randomization** and **execute-only memory** leverage this type of attacks. An attacker can still inject code with **data-only attacks**. Corrupting the intermediate representation without overwriting any code pointers can make the JIT generate malicious code. Defenses propose isolating the compilation from the execution of JIT code through **separate processes** or **hardware-based trusted execution environments**.
+
+
 
 ---
 

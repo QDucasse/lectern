@@ -133,13 +133,19 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor](#2010---Agesen-The-Evolution-of-an-X86-Virtual-Machine-Monitor)
 
+[2010 - Blazakis, Interpreter Exploitation Pointer Inference and JIT Spraying](#2010---Blazakis-Interpreter-Exploitation-Pointer-Inference-and-JIT-Spraying)
+
 [2010 - Ehringer, The Dalvik Virtual Machine Architecture](#2010---Ehringer-The-Dalvik-Virtual-Machine-Architecture)
+
+[2010 - Onarlioglu, G-Free](#2010---Onarlioglu-G-Free)
 
 [2010 - Reynolds, Lightweight Modeling of Java Virtual Machine](#2010---Reynolds-Lightweight-Modeling-of-Java-Virtual-Machine)
 
 [2010 - Rizzo, Practical Padding Oracle Attacks](#2010---Rizzo-Practical-Padding-Oracle-Attacks)
 
 [2010 - Siefers, Robusta Taming the Native Beast of the JVM](#2010---Siefers-Robusta-Taming-the-Native-Beast-of-the-JVM)
+
+[2010 - Sintsov, Writing JIT Spray Shellcode for Fun and Profit](#2010---Sintsov-Writing-JIT-Spray-Shellcode-for-Fun-and-Profit)
 
 [2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages](#2011---Bolz-Runtime-Feedback-in-a-Meta-Tracing-JIT-for-Efficient-Dynamic-Languages)
 
@@ -153,6 +159,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2012 - Wuerthinger, Self-optimizing AST interpreters](#2012---Wuerthinger-Self-optimizing-AST-interpreters)
 
+[2013 - Chen, JITSafe a Framework Against Just-In-Time Spraying Attacks](#2013---Chen-JITSafe-a-Framework-Against-Just-In-Time-Spraying-Attacks)
+
 [2013 - Eckert, Hardware Based Security Enhanced Direct Memory Access](#2013---Eckert-Hardware-Based-Security-Enhanced-Direct-Memory-Access)
 
 [2013 - Fournet, Fully Abstract Compilation to Javascript](#2013---Fournet-Fully-Abstract-Compilation-to-Javascript)
@@ -161,9 +169,13 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2013 - Marr, Supporting Concurrency Abstractions in High-level Language Virtual Machines](#2013---Marr-Supporting-Concurrency-Abstractions-in-High-level-Language-Virtual-Machines)
 
+[2013 - Snow, Just-In-Time Code Reuse On the Effectiveness of Fine-Grained Address Space Layout Randomization](#2013---Snow-Just-In-Time-Code-Reuse-On-the-Effectiveness-of-Fine-Grained-Address-Space-Layout-Randomization)
+
 [2013 - Wimmer, Maxine an Approachable Virtual Machine for and in Java](#2013---Wimmer-Maxine-an-Approachable-Virtual-Machine-for-and-in-Java)
 
 [2013 - Wuerthinger, One VM to Rule Them All](#2013---Wuerthinger-One-VM-to-Rule-Them-All)
+
+[2014 - Backes, Oxymoron Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing](#2014---Backes-Oxymoron-Making-Fine-Grained-Memory-Randomization-Practical-by-Allowing-Code-Sharing)
 
 [2014 - Duboscq, Speculation Without Regret Reducing Deoptimization Meta-data in the Graal Compiler](#2014---Duboscq-Speculation-Without-Regret-Reducing-Deoptimization-Meta-data-in-the-Graal-Compiler)
 
@@ -177,11 +189,15 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2014 - Lin, A Security PaaS Container with a Customized JVM](#2014---Lin-A-Security-PaaS-Container-with-a-Customized-JVM)
 
+[2014 - Niu, RockJIT Securing Just-In-Time Compilation Using Modular Control-Flow Integrity](#2014---Niu-RockJIT-Securing-Just-In-Time-Compilation-Using-Modular-Control-Flow-Integrity)
+
 [2014 - Seaton, Debugging at Full Speed](#2014---Seaton-Debugging-at-Full-Speed)
 
 [2014 - Stadler, Partial Escape Analysis and Scalar Replacement for Java](#2014---Stadler-Partial-Escape-Analysis-and-Scalar-Replacement-for-Java)
 
 [2014 - Woss, An Object Storage Model for the Truffle Language Implementation Framework](#2014---Woss-An-Object-Storage-Model-for-the-Truffle-Language-Implementation-Framework)
+
+[2015 - Athanasakis, The Devil is in the Constants Bypassing Defenses](#2015---Athanasakis-The-Devil-is-in-the-Constants-Bypassing-Defenses)
 
 [2015 - Grimmer, Dynamically Composing Languages in a Modular Way Supporting C Extensions for Dynamic Languages](#2015---Grimmer-Dynamically-Composing-Languages-in-a-Modular-Way-Supporting-C-Extensions-for-Dynamic-Languages)
 
@@ -191,9 +207,13 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2015 - Lam, Numba](#2015---Lam-Numba)
 
+[2015 - Lian, Too LeJIT to Quit Extending JIT Spraying to ARM](#2015---Lian-Too-LeJIT-to-Quit-Extending-JIT-Spraying-to-ARM)
+
 [2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore](#2015---Rohou-Branch-Prediction-and-the-Performance-of-Interpreters-Dont-Trust-Folklore)
 
 [2015 - Simon, Snippets Taking the High Road to a Low Level](#2015---Simon-Snippets-Taking-the-High-Road-to-a-Low-Level)
+
+[2015 - Song, Exploiting and Protecting Dynamic Code Generation](#2015---Song-Exploiting-and-Protecting-Dynamic-Code-Generation)
 
 [2015 - VanDeVanter, Building Debuggers and Other Tools We Can Have it All](#2015---VanDeVanter-Building-Debuggers-and-Other-Tools-We-Can-Have-it-All)
 
@@ -214,6 +234,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2018 - Belleville, Automated Software Protection for the Masses Against Side-Channels Attacks](#2018---Belleville-Automated-Software-Protection-for-the-Masses-Against-Side-Channels-Attacks)
 
 [2018 - Cho, FPGASwarm High Throughput Model Checking on FPGAs](#2018---Cho-FPGASwarm-High-Throughput-Model-Checking-on-FPGAs)
+
+[2018 - Gawlik, Make JIT Spray Great Again](#2018---Gawlik-Make-JIT-Spray-Great-Again)
 
 [2018 - Lipp, Meltdown Reading Kernel Memory from User Space](#2018---Lipp-Meltdown-Reading-Kernel-Memory-from-User-Space)
 
@@ -241,11 +263,15 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware](#2020---Fumero-Running-Parallel-Bytecode-Interpreters-on-Heterogeneous-Hardware)
 
+[2020 - Lee, Keystone An Open Framework for Architecting Trusted Execution Environments](#2020---Lee-Keystone-An-Open-Framework-for-Architecting-Trusted-Execution-Environments)
+
 [2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing](#2020---Lima-Exposing-Bugs-in-JavaScript-Engines-through-Test-Transplantation-and-Differential-Testing)
 
 [2020 - Schrammel, Donky Domain Keys - Efficient In-Process Isolation for RISC-V and x86](#2020---Schrammel-Donky-Domain-Keys---Efficient-In-Process-Isolation-for-RISC-V-and-x86)
 
 [2020 - Taemin, NoJITsu Locking Down Javascript](#2020---Taemin-NoJITsu-Locking-Down-Javascript)
+
+[2020 - Valdiek, ERIM Secure Efficient In-process Isolation with Protection Keys MPK](#2020---Valdiek-ERIM-Secure-Efficient-In-process-Isolation-with-Protection-Keys-MPK)
 
 [2020 - Zandberg, Minimal Virtual Machines on IoT Microcontrollers The Case of Berkeley Packet Filters with rBPF](#2020---Zandberg-Minimal-Virtual-Machines-on-IoT-Microcontrollers-The-Case-of-Berkeley-Packet-Filters-with-rBPF)
 
@@ -876,6 +902,12 @@ The main challenges when linking low-level and high-level programming are that t
 ---
 
 
+### 2010 - Blazakis, Interpreter Exploitation Pointer Inference and JIT Spraying
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2010 - Ehringer, The Dalvik Virtual Machine Architecture
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -894,6 +926,12 @@ Android runtime must support: **limited processor speed, limited RAM, no swap sp
 
 
 
+
+---
+
+
+### 2010 - Onarlioglu, G-Free
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 
@@ -947,6 +985,12 @@ Native code isolation:
 **Native Code Security:** The regulation of native system calls goes through the Java's Security Manager. It accepts or denies a system call based on a security policy. A security policy can grant two kinds of permissions: **mode permissions** and **system-access permissions**. **Mode permissions** specify whether a library can be loaded into the JVM and whether it should be sandboxed. The mode policy is enforced during library-loading. **System-access permissions** define what an application is allowed to perform (e.g. read or write files).
 
 
+
+---
+
+
+### 2010 - Sintsov, Writing JIT Spray Shellcode for Fun and Profit
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 
@@ -1017,6 +1061,12 @@ An extension of C called ClassDL is used to help with OOP mechanisms. The combin
 ---
 
 
+### 2013 - Chen, JITSafe a Framework Against Just-In-Time Spraying Attacks
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2013 - Eckert, Hardware Based Security Enhanced Direct Memory Access
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1065,6 +1115,30 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 ---
 
 
+### 2013 - Snow, Just-In-Time Code Reuse On the Effectiveness of Fine-Grained Address Space Layout Randomization
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[07/05/2021]
+
+At first, the lack of proper bounds checking  was misused to overwrite information on the stack (eg a function's return address) and redirect the flow of a vulnerable application to arbitrary code (called *shellcode*) known as ***smashing the stack***. To mitigate stack-smashing, ***canary*** (random value) was introduced in the stack preceding the return value. Compilers added a verification routine to the end of functions that terminates if the canary is modified.  Attackers thought of new exploits such as ***structured exception handlers***. A ***no-execute*** bit was introduced to the x86 paging scheme that allows any memory to be marked as non-executable.  ***Code-reuse attacks*** utilize code already present in memory with the famous `return-to-libc`. The concept was then extended to chain instruction sequences ending in a `ret` instruction ***gadgets*** to implement arbitrary  program logic. This approach is called ***return-oriented programming***. To counter these attacks, ***address space layout randomization*** was used to randomize both the code and data memory regions.
+
+**Code Reuse Attacks:** The logical program flow is redirected to instructions already present in memory, then use them to execute alternative program logic. ROP shown that attacks may combine short instructions sequences from within functions (gadgets). To orchestrate such an attack, the adversary writes a so-called ROP payload into the application's memory space. The payload consists of a number of pointers (the return addresses) and any other data needed for the attack. Then, the control-flow is hijacked from the intended one to the *stack pivot sequence*. Once the overwritten function pointer is used by the function, the control-flow is redirected. Stack-pivot sequences usually change the value of the stack counter `%esp` to a value stored in another register. The `ret` instruction in x86 simply loads the address pointed to by `%esp` into the instruction pointer and increments `%esp` by one word. A gadget represents an atomic operation (`LOAD`, `ADD`, `STORE`...) followed by `ret`. This succession of carefully crafted return addresses allows an attacker to introduce arbitrary program logic.
+
+**Randomization for Exploit Mitigation:** The basic idea consists of a new stack memory allocator to add a random pad for stack objects larger than 16 bytes. For the most part, ASLR schemes randomize the base address of segments such as the stack, heap or the executable itself. The start address of an executable is therefore relocated between consecutive runs of the application and an attacker needs to guess the location of the functions and instruction sequences needed for successful deployment of a code-reuse attack. ASLR suffers from two problems: the ***entropy on 32-bits system is too low*** and can be bypassed by ***bruteforce*** and all ASLR implementations are vulnerable to ***memory disclosure attacks*** where the knowledge of a single runtime address re-enable code reuse. More fine-grained implementations exist but are based on the fact that the disclosure of a single address no longer allows an attacker to deploy a code-reuse attack.
+
+The target platform uses the following mechanisms for mitigations: *non-executable memory* (NX or DEP), *JIT spraying mitigations*, *export address table filtering* (code outside a module's code segment cannot access shared libraries export tables), *base address randomization* and *fine-grained ASLR* on functions, basic blocks, etc.
+
+**Memory Mapping:** The first action the attacker needs to do to perform his attack is to ***map code page memory*** to actual code without causing a crash. The knowledge of a single valid code pointer reveals that an entire 4 kilobyte-aligned page of memory is guaranteed to be mapped. The next step consists of applying static code analysis to identify both direct and indirect `call` and `jmp`. Direct control-flow instructions yield a hint to other code locations. Indirect control-flow instructions point to other modules and they can be processed by disclosing the address value in the Import Address Table. Iterating this process over each new page found allows an attacker to map a significant portion of the code layout.
+
+**API Function Discovery:** As the payload will have to interact with the OS to be effective, and will prefer using API calls (as in `kernel32.dll`) rather than hardcoded system calls (e.g. `int 0x80` or `syscall`). These calls can be found by parsing the Process Environment Block, manually harvesting an application-specific function pointer. The approach consists of creating signatures based on opcode sequences for call sites of the API functions.
+
+**Gadget Discovery:** A heuristic based on the observation that a single instruction type fulfills a gadget's semantic definitions simplifies the search down to a single table lookup to check if the first instruction type in the sequence meets one of the gadget semantic definitions. 
+
+**JIT Compilation:** Since each instantiation of a vulnerable application may yield a completely different set of concrete gadgets, a dynamic compilation is required to ensure we can use a plethora of gadget types to build the final payload. The gadget compiler works like a traditional compiler except that compilation is embedded directly in an exploit script.
+
+---
+
+
 ### 2013 - Wimmer, Maxine an Approachable Virtual Machine for and in Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1072,6 +1146,12 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 
 ### 2013 - Wuerthinger, One VM to Rule Them All
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2014 - Backes, Oxymoron Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -1151,6 +1231,26 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 ---
 
 
+### 2014 - Niu, RockJIT Securing Just-In-Time Compilation Using Modular Control-Flow Integrity
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[10/05/2021]
+
+Enforcing the control-flow integrity (CFI) in a JIT compiler provides a better defense against code-reuse or code-injections. The generated control-flow graph (CFG) is updated as new code is generated.
+
+**Architecture of JIT compilers:** Looking into several JIT engines (Google V8, Mozilla TraceMonkey, Facebook HHVM or LuaJIT),  they all consist of (1) a ***baseline executor*** that is either an interpreter that interprets (*e.g. Java bytecode*) or that compiles source code directly to unoptimized native code (*e.g. V8*). It also consists of an ***optimizing compiler*** that performs runtime profiling to identify hot code or types and generates optimized native code. Optimization can manifest as either *method-based* or *trace-based* and the corresponding blocks are optimized. Next, a ***garbage collector*** provides automatic memory management (allocation and collection).
+
+**Modular Control-Flow Integrity:** CFI system with low performance overhead and modular support. A program is divided in modules and each module contains not only code and data but also auxiliary information used to generate a new CFG when linking with other modules. MCFI represents the CFG in tables during runtime. Thread-safe table transactions are used to access and update the tables.
+
+**Security:** The JIT engine is modified to cooperate with RockJIT's compilation toolchain and generates an MCFI module. The module is loaded by RockJIT into a sandbox. After loading, RockJIT generates a control-flow graph. The sandbox around the compiler restricts their control flow according to the tables and also restricts the memory access to be inside the box. To rule out code-injection attacks, RockJIT uses W+X protections, however the code heap needs to be both writable and executable. RockJIT uses a *shadow code heap* (similar to what *NaCl-JIT* does), it is mapped to the same physical pages as the code heap in the sandbox but with different permissions. The shadow code heap is made readable and writable but not executable. Instead of directly modifying this shadow heap, the application invokes RockJIT services to install new or modify existing native code. RockJIT enforces CFI on both the JIT compiler and the JITed code but applies different levels of precision to them. For the compiler, it applies a C++ CFG strategy to produce a relatively fine-grained CFG offline while the CFG for the JITed code is coarse-grained.
+
+**Verification:** The verifier maintains three sets of addresses that are code addresses in the code heap. **(1)** ***Pseudo-instruction start addresses (PSA)***, this set remembers the start addresses of all pseudo instructions (defined either as a checked indirect branch, a masked memory write or an instruction that is neither an indirect branch nor an indirect memory write). **(2)** ***Indirect branch targets (IBT)***  and **(3)** ***Direct branch targets***. It verifies several conditions on those sets. Those verifications are performed on native code emission, deletion or modification.
+
+Technical implementations in C++ follow.
+
+---
+
+
 ### 2014 - Seaton, Debugging at Full Speed
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1165,6 +1265,92 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 
 ### 2014 - Woss, An Object Storage Model for the Truffle Language Implementation Framework
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2015 - Athanasakis, The Devil is in the Constants Bypassing Defenses
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[12/05/2021]
+
+ROP attacks consist of linking several *gadgets* (blocks of instructions ending with a `ret`). The threat model consists of a system with defenses present i most modern systems: DEP, W+X, ASLR, stack smashing protection (canaries or function cookies), EMET.
+
+**Goal of the attack:** (1) The browser ***renders a malicious web page*** (2) The JavaScript code in this page, once compiled, ***produces a series of gadgets in the JIT buffer*** (3)  A memory-disclosure bug ***reveals the locations of the gadgets*** (4) A ROP chain ***is built with the just constructed gadgets*** and control is transferred to it (5) The ROP chain ***calls `VirtualProtect` (or `mprotect`) and makes the page where the shellcode is stored executable*** (6) Control is transferred to the shellcode and the ***browser is compromised***.
+
+**Exploits:**
+
+**Firefox:** The preparation is as follows, the idea is to produce a series of gadgets that eventually lead to a call to `mprotect`. To do so, the attacker needs to control four registers. First,  the corresponding system call number `0xb` is stored in `%eax`. Then, the address of the page the attacker wants to change is stored in `%ebx`. The length of the region is stored in `%ecx` and the desired access rights, `0x7` here are stored in `%edx`. To accomplish this, the attacker needs a ROP chain which will load the four registers with the required values and then a gadget will call `mprotect`. In Linux for x86 architectures, system calls are performed by using `int 0x80`. Loading a register with the required value can be done in two ways. Either place the required value on the stack and use `pop` or a `mov`-like command to copy the value to the register. For the JIT to work properly, the stack and `pop` are used for *large values* while *small values* are used with `mov` and registers. In the case a `mov` is used, it affects only part of the register and the attacker needs to zero the register before moving the value which is done by using a `xor` gadget.
+
+In the end, the ROP chain involves seven gadgets:
+
+```assembly
+pop %ebx; ret;       // page address
+pop %ecx; ret;       // region length
+xor %eax; %eax; ret; // 0 before mov
+mov 0x7d; %a1; ret;  // mprotect set
+xor %edx; %edx; ret; // 0 before mov
+mov 0x7; %d1; ret;   // permissions to WRX
+int 0x80; ret;       // mprotect call
+```
+
+The gadgets need to be added to the JIT buffer and the attacker needs to: (1) trigger a JIT compilation (2) add the gadgets to memory. For (1), creating a "hot loop" will most likely trigger the JIT compilation and for (2), variable are initialized with specially crafted immediate values.
+
+```javascript
+var g1 = 0;
+// ...
+var g7 = 0;
+for (var i=0; i<10000; ++i) {
+    g1 = 50011;
+    g2 = 50009;
+    g3 = 12828721;
+    g4 = 12811696;
+    g5 = 12833329;
+    g6 = 12781490;
+    g7 = 12812493;
+}
+```
+
+**Chakra:** function to change memory rights is `VirtualProtect` and needs 4 arguments. The attacker needs to adjust the real stack to the fake stack controlled by himself, this can be done by using ***stack pivoting***. It consists of exchanging a register the attacker controls with `%rsp` so the stack pointer points to an arbitrary value. This exchange can be done with `xchg` but unfortunately, it is 2 bytes long (3 with the `ret`) and these gadgets cannot be constructed trivially. 
+
+Chakra uses several protections: (a) ***constant blinding*** where any value less than 2 bytes long is emitted XORed with a random value (and re-XORed when used), (b) ***long gadgets*** cannot be encapsulated in immediate values and have to be split in several parts, moreover Chakra places several checks when compiling such gadgets (c) ***code diversification*** where Chakra emits a random number of `nop` instructions hat change the layout of the JIT buffer and randomize the location of all important gadgets each time they are generated.
+
+The gadgets have to be generated differently:
+
+```javascript
+function r8 (addr) {
+    return addr + 0x5841;
+}
+
+function r9 (addr) {
+    returnn addr + 0x5941;
+}
+
+function emit_gadgets() {
+    for (i=0; i<10000; i++) {
+        rax = 0xc358; // pop rax
+        rcx = 0xc359; // pop rcx
+        rdx = 0xc35a; // pop rdx
+        r8(0);
+        r9(0);
+    }
+    return 0;
+}
+
+emit_gadgets();
+```
+
+**Discovering the Gadgets:** This can be done using ***information leaks*** such as heap overwrites to obtain essential information to discover gadgets. Instead of revealing the code segment of a given object in a typical JS object layout, the attacker reveals the JIT buffer which contains the artificially constructed gadgets. The following code generates an object with a memory layout that can help access the JIT buffer. Accessing `O` then `foo` will give an access to the JIT buffer.
+
+```javascript
+O = new Object();
+O.g1 = 0xc358;
+O.g2 = 0xc359;
+function foo(x) { return 0x 5841; }
+O.func = foo;
+```
+
+**Defenses:** Enhance the JIT buffer with G-Free to remove all gadgets. The produced code is safe and gadget-free.
 
 ---
 
@@ -1193,6 +1379,26 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 ---
 
 
+### 2015 - Lian, Too LeJIT to Quit Extending JIT Spraying to ARM
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[12/05/2021]
+
+JIT spraying has always be an x86-only attack thanks to its reliance on variable-length, unaligned instructions. ARM and RISC-like architectures work differently as presented.
+
+**ARM Layout:** The ARM architecture has ***13 32-bit general purpose registers*** (`R0-R12`) and ***3 32-bit special-purpose registers*** (`R13-R15`). The usage convention is defined by the Procedure Call Standard (AAPCS). The ***stack pointer register*** (`SP/R13`) is used to hold a pointer to the top of the current execution stack. Special variants of `add` and `sub` are hardwired to `SP` to accelerate stack operations. The ***link register*** (`LR/R14`) is used to hold subroutine return addresses. The ARM analogs of x86 `call` instruction are the branch with link (`bl`) and the exchange (`blx`) instructions. The ***program counter register*** (`PC/R15`) holds the address of the currently-executing instruction plus 8. ARM is a ***bi-endian architecture***, meaning that it can interpret words and halfwords as either big or little endian. The `ENDIANSTATE` execution register stores a bit determining the endianness and the instruction `setend` can modify its value. The ARM architecture also supports the Thumb instruction set that contains mixed 16- and 32-bits instructions (Thumb-2 consists of two instructions close to each other). The choice of the current instruction set is determined by the instruction set state register (`ISETSTATE`). The ARM-Thumb interworking and variable-length instructions can be used as possible vectors for creating instruction confusion.
+
+**JavaScriptCore:** JSC is a multi-tier JavaScript engine, source code is initially compiled to bytecode that is interpreted by an ***interpreter*** but once it has been executed several times (6 for functions, 100 for loops), the bytecode is compiled down to unoptimized native code by the ***baseline JIT***. Once the ***baseline JIT*** has been executed many times (60 for functions, 1000 for loops), the ***DFG JIT*** emits optimized Thumb-2. 
+
+- The ***Low-Level Interpreter (LLInt)*** interprets bytecodes, 32-bit opcodes followed by as many operands as are required. The opcodes are pointers to pre-compiled code snippets in the interpreter's text section. During bytecode execution, a virtual program counter (vPC) register points to the currently-executing opcode in the bytecode while the real `PC` is in the code snippet pointed to by the opcode. The snippet accesses the opcode's operands via vPC-relative memory loads, performs the desired computation, advances the vPC and finally branches o the next opcode's snippet with a register-indirect jump through the vPC.
+- The ***Baseline JIT*** generates native code. The instruction stream produced differs from the one executed by the ***LLInt*** since it does not need to manage the vPC. The code has clear boundaries where the execution of one bytecode instruction ends and the next begins, and it does not flow scratch values in registers across those boundaries. Instead, they are stored onto the JavaScript stack and read back by other bytecode operations.
+- The ***Data Flow Graph JIT*** uses *dead code elimination analysis*, *function inlining* and a *basic register allocator* to optimize the JITed code better.
+
+
+
+---
+
+
 ### 2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1201,6 +1407,35 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 
 ### 2015 - Simon, Snippets Taking the High Road to a Low Level
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2015 - Song, Exploiting and Protecting Dynamic Code Generation
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[10/05/2021]
+
+The challenge posed by dynamic code generation is that the zone it generates code into needs to be both writable and executable, violating the usual W+X rule. A simple idea is to **keep the code cache as read-only and executable**, **switch to writable but not executable** when it needs to be modified and **switch back** when the write operation has finished. However, multi-threaded operations can exploit this idea. Other defense ideas consist of ***Software-based Fault Isolation*** , ***Memory Safety***, ***Control-Flow Integrity*** or ***Process Sandbox***.
+
+**Overwriting the code cache**: The *Software Dynamic Translator (SDT)* translates the IR to native code and maintains a mapping between untranslated code and translated code. The ASLR needs to be bypassed to exploit primitives to overwrite the code cache with full `WRX` permission. 
+
+**Exploiting Race Conditions to Bypass W+X Enforcement:** Memory pages are executable but not writable when allocated by default. The write permission is granted when *new code is installed* (native code is generated and copied to the location), *existing code is patched* (address or constant modifications), *runtime inline caching* (object type or properties cached) or *runtime garbage collection* (memory needs to be managed).
+
+The poc runs as follows: 
+
+- *Create worker*: A worker thread is created.
+- *Initialize the worker*: The worker thread initializes its environment, making sure the code cache is created. It then notifies that it is ready.
+- *Locate the worker's code cache*: The main JS thread locates the worker thread's code cache by exploiting an information disclosure vulnerability. It then notifies the worker thread that it is ready.
+- *Make the code cache writable*: Upon receiving the main thread's message, the worker thread begins to execute another piece of code, forcing the SDT to update its code cache. It can either simply execute a function that is large enough to create a new chunk for the code fragment and set it as writable.
+- *Monitor and Overwrite the code cache*:  At the same time, the main thread monitors the status of the code cache and tries to overwrite it once its status is updated.
+- *Execute the shellcode*: When receiving the main thread's new message, the new worker calls the function whose content has already been overwritten. This way, the injected shellcode is executed.
+
+The race condition needs to be validated and the method that notifies the update takes 23 microsec against the 43 needed by the W+X protection.
+
+**System Design:** Three main challenges. ***Memory Map Synchronization*** as all memory regions allcated by the code cache are dynamically allocated and can grow and shrink freely, an effective way is needed to synchronize memories. A *reservation-based* strategy is chosen for the shared memory. When the process is initialized, a we reserve a large chunk of shared memory in both the untrusted process and the SDT. Once the memory is allocated, the synchronization can be performed with *Inter-Process Communication (IPC)*. ***Remote Procedure Call*** can be done via stubs but suffers from performance and argument passing. There is a choice to extend the shared memory to dynamic data the SDT depends on. ***Permission Enforcement*** comes by intercepting system calls related to virtual memory management. Specifically, some policies are enforced: (i) memory cannot be mapped as both writable and executable, (ii) when mapping a memory region as executable, the base address and the size must come from the SDT process, and the memory is always mapped as RX, (iii) The permission of non-writable memory cannot be changed.
+
+
 
 ---
 
@@ -1236,7 +1471,19 @@ Some **abuses** of Rust had to be performed to improve performance. To represent
 
 
 ### 2016 - Maas, Grail Quest A New Proposal for Hardware-assisted Garbage Collection
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
+<!-- Please prefix the notes with the date as in [22/12/2020] --> 
+
+[10/05/2021]
+
+Garbage collection can be made effectively pause-free at the cost of slowing down application threads and using a substantial amount of resources (both CPU time and energy consumption). Low pause times and energy efficiency can be reconciled using a proper algorithm. The two main GC strategies are ***tracing*** and ***reference counting***. *Tracing* performs a breadth-first search (BFS) to find all reachable objects and then recycle those that are not. *Reference counting* updates reachability data on the fly but requires a tracing backup collector to handle cycles. Next, there is a distinction between ***stop-the-world*** and ***concurrent*** collectors. *Stop-the-world* collectors require ***mutators*** and can only continue once GC has completed while a *concurrent* collector operates in parallel to the mutators. Finally, it is important to note whether or not the collector moves object in memory. Non-relocating collectors tend to fragment memory and end with poor memory locality. Relocation is important to obtain fast collectors but is very difficult to implement in concurrent collectors.
+
+The objective is to design a ***pauseless GC algorithm*** that has to be performed by a ***concurrent, relocating mark-compact GC***. The algorithm has two key components: a *mark* and *relocation* phase. The mark phase regularly performs BFS passes over the heap to produce a fresh set of mark bits that tell if an object is reachable or not. The relocation phase uses the newest set of mark bits to pick pages in memory that are mostly garbage. The key idea is to try to perform these phases concurrently with respect to each other and the mutators. Write barriers are **"self-healing"** as they tag the reference in its original memory location such that next time it is encountered, it is known it has already communicated to the marker. This works by using the MSB of references to hold an NMT (not-marked-through) bit. This way the read barrier is only triggered once for each reference. The relocation phase uses the same mechanism, when an object is moved to another page, a self-healing barrier is used to remap the references to this object to the references to the new location. It maintains an **forwarding table** outside of the original page, which maps the old location to its location in the new page.
+
+**Object Layout:** The object layout is modified from the usual language implementations. It usually starts with a header, then the parent classes' fields and finally the classes' fields. This facilitates casting an object to its parent class but reference are interspersed throughout the object. Using a ***bi-directional layout***, where the header is in the middle of the object, all non-reference fields to the left and reference fields to the right, the marker only needs to read and mark the header then read all references in a single unit-stride access.
+
+The mark unit consists of three parts: the ***reader*** that polls the range until it has received all roots, the ***mark queue*** that is implemented as on-chip SRAM and the ***address range*** used to communicate with the between CPUs and the GC. Once the roots have been loaded, the ***marker*** and the ***tracer*** perform the mark phase. The marker is responsible for taking an object pointer from the mark queue, sending out an atomic fetch-and-or request to mark and read the object's header and, put it into a ***trace queue*** (if the object was unmarked and had at least one outgoing reference). This queue stores pairs of object pointers and number of references associated. The tracer then takes elements from this queue and issues read requests to load the references within the object into the mark queue as they return. This design decouples the different types of memory access necessary for the mark phase. The marker and tracer work together to maximize the memory bandwidth because if the tracer is busy copying one long object, the marker can run ahead and queue up additional objects . Similarly, if the marker is busy marking objects that have been marked before, the tracer can work through the remainder of the trace queue. This design is enabled by the object layout. The relocation unit **finds** pages that are mostly garbage, **builds** a side-table of forwarding pointers, **protects** the original page in the page table and **moves** objects over to the new page.
+
+Changes to CPU consist of an added read barrier mechanism fully implemented in hardware than using a user-level trap. Three important cases are added ***NMT fault***, ***Relocation fault*** and ***Stale reference fault***
 
 ---
 
@@ -1338,6 +1585,12 @@ Semantics for secure garbage collection
 
 
 ### 2018 - Cho, FPGASwarm High Throughput Model Checking on FPGAs
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2018 - Gawlik, Make JIT Spray Great Again
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -1489,6 +1742,12 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 ---
 
 
+### 2020 - Lee, Keystone An Open Framework for Architecting Trusted Execution Environments
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1526,7 +1785,57 @@ JavaScript is **jitted** and sandboxed through browsers to enforce security. The
 
 Initially JIT compilers wrote all run-time generated code onto memory pages that were simultaneously writable and executable throughout the execution of the script. This led to **code-injection** attacks. Later JIT engines added support for **W+X policies** by doubly-mapping JIT pages instead. This meant that JIT code could no longer be found on memory pages that were simultaneously writable and executable. **JIT spraying** attacks still made their way through injecting instructions without writing directly to the pages. This led to the use of **constant blinding**, **constant elimination and code obfuscation**, **code randomization** or **control-flow integrity**. Successfully defending against **code-reuse** is more challenging since an attacker can traverse and disassemble ode pages to dynamically generate a **ROP chain** at run-time. **Randomization** and **execute-only memory** leverage this type of attacks. An attacker can still inject code with **data-only attacks**. Corrupting the intermediate representation without overwriting any code pointers can make the JIT generate malicious code. Defenses propose isolating the compilation from the execution of JIT code through **separate processes** or **hardware-based trusted execution environments**.
 
+**Threat model:** Assume that the system has ***code-injection defense*** (W+X) set, ***code-reuse defense*** (ASLR, CFI) set, ***hardware-based memory protection features*** (Intel MPK) in place and a ***memory-corruption vulnerability*** (ability to arbitrarily corrupt any part of the program's address space).
 
+**SpiderMonkey Implementation:** *Speculative optimization* makes the hypothesis of some type for example and checks that it holds at runtime otherwise it goes back to the standard path through the interpreter. *Native functions* are C++ functions that are registered as `JSNative` functions and are often not inlined and the control is transferred to an internal calling convention. Several regions play a crucial role in ensuring the correct and secure operation of the script engine: (1) bytecode region, (2) the JIT code cache (3) the JIT compiler data, (4) the JavaScript data objects and (5) the object tables.
+
+**Interpreter Attack:** First, the attacker **locates** the **JavaScript context object** and the **JavaScript function objects** of a victim function (i.e. any function we can call from JavaScript). Once the two objects are located, the attacker **overwrites** the f**unction address** contained in the function object with the **address of a target function**. Finally, the attacker **invokes the victim function**. 
+
+---
+
+**NoJITsu design**
+
+ A novel defense that provides fine-grained memory protection to lock down real-world scripting engines. As switching between interpreted and JIT'ed code happens frequently (on a per-function basis), an efficient implementation is key. The interpreter *cannot* be moved out-of-process as proposed for the JIT compiler. Automated dynamic and static analysis are used to restrict memory-access permissions within the scripting engine to the bare minimum. 
+
+Current JIT engines do not distinguish between different kinds of data sections and have little to no security policies. Bytecodes, Objects table, Objects, JIT IR are usually stored in writable memory even though they are rarely overwritten. **This space can be used to manipulate the data structures.** JIT'ed code is usually protected as R/X memory only putting them to R/W when recompiling code. **A code-reuse attack is possible on this region.**
+
+These threats can be countered by deploying **fine-grained security policies** to lock down access permissions for each of the main data regions we identified based on their lifetime and usage within the JIT engine. The data structures mentioned earlier are placed in different memory domains, enabling *write* when, where and as long it is needed before revoking it. Each new type of data is given a specific key. The different regions are:
+
+**JIT Code:** The main goal of the approach is to implement ***execute-only support for JIT code***. The JIT code has to remain ***non-writable*** to prevent attackers to have direct access to the CPU, however this has to be leveraged when emitting a new compiled version of the code. It also needs to be ***non-readable*** to avoid JIT-ROP attacks that need to discover code-reuse gadgets at runtime. However, it needs to be readable because of constant values or target addresses in jump tables. The readable data needs to be separated into a dedicated read-only region.
+
+**Static Code:** The static code regions include the code sections of the JavaScript engine itself and the dynamic libraries loaded into memory. Unlike the JIT code region, it cannot be subject to malicious code injection but can be used as a large code base for code-reuse gadgets. It has to be set to execute-only so the attacker cannot disclose executable memory regions to chain gadgets. **XOM-Switch** is used to enforce execute-only permissions.
+
+**JIT IR:** The IR can be corrupted from another thread and the thread compiling the IR into machine code is the ***only one with write permission***.
+
+**Bytecodes and Object Tables:** Similar to the JIT code, they should be writable only when they are generated during compilation. They then remain read-only throughout the execution. Write access is allowed only when the script parser generates them and immediately made non-writable afterwards.
+
+**JavaScript Objects:** The JS objects can be written to frequently at any point of the program execution and several flags must be updated at run time (reference counter, GC flag). They are separated into two protection domains depending on the types they encapsulate: one for s**ensitive data objects** and the other for **primitive data objects**. An object is *sensitive* if it contains sensitive information such as *function pointers,* *object shape metadata*, *scope metadata* or *JIT code*. By separating the two types, those object classes are not writable at the same time, this way an attacker cannot setup an object type confusion to corrupt sensitive objects using primitive data types. Changing object permissions while the JIT code executes is too costly in terms of overhead so *all access restrictions to primitive data* are lifted during JIT code execution and set back again when the control is transferred back to the JS engine itself. Protections for *sensitive* objects are still enforced to prevent the attacker to manipulate frequently exploited objects (Shapes, Cells, Functions, etc.).
+
+---
+
+**Implementation**
+
+**Intel's MPK (Memory Protection Key):** Allow user-space programs to manage access permissions for up to 16 memory domains. To change the access permissions for a domain, the program uses an unprivileged instruction to write to the thread-local PKRU register. While PKRU write is unprivileged, an attacker has to acquire arbitrary code execution to set its value.
+
+**Compartmentalization:** 
+
+- (1) *Jump table separation* to split jump target addresses from the rest of the jump table. This allows the jump addresses to be read-only and not executable.
+- (2) *Permission change routine*: before writing to a protected region, we insert a call to `set_pkru` to change the value of the `PKRU` register to enable write access. The function first checks if the current `PKRU` value is already correct to avoid losing cycles by flushing the CPU pipeline.
+- (3) *JS object protection*: In JS, the GC is responsible for allocating and reclaiming S objects on the heap. SpiderMonkey provides data isolation through *compartments* by keeping objects from the same origin within the same compartment with strict isolation. JS objects protected by NoJITsu include *shapes* which contain the object layout information, *script  objects* that point to bytecode. The unit of management is a *cell* that are classified on their allocation kind.
+
+**Instrumenting Memory Accesses:**  
+
+- (1) *Code Transformation and Signal handler*: Intentional traps when write accesses  to a protected region occur and catches the resulting segmentation faults in a custom signal handler.
+- (2) *Dynamic Object-Flow Analysis*: Only read permissions are granted to JavaScript objects. At runtime, when a `segfault` is obtained, if it is caused by an MPK violation, it logs the faulting code to be processed later by the LLVM passes. Before entering the signal handler, the OS saves the register state of the interrupted process in memory and recovers the registers after the signal handler returns.
+- (3) *Accessor Functions*: Only a limited number of functions can directly write to an object. Based on SpiderMonkey, any other function should invoke one of these accessor functions to modify a JS object. These functions can be decoupled in *Member Accessors* (private attributes), *Payload Accessors*, *Initialization Accessors* or *GC Accessors*.
+
+
+
+---
+
+
+### 2020 - Valdiek, ERIM Secure Efficient In-process Isolation with Protection Keys MPK
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 

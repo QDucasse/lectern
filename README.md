@@ -263,6 +263,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware](#2020---Fumero-Running-Parallel-Bytecode-Interpreters-on-Heterogeneous-Hardware)
 
+[2020 - Jaloyan, Return-Oriented Programming on RISC-V](#2020---Jaloyan-Return-Oriented-Programming-on-RISC-V)
+
 [2020 - Lee, Keystone An Open Framework for Architecting Trusted Execution Environments](#2020---Lee-Keystone-An-Open-Framework-for-Architecting-Trusted-Execution-Environments)
 
 [2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing](#2020---Lima-Exposing-Bugs-in-JavaScript-Engines-through-Test-Transplantation-and-Differential-Testing)
@@ -905,6 +907,84 @@ The main challenges when linking low-level and high-level programming are that t
 ### 2010 - Blazakis, Interpreter Exploitation Pointer Inference and JIT Spraying
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+[19/05/2021]
+
+To overcome DEP and ASLR, to techniques are presented: ***pointer inference*** and ***JIT spraying***.
+
+In ActionScript, small primitive objects (integer/boolean) are stored by value and objects such as doubles, strings or class instances are stored by reference (the interpreter will allocate a buffer to hold the object and store a pointer to this value). In dynamically typed languages, types are not assigned to values at compile time. The interpreter will simply check if the operands are valid for the given operation at run time. To handle this, the interpreter represents internal objects using tagged pointers (***atoms***). Tagged pointers are a common implementation technique to differentiate between those objects stored by value and those stored by reference using the same word sized memory cell. In ActionScript, a tagged pointer stores type information in 3 bits and the value in 29 bits. ***Both values and references are used as atoms by the interpreter***. 
+
+The built-in ActionScript Dictionary class exposes an associative map data structure, it provides an interface to associate any ActionScript object with any other ActionScript object. Internally, it is implemented as a hashtable that derives the hash from the key atom and stores the key and value atom together in the table. 
+
+
+
+**Pointer Inference:** EIP is the ***stack pointer register***, it holds the address of next instruction to be executed. Scripting environments are a perfect target for pointer inference as the objects live on the heap and are dynamically typed. The goal is to find a way to determine the memory address of a script object in the interpreter/virtual machine. Since integers are placed into the hashtable using their value as the key, we can determine the atom value of some ActionScript object by measuring where the new objec is found when iterating over the hashtable. By recording the integers that fall before and after the newly inserted object, the attacker can derive a bound on the atom of the new object. Since object atoms are just pointers (with the first three bits modified), we can disclose as many bits of a pointer as we can grow the hashtable. To avoid the problem of hash collision, the test is performed twice, ***once for the odd integers, once with the even integers, up to a power of two*** (the larger the better). ***The victim object is inserted in both dictionaries*** and an iterative search using the `for-in` construct recording the last key visited and breaking when the current key is the victim key. The attacker now has two integer values that should differ by 17. The attacker now has the integer that, when turned into an atom is 8 smaller than the victim atom.  
+
+```javascript
+// First, create the Dictionaries
+var even = new Dictionary();
+var odd = new Dictionary();
+// Now, fill the Dictionary objects with the integer atoms
+var index;
+for (index = 0; index < 8; index += 1) {
+    even[index * 2] = true;
+    odd[index * 2 + 1] = true;
+}
+
+var victim = “AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA”;
+even[victim] = true;
+odd[victim] = true;
+
+var curr, evenPrev, oddPrev;
+for (curr in even) {
+    if (curr == victim) { break; }
+    evenPrev = curr;
+}
+for (curr in odd) {
+    if (curr == obj) { break; }
+    oddPrev = curr;
+}
+```
+
+**JIT Spraying:** DEP makes executing delivered shell-code difficult as the stack and default heaps are marked as non-executable. The key insight is that the JIT is predictable and must copy some constants to the executable page. Given a uniform statement (such as a long sum or any repeating pattern), those constants can encode small instructions and then control flow to the next constant location. A long COR expression (`a ^ b ^ c ^ d ...`) would be compiled down to a very compact set of XOR instructions.
+
+```javascript
+var y = (0x3c54d0d9 ^ 0x3c909058 ^ 0x3c59f46a ^ 0x3c90c801 ^ ...);
+```
+
+is compiled to
+
+```assembly
+03470069 B8 D9D0543C     MOV EAX,3C54D0D9
+0347006E 35 5890903C     XOR EAX,3C909058
+03470073 35 6AF4593C     XOR EAX,3C59F46A
+03470078 35 01C8903C     XOR EAX,3C90C801
+0347007D 35 D930903C     XOR EAX,3C9030D9
+03470082 35 5B53533C     XOR EAX,3C53535B
+```
+
+which if execution begins at `0x0347006A` will become the `GetPC()` method:
+
+```assembly
+0347006A  D9 D0          FNOP
+0347006C  54             PUSH ESP
+0347006D  3C 35          CMP AL,35
+0347006F  58             POP EAX
+03470070  90             NOP
+03470071  90             NOP
+03470072  3C 35          CMP AL,35
+03470074  6A F4          PUSH -0C
+03470076  59             POP ECX
+03470077  3C 35          CMP AL,35
+03470079  01 C8          ADD EAX,ECX
+0347007B  90             NOP
+0347007C  3C 35          CMP AL,35
+0347007E  D9 30          FSTENV DS:[EAX]     
+```
+
+Flash objects are allocated using a custom allocator which boils down to `VirtualAlloc`. It will map pages at a 64kB granularity and does so with a linear scan finding the first hole that matches the size requested. 
+
+
+
 ---
 
 
@@ -992,6 +1072,41 @@ Native code isolation:
 ### 2010 - Sintsov, Writing JIT Spray Shellcode for Fun and Profit
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+[19/05/2021]
+
+Browsers are getting protected by permanent DEP that is deployed on IE8 and FF3.5. On the other side, OSes implement ASLR. The idea of JIT spraying is to use many XOR operators with payload as integers in the script itself. The following example needs the memory with evil XORs to be executable and the presence of a
+
+```javascript
+var y = (0x11223344 ^ 0x44332211 ^ ...);
+```
+
+will be transformed into
+
+```assembly
+...
+0x909090:35  44332211    XOR EAX, 11223344
+0x909095:35  44332211    XOR EAX, 11223344
+0x90909A:35  44332211    XOR EAX, 11223344
+...
+```
+
+If an attacker can control the return address, they can switch it on the XOR with one byte offset:
+
+```assembly
+...
+0x909091:44                INC ESP
+0x909092:3322              XOR ESP, [EDX]
+0x909095:1135  44332211    ADC [11223344], ESI
+0x90909A:35    44332211    XOR EAX, 11223344
+...
+```
+
+The author uses the `as3compiler.exe` from SWFTOOLS as the ActionScript compiler. To perform the spray, he creates an SWF file that tries to load another one (with XORs) many times. It is important to control the size of the second SWF bytecode as the offsets between allocated memory blocks grow alongside this file. We cannot know exactly where the XOR instructions are, we simply know the first 0x0CD ~ 0x100 bytes are Flash intro code then executable and non-executable blocks of 0x01000 bytes are interleaved. Loading enough blocks will fill the memory map.
+
+To write shell-code, the high byte must be <0x7F (for XOR) otherwise the compiler breaks the XOR instruction with some others. To use JNE or JE, the Z flag needs to be safe but it is modified by the masking of the XOR instruction. The shell-code cannot deal with 4-byte data directly so it has to combine several PUSH/CALL or MOV.
+
+(Description of the attack)
+
 ---
 
 
@@ -1063,6 +1178,10 @@ An extension of C called ClassDL is used to help with OOP mechanisms. The combin
 
 ### 2013 - Chen, JITSafe a Framework Against Just-In-Time Spraying Attacks
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[19/05/2021]
+
+
 
 ---
 
@@ -1393,6 +1512,41 @@ JIT spraying has always be an x86-only attack thanks to its reliance on variable
 - The ***Low-Level Interpreter (LLInt)*** interprets bytecodes, 32-bit opcodes followed by as many operands as are required. The opcodes are pointers to pre-compiled code snippets in the interpreter's text section. During bytecode execution, a virtual program counter (vPC) register points to the currently-executing opcode in the bytecode while the real `PC` is in the code snippet pointed to by the opcode. The snippet accesses the opcode's operands via vPC-relative memory loads, performs the desired computation, advances the vPC and finally branches o the next opcode's snippet with a register-indirect jump through the vPC.
 - The ***Baseline JIT*** generates native code. The instruction stream produced differs from the one executed by the ***LLInt*** since it does not need to manage the vPC. The code has clear boundaries where the execution of one bytecode instruction ends and the next begins, and it does not flow scratch values in registers across those boundaries. Instead, they are stored onto the JavaScript stack and read back by other bytecode operations.
 - The ***Data Flow Graph JIT*** uses *dead code elimination analysis*, *function inlining* and a *basic register allocator* to optimize the JITed code better.
+
+On x86, the attacker uses back-to-back sequences of one non-attacker controlled byte (opcode) followed by four bytes of attacker controlled data (an immediate operand). ARM and Thumb need to split a 32-bit immediate value into halfwords and loaded into registers one value at a time. An attacker can control the immediate bits in arithmetic operations (up to 16 bits) or in a PC-relative branch (up to 25 for ARM, 24 for Thumb). Aside from immediate, an attacker can control the choice of operand and destination registers used in instructions by carefully crafting an input.
+
+An attacker can control the content of 8 different registers along with different operations between them:
+
+```javascript
+function (R0, R2, R8, R10) {
+	var R1  = R0  ^ 0x1234;
+	var R4  = R2  ^ 0x2345;
+	var R9  = R8  ^ 0x3456;
+	var R11 = R10 ^ 0x4567;
+    // The values of all 8 registers are known 
+	return (R1 ^ R2) | (R4 ^ R8) | (R10 ^ R9) | (R11 ^ R0);
+}
+```
+
+```assembly
+4051       eors   r1 , r2
+ea84 0408  eor.w  r4 , r4 , r8
+4321       orrs   r1 , r4
+ea8a 0a09  eor.w  r10, r10, r9
+ea41 010a  orr.w  r1 , r1 , r10
+ea8b 0b00  eor.w  r11, r11, r0
+ea41 010b  orr.w  r1 , r1 , r11
+```
+
+
+
+Three JIT spraying attacks are presented: first the ***original attack shown to be unfeasible***, then the attack with the ***`ISETSTATE` register*** and finally an attack using ***gadget chaining***. 
+
+The original attack is unfeasible because ARM expects instruction to be 4-byte aligned and shifting it by a byte (the opcode) as it was done in the original attack is not possible here. However, while it is necessary to fetch and decode two-bytes aligned instructions, the mixing of 16- and 32-bits Thumb-2 instructions allows for the second halfword of a 32-bit Thumb-2 instruction to be interpreted as the first halfword of an (unintended) instruction. This way, all ***unintended instructions*** must be ***32-bit Thumb-2 instructions*** and the ***intended instructions encoding them*** as well. **The attack consists of a chain of intended 32-bits Thumb-2 instructions executed one halfword out of phase.** Inducing the JIT to compile correct second halfwords of intended instructions mean that they have to be a valid first word as well. Using a chain of Thumb-2 only instructions makes it impossible to generate a payload because the second halfwords cannot be used as first and vice-versa.
+
+ However, using the switch between ARM and Thumb-2 can be exploited: the attacker needs to induce the JIT to produce Thumb-2 instructions whose bytes in instruction memory decode to a useful stream of ARM instructions and execute it in ARM mode via an inter-working branch instruction. The two ARM instruction fields that make it difficult to encode ARM instructions in a Thumb instruction stream are the ***condition code*** and ***ALU result destination register***. The condition code is expected before most ARM instructions and consists of a 4-bits flag that predicates the runtime execution of the instruction on the status of condition flags (e.g. ***negative, zero, carry, overflow, etc.***). The `1111` code is illegal as a condition but can be used by specific instructions (SIMD, hint or unconditional PC-relative branch with a forced instruction set change to Thumb) that are not useful to an attacker. However, with this technique it is still complex to generate and construct a Turing-complete ARM shellcode.
+
+***Gadget chaining*** consists of using the already available sequences of instructions called ***gadgets*** to generate a full program. The major components are (1) ***pinpointing gadgets in memory***, (2) ***preparing registers and branching to gadgets from JavaScript*** (3) ***returning from gadgets without crashing***. 
 
 
 
@@ -1738,6 +1892,36 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 ### 2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Jaloyan, Return-Oriented Programming on RISC-V
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[18/05/2021]
+
+Preventing the introduction of malicious code is not enough to prevent the execution of malicious computations. ***Return-oriented  programming*** thinks of reusing the code already present from intended operations to perform an attack. Several mitigations have been developed such as `gcc`'s `-mmitigate-rop`, G-Free or even Control-Flow Integrity. 
+
+Return-object Programming consists of injecting a succession of call frames in the stack. Each call frame on the stack will result in the execution of a ***gadget***, a small snippet of legitimate code containing a a small number of instructions ended by a `ret`. When the `ret` instruction is reached, the address of the next gadget is popped from the stack into the program counter. Arbitrary code may be executed providing that enough gadgets are available. Two categories of gadgets can be distinguished: ***Main Execution Path (MEP)*** from legitimate code written by the programmer and ***Hidden Execution Path (HEP)*** that uses overlapping code such as sections that have another interpretation depending on its internal status (32- or 64-bits, Thumb mode, offset of the execution, etc.). ***HEP*** has the advantage that it bypasses traditional compiler stack protections.
+
+The ***Galileo*** algorithm allows the detection of gadgets in any executable memory region. It is based ona backward disassembly method, starting from every return instruction and then trying to bruteforce the length of the previous instruction. The payload is then designed based on the discovered gadgets and the injection method.
+
+The base RISC-V ISA can be extended with several extensions: **M** for integer multiplication and division, **A** for atomic operations, **F, D and Q** for single-, double- and quad-precision floating-point operations, **L** for decimal floating-point operations, **C** for compressed instructions, **J** for just-in-time instructions, **T** for transactional memory, **P** for packed-SIMD instructions, **V** for vector operations and **N** for user-level interrupts. The general extension (**G**) includes **IMAFD** and the one agreed on by Debian and Fedora for Unix platforms is the RV64GC ISA. The RISC-V architecture consists of 32 floating-point registers (`f0-f31`), a program counter (`pc`), 31 general purpose 64-bit registers (`x1-x31`) whose usage is shown in the table below as well as various control and status registers. 
+
+![](./table.png)
+
+RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction length is encoded in the LSB (lowest-address as RISC-V is little endian). 16-bit instructions require the last two bits to be different from 11 whereas 32-bit instructions have their last two bits equal to 11 and the three previous different from 11. This means that there is a possibility for overlapping instructions that can be obtained by either using two 32-bit instructions 2 bytes apart or by using a 32-bit instruction whose last 2 bytes are also a valid 16-bit compressed instruction.
+
+![](/home/quentin/Desktop/Research/VM/Articles/2020_Jaloyan_Return-Oriented Programming on RISC-V/overlapping.png)
+
+**Threat model:** The system consists of RISC-V systems with ROP mitigations deployed such as DEP, ASLR as well as `gcc`'s `-fstack-protector-strong` (since `gcc`'s `-mmitigate-rop` or `clang`'s CFI are not available on RISC-V).
+
+**Backdoor:** Adding a backdoor that consists of a ***trigger*** and a ***payload*** to access a privileged state.  leading to a ROP attack. This often consists of exploiting an SUID program to perform *privilege escalation*. The attacker can then create a concealed persistent backdoor on a compromised system to ensure they have access to the exploit at any time in the future.
+
+**Gadget Chaining:** Hidden gadgets are inserted in the code using one function per gadget, each ending with a C `return` function. Note that for each function, the compiler may add assembly code at the beginning and the end whose purpose is to *insert (save)* or *remove (restore)* the call frame from the stack. Those *restore* are essential in ROP attacks as they tamper with the return address register. The hidden instructions are written directly in C code, and feature one or two instructions followed by a jump to a relative offset. The gadgets are then 
+
+
 
 ---
 

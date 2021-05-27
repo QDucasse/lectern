@@ -22,7 +22,7 @@ The payload is serialized to a structure accessible from the script and control 
 
 JIT-ROP is constructed as a C/C++ project (~3000 lines of code).
 
-<img src="img/JIT-ROP.png" style="zoom:75%;" />
+![](../Articles/2013_Snow_Just-In-Time Code Reuse On the Effectiveness of Fine-Grained Address Space Layout Randomization/JIT-ROP.png)
 
 IE8 on Windows 7  is exploited using CVE-2012-1876. Heap Fencg Shui is applied to arrange objects on the heap. Next an overflow is used to write a value
 

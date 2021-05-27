@@ -12,5 +12,6 @@ An attacker is modeled as a concurrent user-level thread, running in parallel wi
 
 ### Recipe
 
-![](img/RockJIT.png)
+![](../Articles/2014_Niu_RockJIT Securing Just-In-Time Compilation Using Modular Control-Flow Integrity/RockJIT.png)
 
+**Verification:** The verifier maintains three sets of addresses that are code addresses in the code heap. **(1)** ***Pseudo-instruction start addresses (PSA)***, this set remembers the start addresses of all pseudo instructions (defined either as a checked indirect branch, a masked memory write or an instruction that is neither an indirect branch nor an indirect memory write). **(2)** ***Indirect branch targets (IBT)***  and **(3)** ***Direct branch targets***. It verifies several conditions on those sets. Those verifications are performed on native code emission, deletion or modification.

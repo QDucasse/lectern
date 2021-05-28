@@ -10,5 +10,7 @@ Linux operating system that runs a user mode process which contains a memory cor
 
 The procedure goes through 3 main steps. First, ***code transformation*** that transforms an executable *E* to ***Position-and-Layout-Agnostic-Code (PALACE)*** *Pe*. The same applies to shared libraries. Next, ***splitting*** that transforms *Pe* into the smallest possible piece that can be shared among processes: ***a memory page***. *Pe* bcomes *p1 | p2 |...| pn*. Finally, ***randomization*** takes place at load time where the different pieces *p1 | p2 | ... | pn* are shuffled by the ASLR part of the OS loader. Their order is completely random and the pieces may have empty gaps of arbitrary size between them. **RaTTle** is the mechanism that hold the code segments locations through offset kept in the ***Global Descriptor Table*** using specific instructions.
 
-<img src="/home/quentin/Desktop/Research/VM/Articles/2014_Backes_Oxymoron Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing/oxymoron.png" style="zoom: 67%;" />
+<img src="../Articles/2014_Backes_Oxymoron Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing/oxymoron.png" style="zoom: 67%;" />
+
+<img src="../Articles/2014_Backes_Oxymoron Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing/rattle.png" style="zoom: 67%;" />
 

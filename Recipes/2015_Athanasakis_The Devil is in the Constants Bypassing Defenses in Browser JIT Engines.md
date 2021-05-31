@@ -68,3 +68,11 @@ function emit_gadgets() {
 emit_gadgets();
 ```
 
+<img src="..//Articles/2015_Athanasakis_The Devil is in the Constants Bypassing Defenses/IE_attack.png" style="zoom: 67%;" />
+
+
+
+However, the attacker needs to discover the location of the gadgets. By arbitrarily increasing the length of a JS string object and by reading the string's content, the attacker can read past the end of the string. The attacker can then discover any object's *vtable* and transform the overwrite to a memory disclosure.
+
+<img src="../Articles/2015_Athanasakis_The Devil is in the Constants Bypassing Defenses/DisclosureAttack.png" style="zoom: 67%;" />
+

@@ -111,6 +111,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2005 - Ierusalimschy, The Implementation of LUA5](#2005---Ierusalimschy-The-Implementation-of-LUA5)
 
+[2005 - Sheridan, Practical Testing of a C99 Compiler using Output Comparison](#2005---Sheridan-Practical-Testing-of-a-C99-Compiler-using-Output-Comparison)
+
 [2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment](#2005---Ungar-Constructing-a-Metacircular-Virtual-Machine-in-an-Exploratory-Programming-Environment)
 
 [2006 - Gal, HotpathVM An Effective JIT Compiler for Resource-Constrained Devices](#2006---Gal-HotpathVM-An-Effective-JIT-Compiler-for-Resource-Constrained-Devices)
@@ -127,6 +129,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2008 - Kotzmann, Design of the Java HotSpot Client Compiler for Java 6](#2008---Kotzmann-Design-of-the-Java-HotSpot-Client-Compiler-for-Java-6)
 
+[2008 - One, Smashing the Stack for Fun and Profit](#2008---One-Smashing-the-Stack-for-Fun-and-Profit)
+
 [2009 - Bolz, Tracing the Meta-Level PyPys Tracing JIT Compiler](#2009---Bolz-Tracing-the-Meta-Level-PyPys-Tracing-JIT-Compiler)
 
 [2009 - Frampton, Demystifying Magic High-Level Low-Level Programming](#2009---Frampton-Demystifying-Magic-High-Level-Low-Level-Programming)
@@ -134,6 +138,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor](#2010---Agesen-The-Evolution-of-an-X86-Virtual-Machine-Monitor)
 
 [2010 - Blazakis, Interpreter Exploitation Pointer Inference and JIT Spraying](#2010---Blazakis-Interpreter-Exploitation-Pointer-Inference-and-JIT-Spraying)
+
+[2010 - DeGroef, JITsec Just-in-Time Security for Code Injection Attacks](#2010---DeGroef-JITsec-Just-in-Time-Security-for-Code-Injection-Attacks)
 
 [2010 - Ehringer, The Dalvik Virtual Machine Architecture](#2010---Ehringer-The-Dalvik-Virtual-Machine-Architecture)
 
@@ -152,6 +158,8 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 [2011 - Chen, JITDefender A Defense against JIT Spraying Attacks](#2011---Chen-JITDefender-A-Defense-against-JIT-Spraying-Attacks)
 
 [2011 - Haupt, CSOMPL a virtual machine product line](#2011---Haupt-CSOMPL-a-virtual-machine-product-line)
+
+[2011 - Miranda, The Cog Smalltalk Virtual Machine Writing a JIT in a High-Level Language](#2011---Miranda-The-Cog-Smalltalk-Virtual-Machine-Writing-a-JIT-in-a-High-Level-Language)
 
 [2012 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused](#2012---Barbu-Application-Replay-Attack-on-Java-Cards-When-the-Garbage-Collector-Gets-Confused)
 
@@ -263,21 +271,27 @@ $ python utils.py --genreadme  # Adds the notes to the present README.md file
 
 [2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware](#2020---Fumero-Running-Parallel-Bytecode-Interpreters-on-Heterogeneous-Hardware)
 
+[2020 - Haeyoung, RIMI Instruction-level Memory Isolation for Embedded Systems on RISC-V](#2020---Haeyoung-RIMI-Instruction-level-Memory-Isolation-for-Embedded-Systems-on-RISC-V)
+
 [2020 - Jaloyan, Return-Oriented Programming on RISC-V](#2020---Jaloyan-Return-Oriented-Programming-on-RISC-V)
 
 [2020 - Lee, Keystone An Open Framework for Architecting Trusted Execution Environments](#2020---Lee-Keystone-An-Open-Framework-for-Architecting-Trusted-Execution-Environments)
 
 [2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing](#2020---Lima-Exposing-Bugs-in-JavaScript-Engines-through-Test-Transplantation-and-Differential-Testing)
 
+[2020 - Proskurin, xMP Selective Memory Protection for Kernel and User Space](#2020---Proskurin-xMP-Selective-Memory-Protection-for-Kernel-and-User-Space)
+
 [2020 - Schrammel, Donky Domain Keys - Efficient In-Process Isolation for RISC-V and x86](#2020---Schrammel-Donky-Domain-Keys---Efficient-In-Process-Isolation-for-RISC-V-and-x86)
 
 [2020 - Taemin, NoJITsu Locking Down Javascript](#2020---Taemin-NoJITsu-Locking-Down-Javascript)
 
-[2020 - Valdiek, ERIM Secure Efficient In-process Isolation with Protection Keys MPK](#2020---Valdiek-ERIM-Secure-Efficient-In-process-Isolation-with-Protection-Keys-MPK)
-
 [2020 - Zandberg, Minimal Virtual Machines on IoT Microcontrollers The Case of Berkeley Packet Filters with rBPF](#2020---Zandberg-Minimal-Virtual-Machines-on-IoT-Microcontrollers-The-Case-of-Berkeley-Packet-Filters-with-rBPF)
 
 [2021 - Dobis, Open-Source Verification with Chisel and Scala](#2021---Dobis-Open-Source-Verification-with-Chisel-and-Scala)
+
+[2021 - Lu, A Survey on RISC-V Security Hardware and Architecture](#2021---Lu-A-Survey-on-RISC-V-Security-Hardware-and-Architecture)
+
+[2021 - Polito, Cross-ISA Testing of the Pharo VM Lessons Learned While Porting to ARMv8](#2021---Polito-Cross-ISA-Testing-of-the-Pharo-VM-Lessons-Learned-While-Porting-to-ARMv8)
 
 
 
@@ -826,6 +840,12 @@ This solution is expensive to copy values but ensures portability. Strings are i
 ---
 
 
+### 2005 - Sheridan, Practical Testing of a C99 Compiler using Output Comparison
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -869,6 +889,12 @@ This solution is expensive to copy values but ensures portability. Strings are i
 
 
 ### 2008 - Kotzmann, Design of the Java HotSpot Client Compiler for Java 6
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2008 - One, Smashing the Stack for Fun and Profit
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -945,7 +971,7 @@ for (curr in odd) {
 }
 ```
 
-**JIT Spraying:** DEP makes executing delivered shell-code difficult as the stack and default heaps are marked as non-executable. The key insight is that the JIT is predictable and must copy some constants to the executable page. Given a uniform statement (such as a long sum or any repeating pattern), those constants can encode small instructions and then control flow to the next constant location. A long COR expression (`a ^ b ^ c ^ d ...`) would be compiled down to a very compact set of XOR instructions.
+**JIT Spraying:** DEP makes executing delivered shell-code difficult as the stack and default heaps are marked as non-executable. The key insight is that the JIT is predictable and must copy some constants to the executable page. Given a uniform statement (such as a long sum or any repeating pattern), those constants can encode small instructions and then control flow to the next constant location. A long XOR expression (`a ^ b ^ c ^ d ...`) would be compiled down to a very compact set of XOR instructions.
 
 ```javascript
 var y = (0x3c54d0d9 ^ 0x3c909058 ^ 0x3c59f46a ^ 0x3c90c801 ^ ...);
@@ -982,6 +1008,86 @@ which if execution begins at `0x0347006A` will become the `GetPC()` method:
 ```
 
 Flash objects are allocated using a custom allocator which boils down to `VirtualAlloc`. It will map pages at a 64kB granularity and does so with a linear scan finding the first hole that matches the size requested. 
+
+
+
+---
+
+
+### 2010 - DeGroef, JITsec Just-in-Time Security for Code Injection Attacks
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[28/05/2021]
+
+**System calls:** system calls are the interface between user programs and the operating system. This separation allows the OS to enforce security policies and conform processes to their permissions. When a program wants to communicate with the kernel through a system call on x86/Linux , it places the number of the system call in the `eax` register and the arguments in `ebx`, `ecx`, `edx`, `edi` and `esi`. The program then issues a system call interrupt (`int 0x80`) which informs the operating system that the caller program wants to perform a system call. Execution flow is returned once the call is performed.
+
+**Threat model:** It is assumed a vulnerability exists so that an attacker can change at least one memory location in the user-space of the process (return addresses, function pointers, etc.). One attacker-controlled variable exists which the attacker can use to inject the code of its choice.
+
+**Design:** A monitor checks the callsite of a system call interrupt to guarantee correct behavior of the interrupting process. When it lies on the stack or the heap, the request is modified to terminate the application. In all other cases, the system call will not be changed. the monitor is placed between user processes and the system call handler by hijacking the `IDT` register (Interrupt Descriptor Table, a data structure that is used to determine the correct function to handle interrupts and exceptions). The trampoline function stores the content of registers on the stack, calls the policy-enforcing function then popped from the stack. The policy-enforcing function accesses the return address where the control flow is supposed to return to. It is checked against the range of the stack and heap memory sections. If it is one in one of them, the contents of the `eax` register is overwritten with the number for the `exit()` system call.
+
+```C
+void asmlinkage jitsec_trampoline (void) 
+{
+	__asm__ __volatile__ (
+    	"push %edi               \n"
+    	"push %esi               \n"
+        "push %edx               \n"
+        "push %ecx               \n"
+        "push %ebx               \n"
+        "push %eax               \n"
+        "call jitsec_monitor     \n"
+        // discard original eax value
+        "pop %ebx                \n"
+        "pop %ebx                \n"
+        "pop %ecx                \n"
+        "pop %edx                \n"
+        "pop %esi                \n"
+        "pop %edi                \n"
+        "pushl orig_sc_routine   \n"
+    );
+}
+```
+
+```c
+#define K_EXIT 0 x1     // exit system call number
+#define IS_BETWEEN_ADDR ( start , log2size , addr )
+	((( start ^ addr ) >> log2size ) == 0)
+
+int jitsec_monitor ( unsigned int orig_eax )
+{
+    /* general structures provided by the kernel */
+    struct task_struct * task = current_thread_info () -> task ;
+    struct mm_struct * mm = task - > mm ;
+    struct pt_regs *r ;
+    /* contains the ( possibly ) new eax value */
+    unsigned int new_eax = orig_eax ;
+    
+    /* Size of stack is given in memory pages
+       log_2 ( stack_size * page_size ) =
+       log_2 ( stack_size ) + ( log_2 (4096) = 12) */
+    unsigned long l = log_2 ( mm - > stack_vm ) + 12;
+    
+    /* accessing registers for the current process thread */
+    r = (( struct pt_regs *) task - > thread . sp0 - 1) ;
+    
+    /* 1. Check if callsite on stack */
+    if ( IS_BETWEEN_ADDR ( mm - > start_stack , l , r - > ip ) ) {
+    	/* callsite on stack -> exit ! */
+    	new_eax = K_EXIT ;
+    }
+    else {
+    	/* subtracting start and end gives size of heap */
+    	l = log_2 ( mm - > brk - mm - > start_brk ) ;
+    	/* 2. Check if callsite on heap */
+    	if ( IS_BETWEEN_ADDR ( mm - > start_brk , l , r - > ip ) ) {
+    		/* callsite on heap -> exit ! */
+    		new_eax = K_EXIT ;
+    	}
+    }
+    
+    return new_eax ;
+}
+```
 
 
 
@@ -1158,6 +1264,12 @@ An extension of C called ClassDL is used to help with OOP mechanisms. The combin
 ---
 
 
+### 2011 - Miranda, The Cog Smalltalk Virtual Machine Writing a JIT in a High-Level Language
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2012 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1180,6 +1292,16 @@ An extension of C called ClassDL is used to help with OOP mechanisms. The combin
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 [19/05/2021]
+
+Modern OS adopted ***data execution prevention (DEP)*** or ***writable XOR executable (W+X)*** policies to overcome code-injection attacks. Along with code-injection attacks, code-reuse techniques such as `return-to-libc` or ***return-oriented programming (ROP)*** have been proposed to overcome DEP or W+X. ***Address Space Layout Randomization*** was proposed to mitigate this type of attacks. However, JIT spraying attacks demonstrate that it is possible to overcome the defense mechanisms. 
+
+**JITSafe presentation:** JIT compilation needs to store the JITed code as writable *and* executable, breaking the W+X policy and opening the door to JIT spraying attacks. The objective of JITSafe is to ***enforce the W+X protection within the VM***, ***eliminate the immediate values*** and ***obfuscate the JITed code***. 
+
+**Immediate value  elimination:** To eliminate immediate values, when the machine code generator comes across a XOR instruction, it first allocates the memory on the heap to pre-store the immediate value. Then it inserts the instruction that obtains the value from the memory to one register and replaces the original instruction with the new one that uses the register instead of the immediate value.
+
+**Code Obfuscation:** To add more complexity, code obfuscation randomly selects the register that obtains the immediate value and inserts the padding between the instructions. The new XOR operation will use the randomly chosen register as an operand. Moreover, NOP instructions are added in between compiled instructions. 
+
+**W+X:** Two important points during the execution of JIT compiled code  have to be noted: (1) the code compilation point where the JIT compiler generates the native code and (2) the code execution point when the VM executes the native code. When entering (1), the memory pages are marked as writable and non-executable. Shortly before (2), memory pages are marked as executable, and afterwards, non-executable again.
 
 
 
@@ -1272,6 +1394,24 @@ The target platform uses the following mechanisms for mitigations: *non-executab
 
 ### 2014 - Backes, Oxymoron Making Fine-Grained Memory Randomization Practical by Allowing Code Sharing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[20/05/2021]
+
+Oxymoron aims to provide fine-grained memory randomization. It features ***memory-layout-agnostic code*** which works on a per-process level and does not interfere with code sharing. This way, the memory is secure without having to throw away shared libraries.
+
+While ASLR has become widespread, it has also been shown to be ineffective by using large chunks of memory. Using finer grain randomization techniques aim at randomizing functions, basic blocks or even instructions. To be effective, it has to prevent an attacker from using information about the memory layout of one process to infer the layout of another process. This is a particular threat when looking at shared code originating from shared libraries. Most fine-grained techniques also randomize shared libraries for every single process. As a result, there is no identical in any two processes which makes sharing impossible and increases the overall memory footprint.
+
+Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code (PALACE)***. This code uses no instructions that reference other code or data directly. It cuts program code into the smallest sharable piece, a memory page. Those pages are randomized and shared among processes. An index is given to each process and it would appear different to each of them, organized in a translation table.
+
+**Oxymoron Design:** The main objective of Oxymoron is to benefit from both worlds (code sharing AND fine-grained randomization). Four challenges come along this objective: (1) ***small translation table*** ; (2) ***efficient layer of indirection*** ; (3) ***translation inaccessible for adversaries*** ; (4) ***ability to run on a commodity Linux***. The overall procedure consists of:
+
+- **Code Transformation:** The executable *E* is transformed to a PALACE-code executable *Pe*. The same applies to shared libraries, which can be treated like executables. To enable layout-agnostic code, all references to code and data are replaced with a unique label, an assigned index into a translation table. This ***randomization-agnostic translation table (rattle)*** in turn refers to the actual target.
+- **Splitting:** The code is split into the smallest possible piece that can be shared: a memory page. The code of *Pe* now consists of code pieces: *p1 | p2 | ... | pn*. The PALACE code is split into page-sized pieces, as those pieces are shuffled, it must be assured that the original semantics of the program are kept intact. Explicit control flow needs to be inserted between consecutive code pieces that might be moved away in a alter stage of randomization. These links are inserted as the last instruction of a piece to ensure the successor is correct.
+- **Randomization:** At program load time, the pieces are shuffled by the ASLR part of the OS loader. In memory, their order is completely random and the pieces may have empty gaps of arbitrary size between them. Modern OSes already support ASLR, loading code, data and stack segments at random base addresses. Every memory page is put in its own loadable segment of the executable file or of the shared library. Each process can have its own permutation of the randomization. Only the ***rattle*** needs to be kept up to date with a per-process randomization.
+
+**RATTLE:** This translation table is needed because other methods have drawbacks. Storing the rattle at a **fixed** address in memory allows for its address to be hard-coded in the instructions themselves. Unfortunately, this can be exploited by an attacker. Ut can use a **Global Offset Table (GOT)** but this is realized using relative addresses and forfeits sharing. A dynamic address that is randomly chosen for every process could be stored in a dedicated **machine register**. However, this sacrifices the usage of that register. Rattle chose to use the x86 feature of ***memory segmentation*** to address and at the same time hide it from adversaries. It allows for different *segment descriptors* to be created, each with their own *base address* and *limit* (start and length).
+
+
 
 ---
 
@@ -1581,13 +1721,13 @@ The poc runs as follows:
 - *Create worker*: A worker thread is created.
 - *Initialize the worker*: The worker thread initializes its environment, making sure the code cache is created. It then notifies that it is ready.
 - *Locate the worker's code cache*: The main JS thread locates the worker thread's code cache by exploiting an information disclosure vulnerability. It then notifies the worker thread that it is ready.
-- *Make the code cache writable*: Upon receiving the main thread's message, the worker thread begins to execute another piece of code, forcing the SDT to update its code cache. It can either simply execute a function that is large enough to create a new chunk for the code fragment and set it as writable.
+- *Make the code cache writable*: Upon receiving the main thread's message, the worker thread begins to execute another piece of code, forcing the SDT to update its code cache. It can  simply execute a function that is large enough to create a new chunk for the code fragment and set it as writable.
 - *Monitor and Overwrite the code cache*:  At the same time, the main thread monitors the status of the code cache and tries to overwrite it once its status is updated.
 - *Execute the shellcode*: When receiving the main thread's new message, the new worker calls the function whose content has already been overwritten. This way, the injected shellcode is executed.
 
 The race condition needs to be validated and the method that notifies the update takes 23 microsec against the 43 needed by the W+X protection.
 
-**System Design:** Three main challenges. ***Memory Map Synchronization*** as all memory regions allcated by the code cache are dynamically allocated and can grow and shrink freely, an effective way is needed to synchronize memories. A *reservation-based* strategy is chosen for the shared memory. When the process is initialized, a we reserve a large chunk of shared memory in both the untrusted process and the SDT. Once the memory is allocated, the synchronization can be performed with *Inter-Process Communication (IPC)*. ***Remote Procedure Call*** can be done via stubs but suffers from performance and argument passing. There is a choice to extend the shared memory to dynamic data the SDT depends on. ***Permission Enforcement*** comes by intercepting system calls related to virtual memory management. Specifically, some policies are enforced: (i) memory cannot be mapped as both writable and executable, (ii) when mapping a memory region as executable, the base address and the size must come from the SDT process, and the memory is always mapped as RX, (iii) The permission of non-writable memory cannot be changed.
+**System Design:** Three main challenges. ***Memory Map Synchronization*** as all memory regions allocated by the code cache are dynamically allocated and can grow and shrink freely, an effective way is needed to synchronize memories. A *reservation-based* strategy is chosen for the shared memory. When the process is initialized, a we reserve a large chunk of shared memory in both the untrusted process and the SDT. Once the memory is allocated, the synchronization can be performed with *Inter-Process Communication (IPC)*. ***Remote Procedure Call*** can be done via stubs but suffers from performance and argument passing. There is a choice to extend the shared memory to dynamic data the SDT depends on. ***Permission Enforcement*** comes by intercepting system calls related to virtual memory management. Specifically, some policies are enforced: (i) memory cannot be mapped as both writable and executable, (ii) when mapping a memory region as executable, the base address and the size must come from the SDT process, and the memory is always mapped as RX, (iii) The permission of non-writable memory cannot be changed.
 
 
 
@@ -1896,6 +2036,12 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 ---
 
 
+### 2020 - Haeyoung, RIMI Instruction-level Memory Isolation for Embedded Systems on RISC-V
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2020 - Jaloyan, Return-Oriented Programming on RISC-V
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1919,7 +2065,9 @@ RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction len
 
 **Backdoor:** Adding a backdoor that consists of a ***trigger*** and a ***payload*** to access a privileged state.  leading to a ROP attack. This often consists of exploiting an SUID program to perform *privilege escalation*. The attacker can then create a concealed persistent backdoor on a compromised system to ensure they have access to the exploit at any time in the future.
 
-**Gadget Chaining:** Hidden gadgets are inserted in the code using one function per gadget, each ending with a C `return` function. Note that for each function, the compiler may add assembly code at the beginning and the end whose purpose is to *insert (save)* or *remove (restore)* the call frame from the stack. Those *restore* are essential in ROP attacks as they tamper with the return address register. The hidden instructions are written directly in C code, and feature one or two instructions followed by a jump to a relative offset. The gadgets are then 
+**Gadget Chaining:** Hidden gadgets are inserted in the code using one function per gadget, each ending with a C `return` function. Note that for each function, the compiler may add assembly code at the beginning and the end whose purpose is to *insert (save)* or *remove (restore)* the call frame from the stack. Those *restore* are essential in ROP attacks as they tamper with the return address register. The hidden instructions are written directly in C code, and feature one or two instructions followed by a jump to a relative offset. 
+
+
 
 
 
@@ -1933,6 +2081,12 @@ RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction len
 
 
 ### 2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Proskurin, xMP Selective Memory Protection for Kernel and User Space
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -2018,12 +2172,6 @@ These threats can be countered by deploying **fine-grained security policies** t
 ---
 
 
-### 2020 - Valdiek, ERIM Secure Efficient In-process Isolation with Protection Keys MPK
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
----
-
-
 ### 2020 - Zandberg, Minimal Virtual Machines on IoT Microcontrollers The Case of Berkeley Packet Filters with rBPF
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -2062,6 +2210,34 @@ VM adds overhead that has an impact on execution time and a measurable additiona
 
 ### 2021 - Dobis, Open-Source Verification with Chisel and Scala
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2021 - Lu, A Survey on RISC-V Security Hardware and Architecture
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2021 - Polito, Cross-ISA Testing of the Pharo VM Lessons Learned While Porting to ARMv8
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[30/06/2021]
+
+**Pharo VM:** At its core, the Pharo VM contains a threaded bytecode interpreter, a linear non-optimising JIT compiler named **Cogit** and a generational scavenger garbage collector (copy collector for young objects and mark-compact collector for older objects). The VM itself contains **255 bytecodes (in 77 families)**, **340 primitive methods** with some duplicated in the interpreter and the JIT compiler as well as **150 IR instructions**.
+
+**Slang:** Smalltalk-to-C VM-specific transpiler. It transpiles a group of classes into a single C file. Methods are translated into functions, message sends to function calls and polymorphism is forbidden. It helps introducing interpreter optimizations (localisation of critical variables, inlining of bytecode cases, threaded code) and helps simulating the Pharo VM by executing it as normal code.
+
+**Cogit:** The JIT compiler is a **method-based non-optimising linear** JIT compiler. It uses a linear **2-address-code** immediate representation. Compiling a method includes three phases: (1) *bytecode scan phase* extracts meta-data (i.e. need for frame) (2) *bytecode parse phase* does an abstract interpretation through a stack-bytecode to register-IR transformation (3) *code generation phase* computes the IR instruction offsets and assembles the machine code for the platform.
+
+**CogRTL IR:** The intermediate representation uses a fixed number of virtual registers (such as `ReceiverRegister` or `ClassRegister`). These registers are needed by the compilation and are mapped to the real registers ahead of time as a compiler configuration for each supported backend/platform. CogRTL aims to be as machine-independent as possible, there is a clear separation between the compiler's frontend that parses bytecode and generates an IR and the compiler's backend that generates machine code from the IR.
+
+**Code Patching and PICs:** Apart from method compilation, Cogit performs code patching as implemented in the compiler's backend. This does not use any of the support from CogRTL and is used in two scenarios: mono/poly/mega-morphic inline caches and updating object references when moved by the garbage collector.
+
+
+
+
 
 ---
 

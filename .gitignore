@@ -6,10 +6,15 @@
 **/*.sav
 **/*.sav.tmp
 
+# Autobib residuals
+**/.queried.*
+**/.rejected.txt
+
 # Divine and lectures materials
 DVE/
 Course/
 
+# Resources that should not be versioned
 Books/
 ISA\ Docs/
 Presentations/

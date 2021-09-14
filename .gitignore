@@ -2,7 +2,7 @@
 **/*.pdf
 
 # JabRef backup files
-**/*.bak
+**/*.bak*
 **/*.sav
 **/*.sav.tmp
 

@@ -1,21 +1,18 @@
  ## VM-related Articles
 
-This repository contains the different articles and the bibliography (in BibTeX format) related to the VM world (to a LARGE extent). The `VM.bib` file in `Bibliography` contains the bib entries for the articles. The notes in each of the folders, namely `notes.md` are integrated in the bibliography using a Python script in `utils.py`.  This script contains several useful helpers:
+This repository contains the different articles and the bibliography (in BibTeX format) related to the VM world (to a LARGE extent). The `VM.bib` file in `Bibliography` is best used with  [JabRef]. The notes in each of the folders, namely `notes.md` are integrated in the bibliography using a Python script in `utils.py`.  This script contains several useful helpers:
 
 ```bash
-$ python utils.py [flags]
-
- -h, --help        show this help message and exit
- -n, --nocomments  Flag to output a bibliography without comments.
- -p, --propagate   Propagate the markdown notes to the comment field of
-                   the corresponding bib entry
- -P, --process     Create a folder and a blank note file for each pdf 
-                   article in the folder TO_PROCESS
- -g, --generate    Modify the README with the different notes from the
-                   articles
- -c, --compare     Compare the physical bibliography structure with the 
-                   bib file and notes the differences
+$ python utils.py --propagate  # Adds the contents of the notes.md files to their respective entry
+$ python utils.py --nocomments # Generates a comment-free bibliography
+$ python utils.py --process    # Creates a repository and empty notes.md file for each pdf in
+							   # Articles/TO_PROCESS
+$ python utils.py --genreadme  # Adds the notes to the present README.md file
 ```
+[JabRef]: https://www.jabref.org/
+
+
+
 ## Article notes
 ### Summary
 [1973 - Bell, Threaded Code](#1973---Bell-Threaded-Code)
@@ -82,11 +79,15 @@ $ python utils.py [flags]
 
 [2001 - Cheng, A Parallel Real-Time Garbage Collector](#2001---Cheng-A-Parallel-Real-Time-Garbage-Collector)
 
+[2001 - Ogel, Towards Active Applications the Virtual Virtual Machine Project](#2001---Ogel-Towards-Active-Applications-the-Virtual-Virtual-Machine-Project)
+
 [2001 - Paleczny, The Java HotSpot Server Compiler](#2001---Paleczny-The-Java-HotSpot-Server-Compiler)
 
 [2002 - Click, Fast Subtype Checking in the HotSpot JVM](#2002---Click-Fast-Subtype-Checking-in-the-HotSpot-JVM)
 
 [2002 - Ertl, Vmgen a Generator of Efficient Virtual Machine Interpreters](#2002---Ertl-Vmgen-a-Generator-of-Efficient-Virtual-Machine-Interpreters)
+
+[2002 - Lattner, The LLVM Instruction Set and Compilation Strategy](#2002---Lattner-The-LLVM-Instruction-Set-and-Compilation-Strategy)
 
 [2003 - Dehnert, The Transmeta Code Morphing - Software Using Speculation recovery and Adaptive Retranslation to Address Real-Life Challenges](#2003---Dehnert-The-Transmeta-Code-Morphing---Software-Using-Speculation-recovery-and-Adaptive-Retranslation-to-Address-Real-Life-Challenges)
 
@@ -95,6 +96,8 @@ $ python utils.py [flags]
 [2003 - Fink, Design Implementation and Evaluation of Adaptive Recompilation with On-Stack Replacement](#2003---Fink-Design-Implementation-and-Evaluation-of-Adaptive-Recompilation-with-On-Stack-Replacement)
 
 [2003 - Govindavajhala, Using Memory Errors to Attack a Virtual Machine](#2003---Govindavajhala-Using-Memory-Errors-to-Attack-a-Virtual-Machine)
+
+[2003 - Merrill, GENERIC and GIMPLE A New Tree Representation for Entire Functions](#2003---Merrill-GENERIC-and-GIMPLE-A-New-Tree-Representation-for-Entire-Functions)
 
 [2003 - Shaylor, A Java Virtual Machine Architecture for Very Small Devices](#2003---Shaylor-A-Java-Virtual-Machine-Architecture-for-Very-Small-Devices)
 
@@ -128,6 +131,10 @@ $ python utils.py [flags]
 
 [2006 - Russell, Eliminating Synchronization-Related Atomic Operations with Biased Locking and Bulk Rebiasing](#2006---Russell-Eliminating-Synchronization-Related-Atomic-Operations-with-Biased-Locking-and-Bulk-Rebiasing)
 
+[2007 - Bolz, How to not write Virtual Machines for Dynamic Languages](#2007---Bolz-How-to-not-write-Virtual-Machines-for-Dynamic-Languages)
+
+[2008 - Ancona, RPython a Step Towards Reconciling Dynamically and Statically Typed OO Languages](#2008---Ancona-RPython-a-Step-Towards-Reconciling-Dynamically-and-Statically-Typed-OO-Languages)
+
 [2008 - Fuess, An FPGA Implementation of Explicit-State Model Checking](#2008---Fuess-An-FPGA-Implementation-of-Explicit-State-Model-Checking)
 
 [2008 - Kotzmann, Design of the Java HotSpot Client Compiler for Java 6](#2008---Kotzmann-Design-of-the-Java-HotSpot-Client-Compiler-for-Java-6)
@@ -156,6 +163,8 @@ $ python utils.py [flags]
 
 [2010 - Sintsov, Writing JIT Spray Shellcode for Fun and Profit](#2010---Sintsov-Writing-JIT-Spray-Shellcode-for-Fun-and-Profit)
 
+[2010 - Swaine, Back to the futures Incremental Parallelization of Existing Sequential Runtime Systems](#2010---Swaine-Back-to-the-futures-Incremental-Parallelization-of-Existing-Sequential-Runtime-Systems)
+
 [2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages](#2011---Bolz-Runtime-Feedback-in-a-Meta-Tracing-JIT-for-Efficient-Dynamic-Languages)
 
 [2011 - Chen, JITDefender A Defense against JIT Spraying Attacks](#2011---Chen-JITDefender-A-Defense-against-JIT-Spraying-Attacks)
@@ -172,9 +181,13 @@ $ python utils.py [flags]
 
 [2013 - Chen, JITSafe a Framework Against Just-In-Time Spraying Attacks](#2013---Chen-JITSafe-a-Framework-Against-Just-In-Time-Spraying-Attacks)
 
+[2013 - Duboscq, Graal IR An Extensible Declarative Intermediate Representation](#2013---Duboscq-Graal-IR-An-Extensible-Declarative-Intermediate-Representation)
+
 [2013 - Eckert, Hardware Based Security Enhanced Direct Memory Access](#2013---Eckert-Hardware-Based-Security-Enhanced-Direct-Memory-Access)
 
 [2013 - Fournet, Fully Abstract Compilation to Javascript](#2013---Fournet-Fully-Abstract-Compilation-to-Javascript)
+
+[2013 - Homescu, Librando Transparent Code Randomization for JIT Compilers](#2013---Homescu-Librando-Transparent-Code-Randomization-for-JIT-Compilers)
 
 [2013 - Kulkarni, Automatic Construction of Inlining Heuristics using Machine Learning](#2013---Kulkarni-Automatic-Construction-of-Inlining-Heuristics-using-Machine-Learning)
 
@@ -254,6 +267,8 @@ $ python utils.py [flags]
 
 [2019 - Du, XPC Architectural Support for Secure and Efficient Cross Process Call](#2019---Du-XPC-Architectural-Support-for-Secure-and-Efficient-Cross-Process-Call)
 
+[2019 - Fumero, Dynamic Application Reconfiguration on Heterogeneous Hardware](#2019---Fumero-Dynamic-Application-Reconfiguration-on-Heterogeneous-Hardware)
+
 [2019 - Kermarrec, LiteX  an open-source SoC builder and library based on Migen Python DSL](#2019---Kermarrec-LiteX--an-open-source-SoC-builder-and-library-based-on-Migen-Python-DSL)
 
 [2019 - Kocher, Spectre Attacks Exploiting Speculative Execution](#2019---Kocher-Spectre-Attacks-Exploiting-Speculative-Execution)
@@ -268,11 +283,17 @@ $ python utils.py [flags]
 
 [2020 - Agache, Firecracker Lightweight Virtualization for Serverless Applications](#2020---Agache-Firecracker-Lightweight-Virtualization-for-Serverless-Applications)
 
+[2020 - Ahmed, Methodologies for Quantifying Re-randomization Security and Timing under JIT-ROP](#2020---Ahmed-Methodologies-for-Quantifying-Re-randomization-Security-and-Timing-under-JIT-ROP)
+
+[2020 - Brennan, JVM Fuzzing for JIT-Induced Side-Channel Detection](#2020---Brennan-JVM-Fuzzing-for-JIT-Induced-Side-Channel-Detection)
+
 [2020 - Bruant, System Verilog to Chisel Translation for Faster](#2020---Bruant-System-Verilog-to-Chisel-Translation-for-Faster)
 
 [2020 - Fournier, Menhir Generic High-Speed FPGA Model-Checker](#2020---Fournier-Menhir-Generic-High-Speed-FPGA-Model-Checker)
 
 [2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware](#2020---Fumero-Running-Parallel-Bytecode-Interpreters-on-Heterogeneous-Hardware)
+
+[2020 - Geffen, Synthesizing JIT Compilers for In-Kernel DSLs](#2020---Geffen-Synthesizing-JIT-Compilers-for-In-Kernel-DSLs)
 
 [2020 - Haeyoung, RIMI Instruction-level Memory Isolation for Embedded Systems on RISC-V](#2020---Haeyoung-RIMI-Instruction-level-Memory-Isolation-for-Embedded-Systems-on-RISC-V)
 
@@ -282,6 +303,8 @@ $ python utils.py [flags]
 
 [2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing](#2020---Lima-Exposing-Bugs-in-JavaScript-Engines-through-Test-Transplantation-and-Differential-Testing)
 
+[2020 - Papadimitriou, Transparent Compiler and Runtime Specializations for Accelerating MAnaged Languages on FPGAs](#2020---Papadimitriou-Transparent-Compiler-and-Runtime-Specializations-for-Accelerating-MAnaged-Languages-on-FPGAs)
+
 [2020 - Proskurin, xMP Selective Memory Protection for Kernel and User Space](#2020---Proskurin-xMP-Selective-Memory-Protection-for-Kernel-and-User-Space)
 
 [2020 - Schrammel, Donky Domain Keys - Efficient In-Process Isolation for RISC-V and x86](#2020---Schrammel-Donky-Domain-Keys---Efficient-In-Process-Isolation-for-RISC-V-and-x86)
@@ -290,7 +313,13 @@ $ python utils.py [flags]
 
 [2020 - Zandberg, Minimal Virtual Machines on IoT Microcontrollers The Case of Berkeley Packet Filters with rBPF](#2020---Zandberg-Minimal-Virtual-Machines-on-IoT-Microcontrollers-The-Case-of-Berkeley-Packet-Filters-with-rBPF)
 
+[2021 - Chevalier-Boisvert, YJIT A Basic Block Versioning JIT for Ruby](#2021---Chevalier-Boisvert-YJIT-A-Basic-Block-Versioning-JIT-for-Ruby)
+
 [2021 - Dobis, Open-Source Verification with Chisel and Scala](#2021---Dobis-Open-Source-Verification-with-Chisel-and-Scala)
+
+[2021 - Dorflinger, A Comparative Survey of Open-Source Application-Class RISC-V Processor Implementations](#2021---Dorflinger-A-Comparative-Survey-of-Open-Source-Application-Class-RISC-V-Processor-Implementations)
+
+[2021 - Herdt, Adaptive Simulation with Virtual Prototypes in an open-source RISC-V evaluation platform](#2021---Herdt-Adaptive-Simulation-with-Virtual-Prototypes-in-an-open-source-RISC-V-evaluation-platform)
 
 [2021 - Lu, A Survey on RISC-V Security Hardware and Architecture](#2021---Lu-A-Survey-on-RISC-V-Security-Hardware-and-Architecture)
 
@@ -601,6 +630,12 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ---
 
 
+### 2001 - Ogel, Towards Active Applications the Virtual Virtual Machine Project
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2001 - Paleczny, The Java HotSpot Server Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -614,6 +649,12 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 
 
 ### 2002 - Ertl, Vmgen a Generator of Efficient Virtual Machine Interpreters
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2002 - Lattner, The LLVM Instruction Set and Compilation Strategy
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -638,6 +679,12 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 
 
 ### 2003 - Govindavajhala, Using Memory Errors to Attack a Virtual Machine
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2003 - Merrill, GENERIC and GIMPLE A New Tree Representation for Entire Functions
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -880,6 +927,18 @@ This solution is expensive to copy values but ensures portability. Strings are i
 
 
 ### 2006 - Russell, Eliminating Synchronization-Related Atomic Operations with Biased Locking and Bulk Rebiasing
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2007 - Bolz, How to not write Virtual Machines for Dynamic Languages
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2008 - Ancona, RPython a Step Towards Reconciling Dynamically and Statically Typed OO Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -1219,6 +1278,12 @@ To write shell-code, the high byte must be <0x7F (for XOR) otherwise the compile
 ---
 
 
+### 2010 - Swaine, Back to the futures Incremental Parallelization of Existing Sequential Runtime Systems
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1311,6 +1376,12 @@ Modern OS adopted ***data execution prevention (DEP)*** or ***writable XOR execu
 ---
 
 
+### 2013 - Duboscq, Graal IR An Extensible Declarative Intermediate Representation
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2013 - Eckert, Hardware Based Security Enhanced Direct Memory Access
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1343,6 +1414,26 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 ### 2013 - Fournet, Fully Abstract Compilation to Javascript
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2013 - Homescu, Librando Transparent Code Randomization for JIT Compilers
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[15/09/2021]
+
+**Background:** JIT compilers are extremely useful in the speedup of languages runtime such as Java or JavaScript. However, from a security point of view, they have an important characteristic: predictability. As they optimize code for performance, there are only a few optimal translation of HLL code to native code, and a JIT compiler emits one of these. Attackers can use this predictability to their advantage with attacks such as code injection or code reuse. JIT spraying is an example of the sooner while ROP is of the latter. Note that ROP attacks can even be designed at runtime in JIT compilers because an attacker can submit the gadget they want to compile down to machine code.
+
+**Librando:** The objective of librando is to diversify the code generated by the compiler. It can do so following *black-box* or *white-box* diversification. On one hand, *black-box* diversification treats the compiler as a black box and the library has no knowledge of compiler internals. The library attaches to the compiler and intercepts all branches into and out of dynamically-generated code, without requiring any changes to compiler internals. On the other hand, *white-box* diversification works with some assistance from the compiler. The code emitter notifies librando through an API when it starts running undiversified code. The library locates this code, diversifies it and provides the diversified code address back to the compiler. 
+
+It sets up several  security measures. The first one is the prevention of dynamically-generated code execution. Instead, the library disassembles the code in a cfg, diversifies every basic block then writes the blocks to a separate executable area. The library intercepts all memory allocation functions that return executable memory, then removes the executable flag on all intercepted allocation requests. In *black-box* diversification, the library catches segmentation fault signals (page faults in the MMU) and redirects execution of undiversified code to their diversified version.
+
+Several assumptions are made to simplify the implementation effort. *No stack-pointer reuse*, *no self-modifying code* and *all calls are paired with returns*. Moreover, librando has to maintain several pieces of program state such as: *processor register contents*, *native stack contents* and *POSIX signals*.
+
+Two rewriting techniques are used: **NOP insertion** and **constant blinding**. Moreover, the randomization goes through **`mmap` address randomization**, **basic block reordering**, **equivalent instruction substitution** and **register reallocation**. The implementation is presented on x86.
+
+
 
 ---
 
@@ -1931,6 +2022,12 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 ---
 
 
+### 2019 - Fumero, Dynamic Application Reconfiguration on Heterogeneous Hardware
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2019 - Kermarrec, LiteX  an open-source SoC builder and library based on Migen Python DSL
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1968,6 +2065,18 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 
 
 ### 2020 - Agache, Firecracker Lightweight Virtualization for Serverless Applications
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Ahmed, Methodologies for Quantifying Re-randomization Security and Timing under JIT-ROP
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Brennan, JVM Fuzzing for JIT-Induced Side-Channel Detection
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -2039,8 +2148,34 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 ---
 
 
+### 2020 - Geffen, Synthesizing JIT Compilers for In-Kernel DSLs
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2020 - Haeyoung, RIMI Instruction-level Memory Isolation for Embedded Systems on RISC-V
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[23/08/2021]
+
+**Previous techniques:** Usual isolation techniques such as *hardware virtualization extension*, *enclaves* and *tagged memory architectures* are not suitable for low-end embedded systems due to hardware costs or power consumption. Memory isolation ensures data can only be accessed by authorized code. Two types of isolation coexist, software- and hardware-based solutions. The first ones instrument program code by inserting instruction sequences to assign different memory permissions or sensitive data to legitimate code. These solutions often come with a significant overhead and scalability issues. Hardware-based solutions enable legitimate code to have another memory view from other code without the need for code instrumentation. These solutions are not scalable due to the limited number of memory regions that can be defined.
+
+**RISC-V native options:** RISC-V defines three privilege modes from least to most privileged: user (U), supervisor (S) and machine (M). The supervisor mode is the one the operating system runs on. Each of these mode use *control and status registers* to configure the system operation and status. RISC-V also provides *physical memory protection (PMP)* that divides memory space into up to 16 regions and assigns specific memory permissions to each region. Two CSRs `pmpcfg` (permissions) and `pmpaddr` (regions) configure the PMP.
+
+**Threat model:** Memory vulnerabilities exist in the software of the embedded system. The goal of the attacker would be to modify or leak sensitive data in the embedded system. A trusted privileged software is present in the system as *trusted computing base (TCB)*. This component guarantees the integrity of critical resources such as W+X policy on PMP regions.
+
+**RIMI: ** RIMI is a technique for instruction-level memory isolation. It introduces two domains, `domain0` and `domain1`. Each domain consists of PMP regions and dedicated instructions to access its PMP regions. The access permission is bound to the dedicated instructions for each domain and the domain switch is only allowed by the dedicated control transfer instructions. To decide which PMP regions are included in each domain, a special CSR is added.
+
+All existing instructions for memory access and control transfer are duplicated and the PMP is adjusted to check the permission according to the instructions. The control signal for added instructions is processed at the same time as the original instructions after the decoding stage. It does not affect the internal states of the core and the method can be applied to various RISC-V cores at a very small cost.
+
+For *memory instructions*, RIMI uses replicated instructions for `domain1` and existing memory instructions for `domain0`. To distinguish which domains those instructions belong to, a small logic is added at the decode stage of the processor. The signal is then passed to PMP to check memory access. For *control transfer instructions*, RIMI defines the existing `branch`, `jal` and `jalr` instructions as the ones allowed to branch to the same domain and `jalx` and `jalrx` the ones to switch domains. Control transfer instructions do not access memory directly but access in the fetch state of the pipeline. The memory access is verified in the next pipeline state and information on the executed instruction is kept until the next fetch cycle.
+
+**Domain Memory Protection (DMP):** DMP adjusts the memory permission so that only dedicated instructions can access isolated memory. It is implemented by bit-masking the PMP permission for the memory region and errors in the PMP always take precedence on the DMP ones. DMP defines an additional control status register `dmpcfg` to state from which domain the memory is accessible. 
+
+**Evaluation:** Bristol/Embescom Embedded Benchmark Suite (BEEBS) shows that RIMI presents a 0.88% overhead against the 7.74% reached by other software solutions.
+
+
 
 ---
 
@@ -2084,6 +2219,12 @@ RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction len
 
 
 ### 2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2020 - Papadimitriou, Transparent Compiler and Runtime Specializations for Accelerating MAnaged Languages on FPGAs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -2211,7 +2352,46 @@ VM adds overhead that has an impact on execution time and a measurable additiona
 ---
 
 
+### 2021 - Chevalier-Boisvert, YJIT A Basic Block Versioning JIT for Ruby
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+CRuby, the official Ruby implementation includes a JIT compiler known as MJIT that works well on synthetic benchmarks but not with production workloads. Shopify and Github rely on the interpreter side only. Truffle Ruby, JRuby, PyPy and LuaJIT are implementation efforts that unfortunately contain a gap in terms of compatibility and support for the features of the latest reference implementation.
+
+**Ruby:** Ruby has a broad set of features. Method calls perform **dynamic dispatch**. Methods can be **dynamically redefined** and the **method lookup order** can also be changed. Common operation such as integer arithmetic are not primitive and are calls that can be redefined at runtime. Ruby has support for first-class environments which allow local variable access from outside the local scope. Callees can redefine local variables in their callers.
+
+**CRuby VM:** At its core lays a stack-based interpreter which executes **YARV** bytecode one at a time, with each instruction able to push and pop values of the temporary stack. Another stack is used to keep track of control frame objects corresponding to activation records for method calls. CRuby uses a system of **tags** to differentiate small immediate values as well as the constants `true`, `false` and `nil`. Ruby makes heavy use of method calls that are categorized in 11 different types (each with a slightly different implementation of `send`).
+
+**MJIT:** MJIT compiles Ruby source by generating C source code, it then calls an external C compiler, then loads the output via dynamic linking. This limits optimizations and control.
+
+**Lazy Basic Block Versioning (LBBV):** Code for methods is compiled incrementally one basic block at a time, as opposed to method-based compilers which treat whole methods as compilation units. Code generation proceeds for as long as the compiler can determine the direction of a branch. When it cannot anymore, branch stubs are installed and execution is resumed. Hitting a stub in turn interrupts execution to resume code generation. This helps bring more details to the runtime code generation such as types and values. Code that is not executed is never compiled. Machine code is appended to an array, and stubs are generated in a separate out-of-line memory region (so they do not impact caches). A fixed maximum number of block versions can be generated for each block. The last version must always be generic, meaning it accepts any incoming value types.
+
+**YJIT:** 
+
+1. **Integration with CRuby** by using the same direct-threaded interpreter as a baseline. A counter monitors how many times a method is called and triggers YJIT.
+2. **Deoptimization** allows individual versions of a basic block to be invalidated if specific assumptions made at code generation do not hold at runtime. 
+3. **Runtime value promotion** can be used to promote runtime values to compile-time constants (equivalent of Psyco's `unlift` operator), this is done by interrupting compilation and inserting a new stub which will then peek at the runtime value and resume compilation. This is used to create **Polymorphic Inline Caches** by detecting the runtime class so that it generates specialized machine code for reading the requested property on the class. If an object of another class is encountered, it causes a jump to a stub which will call back in to the JIT to generate a specialized instance variable read for the new class.
+4. **Type Specialization** tracks and propagates type information that is then used to specialize machine code.
+
+
+
+Validation over a list of benchmarks along with the number of instruction sequences compiled by YJIT.
+
+---
+
+
 ### 2021 - Dobis, Open-Source Verification with Chisel and Scala
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2021 - Dorflinger, A Comparative Survey of Open-Source Application-Class RISC-V Processor Implementations
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2021 - Herdt, Adaptive Simulation with Virtual Prototypes in an open-source RISC-V evaluation platform
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -2243,4 +2423,5 @@ VM adds overhead that has an impact on execution time and a measurable additiona
 
 
 ---
+
 

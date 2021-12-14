@@ -142,7 +142,7 @@ def process_pdf_articles():
         # Create directory
         os.mkdir("Articles/"+article_name)
         # Add bib file
-        with open("Articles/" + articles_name + "/biblio.bib", "w") as f:
+        with open("Articles/" + article_name + "/biblio.bib", "w") as f:
             f.write(" ")
         # Add notes file
         with open("Articles/"+ article_name + "/notes.md", "w") as f:

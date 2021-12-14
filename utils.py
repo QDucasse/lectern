@@ -141,6 +141,9 @@ def process_pdf_articles():
         article_name = article.split(".")[0]
         # Create directory
         os.mkdir("Articles/"+article_name)
+        # Add bib file
+        with open("Articles/" + articles_name + "/biblio.bib", "w") as f:
+            f.write(" ")
         # Add notes file
         with open("Articles/"+ article_name + "/notes.md", "w") as f:
             f.write("<!-- Please prefix the notes with the date as in [22/12/2020] -->")

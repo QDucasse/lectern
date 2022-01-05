@@ -44,7 +44,7 @@ while True:     # Event Loop
 
     bib = []
     for folder in values['-TREE-']:
-        with open(folder + "/custombib.bib","r") as f:
+        with open(folder + "/biblio.bib","r") as f:
             bib += f.readlines()
 
     with open("biblio.bib", "w") as f:

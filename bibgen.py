@@ -47,7 +47,7 @@ while True:     # Event Loop
         with open(folder + "/biblio.bib","r") as f:
             bib += f.readlines()
 
-    with open("biblio.bib", "w") as f:
+    with open("bibgen.bib", "w") as f:
         f.writelines(bib)
 
     if event in (sg.WIN_CLOSED, 'Cancel'):

@@ -33,6 +33,7 @@ def process_pdf_articles():
     '''
     # List articles
     articles_to_process = os.listdir("articles/TO_PROCESS/")
+    articles_to_process.remove("README.md")
     if len(articles_to_process)==0:
         print("No article to process.")
         return

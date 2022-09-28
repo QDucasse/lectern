@@ -1,0 +1,72 @@
+1. Design
+
+   The goal of NOEXEC is to prevent the injection and execution of code into a
+   task's address space and render this exploit technique unusable under PaX.
+
+   There are two ways of introducing new executable code into a task's address
+   space: creating an executable mapping or modifying an already existing
+   writable/executable mapping. The first method is not handled by PaX, we
+   believe that various access control systems should manage it. The second
+   method can be stopped if we prevent the creation of writable/executable
+   mappings altogether. This also implies that we can have proper executable
+   semantics for mappings (i.e., one that is not coupled to the readability
+   of the mapping).
+
+   While having the executable semantics is not a security feature itself, it
+   plays an important role in the PaX strategy because it allows the separation
+   of the writable and executable properties on memory pages (in most systems
+   if a page is writable it is also readable and hence executable). This in
+   turn makes a number of approaches possible that otherwise would be easy to
+   defeat.
+
+   From another point of view NOEXEC is a form of least privilege enforcement.
+   In our case the idea is that if some data in a task's address space does
+   not need to be executable then it should not be, hence we need the ability
+   to mark such data (pages) non-executable. Taking this idea further, if an
+   application does not need to generate code at runtime then it should not
+   be able to, therefore we need the ability to prevent state transitions on
+   memory pages between writability and executability (if an application does
+   need the ability to generate code at runtime, then these restrictions cannot
+   be applied to it nor can we then make guarantees about exploit techniques
+   that are unusable against its bugs).
+
+   The first feature NOEXEC implements is the executable semantics on memory
+   pages. On architectures where the Memory Management Unit (MMU) has direct
+   support for this we can trivially make use of it. The main and (so far)
+   only exception is IA-32 where we have to resort to some tricks to get true
+   non-executable pages. The two approaches PaX has are based on the paging
+   and the segmentation logic of IA-32 and make various tradeoffs between
+   performance and usability (the other architectures make no such tradeoff).
+
+   The second feature of NOEXEC is making the kernel actually use the finally
+   available executable semantics. In particular, PaX makes the stack and the
+   heap (all anonymous mappings in general) non-executable. Furthermore, ELF
+   file mappings are created with the requested access rigths, that is, only
+   ELF segments holding code will actually be executable.
+
+   The last feature of NOEXEC is the locking down of permissions on memory
+   pages. This means that we prevent the creation of writable/executable file
+   mappings (anonymous mappings are already made non-executable) and we also
+   refuse to turn a writable or non-executable mapping into an executable one
+   and vice versa. Since this lockdown breaks real life applications that do
+   need to generate code at runtime, PaX allows to relax these restrictions
+   on a per executable basis (along with other features).
+
+
+2. Implementation
+
+   The Linux implementation of NOEXEC is split into two main feature sets: the
+   actual non-executable page implementations (PAGEEXEC and SEGMEXEC, the latter
+   is IA-32 only) and the page protection restrictions (MPROTECT).
+
+   PAGEEXEC uses the paging logic of the CPU whereas SEGMEXEC uses the IA-32
+   specific segmentation logic to implement the non-executable page semantics
+   (the exact details are discussed in separate documents). There is also a set
+   of changes that actually makes the kernel use the non-executable page feature
+   where it makes sense, e.g., the stack or the brk() managed heap - this is
+   implemented by simply modifying the appropriate constants to not request
+   executable memory for these areas.
+
+   Since page protection rights originate from mmap() and can be changed by
+   mprotect(), they are modified to enforce the restrictions, the details are
+   described in the MPROTECT document.

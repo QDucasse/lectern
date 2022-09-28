@@ -1,0 +1,141 @@
+1. Design
+
+   The goal of the PaX project is to research various defense mechanisms
+   against the exploitation of software bugs that give an attacker arbitrary
+   read/write access to the attacked task's address space. This class of bugs
+   contains among others various forms of buffer overflow bugs (be they stack
+   or heap based), user supplied format string bugs, etc.
+
+   It is important to realize that our focus is not on the finding and fixing
+   such bugs but rather on prevention and containment of exploit techniques.
+   For our purposes these techniques can affect the attacked task at three
+   different levels:
+
+     (1) introduce/execute arbitrary code
+     (2) execute existing code out of original program order
+     (3) execute existing code in original program order with arbitrary data
+
+   For example the well known shellcode injection technique belongs to (1)
+   while the so-called return-to-libc style technique belongs to (2).
+
+   Introducing code into a task's address space is possible by either creating
+   an executable mapping or modifying an already existing writable/executable
+   mapping. The first method can be prevented by controlling what can be mapped
+   into the task and is beyond the PaX project, access control systems are the
+   proper way of handling this. The second method can be prevented by not
+   allowing the creation of writable/executable mappings at all. While this
+   solution breaks some applications that do need such mappings, until they are
+   rewritten to handle such mappings more carefully this is the best we can do.
+   The details of this solution are in a separate document describing NOEXEC.
+
+   Executing code (be that introduced by the attacker or already present in
+   the task's address space) requires the ability to change the execution flow
+   using already existing code. Such changes occur when code dereferences a
+   function pointer. An attacker can intervene if such a pointer is stored in
+   writable memory. Although it would seem a good idea to not have function
+   pointers in writable memory at all, it is unfortunately not possible (e.g.,
+   saved return addresses from procedures are on the stack), so a different
+   approach is needed. Since the changes need to be in userland and PaX has
+   so far been a kernel oriented project, they will be implemented in the
+   future, see the details in a separate document.
+
+   The next category of features PaX employs is a form of diversification:
+   address space layout randomization (ASLR). The generic idea behind this
+   approach is based on the observation that in practice most attacks require
+   advance knowledge of various addresses in the attacked task. If we can
+   introduce entropy into such addresses each time a task is created then we
+   will force the attacker to guess or brute force it which in turn will make
+   the attack attempts quite 'noisy' because any failed attempt will likely
+   crash the target. It will be easy then to watch for and react on such
+   events. The details of this solution are in a separate document describing
+   ASLR.
+
+   Before going into the analysis of the above techniques, let's note an often
+   overlooked or misunderstood property of combining defense mechanisms. Some
+   like to look at the individual pieces of a system and arrive at a conclusion
+   regarding the effectivenes of the whole based on that (or worse, dismiss one
+   mechanism because it is not efficient without employing another, and vice
+   versa). In our case this approach can lead to misleading results. Consider
+   that one has a defense mechanism against (1) and (2) such as NOEXEC and the
+   future userland changes in PaX. If only NOEXEC is employed, one could argue
+   that it is pointless since (2) can still be used (in practice this reason
+   has often been used to dismiss non-executable stack approaches, which is
+   not to be confused with NOEXEC however). If one protects against (2) only
+   then one could equally well argue that why bother at all if the attacker
+   can go directly for (1) and then the final conclusion comes saying that
+   none of these defense mechanisms is effective. As hinted at above, this
+   turns out to be the wrong conclusion here, deploying both kinds of defense
+   mechanisms will protect against both (1) and (2) at the same time - where
+   one defense line would fail, the other prevents that (i.e., NOEXEC can be
+   broken by a return-to-libc style attack only and vice versa).
+
+   In the following we will assume that both NOEXEC (the non-executable page
+   feature and the mmap/mprotect restrictions) and full ASLR (using ET_DYN
+   executables) are active in the system. Furthermore we also require that
+   there be only PIC ELF libraries on the system and also a crash detection
+   and reaction system be in place that will prevent the execution of the
+   attacked program after a fixed (low) number of crashes. The possible venues
+   of attack against such a system are as follows:
+
+     - attack method (3) is possible with 100% reliability if the attacker
+       does not need advance knowledge of addresses in the attacked task.
+
+     - attack methods (2) and (3) are possible with 100% reliability if the
+       attacker needs advance knowledge of addresses and can derive them by
+       reading the attacked task's address space (i.e., the target has an
+       information leaking bug).
+
+     - attack methods (2) and (3) are possible with a small probability if the
+       attacker needs advance knowledge of addresses but cannot derive them
+       without resorting to guessing or a brute force search ('small' can be
+       further quantified, see the ASLR documentation).
+
+     - attack method (1) is possible if the attacker can have the attacked
+       task create, write to and mmap a file. This in turn requires attack
+       method (2), so the analysis of that applies here as well (note that
+       although not part of PaX per se, it is recommended among others, that
+       production systems use an access control system that would prevent
+       this venue of attack).
+
+   Based on the above it should come as no surprise that the future direction
+   of PaX will be to prevent or at least reduce the efficiency of method (2)
+   and eliminate or reduce the number of ways method (3) can be done (which
+   will also help counter the other methods of course).
+
+
+2. Implementation
+
+   The main line of development is Linux 2.4 on IA-32 (i386) although most
+   features already exist for alpha, ia64, parisc, ppc, sparc, sparc64 and
+   x86_64 as well and other architectures are coming as hardware becomes
+   available (thanks to the grsecurity and Hardened Gentoo projects). For
+   this reason all implementation documentation is i386 specific (the generic
+   design ideas apply to all architectures though).
+
+   The non-executable page feature exists for alpha, i386, ia64, parisc, ppc,
+   sparc, sparc64 and x86_64 while ppc64 can have the same implementation as
+   ppc. The mips and mips64 architectures are hopeless in general as they have
+   a unified TLB (the models with a split one will be supported by PaX). The
+   main document on the non-executable pages and related features is NOEXEC,
+   the two i386 specific approaches are described by PAGEEXEC and SEGMEXEC.
+
+   The mmap/mprotect restrictions are mainly architecture independent, only
+   special case handling needs architecture specific code (various pieces of
+   code that need to be executed from writable and therefore non-executable
+   memory, e.g., the stack or the PLT on some architectures). Here the main
+   document is MPROTECT whereas EMUTRAMP and EMUSIGRT describe the i386
+   specific emulations.
+
+   ASLR is also mostly architecture independent, only the randomizable bits
+   of various addresses vary among the architectures. The documents are split
+   based on the randomized region, so RANDKSTACK and RANDUSTACK describe the
+   feature for the kernel and user stack, respectively. RANDMMAP and RANDEXEC
+   are about randomizing the regions used for (among others) ELF libraries
+   and executables, respectively. The infrastructure that makes both SEGMEXEC
+   and RANDEXEC possible is vma mirroring described by the VMMIRROR document.
+
+   Since some applications need to do things that PaX prevents (runtime code
+   generation) or make assumptions that are no longer true under PaX (e.g.,
+   fixed or at least predictable addresses in the address space), we provide
+   a tool called 'chpax' that gives the end user fine grained control over the
+   various PaX features on a per executable basis.

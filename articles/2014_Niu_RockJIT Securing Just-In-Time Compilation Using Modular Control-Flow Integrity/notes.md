@@ -1,0 +1,15 @@
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[10/05/2021]
+
+Enforcing the control-flow integrity (CFI) in a JIT compiler provides a better defense against code-reuse or code-injections. The generated control-flow graph (CFG) is updated as new code is generated.
+
+**Architecture of JIT compilers:** Looking into several JIT engines (Google V8, Mozilla TraceMonkey, Facebook HHVM or LuaJIT),  they all consist of (1) a ***baseline executor*** that is either an interpreter that interprets (*e.g. Java bytecode*) or that compiles source code directly to unoptimized native code (*e.g. V8*). It also consists of an ***optimizing compiler*** that performs runtime profiling to identify hot code or types and generates optimized native code. Optimization can manifest as either *method-based* or *trace-based* and the corresponding blocks are optimized. Next, a ***garbage collector*** provides automatic memory management (allocation and collection).
+
+**Modular Control-Flow Integrity:** CFI system with low performance overhead and modular support. A program is divided in modules and each module contains not only code and data but also auxiliary information used to generate a new CFG when linking with other modules. MCFI represents the CFG in tables during runtime. Thread-safe table transactions are used to access and update the tables.
+
+**Security:** The JIT engine is modified to cooperate with RockJIT's compilation toolchain and generates an MCFI module. The module is loaded by RockJIT into a sandbox. After loading, RockJIT generates a control-flow graph. The sandbox around the compiler restricts their control flow according to the tables and also restricts the memory access to be inside the box. To rule out code-injection attacks, RockJIT uses W+X protections, however the code heap needs to be both writable and executable. RockJIT uses a *shadow code heap* (similar to what *NaCl-JIT* does), it is mapped to the same physical pages as the code heap in the sandbox but with different permissions. The shadow code heap is made readable and writable but not executable. Instead of directly modifying this shadow heap, the application invokes RockJIT services to install new or modify existing native code. RockJIT enforces CFI on both the JIT compiler and the JITed code but applies different levels of precision to them. For the compiler, it applies a C++ CFG strategy to produce a relatively fine-grained CFG offline while the CFG for the JITed code is coarse-grained.
+
+**Verification:** The verifier maintains three sets of addresses that are code addresses in the code heap. **(1)** ***Pseudo-instruction start addresses (PSA)***, this set remembers the start addresses of all pseudo instructions (defined either as a checked indirect branch, a masked memory write or an instruction that is neither an indirect branch nor an indirect memory write). **(2)** ***Indirect branch targets (IBT)***  and **(3)** ***Direct branch targets***. It verifies several conditions on those sets. Those verifications are performed on native code emission, deletion or modification.
+
+Technical implementations in C++ follow.

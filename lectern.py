@@ -86,6 +86,8 @@ $ python lectern.py --genreadme
 $ python lectern.py --bibgui
 # or -b. Opens the GUI to generate a bibgen.bib file with selected articles.
 
+$ python lectern.py --missbib
+# or -m. Checks for missing or empty biblio files.
 ```
 
 ## Article notes

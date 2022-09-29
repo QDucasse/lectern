@@ -6,11 +6,14 @@ This repository contains the different articles and the bibliography (in BibTeX 
 $ python lectern.py --process
 # or -p. Creates a repository and empty notes.md file for each pdf in
 
-$ python utils.py --genreadme
+$ python lectern.py --genreadme
 # or -g. Adds the notes to the present README.md file
 
-$ python utils.py --genreadme
+$ python lectern.py --bibgui
 # or -b. Opens the GUI to generate a bibgen.bib file with selected articles.
+
+$ python lectern.py --missbib
+# or -m. Checks for missing or empty biblio files.
 ```
 
 ## Article notes

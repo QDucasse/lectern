@@ -2,30 +2,17 @@ import sys
 import os
 import PySimpleGUI as sg
 
-bib_name = "biblio.bib"
+# $ python lectern.py --process
+# or -p. Creates a repository and empty notes.md file for each pdf in
+# $ python lectern.py --genreadme
+# or -g. Adds the notes to the present README.md file
+# $ python lectern.py --bibgui
+# or -b. Opens the GUI to generate a bibgen.bib file with selected articles.
 
-def find_entry(year, author, title, database):
-    unwanted_characters = [",", ".", ":", "{", "}", '"', "'", "+", "`", "^", "&", "*", "?", "!", "\\", "/", "™"]
-    for entry in database.entries:
-        # Process unwanted characters
-        try:
-            modified_title = entry['title'].strip()
-            modified_author = entry['author'].strip()
-        except KeyError:
-            print(entry)
-            print("Error when processing: " +title)
-        for char in unwanted_characters:
-            modified_title =   modified_title.replace(char, "")
-            modified_author = modified_author.replace(char, " ")
-        # Compare Title
-        # print("Comparing '" + modified_title + "' with '" + title + "'")
-        if title.lower() in modified_title.lower():
-            return entry
-        # Compare year and author
-        elif year == entry['year'] and author.lower() in modified_author.lower():
-            return entry
-    return "Entry not found!"
 
+# =================================
+#            Process
+# =================================
 
 def process_pdf_articles():
     '''
@@ -41,16 +28,24 @@ def process_pdf_articles():
         # Extract name
         article_name = article.split(".")[0]
         # Create directory
-        os.mkdir("articles/"+article_name)
+        path = "articles/"+article_name
+        if os.path.exists(path):
+            print(" - " + article_name + "\n ↳ Article directory already present, continuing...")
+            continue
+        os.mkdir(path)
         # Add bib file
-        with open("articles/" + article_name + "/biblio.bib", "w") as f:
+        with open(path + "/biblio.bib", "w") as f:
             f.write(" ")
         # Add notes file
-        with open("articles/"+ article_name + "/notes.md", "w") as f:
+        with open(path + "/notes.md", "w") as f:
             f.write("<!-- Please prefix the notes with the date as in [22/12/2020] -->")
         os.rename("articles/TO_PROCESS/" + article, "articles/"+ article_name + "/" + article_name + ".pdf")
-        print("Article processed: " + article_name)
+        print(" - " + article_name + "\n ↳ Article processed in its corresponding directory!")
 
+
+# =================================
+#         README generation
+# =================================
 
 def generate_readme():
     '''
@@ -58,7 +53,7 @@ def generate_readme():
     '''
     # Process all files
     articles = os.listdir("articles/")
-    articles = [article for article in articles if article != "TO_PROCESS"]
+    articles.remove("TO_PROCESS")
     article_dict = {}
     for article in articles:
         print(article)
@@ -85,11 +80,12 @@ This repository contains the different articles and the bibliography (in BibTeX 
 $ python lectern.py --process
 # or -p. Creates a repository and empty notes.md file for each pdf in
 
-$ python utils.py --genreadme
+$ python lectern.py --genreadme
 # or -g. Adds the notes to the present README.md file
 
-$ python utils.py --genreadme
+$ python lectern.py --bibgui
 # or -b. Opens the GUI to generate a bibgen.bib file with selected articles.
+
 ```
 
 ## Article notes
@@ -102,6 +98,11 @@ $ python utils.py --genreadme
 
         for item in sorted_items:
             f.write(item[1][1] + "\n")
+
+
+# =================================
+#        GUI bib generation
+# =================================
 
 
 def open_bib_gui():
@@ -154,6 +155,27 @@ def add_files_in_folder(parent, dirname):
     return treedata
 
 
+# =================================
+#        Check missing bibs
+# =================================
+
+def check_missing_bibs():
+    articles = os.listdir("articles/")
+    articles.remove("TO_PROCESS")
+    missing_bibs = []
+    for article in articles:
+        bib_path = "articles/" + article + "/biblio.bib"
+        bib_file_exists = os.path.exists(bib_path) and os.path.getsize(bib_path) > 0
+        if not bib_file_exists:
+            missing_bibs.append(article)
+    if len(missing_bibs) > 0:
+        print("Missing bibs:")
+        for bib in missing_bibs:
+            print(" - " + bib)
+    else:
+        print("No missing bibs!")
+
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Helper for Bibliography handling")
@@ -166,19 +188,26 @@ if __name__ == "__main__":
         help="Modify the README with the different notes from the articles"
     )
     parser.add_argument(
-        "-b", "--guibib", action="store_true",
+        "-b", "--bibgui", action="store_true",
         help="Open the GUI to create a new biblio file"
+    )
+    parser.add_argument(
+        "-m", "--missbib", action="store_true",
+        help="Checks for missing bibliographic references"
     )
 
     args = parser.parse_args(sys.argv[1:])
     if args.process:
         process_pdf_articles()
-        print("articles in TO_PROCESS have their dedicated folder!")
+        print("________________________________\n\nArticles in TO_PROCESS have their dedicated folder!")
     elif args.generate:
         generate_readme()
-        print("Notes propagated into the main README!")
-    elif args.guibib:
+        print("________________________________\n\nNotes propagated into the main README!")
+    elif args.bibgui:
         open_bib_gui()
-        print("Biblio generated in bibgen.bib")
+        print("________________________________\n\nBiblio generated in bibgen.bib!")
+    elif args.missbib:
+        check_missing_bibs()
+        print("________________________________\n\nBibliographic references checked!")
     else:
         parser.print_help()

@@ -469,6 +469,8 @@ $ python utils.py --genreadme
 
 [2022 - Park, Bratter An Instruction Set Extension for Forward Control-Flow Integrity in RISC-V](#2022---Park-Bratter-An-Instruction-Set-Extension-for-Forward-Control-Flow-Integrity-in-RISC-V)
 
+[2022 - Qin, DeJITLeak Eliminating JIT-Induced Timing Side-Channel Leaks](#2022---Qin-DeJITLeak-Eliminating-JIT-Induced-Timing-Side-Channel-Leaks)
+
 [2022 - Saileshwar, HeapCheck Low-cost Hardware Support for Memory Safety](#2022---Saileshwar-HeapCheck-Low-cost-Hardware-Support-for-Memory-Safety)
 
 [2022 - Schneider, SoK Hardware-supported Trusted Execution Environments](#2022---Schneider-SoK-Hardware-supported-Trusted-Execution-Environments)
@@ -3159,6 +3161,12 @@ The two CFI solutions presented are **function signature check**, check at the g
 **Evaluation:**
 
 The solution is presented on top of the Spike RISC-V simulator ans as an LLVM pass. The code size overhead usually is lower than 1% for the function signature solution and around 2% for the other (up to 11% in worst-case scenario!). Execution time overhead is less than 6%!
+
+---
+
+
+### 2022 - Qin, DeJITLeak Eliminating JIT-Induced Timing Side-Channel Leaks
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 

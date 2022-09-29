@@ -35,7 +35,7 @@ def process_pdf_articles():
         os.mkdir(path)
         # Add bib file
         with open(path + "/biblio.bib", "w") as f:
-            f.write(" ")
+            f.write("")
         # Add notes file
         with open(path + "/notes.md", "w") as f:
             f.write("<!-- Please prefix the notes with the date as in [22/12/2020] -->")
@@ -167,8 +167,13 @@ def check_missing_bibs():
     missing_bibs = []
     for article in articles:
         bib_path = "articles/" + article + "/biblio.bib"
-        bib_file_exists = os.path.exists(bib_path) and os.path.getsize(bib_path) > 0
-        if not bib_file_exists:
+        bib_file_filled = os.path.exists(bib_path) and os.path.getsize(bib_path) > 0
+        # Check if it consists of a single space character
+        if bib_file_filled:
+            with open(bib_path, "r") as f:
+                if f.readline() == " ":
+                    bib_file_filled = False
+        if not bib_file_filled:
             missing_bibs.append(article)
     if len(missing_bibs) > 0:
         print("Missing bibs:")

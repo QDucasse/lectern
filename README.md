@@ -182,7 +182,7 @@ $ python lectern.py --missbib
 
 [2010 - Blazakis, Interpreter Exploitation Pointer Inference and JIT Spraying](#2010---Blazakis-Interpreter-Exploitation-Pointer-Inference-and-JIT-Spraying)
 
-[2010 - Brunthaler, Reusable Inline Caching for JavaScript Performance](#2010---Brunthaler-Reusable-Inline-Caching-for-JavaScript-Performance)
+[2010 - Brunthaler, Inline Caching Meets Quickening](#2010---Brunthaler-Inline-Caching-Meets-Quickening)
 
 [2010 - Checkoway, Return-Oriented Programming without Returns](#2010---Checkoway-Return-Oriented-Programming-without-Returns)
 
@@ -256,11 +256,17 @@ $ python lectern.py --missbib
 
 [2014 - Bosman, Framing Signals A Return to Portable Shellcode](#2014---Bosman-Framing-Signals-A-Return-to-Portable-Shellcode)
 
+[2014 - Carlini, ROP is Still Dangerous Breaking Modern Defenses](#2014---Carlini-ROP-is-Still-Dangerous-Breaking-Modern-Defenses)
+
+[2014 - Davi, Stitching the Gadgets On the Ineffectiveness of Coarse-Grained Control-Flow Integrity Protection](#2014---Davi-Stitching-the-Gadgets-On-the-Ineffectiveness-of-Coarse-Grained-Control-Flow-Integrity-Protection)
+
 [2014 - Duboscq, Speculation Without Regret Reducing Deoptimization Meta-data in the Graal Compiler](#2014---Duboscq-Speculation-Without-Regret-Reducing-Deoptimization-Meta-data-in-the-Graal-Compiler)
 
 [2014 - Eckert, FPGA-Based System Virtual Machines](#2014---Eckert-FPGA-Based-System-Virtual-Machines)
 
 [2014 - Freundenberg, SqueakJS a Modern and Practical Smalltalk that Runs in any Browser](#2014---Freundenberg-SqueakJS-a-Modern-and-Practical-Smalltalk-that-Runs-in-any-Browser)
+
+[2014 - Goktas, Out Of Control Overcoming Control-Flow Integrity](#2014---Goktas-Out-Of-Control-Overcoming-Control-Flow-Integrity)
 
 [2014 - Humer, A Domain-Specific Language for Building Self-Optimizing AST Interpreters](#2014---Humer-A-Domain-Specific-Language-for-Building-Self-Optimizing-AST-Interpreters)
 
@@ -322,7 +328,7 @@ $ python lectern.py --missbib
 
 [2016 - Gruss, Rowhammer js A Remote Software-Induced Fault Attack in JavaScript](#2016---Gruss-Rowhammer-js-A-Remote-Software-Induced-Fault-Attack-in-JavaScript)
 
-[2016 - Ibeyi, Pydgin for RISC-V A Fast and Productive Instruction-Set Simulator](#2016---Ibeyi-Pydgin-for-RISC-V-A-Fast-and-Productive-Instruction-Set-Simulator)
+[2016 - Ilbeyi, Pydgin for RISC-V A Fast and Productive Instruction-Set Simulator](#2016---Ilbeyi-Pydgin-for-RISC-V-A-Fast-and-Productive-Instruction-Set-Simulator)
 
 [2016 - Lin, Rust as a Language for High Performance GC Implementation](#2016---Lin-Rust-as-a-Language-for-High-Performance-GC-Implementation)
 
@@ -450,6 +456,8 @@ $ python lectern.py --missbib
 
 [2021 - Dorflinger, A Comparative Survey of Open-Source Application-Class RISC-V Processor Implementations](#2021---Dorflinger-A-Comparative-Survey-of-Open-Source-Application-Class-RISC-V-Processor-Implementations)
 
+[2021 - Harris, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware](#2021---Harris-Morpheus-II-a-RISC-V-Security-Extension-for-Protecting-Vulnerable-Software-and-Hardware)
+
 [2021 - Harros, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware](#2021---Harros-Morpheus-II-a-RISC-V-Security-Extension-for-Protecting-Vulnerable-Software-and-Hardware)
 
 [2021 - Herdt, Adaptive Simulation with Virtual Prototypes in an open-source RISC-V evaluation platform](#2021---Herdt-Adaptive-Simulation-with-Virtual-Prototypes-in-an-open-source-RISC-V-evaluation-platform)
@@ -465,8 +473,6 @@ $ python lectern.py --missbib
 [2021 - Suzaki, TS-Perf General Performance Measurement of Trusted Execution Environment and Rich Execution Environment on Intel SGX Arm TrustZone and RISC-V Keystone](#2021---Suzaki-TS-Perf-General-Performance-Measurement-of-Trusted-Execution-Environment-and-Rich-Execution-Environment-on-Intel-SGX-Arm-TrustZone-and-RISC-V-Keystone)
 
 [2022 - Cloosters, RiscyROP Automated Return-Oriented Programming Attacks on RISC-V and ARM64](#2022---Cloosters-RiscyROP-Automated-Return-Oriented-Programming-Attacks-on-RISC-V-and-ARM64)
-
-[2022 - Harris, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware](#2022---Harris-Morpheus-II-a-RISC-V-Security-Extension-for-Protecting-Vulnerable-Software-and-Hardware)
 
 [2022 - Izawa, Two-level Just-in-Time Compilation with One Interpreter and One Engine](#2022---Izawa-Two-level-Just-in-Time-Compilation-with-One-Interpreter-and-One-Engine)
 
@@ -1368,7 +1374,7 @@ Flash objects are allocated using a custom allocator which boils down to `Virtua
 ---
 
 
-### 2010 - Brunthaler, Reusable Inline Caching for JavaScript Performance
+### 2010 - Brunthaler, Inline Caching Meets Quickening
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -1868,6 +1874,18 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 ---
 
 
+### 2014 - Carlini, ROP is Still Dangerous Breaking Modern Defenses
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2014 - Davi, Stitching the Gadgets On the Ineffectiveness of Coarse-Grained Control-Flow Integrity Protection
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2014 - Duboscq, Speculation Without Regret Reducing Deoptimization Meta-data in the Graal Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1881,6 +1899,12 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 
 
 ### 2014 - Freundenberg, SqueakJS a Modern and Practical Smalltalk that Runs in any Browser
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
+### 2014 - Goktas, Out Of Control Overcoming Control-Flow Integrity
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -2284,7 +2308,7 @@ JITScope enforces **CFI ** on both statically compiled and JIT compiled code as 
 ---
 
 
-### 2016 - Ibeyi, Pydgin for RISC-V A Fast and Productive Instruction-Set Simulator
+### 2016 - Ilbeyi, Pydgin for RISC-V A Fast and Productive Instruction-Set Simulator
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
@@ -3033,6 +3057,12 @@ Validation over a list of benchmarks along with the number of instruction sequen
 ---
 
 
+### 2021 - Harris, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+---
+
+
 ### 2021 - Harros, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -3092,12 +3122,6 @@ Validation over a list of benchmarks along with the number of instruction sequen
 
 
 ### 2022 - Cloosters, RiscyROP Automated Return-Oriented Programming Attacks on RISC-V and ARM64
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
-
----
-
-
-### 2022 - Harris, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---

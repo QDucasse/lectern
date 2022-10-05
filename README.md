@@ -168,6 +168,8 @@ $ python lectern.py --missbib
 
 [2008 - One, Smashing the Stack for Fun and Profit](#2008---One-Smashing-the-Stack-for-Fun-and-Profit)
 
+[2009 - Abadi, Control-Flow Integrity Principles Implementations and Applications](#2009---Abadi-Control-Flow-Integrity-Principles-Implementations-and-Applications)
+
 [2009 - Bolz, Tracing the Meta-Level PyPys Tracing JIT Compiler](#2009---Bolz-Tracing-the-Meta-Level-PyPys-Tracing-JIT-Compiler)
 
 [2009 - Frampton, Demystifying Magic High-Level Low-Level Programming](#2009---Frampton-Demystifying-Magic-High-Level-Low-Level-Programming)
@@ -335,6 +337,8 @@ $ python lectern.py --missbib
 [2016 - Lopriore, Memory Protection in Embedded Systems](#2016---Lopriore-Memory-Protection-in-Embedded-Systems)
 
 [2016 - Maas, Grail Quest A New Proposal for Hardware-assisted Garbage Collection](#2016---Maas-Grail-Quest-A-New-Proposal-for-Hardware-assisted-Garbage-Collection)
+
+[2017 - Burow, Control-Flow Integrity Precision Security and Performance](#2017---Burow-Control-Flow-Integrity-Precision-Security-and-Performance)
 
 [2017 - Frassetto, JITGuard Hardening Just-in-time Compilers with SGX](#2017---Frassetto-JITGuard-Hardening-Just-in-time-Compilers-with-SGX)
 
@@ -1242,6 +1246,26 @@ struct list {
 ---
 
 
+### 2009 - Abadi, Control-Flow Integrity Principles Implementations and Applications
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+
+
+[04/10/2022]
+
+**Threat model:** An attacker that has full control over the entire data memory of the executing program.
+
+**Control-Flow Integrity  (CFI):** defines **security policies** that dictates how software execution must follow a given path. This path is defined in the **Control-Flow Graph (CFG)** determined ahead-of-time. The CFG is determined by analysis, either *source-code analysis*, *binary analysis* or *execution profiling*.  The enforcement is done using a combination of **lightweight static verification** and **machine-code rewriting that instruments software with runtime checks**. The runtime checks ensure that control flow remains within a given CFG. CFI enforcement protects a wide range of attacks, whther stack-based (buffer overflows) or heap-based (jump-to-libc). It will not however cover attacks within the vbounds of the CFG (*e.g.* incorrect string parsing).
+
+**Related Works:** (1) *SFI and Inlined Reference Monitors (IRMs)* are a general technique for enforcing fine-grained security policies through inline checks. SFI is a special IRM that performs dynamic checks for the purposes of memory protection. They operate by adding code into the program that needs to be monitored. The performance is problematic because of the need for control-flow checks. (2) *Vulnerability Mitigation with Secrets* such as PointGuard that stores code addresses in an encrypted form in data memory. The reliability on a secret value remains uncertain.
+
+**Solution:** CFI relies on dynamic checks implemented by machine-code rewriting (verified by static inspection). CFI requires that when a machine code instruction transfers control, it targets a valid destination determined by the CFG ahead of time. For static destinations, this is verified statically but control-flows whose destination is determined at runtime have to be dynamically checked. To determine if an address sane, multiple strategies are available. A check against a set of address ranges adds unacceptable overhead. Three instructions: `label ID` that has no effect, `call, ID, DST` that jumps to the address in `DST` if the `ID` is correct and the corresponding `ret ID` . The instrumentation modifies each source instruction and each possible destination instruction of computed control-flow transfer. It adds before each source a dynamic check (ID-check) that ensures the runtime destination has the ID of the proper equivalence class (that have to be defined in the CFG).
+
+
+
+---
+
+
 ### 2009 - Bolz, Tracing the Meta-Level PyPys Tracing JIT Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
@@ -1991,9 +2015,11 @@ Enforcing the control-flow integrity (CFI) in a JIT compiler provides a better d
 
 **Security:** The JIT engine is modified to cooperate with RockJIT's compilation toolchain and generates an MCFI module. The module is loaded by RockJIT into a sandbox. After loading, RockJIT generates a control-flow graph. The sandbox around the compiler restricts their control flow according to the tables and also restricts the memory access to be inside the box. To rule out code-injection attacks, RockJIT uses W+X protections, however the code heap needs to be both writable and executable. RockJIT uses a *shadow code heap* (similar to what *NaCl-JIT* does), it is mapped to the same physical pages as the code heap in the sandbox but with different permissions. The shadow code heap is made readable and writable but not executable. Instead of directly modifying this shadow heap, the application invokes RockJIT services to install new or modify existing native code. RockJIT enforces CFI on both the JIT compiler and the JITed code but applies different levels of precision to them. For the compiler, it applies a C++ CFG strategy to produce a relatively fine-grained CFG offline while the CFG for the JITed code is coarse-grained.
 
-**Verification:** The verifier maintains three sets of addresses that are code addresses in the code heap. **(1)** ***Pseudo-instruction start addresses (PSA)***, this set remembers the start addresses of all pseudo instructions (defined either as a checked indirect branch, a masked memory write or an instruction that is neither an indirect branch nor an indirect memory write). **(2)** ***Indirect branch targets (IBT)***  and **(3)** ***Direct branch targets***. It verifies several conditions on those sets. Those verifications are performed on native code emission, deletion or modification.
+**Verification:** The verifier maintains three sets of addresses that are code addresses in the code heap. **(1)** ***Pseudo-instruction start addresses (PSA)***, this set remembers the start addresses of all pseudo instructions (defined either as a checked indirect branch, a masked memory write or an instruction that is neither an indirect branch nor an indirect memory write). **(2)** ***Indirect branch targets (IBT)***  and **(3)** ***Direct branch targets***. It verifies several conditions on those sets.
 
-Technical implementations in C++ follow.
+[05/10/2022]
+
+Those verifications are performed on native code emission, deletion or modification. The three address sets presented earlier are constructed at code installation. The verifier performs address-set updates and constraint checking in one phase: (1) **code installation** checks code and updates address sets, copies the code to the shadow heap and MCFI updates is tables, (2) **code deletion** checks that direct branches outside the code region do not target any instruction within, remove related entries in the MCDI table and checks that there are no threads in the code region (3) **code modification** boils down to a code deletion followed by a code installation.
 
 ---
 
@@ -2358,6 +2384,12 @@ The objective is to design a ***pauseless GC algorithm*** that has to be perform
 The mark unit consists of three parts: the ***reader*** that polls the range until it has received all roots, the ***mark queue*** that is implemented as on-chip SRAM and the ***address range*** used to communicate with the between CPUs and the GC. Once the roots have been loaded, the ***marker*** and the ***tracer*** perform the mark phase. The marker is responsible for taking an object pointer from the mark queue, sending out an atomic fetch-and-or request to mark and read the object's header and, put it into a ***trace queue*** (if the object was unmarked and had at least one outgoing reference). This queue stores pairs of object pointers and number of references associated. The tracer then takes elements from this queue and issues read requests to load the references within the object into the mark queue as they return. This design decouples the different types of memory access necessary for the mark phase. The marker and tracer work together to maximize the memory bandwidth because if the tracer is busy copying one long object, the marker can run ahead and queue up additional objects . Similarly, if the marker is busy marking objects that have been marked before, the tracer can work through the remainder of the trace queue. This design is enabled by the object layout. The relocation unit **finds** pages that are mostly garbage, **builds** a side-table of forwarding pointers, **protects** the original page in the page table and **moves** objects over to the new page.
 
 Changes to CPU consist of an added read barrier mechanism fully implemented in hardware than using a user-level trap. Three important cases are added ***NMT fault***, ***Relocation fault*** and ***Stale reference fault***
+
+---
+
+
+### 2017 - Burow, Control-Flow Integrity Precision Security and Performance
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
 
 ---
 

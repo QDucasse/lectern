@@ -107,6 +107,20 @@ $ python lectern.py --missbib
 # =================================
 
 
+
+def add_files_in_folder(parent, dirname, ignored_files):
+    # Base64 versions of images of a file. PNG files (may not work with PySimpleGUI27, swap with GIFs)
+    file_icon = b'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABU0lEQVQ4y52TzStEURiHn/ecc6XG54JSdlMkNhYWsiILS0lsJaUsLW2Mv8CfIDtr2VtbY4GUEvmIZnKbZsY977Uwt2HcyW1+dTZvt6fn9557BGB+aaNQKBR2ifkbgWR+cX13ubO1svz++niVTA1ArDHDg91UahHFsMxbKWycYsjze4muTsP64vT43v7hSf/A0FgdjQPQWAmco68nB+T+SFSqNUQgcIbN1bn8Z3RwvL22MAvcu8TACFgrpMVZ4aUYcn77BMDkxGgemAGOHIBXxRjBWZMKoCPA2h6qEUSRR2MF6GxUUMUaIUgBCNTnAcm3H2G5YQfgvccYIXAtDH7FoKq/AaqKlbrBj2trFVXfBPAea4SOIIsBeN9kkCwxsNkAqRWy7+B7Z00G3xVc2wZeMSI4S7sVYkSk5Z/4PyBWROqvox3A28PN2cjUwinQC9QyckKALxj4kv2auK0xAAAAAElFTkSuQmCC'
+    files = sorted(os.listdir(dirname))
+    for ifile in ignored_files:
+        files.remove(ifile)
+    treedata = sg.TreeData()
+    for f in files:
+        fullname = os.path.join(dirname, f)
+        treedata.Insert(parent, fullname, f, values=[os.stat(fullname).st_size], icon=file_icon)
+    return treedata
+
+
 def open_bib_gui():
     '''
     Opens a simple gui to select articles to include in a bib. The generated bib is called bibgen.bib.
@@ -114,7 +128,7 @@ def open_bib_gui():
     sg.theme('light brown 8')
     starting_path = "./articles"
 
-    treedata = add_files_in_folder('', starting_path)
+    treedata = add_files_in_folder('', starting_path, ["TO_PROCESS", ".gitignore"])
     layout = [[sg.Tree(
         data=treedata,
         headings=[],
@@ -146,17 +160,6 @@ def open_bib_gui():
     window.close()
 
 
-def add_files_in_folder(parent, dirname):
-    # Base64 versions of images of a file. PNG files (may not work with PySimpleGUI27, swap with GIFs)
-    file_icon = b'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABU0lEQVQ4y52TzStEURiHn/ecc6XG54JSdlMkNhYWsiILS0lsJaUsLW2Mv8CfIDtr2VtbY4GUEvmIZnKbZsY977Uwt2HcyW1+dTZvt6fn9557BGB+aaNQKBR2ifkbgWR+cX13ubO1svz++niVTA1ArDHDg91UahHFsMxbKWycYsjze4muTsP64vT43v7hSf/A0FgdjQPQWAmco68nB+T+SFSqNUQgcIbN1bn8Z3RwvL22MAvcu8TACFgrpMVZ4aUYcn77BMDkxGgemAGOHIBXxRjBWZMKoCPA2h6qEUSRR2MF6GxUUMUaIUgBCNTnAcm3H2G5YQfgvccYIXAtDH7FoKq/AaqKlbrBj2trFVXfBPAea4SOIIsBeN9kkCwxsNkAqRWy7+B7Z00G3xVc2wZeMSI4S7sVYkSk5Z/4PyBWROqvox3A28PN2cjUwinQC9QyckKALxj4kv2auK0xAAAAAElFTkSuQmCC'
-    files = sorted(os.listdir(dirname))
-    treedata = sg.TreeData()
-    for f in files:
-        fullname = os.path.join(dirname, f)
-        treedata.Insert(parent, fullname, f, values=[os.stat(fullname).st_size], icon=file_icon)
-    return treedata
-
-
 # =================================
 #        Check missing bibs
 # =================================
@@ -184,6 +187,61 @@ def check_missing_bibs():
 
 
 # =================================
+#              Tags
+# =================================
+
+def collect_tags():
+    articles = os.listdir("articles/")
+    articles.remove("TO_PROCESS")
+    tags = {}
+    for article in articles:
+        # Extract the last line
+        with open("articles/" + article + "/notes.md", 'r') as f:
+            last_line = f.readlines()[-1]
+        # Process the last line
+        if last_line.startswith("##### tags:"):
+            # Extract tags
+            article_tags = last_line.split("##### tags:")[1].split(",")
+            article_tags = [tag.strip() for tag in article_tags]
+            # Add the article to the corresponding entry in the dict
+            for tag in article_tags:
+                if tag in tags:
+                    tags[tag].append(article)
+                else:
+                    tags[tag] = [article]
+    return dict(sorted(tags.items()))
+
+
+def display_tags(tags):
+    nb_digits = len(str(len(tags.keys())))
+    print("Available tags:\n")
+    for i, tag in enumerate(tags):
+        sub_str = str(i+1) + "."
+        print("{0:>{padding}}{1}".format(sub_str, tag, padding=(nb_digits + 1)))
+    selection = int(input("\nSelect the tag you want:\n_______________________\n> "))
+    return list(tags.items())[selection - 1]
+
+
+def create_tagged_directory(tag_result):
+    tag_name, tagged_articles = tag_result
+    tag_dir_path = "tags/" + tag_name
+    if not os.path.exists(tag_dir_path):
+        os.makedirs(tag_dir_path)
+    for article in tagged_articles:
+        sym_src_dir = "../../articles/{}".format(article)
+        sym_dst_dir = "tags/{}/{}".format(tag_name, article)
+        temp_link = sym_dst_dir + ".new"
+        os.symlink(sym_src_dir, temp_link)
+        os.rename(temp_link, sym_dst_dir)
+
+
+def handle_tag():
+    tag_dict = collect_tags()
+    tag_selection = display_tags(tag_dict)
+    create_tagged_directory(tag_selection)
+
+
+# =================================
 #          Main and CLI
 # =================================
 
@@ -206,6 +264,10 @@ if __name__ == "__main__":
         "-m", "--missbib", action="store_true",
         help="Checks for missing bibliographic references"
     )
+    parser.add_argument(
+        "-t", "--tags", action="store_true",
+        help="Display tags to choose from and get corresponding articles"
+    )
 
     args = parser.parse_args(sys.argv[1:])
     if args.process:
@@ -220,5 +282,8 @@ if __name__ == "__main__":
     elif args.missbib:
         check_missing_bibs()
         print("________________________________\n\nBibliographic references checked!")
+    elif args.tags:
+        handle_tag()
+        print("________________________________\n\nTag directory created!")
     else:
         parser.print_help()

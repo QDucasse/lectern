@@ -183,6 +183,10 @@ def check_missing_bibs():
         print("No missing bibs!")
 
 
+# =================================
+#          Main and CLI
+# =================================
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Helper for Bibliography handling")

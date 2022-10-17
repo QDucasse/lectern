@@ -218,7 +218,9 @@ def display_tags(tags):
     for i, tag in enumerate(tags):
         sub_str = str(i+1) + "."
         print("{0:>{padding}}{1}".format(sub_str, tag, padding=(nb_digits + 1)))
-    selection = int(input("\nSelect the tag you want:\n_______________________\n> "))
+    selection = input("\nSelect the tag you want:\n_______________________\n> ")
+    if not selection.isdigit():
+        exit()
     return list(tags.items())[selection - 1]
 
 
@@ -239,6 +241,12 @@ def handle_tag():
     tag_dict = collect_tags()
     tag_selection = display_tags(tag_dict)
     create_tagged_directory(tag_selection)
+
+
+def handle_all_tags():
+    tag_dict = collect_tags()
+    for elt in tag_dict.items():
+        create_tagged_directory(elt)
 
 
 # =================================
@@ -265,9 +273,14 @@ if __name__ == "__main__":
         help="Checks for missing bibliographic references"
     )
     parser.add_argument(
-        "-t", "--tags", action="store_true",
+        "-t", "--tag", action="store_true",
         help="Display tags to choose from and get corresponding articles"
     )
+    parser.add_argument(
+        "-T", "--tags", action="store_true",
+        help="Generate all tag directories"
+    )
+
 
     args = parser.parse_args(sys.argv[1:])
     if args.process:
@@ -282,8 +295,11 @@ if __name__ == "__main__":
     elif args.missbib:
         check_missing_bibs()
         print("________________________________\n\nBibliographic references checked!")
-    elif args.tags:
+    elif args.tag:
         handle_tag()
         print("________________________________\n\nTag directory created!")
+    elif args.tags:
+        handle_all_tags()
+        print("________________________________\n\nTag directories created!")
     else:
         parser.print_help()

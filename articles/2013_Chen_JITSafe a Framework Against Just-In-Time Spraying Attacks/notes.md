@@ -12,3 +12,4 @@ Modern OS adopted ***data execution prevention (DEP)*** or ***writable XOR execu
 
 **W+X:** Two important points during the execution of JIT compiled code  have to be noted: (1) the code compilation point where the JIT compiler generates the native code and (2) the code execution point when the VM executes the native code. When entering (1), the memory pages are marked as writable and non-executable. Shortly before (2), memory pages are marked as executable, and afterwards, non-executable again.
 
+##### tags: defense, diversification, jit, jit spraying, w xor x, security

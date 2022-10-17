@@ -72,3 +72,4 @@ int jitsec_monitor ( unsigned int orig_eax )
 }
 ```
 
+##### tags: defense, jit

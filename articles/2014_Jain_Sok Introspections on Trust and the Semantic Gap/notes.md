@@ -10,4 +10,4 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 
 - Current VMI systems face fundamental trade-offs between performance and risk, often making fragile assumptions about the guest OS
 
-  
+  ##### tags: formal, sok

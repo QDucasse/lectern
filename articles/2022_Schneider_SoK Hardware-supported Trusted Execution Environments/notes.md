@@ -17,4 +17,6 @@ A comparison of the solutions considering those four points is presented. Its me
 
 (3) involves two components: a *trusted path to the device* and a *trusted device architecture to protect security sensitive data just like the CPU*. The trusted paths are either *logical* or *cryptographic* and the same taxonomy as (2) is used to qualify the trusted device architecture.
 
-(4) ensures that any sensitive data that is persistent is only available to authorized entities (*sealing*). Early sealing mechanisms rely on concepts pioneered by the TPM.
+(4) ensures that any sensitive data that is persistent is only available
+
+ ##### tags: hardware, security, sok, tee

@@ -15,3 +15,5 @@ Enforcing the control-flow integrity (CFI) in a JIT compiler provides a better d
 [05/10/2022]
 
 Those verifications are performed on native code emission, deletion or modification. The three address sets presented earlier are constructed at code installation. The verifier performs address-set updates and constraint checking in one phase: (1) **code installation** checks code and updates address sets, copies the code to the shadow heap and MCFI updates is tables, (2) **code deletion** checks that direct branches outside the code region do not target any instruction within, remove related entries in the MCDI table and checks that there are no threads in the code region (3) **code modification** boils down to a code deletion followed by a code installation.
+
+##### tags: cfi, defense, jit, security

@@ -16,3 +16,4 @@ JavaScript is **jitted** and sandboxed through browsers to enforce security. The
 
 **Security Evaluation:** *Hardware call gates* prevent code-reuse attacks on Donky Monitor. *System calls and signals* are interposed by Donky by redirecting them to the Monitor. The *Donky Monitor* itself validates all inputs in the *Donky API*.
 
+##### tags: hardware, mpk, risc-v, security

@@ -18,3 +18,5 @@ These restrictions allow a number of important consequences:
 
 
 A deterministic stack type-state restriction and a bytecode IR allow the bytecoded program to be compact then directly interpreted or translated to machine code. The implementation of these manipulations can be simple, fast and small.
+
+##### tags: general vm, intermediate representation, java

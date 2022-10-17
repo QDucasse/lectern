@@ -47,3 +47,4 @@ The original attack is unfeasible because ARM expects instruction to be 4-byte a
 
 ***Gadget chaining*** consists of using the already available sequences of instructions called ***gadgets*** to generate a full program. The major components are (1) ***pinpointing gadgets in memory***, (2) ***preparing registers and branching to gadgets from JavaScript*** (3) ***returning from gadgets without crashing***. 
 
+##### tags: attack, jit, jit spraying, rop, security

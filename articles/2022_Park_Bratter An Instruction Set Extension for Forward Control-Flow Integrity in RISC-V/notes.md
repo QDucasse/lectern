@@ -52,3 +52,5 @@ The two CFI solutions presented are **function signature check**, check at the g
 **Evaluation:**
 
 The solution is presented on top of the Spike RISC-V simulator ans as an LLVM pass. The code size overhead usually is lower than 1% for the function signature solution and around 2% for the other (up to 11% in worst-case scenario!). Execution time overhead is less than 6%!
+
+ ##### tags: cfi, hardware, risc-v, security

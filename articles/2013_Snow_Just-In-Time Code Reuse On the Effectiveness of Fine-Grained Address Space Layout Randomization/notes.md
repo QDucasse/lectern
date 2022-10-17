@@ -17,3 +17,5 @@ The target platform uses the following mechanisms for mitigations: *non-executab
 **Gadget Discovery:** A heuristic based on the observation that a single instruction type fulfills a gadget's semantic definitions simplifies the search down to a single table lookup to check if the first instruction type in the sequence meets one of the gadget semantic definitions. 
 
 **JIT Compilation:** Since each instantiation of a vulnerable application may yield a completely different set of concrete gadgets, a dynamic compilation is required to ensure we can use a plethora of gadget types to build the final payload. The gadget compiler works like a traditional compiler except that compilation is embedded directly in an exploit script.
+
+##### tags: aslr, attack, jit, rop, security

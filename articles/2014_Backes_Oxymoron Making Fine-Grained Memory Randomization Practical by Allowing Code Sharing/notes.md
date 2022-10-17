@@ -16,3 +16,4 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 
 **RATTLE:** This translation table is needed because other methods have drawbacks. Storing the rattle at a **fixed** address in memory allows for its address to be hard-coded in the instructions themselves. Unfortunately, this can be exploited by an attacker. Ut can use a **Global Offset Table (GOT)** but this is realized using relative addresses and forfeits sharing. A dynamic address that is randomly chosen for every process could be stored in a dedicated **machine register**. However, this sacrifices the usage of that register. Rattle chose to use the x86 feature of ***memory segmentation*** to address and at the same time hide it from adversaries. It allows for different *segment descriptors* to be created, each with their own *base address* and *limit* (start and length).
 
+##### tags: aslr, diversification, defense, security

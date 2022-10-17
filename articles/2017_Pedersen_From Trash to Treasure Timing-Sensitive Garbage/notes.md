@@ -21,3 +21,5 @@ The attack can be amplified to leak more bits (i.e. 32-bits `int` here).**First*
 Example:
 
 Semantics for secure garbage collection
+
+##### tags: garbage collection, security, side-channel attack

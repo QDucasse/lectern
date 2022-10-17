@@ -17,4 +17,4 @@ Code-reuse attacks can be used instead of injecting a malicious piece of code. T
 **Implementation in Javascript engine:** In V8, Native code is stored as `SharedFunctionInfo`. At the end of `Compiler::Compile`, the page is set as non-executable. Before `Execution::call`, it is set as executable then non-executable again after the execution. In Safari's engine, the same idea is used: non-executable after `JIT::compile`, executable before `JITStubCall::call` then non-executable again.
 
  
-
+##### tags: defense, jit, w xor x, 

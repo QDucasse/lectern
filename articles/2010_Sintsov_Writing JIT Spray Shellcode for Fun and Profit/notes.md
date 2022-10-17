@@ -34,3 +34,5 @@ The author uses the `as3compiler.exe` from SWFTOOLS as the ActionScript compiler
 To write shell-code, the high byte must be <0x7F (for XOR) otherwise the compiler breaks the XOR instruction with some others. To use JNE or JE, the Z flag needs to be safe but it is modified by the masking of the XOR instruction. The shell-code cannot deal with 4-byte data directly so it has to combine several PUSH/CALL or MOV.
 
 (Description of the attack)
+
+##### tags: attack, jit, jit spraying, security

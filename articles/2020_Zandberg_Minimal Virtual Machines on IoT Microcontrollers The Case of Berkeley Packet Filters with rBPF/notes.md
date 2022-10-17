@@ -29,3 +29,5 @@ Design of **rBPF**, a variant of the eBPF VM designed to be ISA-compatible. It e
 
 
 VM adds overhead that has an impact on execution time and a measurable additional size. While the Wasm VM requires too much RAM and ROM, rBPF looks like a good compromise between security through process isolation and memory and time overhead.
+
+##### tags: embedded systems

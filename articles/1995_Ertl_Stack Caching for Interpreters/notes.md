@@ -20,5 +20,5 @@ Every allowed mapping of stack items to machine registers constitutes a **cache 
 
 There should be one state for every number of stack items in registers. The bottom of the cached stack items should be in all states and the other stack items allocated similarly. This avoids the need to move stack items around the bottom of the cache when something on the top changes. 
 
-
+##### tags: cache, general vm, interpreter
 

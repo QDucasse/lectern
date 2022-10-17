@@ -38,7 +38,7 @@ def process_pdf_articles():
             f.write("")
         # Add notes file
         with open(path + "/notes.md", "w") as f:
-            f.write("<!-- Please prefix the notes with the date as in [22/12/2020] -->")
+            f.write("<!-- Please prefix the notes with the date as in [22/12/2020] -->\n\n##### tags: unread")
         os.rename("articles/TO_PROCESS/" + article, "articles/"+ article_name + "/" + article_name + ".pdf")
         print(" - " + article_name + "\n ↳ Article processed in its corresponding directory!")
 

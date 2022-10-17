@@ -23,4 +23,4 @@ RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction len
 **Gadget Chaining:** Hidden gadgets are inserted in the code using one function per gadget, each ending with a C `return` function. Note that for each function, the compiler may add assembly code at the beginning and the end whose purpose is to *insert (save)* or *remove (restore)* the call frame from the stack. Those *restore* are essential in ROP attacks as they tamper with the return address register. The hidden instructions are written directly in C code, and feature one or two instructions followed by a jump to a relative offset. 
 
 
-
+##### tags: attack, risc-v, rop, security

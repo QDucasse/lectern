@@ -79,3 +79,5 @@ O.func = foo;
 ```
 
 **Defenses:** Enhance the JIT buffer with G-Free to remove all gadgets. The produced code is safe and gadget-free.
+
+##### tags: attack, jit, rop, security

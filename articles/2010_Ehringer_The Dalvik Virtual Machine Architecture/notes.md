@@ -10,7 +10,4 @@ Android runtime must support: **limited processor speed, limited RAM, no swap sp
 
 **Zygote:** The Zygote enable fast startup time for new instances as well as sharing of code. It assumes a significant number of core libraries are used among multiple applications and often in read-only mode. The Zygote is a VM process that starts at system boot time, preloads core libraries and waits for socket request to fork a new VM.
 
-
-
-
-
+##### tags: general vm, java

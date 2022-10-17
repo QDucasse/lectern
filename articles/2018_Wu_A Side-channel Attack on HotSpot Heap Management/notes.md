@@ -14,3 +14,4 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 
 **Time Dilation in Multi-tenant Systems:** The *Time-stamp Counter* is commonly used for timekeeping as it is an **auto-incremented register on CPU at the clock rate**. Timing utilities such as `gettimeofday` use this register to keep track of time. Leaving the control of time keeping utilities to an external tool can allow other programs to run between the meantime and dilate the time spent performing an action.
 
+##### tags: hotspot, security, side-channel attack

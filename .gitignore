@@ -1,5 +1,8 @@
 # Actual articles
 **/*.pdf
 
+tags/*
+!tags/.gitignore
+
 # output
 bibgen.bib

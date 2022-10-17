@@ -22,3 +22,5 @@ To return to a different location than it was called from, a function must be ab
 - `fputs()` - characters are temporarily buffered to a location as specified in the `FILE` argument that the attacker can supply, placing the temporary buffer on top of the return address.
 
 It is also possible to perform a **loop injection** using two following calls to the same dispatcher function where the attacker controls the input to the second one. It is common for programs to perform successive calls to `printf()` for example. When the second call to `printf()` is reached, the attacker can modify the return address to point to the instruction right after the first `printf()` and re-trigger the second call! This just created a **loop**!
+
+##### tags: attack, cfi, security

@@ -22,3 +22,4 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 **Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.
 
+##### tags: defense, fpga, hardware, security

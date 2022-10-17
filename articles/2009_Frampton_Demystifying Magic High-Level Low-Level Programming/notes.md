@@ -11,3 +11,5 @@ The main challenges when linking low-level and high-level programming are that t
 **Implementation:** **Raw Storage** allows the user to associate an empty type with a raw chunk of backing data of a specified size. This helps to create non-compound unboxed types. This can be done through the use of `@RawStorage` and`@Unboxed`. An unboxed type is only syntactically distinguished from an object and the **runtime compiler** ensures that unboxed types are never used as objects.
 
  The framework is used by MMTk !
+
+ ##### tags: garbage collection, intermediate representation

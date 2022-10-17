@@ -20,3 +20,5 @@ CRuby, the official Ruby implementation includes a JIT compiler known as MJIT th
 
 
 Validation over a list of benchmarks along with the number of instruction sequences compiled by YJIT.
+
+##### tags: general vm, jit

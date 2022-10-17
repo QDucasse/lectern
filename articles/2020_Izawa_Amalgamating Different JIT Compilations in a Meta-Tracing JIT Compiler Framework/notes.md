@@ -7,4 +7,4 @@ JIT compilers mainly use two types of compilation: **trace-based** compilation a
 Using both strategies needs to answer several questions: (1) how can we construct such a compilation engine without using two different compilers (2) how do the code fragments that are compiled by different strategies interact with each others and (3) how can we determine a compilation strategy to compile part of a program.
 
 
-
+##### tags: jit

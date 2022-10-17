@@ -6,3 +6,4 @@
 
 **Shadow Stack Design Space:** For a shadow stack to be adopted, it must be *highly performant*, *compatible with existing code* and provide *meaningful security*. Shadow stacks can be split into 5 categories, 3 as **compact** and 2 as **parallel**. They differ in the way they store the shadow stack pointer, either as a global variable, segment or register for the **compact** version or constant offset or register offset for the **parallel** version. The compact version use the location of the return address on the program stack to directly find the corresponding entry on the shadow stack. The parallel shadow stack is as large as the program stack and a simple offset maps from the program stack to the shadow stack. Direct mapping trades memory overhead for performance.
 
+##### tags: cfi, security, sok

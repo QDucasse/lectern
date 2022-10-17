@@ -10,3 +10,5 @@ The main idea PyPy defends is that VMs for dynamic languages should be generated
 
 The benefits are: *single source to maintain*, *writing the interpreter is easier*, *separation of concerns*. And the effort of writing a translation toolchain is still lower than writing the VM from scratch. It is also possible to add a dynamic compilation (JIT) pass in the toolchain so that a dynamic compiler can be automatically generated.
 
+
+##### tags: general vm, pypy, python, rpython

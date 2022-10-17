@@ -28,3 +28,4 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
  
 
+##### tags: fpga, garbage collection, hardware, java

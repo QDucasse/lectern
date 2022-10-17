@@ -46,3 +46,4 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 *LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*
 
+##### tags: hardware, fpga, model checking

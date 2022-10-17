@@ -18,3 +18,4 @@ For *memory instructions*, RIMI uses replicated instructions for `domain1` and e
 
 **Evaluation:** Bristol/Embescom Embedded Benchmark Suite (BEEBS) shows that RIMI presents a 0.88% overhead against the 7.74% reached by other software solutions.
 
+##### tags: hardware, risc-v, security

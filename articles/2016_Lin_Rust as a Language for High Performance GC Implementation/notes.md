@@ -16,3 +16,4 @@ Building a GC in Rust brought up the following challenges:
 
 Some **abuses** of Rust had to be performed to improve performance. To represent collections state, memory managers often use bit maps (or byte maps). Examples include **card tables** (remember modified memory regions) and **mark tables** (remember marked objects). Concurrent writing is needed in an array but forbidden by Rust. 
 
+##### tags: garbage collection, mmtk

@@ -12,3 +12,4 @@ Several assumptions are made to simplify the implementation effort. *No stack-po
 
 Two rewriting techniques are used: **NOP insertion** and **constant blinding**. Moreover, the randomization goes through **`mmap` address randomization**, **basic block reordering**, **equivalent instruction substitution** and **register reallocation**. The implementation is presented on x86.
 
+##### tags: defense, diversification, jit, security

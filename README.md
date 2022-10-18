@@ -14,6 +14,12 @@ $ python lectern.py --bibgui
 
 $ python lectern.py --missbib
 # or -m. Checks for missing or empty biblio files.
+
+$ python lectern.py --tag
+# or -t. Displays existing tag and generates a directory with symlinks to tagged articles.
+
+$ python lectern.py --tags
+# or -T. Generates tag directory for all tags.
 ```
 
 ## Article notes

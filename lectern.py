@@ -128,30 +128,6 @@ def open_bib_gui():
     sg.theme('light brown 8')
     starting_path = "./articles"
 
-    # treedata = add_files_in_folder('', starting_path, ["TO_PROCESS"])
-    # layout = [[sg.Tree(
-    #     data=treedata,
-    #     headings=[],
-    #     auto_size_columns=True,
-    #     select_mode=sg.TABLE_SELECT_MODE_EXTENDED,
-    #     num_rows=20,
-    #     col0_width=40,
-    #     key='-TREE-',
-    #     show_expanded=False,
-    #     enable_events=True
-    # )]]
-
-    # window = sg.Window('Select articles to add to the bib', layout, resizable=True, finalize=True)
-    # window['-TREE-'].expand(True, True)  # Resize with the window (Full support for Tree element being released in 4.44.0)
-
-    # while True:     # Event Loop
-    #     event, values = window.read()
-
-
-    #     if event in (sg.WIN_CLOSED, 'Cancel'):
-    #         break
-    # window.close()
-
     treedata = add_files_in_folder('', starting_path, ["TO_PROCESS"])
     layout = [[sg.Text('File and folder browser Test')],
           [sg.Tree(data=treedata,

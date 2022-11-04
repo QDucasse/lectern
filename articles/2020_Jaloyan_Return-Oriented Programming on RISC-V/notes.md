@@ -14,7 +14,7 @@ The base RISC-V ISA can be extended with several extensions: **M** for integer m
 
 RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction length is encoded in the LSB (lowest-address as RISC-V is little endian). 16-bit instructions require the last two bits to be different from 11 whereas 32-bit instructions have their last two bits equal to 11 and the three previous different from 11. This means that there is a possibility for overlapping instructions that can be obtained by either using two 32-bit instructions 2 bytes apart or by using a 32-bit instruction whose last 2 bytes are also a valid 16-bit compressed instruction.
 
-![](/home/quentin/Desktop/Research/VM/articles/2020_Jaloyan_Return-Oriented Programming on RISC-V/overlapping.png)
+![](overlapping.png)
 
 **Threat model:** The system consists of RISC-V systems with ROP mitigations deployed such as DEP, ASLR as well as `gcc`'s `-fstack-protector-strong` (since `gcc`'s `-mmitigate-rop` or `clang`'s CFI are not available on RISC-V).
 

@@ -14,12 +14,6 @@ $ python lectern.py --bibgui
 
 $ python lectern.py --missbib
 # or -m. Checks for missing or empty biblio files.
-
-$ python lectern.py --tag
-# or -t. Displays existing tag and generates a directory with symlinks to tagged articles.
-
-$ python lectern.py --tags
-# or -T. Generates tag directory for all tags.
 ```
 
 ## Article notes
@@ -51,6 +45,8 @@ $ python lectern.py --tags
 [1991 - Holzle, Optimizing Dynamically-Typed Object-Oriented Languages with Polymorphic Inline Caches](#1991---Holzle-Optimizing-Dynamically-Typed-Object-Oriented-Languages-with-Polymorphic-Inline-Caches)
 
 [1992 - Holzle, Debugging Optimized Code with Dynamic Deoptimization](#1992---Holzle-Debugging-Optimized-Code-with-Dynamic-Deoptimization)
+
+[1993 - Wahbe, Efficient Software-Based Fault Isolation](#1993---Wahbe-Efficient-Software-Based-Fault-Isolation)
 
 [1994 - Holzle, A Third-Generation SELF Implementation Reconciling Responsiveness with Performance](#1994---Holzle-A-Third-Generation-SELF-Implementation-Reconciling-Responsiveness-with-Performance)
 
@@ -104,6 +100,8 @@ $ python lectern.py --tags
 
 [2002 - Ozdoganoglu, SmashGuard A Hardware Solution To Prevent Attacks on the Function Return Address](#2002---Ozdoganoglu-SmashGuard-A-Hardware-Solution-To-Prevent-Attacks-on-the-Function-Return-Address)
 
+[2003 - Asokan, Man-in-the-Middle in Tunneled Authentication Protocols](#2003---Asokan-Man-in-the-Middle-in-Tunneled-Authentication-Protocols)
+
 [2003 - Dehnert, The Transmeta Code Morphing - Software Using Speculation recovery and Adaptive Retranslation to Address Real-Life Challenges](#2003---Dehnert-The-Transmeta-Code-Morphing---Software-Using-Speculation-recovery-and-Adaptive-Retranslation-to-Address-Real-Life-Challenges)
 
 [2003 - Ertl, The Structure and Performance of Efficient Interpreters](#2003---Ertl-The-Structure-and-Performance-of-Efficient-Interpreters)
@@ -146,6 +144,8 @@ $ python lectern.py --tags
 
 [2005 - Sheridan, Practical Testing of a C99 Compiler using Output Comparison](#2005---Sheridan-Practical-Testing-of-a-C99-Compiler-using-Output-Comparison)
 
+[2005 - Spett, Cross-Site Scripting](#2005---Spett-Cross-Site-Scripting)
+
 [2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment](#2005---Ungar-Constructing-a-Metacircular-Virtual-Machine-in-an-Exploratory-Programming-Environment)
 
 [2006 - Gal, HotpathVM An Effective JIT Compiler for Resource-Constrained Devices](#2006---Gal-HotpathVM-An-Effective-JIT-Compiler-for-Resource-Constrained-Devices)
@@ -166,6 +166,8 @@ $ python lectern.py --tags
 
 [2008 - Ancona, RPython a Step Towards Reconciling Dynamically and Statically Typed OO Languages](#2008---Ancona-RPython-a-Step-Towards-Reconciling-Dynamically-and-Statically-Typed-OO-Languages)
 
+[2008 - Barth, Robust Defenses for Cross Site Request Forgery](#2008---Barth-Robust-Defenses-for-Cross-Site-Request-Forgery)
+
 [2008 - Fuess, An FPGA Implementation of Explicit-State Model Checking](#2008---Fuess-An-FPGA-Implementation-of-Explicit-State-Model-Checking)
 
 [2008 - Heiser, The Role Of Virtualization in Embedded Systems](#2008---Heiser-The-Role-Of-Virtualization-in-Embedded-Systems)
@@ -178,11 +180,11 @@ $ python lectern.py --tags
 
 [2009 - Bolz, Tracing the Meta-Level PyPys Tracing JIT Compiler](#2009---Bolz-Tracing-the-Meta-Level-PyPys-Tracing-JIT-Compiler)
 
+[2009 - Callegati, Man-in-the-Middle Attack to the HTTPS Protocol](#2009---Callegati-Man-in-the-Middle-Attack-to-the-HTTPS-Protocol)
+
 [2009 - Frampton, Demystifying Magic High-Level Low-Level Programming](#2009---Frampton-Demystifying-Magic-High-Level-Low-Level-Programming)
 
 [2009 - Gal, Trace-based Just-in-Time Type Specialization for Dynamic Languages](#2009---Gal-Trace-based-Just-in-Time-Type-Specialization-for-Dynamic-Languages)
-
-[2009 - Yee, Native Client A Sandbox for Portable, Untrusted x86 Native Code](#2009---Yee-Native-Client-A-Sandbox-for-Portable,-Untrusted-x86-Native-Code)
 
 [2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor](#2010---Agesen-The-Evolution-of-an-X86-Virtual-Machine-Monitor)
 
@@ -214,6 +216,8 @@ $ python lectern.py --tags
 
 [2010 - Wei, Secure Dynamic Code Generation Against Spraying](#2010---Wei-Secure-Dynamic-Code-Generation-Against-Spraying)
 
+[2010 - Yee, Native Client A Sandbox for Portable, Untrusted x86 Native Code](#2010---Yee-Native-Client-A-Sandbox-for-Portable,-Untrusted-x86-Native-Code)
+
 [2011 - Ansel, Language-Independent Sandboxing of Just-In-Time Compilation and Self-Modifying Code](#2011---Ansel-Language-Independent-Sandboxing-of-Just-In-Time-Compilation-and-Self-Modifying-Code)
 
 [2011 - Bletsch, Jump-Oriented Programming A New Class of Code-Reuse Attack](#2011---Bletsch-Jump-Oriented-Programming-A-New-Class-of-Code-Reuse-Attack)
@@ -224,6 +228,8 @@ $ python lectern.py --tags
 
 [2011 - Chen, JITDefender A Defense against JIT Spraying Attacks](#2011---Chen-JITDefender-A-Defense-against-JIT-Spraying-Attacks)
 
+[2011 - Davi, ROPdefender A Detection Tool to Defend Against Return-Oriented Programming Attacks](#2011---Davi-ROPdefender-A-Detection-Tool-to-Defend-Against-Return-Oriented-Programming-Attacks)
+
 [2011 - Haupt, CSOMPL a virtual machine product line](#2011---Haupt-CSOMPL-a-virtual-machine-product-line)
 
 [2011 - Miranda, The Cog Smalltalk Virtual Machine Writing a JIT in a High-Level Language](#2011---Miranda-The-Cog-Smalltalk-Virtual-Machine-Writing-a-JIT-in-a-High-Level-Language)
@@ -231,6 +237,8 @@ $ python lectern.py --tags
 [2011 - Rohlf, The Security Challenges of Client-Side Just-in-Time Engines](#2011---Rohlf-The-Security-Challenges-of-Client-Side-Just-in-Time-Engines)
 
 [2012 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused](#2012---Barbu-Application-Replay-Attack-on-Java-Cards-When-the-Garbage-Collector-Gets-Confused)
+
+[2012 - Pappas, Smashing the Gadgets: Hindering Return-Oriented Programming Using In-Place Code Randomization](#2012---Pappas-Smashing-the-Gadgets:-Hindering-Return-Oriented-Programming-Using-In-Place-Code-Randomization)
 
 [2012 - Rohou, Tiptop Hardware Performance Counters for the Masses](#2012---Rohou-Tiptop-Hardware-Performance-Counters-for-the-Masses)
 
@@ -251,6 +259,8 @@ $ python lectern.py --tags
 [2013 - Kulkarni, Automatic Construction of Inlining Heuristics using Machine Learning](#2013---Kulkarni-Automatic-Construction-of-Inlining-Heuristics-using-Machine-Learning)
 
 [2013 - Marr, Supporting Concurrency Abstractions in High-level Language Virtual Machines](#2013---Marr-Supporting-Concurrency-Abstractions-in-High-level-Language-Virtual-Machines)
+
+[2013 - Papadogiannakis, ASIST Architectural Support for Instruction Set Randomization](#2013---Papadogiannakis-ASIST-Architectural-Support-for-Instruction-Set-Randomization)
 
 [2013 - Snow, Just-In-Time Code Reuse On the Effectiveness of Fine-Grained Address Space Layout Randomization](#2013---Snow-Just-In-Time-Code-Reuse-On-the-Effectiveness-of-Fine-Grained-Address-Space-Layout-Randomization)
 
@@ -298,6 +308,8 @@ $ python lectern.py --tags
 
 [2015 - Athanasakis, The Devil is in the Constants Bypassing Defenses](#2015---Athanasakis-The-Devil-is-in-the-Constants-Bypassing-Defenses)
 
+[2015 - Carlini, Control-Flow Bending: On the Effectiveness of Control-Flow Integrity](#2015---Carlini-Control-Flow-Bending:-On-the-Effectiveness-of-Control-Flow-Integrity)
+
 [2015 - Evans, Missing the Pointer on the Effectiveness of Code Pointer Integrity](#2015---Evans-Missing-the-Pointer-on-the-Effectiveness-of-Code-Pointer-Integrity)
 
 [2015 - Grimmer, Dynamically Composing Languages in a Modular Way Supporting C Extensions for Dynamic Languages](#2015---Grimmer-Dynamically-Composing-Languages-in-a-Modular-Way-Supporting-C-Extensions-for-Dynamic-Languages)
@@ -334,7 +346,11 @@ $ python lectern.py --tags
 
 [2016 - Constan, Intel SGX Explained](#2016---Constan-Intel-SGX-Explained)
 
+[2016 - Conti, A Survey of Man In The Middle Attack](#2016---Conti-A-Survey-of-Man-In-The-Middle-Attack)
+
 [2016 - Gruss, Rowhammer js A Remote Software-Induced Fault Attack in JavaScript](#2016---Gruss-Rowhammer-js-A-Remote-Software-Induced-Fault-Attack-in-JavaScript)
+
+[2016 - Hu, Data-Oriented Programming On the Expressiveness of Non-Control Data Attacks](#2016---Hu-Data-Oriented-Programming-On-the-Expressiveness-of-Non-Control-Data-Attacks)
 
 [2016 - Ilbeyi, Pydgin for RISC-V A Fast and Productive Instruction-Set Simulator](#2016---Ilbeyi-Pydgin-for-RISC-V-A-Fast-and-Productive-Instruction-Set-Simulator)
 
@@ -344,7 +360,13 @@ $ python lectern.py --tags
 
 [2016 - Maas, Grail Quest A New Proposal for Hardware-assisted Garbage Collection](#2016---Maas-Grail-Quest-A-New-Proposal-for-Hardware-assisted-Garbage-Collection)
 
+[2016 - Maisuradze, What Cannot Be Read Cannot Be Leveraged Revisiting Assumptions of JIT-ROP Defenses](#2016---Maisuradze-What-Cannot-Be-Read-Cannot-Be-Leveraged-Revisiting-Assumptions-of-JIT-ROP-Defenses)
+
+[2016 - Shoshitaishvili, (State of) The Art of War Offensive Techniques in Binary Analysis](#2016---Shoshitaishvili-(State-of)-The-Art-of-War-Offensive-Techniques-in-Binary-Analysis)
+
 [2017 - Burow, Control-Flow Integrity Precision Security and Performance](#2017---Burow-Control-Flow-Integrity-Precision-Security-and-Performance)
+
+[2017 - Delshadtehrani, Nile A Programmable Monitoring Coprocessor](#2017---Delshadtehrani-Nile-A-Programmable-Monitoring-Coprocessor)
 
 [2017 - Frassetto, JITGuard Hardening Just-in-time Compilers with SGX](#2017---Frassetto-JITGuard-Hardening-Just-in-time-Compilers-with-SGX)
 
@@ -364,9 +386,13 @@ $ python lectern.py --tags
 
 [2017 - Pridgen, Picking up the Trash Exploiting Generational GC for Memory Analysis](#2017---Pridgen-Picking-up-the-Trash-Exploiting-Generational-GC-for-Memory-Analysis)
 
-[2017 - Reshetova, Randomization cannott stop BPF JIT spray](#2017---Reshetova-Randomization-cannott-stop-BPF-JIT-spray)
+[2017 - Reshetova, Randomization cannot stop BPF JIT spray](#2017---Reshetova-Randomization-cannot-stop-BPF-JIT-spray)
+
+[2017 - Sinha, Reviving Instruction Set Randomization](#2017---Sinha-Reviving-Instruction-Set-Randomization)
 
 [2018 - Belleville, Automated Software Protection for the Masses Against Side-Channels Attacks](#2018---Belleville-Automated-Software-Protection-for-the-Masses-Against-Side-Channels-Attacks)
+
+[2018 - Biondo, The Guard’s Dilemma Efficient Code-Reuse Attacks Against Intel SGX](#2018---Biondo-The-Guard’s-Dilemma-Efficient-Code-Reuse-Attacks-Against-Intel-SGX)
 
 [2018 - Cho, FPGASwarm High Throughput Model Checking on FPGAs](#2018---Cho-FPGASwarm-High-Throughput-Model-Checking-on-FPGAs)
 
@@ -386,9 +412,13 @@ $ python lectern.py --tags
 
 [2019 - Choi, Reusable Inline Caching for JavaScript Performance](#2019---Choi-Reusable-Inline-Caching-for-JavaScript-Performance)
 
+[2019 - De, FIXER Flow Integrity Extensions for Embedded RISC-V](#2019---De-FIXER-Flow-Integrity-Extensions-for-Embedded-RISC-V)
+
 [2019 - Du, XPC Architectural Support for Secure and Efficient Cross Process Call](#2019---Du-XPC-Architectural-Support-for-Secure-and-Efficient-Cross-Process-Call)
 
 [2019 - Fumero, Dynamic Application Reconfiguration on Heterogeneous Hardware](#2019---Fumero-Dynamic-Application-Reconfiguration-on-Heterogeneous-Hardware)
+
+[2019 - Hedayati, Hodor Intra-Process Isolation for High-Throughput Data Plane Libraries](#2019---Hedayati-Hodor-Intra-Process-Isolation-for-High-Throughput-Data-Plane-Libraries)
 
 [2019 - Kermarrec, LiteX  an open-source SoC builder and library based on Migen Python DSL](#2019---Kermarrec-LiteX--an-open-source-SoC-builder-and-library-based-on-Migen-Python-DSL)
 
@@ -422,6 +452,12 @@ $ python lectern.py --tags
 
 [2020 - Bruant, System Verilog to Chisel Translation for Faster Hardware Design](#2020---Bruant-System-Verilog-to-Chisel-Translation-for-Faster-Hardware-Design)
 
+[2020 - Canacki, Efficient Context-Sensitive CFI Enforcement Through a Hardware Monitor](#2020---Canacki-Efficient-Context-Sensitive-CFI-Enforcement-Through-a-Hardware-Monitor)
+
+[2020 - Christou, On Architectural Support for Instruction Set Randomization](#2020---Christou-On-Architectural-Support-for-Instruction-Set-Randomization)
+
+[2020 - Delshadtehrani, PHMon A Programmable Hardware Monitor and Its Security Use Cases](#2020---Delshadtehrani-PHMon-A-Programmable-Hardware-Monitor-and-Its-Security-Use-Cases)
+
 [2020 - Fournier, Menhir Generic High-Speed FPGA Model-Checker](#2020---Fournier-Menhir-Generic-High-Speed-FPGA-Model-Checker)
 
 [2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware](#2020---Fumero-Running-Parallel-Bytecode-Interpreters-on-Heterogeneous-Hardware)
@@ -442,9 +478,7 @@ $ python lectern.py --tags
 
 [2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing](#2020---Lima-Exposing-Bugs-in-JavaScript-Engines-through-Test-Transplantation-and-Differential-Testing)
 
-[2020 - Lu, A survey on RISC-V Security Hardware and Architecture](#2020---Lu-A-survey-on-RISC-V-Security-Hardware-and-Architecture)
-
-[2020 - Papadimitriou, Transparent Compiler and Runtime Specializations for Accelerating MAnaged Languages on FPGAs](#2020---Papadimitriou-Transparent-Compiler-and-Runtime-Specializations-for-Accelerating-MAnaged-Languages-on-FPGAs)
+[2020 - Papadimitriou, Transparent Compiler and Runtime Specializations for Accelerating Managed Languages on FPGAs](#2020---Papadimitriou-Transparent-Compiler-and-Runtime-Specializations-for-Accelerating-Managed-Languages-on-FPGAs)
 
 [2020 - Park, NoJITsu Locking Down Javascript](#2020---Park-NoJITsu-Locking-Down-Javascript)
 
@@ -456,9 +490,13 @@ $ python lectern.py --tags
 
 [2020 - Varoumas, High-level programming models for microcontrollers with scarce resources](#2020---Varoumas-High-level-programming-models-for-microcontrollers-with-scarce-resources)
 
+[2020 - Xu, Hardware-Based Domain Virtualization for Intra-Process Isolation of Persistent Memory Objects](#2020---Xu-Hardware-Based-Domain-Virtualization-for-Intra-Process-Isolation-of-Persistent-Memory-Objects)
+
 [2020 - Zandberg, Minimal Virtual Machines on IoT Microcontrollers The Case of Berkeley Packet Filters with rBPF](#2020---Zandberg-Minimal-Virtual-Machines-on-IoT-Microcontrollers-The-Case-of-Berkeley-Packet-Filters-with-rBPF)
 
 [2021 - Chevalier-Boisvert, YJIT A Basic Block Versioning JIT for Ruby](#2021---Chevalier-Boisvert-YJIT-A-Basic-Block-Versioning-JIT-for-Ruby)
+
+[2021 - Cui, SmashEx Smashing SGX Enclaves Using Exceptions](#2021---Cui-SmashEx-Smashing-SGX-Enclaves-Using-Exceptions)
 
 [2021 - Delshadtehrani, FlexFilt Towards Flexible Instruction](#2021---Delshadtehrani-FlexFilt-Towards-Flexible-Instruction)
 
@@ -468,11 +506,13 @@ $ python lectern.py --tags
 
 [2021 - Harris, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware](#2021---Harris-Morpheus-II-a-RISC-V-Security-Extension-for-Protecting-Vulnerable-Software-and-Hardware)
 
-[2021 - Harros, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware](#2021---Harros-Morpheus-II-a-RISC-V-Security-Extension-for-Protecting-Vulnerable-Software-and-Hardware)
-
 [2021 - Herdt, Adaptive Simulation with Virtual Prototypes in an open-source RISC-V evaluation platform](#2021---Herdt-Adaptive-Simulation-with-Virtual-Prototypes-in-an-open-source-RISC-V-evaluation-platform)
 
 [2021 - Izawa, Threaded Code Generation with a Meta-Tracing JIT Compiler](#2021---Izawa-Threaded-Code-Generation-with-a-Meta-Tracing-JIT-Compiler)
+
+[2021 - Kang, A Framework for Automatic Exploit Generation for JIT Compilers](#2021---Kang-A-Framework-for-Automatic-Exploit-Generation-for-JIT-Compilers)
+
+[2021 - Kim, Refining Indirect Call Targets at the Binary Level](#2021---Kim-Refining-Indirect-Call-Targets-at-the-Binary-Level)
 
 [2021 - Kwon, A Hardware Platform for Ensuring OS Kernel Integrity on RISC-V](#2021---Kwon-A-Hardware-Platform-for-Ensuring-OS-Kernel-Integrity-on-RISC-V)
 
@@ -485,6 +525,12 @@ $ python lectern.py --tags
 [2022 - Cloosters, RiscyROP Automated Return-Oriented Programming Attacks on RISC-V and ARM64](#2022---Cloosters-RiscyROP-Automated-Return-Oriented-Programming-Attacks-on-RISC-V-and-ARM64)
 
 [2022 - Izawa, Two-level Just-in-Time Compilation with One Interpreter and One Engine](#2022---Izawa-Two-level-Just-in-Time-Compilation-with-One-Interpreter-and-One-Engine)
+
+[2022 - Jentzch, 2022](#2022---Jentzch-2022)
+
+[2022 - Jeong, Exploiting Metaobjects to Reinforce Data Leakage Attacks](#2022---Jeong-Exploiting-Metaobjects-to-Reinforce-Data-Leakage-Attacks)
+
+[2022 - Jiang, On the Challenges of Detecting Side-Channel Attacks in SGX](#2022---Jiang-On-the-Challenges-of-Detecting-Side-Channel-Attacks-in-SGX)
 
 [2022 - Park, Bratter An Instruction Set Extension for Forward Control-Flow Integrity in RISC-V](#2022---Park-Bratter-An-Instruction-Set-Extension-for-Forward-Control-Flow-Integrity-in-RISC-V)
 
@@ -500,11 +546,15 @@ $ python lectern.py --tags
 ### 1973 - Bell, Threaded Code
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, unread
+
 ---
 
 
 ### 1974 - Popek, Formal Requirements for Virtualizable Third Generation Architectures
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, unread
 
 ---
 
@@ -512,11 +562,15 @@ $ python lectern.py --tags
 ### 1975 - Dewar, Indirect Threaded Code
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, unread
+
 ---
 
 
 ### 1983 - Krasner, Smalltalk-80 Bits of History Words of Advice
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, smalltalk, unread
 
 ---
 
@@ -524,11 +578,15 @@ $ python lectern.py --tags
 ### 1984 - Deutsch, Efficient Implementation of the SmallTalk-80 System
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, smalltalk, unread
+
 ---
 
 
 ### 1984 - Ungar, Generation Scavenging A non-disruptive High Performance Storage Reclamation Algorithm
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: garbage collection, unread
 
 ---
 
@@ -536,11 +594,15 @@ $ python lectern.py --tags
 ### 1986 - Samples, SOAR Smalltalk Without Bytecodes
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, smalltalk, unread
+
 ---
 
 
 ### 1986 - Ungar, The Design and Evaluation of a High Performance Smalltalk System
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, smalltalk, unread
 
 ---
 
@@ -564,11 +626,15 @@ When more registers are required than available, **spilling** is necessary. Spil
 
 SOAR takes advantage of the fact that all simple arithmetic operations are performed only on integers. If incorrect, the hardware will **trap** and transfer to a handler that will **look-up** the correct method. The compiler also takes advantage of hardware that **maps registers to memory addresses** and allows **pointers to registers**.
 
+##### tags: smalltalk
+
 ---
 
 
 ### 1987 - Cointe, Metaclasses are First Class the ObjVlisp Model 
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: lisp, oop, unread
 
 ---
 
@@ -576,11 +642,15 @@ SOAR takes advantage of the fact that all simple arithmetic operations are perfo
 ### 1987 - Ungar, What Price Smalltalk
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, smalltalk, unread
+
 ---
 
 
 ### 1989 - Chambers, Customization Optimizing Compiler Technology for SELF a Dynamically-Typed Object-Oriented Programming Language
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, self, smalltalk, unread
 
 ---
 
@@ -639,11 +709,23 @@ Remaining problems and possible solutions:
 - **Short methods inlining:** Many methods are very small (*e.g*. output one of the receiver's instance variable). Such methods could be integrated into the ***PIC*** directly rather than being called by it.
 - **Space efficiency improvement:** If the system runs on tight space, call sites with identical message names could share a common ***PIC*** to reduce the space overhead.
 
+##### tags: cache, pic, smalltalk, general vm
+
 ---
 
 
 ### 1992 - Holzle, Debugging Optimized Code with Dynamic Deoptimization
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: debug, deoptimization, general vm, smalltalk, unread
+
+---
+
+
+### 1993 - Wahbe, Efficient Software-Based Fault Isolation
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -651,17 +733,23 @@ Remaining problems and possible solutions:
 ### 1994 - Holzle, A Third-Generation SELF Implementation Reconciling Responsiveness with Performance
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, self, smalltalk, unread
+
 ---
 
 
 ### 1995 - Click, A Simple Graph-Based Intermediate Representation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: intermediate representation, unread
+
 ---
 
 
 ### 1995 - Dean, Optimization of Object-Oriented Programs Using Static Class Hierarchy Analysis
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -689,7 +777,7 @@ Every allowed mapping of stack items to machine registers constitutes a **cache 
 
 There should be one state for every number of stack items in registers. The bottom of the cached stack items should be in all states and the other stack items allocated similarly. This avoids the need to move stack items around the bottom of the cache when something on the top changes. 
 
-
+##### tags: cache, general vm, interpreter
 
 
 
@@ -718,11 +806,15 @@ These restrictions allow a number of important consequences:
 
 A deterministic stack type-state restriction and a bytecode IR allow the bytecoded program to be compact then directly interpreted or translated to machine code. The implementation of these manipulations can be simple, fast and small.
 
+##### tags: general vm, intermediate representation, java
+
 ---
 
 
 ### 1995 - Yellin, Low-Level Security in Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: java, security, unread
 
 ---
 
@@ -730,11 +822,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 1996 - Bacon, Fast Static Analysis of C Virtual Function Calls
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: unread
+
 ---
 
 
 ### 1997 - Agesen, Design and Implementation of PEp a Java Just-In-Time Translator
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: java, unread
 
 ---
 
@@ -742,11 +838,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 1997 - Forrest, Building Diverse Computer Systems
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: aslr, general security, unread
+
 ---
 
 
 ### 1997 - Franz, Slim Binaries
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -754,11 +854,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 1997 - Ingals, Back to the Future The Story of Squeak a Practical Smalltalk Written in Itself
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, smalltalk, squeak, unread
+
 ---
 
 
 ### 1998 - Piumarta, Optimizing Direct Threaded Code by Selective Inlining
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -766,11 +870,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 1998 - Taivalsaari, Implementing a Java Virtual Machine in the Java Programming Language
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: unread
+
 ---
 
 
 ### 1999 - Burke, The Jalapeno Dynamic Optimizing Compiler for Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -778,11 +886,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 1999 - Futamara, Partial Evaluation of Computation Process an Approach to a Compiler-Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: unread
+
 ---
 
 
 ### 1999 - Wolczko, Self Includes Smalltalk
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, self, smalltalk, unread
 
 ---
 
@@ -790,11 +902,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2000 - Alpern, The Jalapeno Virtual Machine
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, jalapeno, java, unread
+
 ---
 
 
 ### 2000 - Arnold, Adaptive Optimization in the Jalapeno JVM
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, jalapeno, java, unread
 
 ---
 
@@ -802,11 +918,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2000 - Bala, Dynamo a Transparent Dynamic Optimisation System
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: dynamo, general vm, unread
+
 ---
 
 
 ### 2000 - Diehl, Abstract Machines for Programming Language Implementation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, unread
 
 ---
 
@@ -814,11 +934,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2001 - Cheng, A Parallel Real-Time Garbage Collector
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: garbage collection, unread
+
 ---
 
 
 ### 2001 - Paleczny, The Java HotSpot Server Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, java, hotspot, unread
 
 ---
 
@@ -826,11 +950,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2002 - Click, Fast Subtype Checking in the HotSpot JVM
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, hotspot, java, unread
+
 ---
 
 
 ### 2002 - Ertl, Vmgen a Generator of Efficient Virtual Machine Interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, interpreter, unread
 
 ---
 
@@ -838,11 +966,23 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2002 - Lattner, The LLVM Instruction Set and Compilation Strategy
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: intermediate representation, llvm, unread
+
 ---
 
 
 ### 2002 - Ozdoganoglu, SmashGuard A Hardware Solution To Prevent Attacks on the Function Return Address
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: cfi, hardware, unread
+
+---
+
+
+### 2003 - Asokan, Man-in-the-Middle in Tunneled Authentication Protocols
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -850,11 +990,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2003 - Dehnert, The Transmeta Code Morphing - Software Using Speculation recovery and Adaptive Retranslation to Address Real-Life Challenges
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: translation, unread
+
 ---
 
 
 ### 2003 - Ertl, The Structure and Performance of Efficient Interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, interpreter, unread
 
 ---
 
@@ -862,11 +1006,15 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2003 - Fink, Design Implementation and Evaluation of Adaptive Recompilation with On-Stack Replacement
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, unread
+
 ---
 
 
 ### 2003 - Govindavajhala, Using Memory Errors to Attack a Virtual Machine
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, general vm, security
 
 ---
 
@@ -874,17 +1022,23 @@ A deterministic stack type-state restriction and a bytecode IR allow the bytecod
 ### 2003 - Merrill, GENERIC and GIMPLE A New Tree Representation for Entire Functions
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: intermediate representation, unread
+
 ---
 
 
 ### 2003 - Ogel, Towards Active Applications the Virtual Virtual Machine Project
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, unread
+
 ---
 
 
 ### 2003 - Pax, Pax Team NOEXEC
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: permissions, security
 
 ---
 
@@ -942,7 +1096,7 @@ for (;;) {
 }
 ```
 
-
+##### tags: java, hardware
 
 
 
@@ -979,7 +1133,7 @@ MMTk uses patterns for efficiency and reuse (*TriColor, RootSet, Adapter, Facade
 
 **4) Composition (Mechanisms, Policies, Plans):** Mechanisms are **collector-neutral**, **highly-tuned** mechanisms include *bump-pointer, free list, large object allocations*. Policies implements five policies: *immortal allocation, copying collection, mark-sweep collection, reference counting collection* and *treadmill collection*. MMTk maps policies to spaces which are contiguous regions of virtual memory managed by a single policy. Each policy follows a local/global pattern. A plan is MMTk's highest level of composition, defining the rules by which policies are composed (collection and allocation policy for each object for example).
 
-
+##### tags: garbage collection, java, mmtk
 
 ---
 
@@ -987,11 +1141,15 @@ MMTk uses patterns for efficiency and reuse (*TriColor, RootSet, Adapter, Facade
 ### 2004 - Chambers, A Retrospective on Customization Optimizing Compiler Technology for SELF a Dynamically-Typed Object-Oriented Programming Language
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, self, unread
+
 ---
 
 
 ### 2004 - Ertl, Combining Stack Caching with Dynamic Superinstructions
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: cache, general vm, interpreter, unread
 
 ---
 
@@ -999,11 +1157,15 @@ MMTk uses patterns for efficiency and reuse (*TriColor, RootSet, Adapter, Facade
 ### 2004 - Garfinkel, Ostia A Delegating Architecture for Secure System Call Interposition
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: sandbox, unread
+
 ---
 
 
 ### 2004 - Ravi, Security in Embedded Systems Design Challenges
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: embedded systems, security, unread
 
 ---
 
@@ -1011,11 +1173,15 @@ MMTk uses patterns for efficiency and reuse (*TriColor, RootSet, Adapter, Facade
 ### 2004 - Sachindran, MC2 High-Performance Garbage Collection for Memory-Constrained Environments
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: garbage collection, unread
+
 ---
 
 
 ### 2004 - VanDeVen, New Security Enhancements in Red Hat Enterprise Linux
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: aslr, linux, unread
 
 ---
 
@@ -1023,11 +1189,15 @@ MMTk uses patterns for efficiency and reuse (*TriColor, RootSet, Adapter, Facade
 ### 2005 - Chen, Non Control Data Attacks Are Realistic Threats
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: attack, non-control data attack, security, unread
+
 ---
 
 
 ### 2005 - Click, The Pauseless GC Algorithm
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: garbage collection, unread
 
 ---
 
@@ -1063,7 +1233,7 @@ The GC in the HW/SW system needs to send a *pause* signal to each HW entity and 
 
  
 
-
+##### tags: fpga, garbage collection, hardware, java
 
 ---
 
@@ -1101,8 +1271,7 @@ This solution is expensive to copy values but ensures portability. Strings are i
 **The VM itself:** For each function that Lua compiles it creates a prototype which contains an array with the opcodes for the function and an array of Lua values with all constants used by the function. Register-based VM allows for less instructions and a single fetch time because operands are inside the instruction. Instructions are 32 bits long divided into three or four fields: OP|A|B|C or OP|A|Bx or OP|A|sBx where A is the destination, B and C registers, Bx an unsigned value and sBx a signed value. Branch instructions are decoupled in a test and a jump instruction. If the test is not verified, the next instruction is skipped. Each function (and coroutine) holds two stacks, the activation records of the other functions and a large array of temporary values corresponding to a given function.
 
 
-
-
+##### tags: general vm, lua
 
 ---
 
@@ -1110,11 +1279,23 @@ This solution is expensive to copy values but ensures portability. Strings are i
 ### 2005 - Krall, Advances in Interpreters Virtual Machines and Emulators
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, unread
+
 ---
 
 
 ### 2005 - Sheridan, Practical Testing of a C99 Compiler using Output Comparison
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: fuzzing, unread
+
+---
+
+
+### 2005 - Spett, Cross-Site Scripting
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -1122,11 +1303,15 @@ This solution is expensive to copy values but ensures portability. Strings are i
 ### 2005 - Ungar, Constructing a Metacircular Virtual Machine in an Exploratory Programming Environment
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, unread
+
 ---
 
 
 ### 2006 - Gal, HotpathVM An Effective JIT Compiler for Resource-Constrained Devices
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: embedded systems, unread
 
 ---
 
@@ -1134,11 +1319,15 @@ This solution is expensive to copy values but ensures portability. Strings are i
 ### 2006 - Leroy, Formal Certification of a Compiler Backend
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: formal, unread
+
 ---
 
 
 ### 2006 - Piumarta, Open extensible object models
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: oop, unread
 
 ---
 
@@ -1146,11 +1335,15 @@ This solution is expensive to copy values but ensures portability. Strings are i
 ### 2006 - Rigo, PyPys Approach to Virtual Machine Construction
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, pypy, unread
+
 ---
 
 
 ### 2006 - Russell, Eliminating Synchronization-Related Atomic Operations with Biased Locking and Bulk Rebiasing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -1169,6 +1362,7 @@ The main idea PyPy defends is that VMs for dynamic languages should be generated
 The benefits are: *single source to maintain*, *writing the interpreter is easier*, *separation of concerns*. And the effort of writing a translation toolchain is still lower than writing the VM from scratch. It is also possible to add a dynamic compilation (JIT) pass in the toolchain so that a dynamic compiler can be automatically generated.
 
 
+##### tags: general vm, pypy, python, rpython
 
 ---
 
@@ -1176,11 +1370,15 @@ The benefits are: *single source to maintain*, *writing the interpreter is easie
 ### 2007 - Shacham, The Geometry of Innocent Flesh on the Bone Return-into-libc without Function Calls on the x86
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: attack, rop, security
+
 ---
 
 
 ### 2007 - Sotirov, Heap Feng Shui Javascript
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, heap feng shui, javascript, security
 
 ---
 
@@ -1222,8 +1420,15 @@ struct list {
 ```
 
 
+##### tags: general vm, pypy, python, rpython
+
+---
 
 
+### 2008 - Barth, Robust Defenses for Cross Site Request Forgery
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -1231,11 +1436,15 @@ struct list {
 ### 2008 - Fuess, An FPGA Implementation of Explicit-State Model Checking
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: fpga, hardware, model checking
+
 ---
 
 
 ### 2008 - Heiser, The Role Of Virtualization in Embedded Systems
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: embedded systems, general vm, unread
 
 ---
 
@@ -1243,11 +1452,15 @@ struct list {
 ### 2008 - Kotzmann, Design of the Java HotSpot Client Compiler for Java 6
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hotspot, java, unread
+
 ---
 
 
 ### 2008 - One, Smashing the Stack for Fun and Profit
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, buffer overflow, unread
 
 ---
 
@@ -1267,13 +1480,23 @@ struct list {
 
 **Solution:** CFI relies on dynamic checks implemented by machine-code rewriting (verified by static inspection). CFI requires that when a machine code instruction transfers control, it targets a valid destination determined by the CFG ahead of time. For static destinations, this is verified statically but control-flows whose destination is determined at runtime have to be dynamically checked. To determine if an address sane, multiple strategies are available. A check against a set of address ranges adds unacceptable overhead. Three instructions: `label ID` that has no effect, `call, ID, DST` that jumps to the address in `DST` if the `ID` is correct and the corresponding `ret ID` . The instrumentation modifies each source instruction and each possible destination instruction of computed control-flow transfer. It adds before each source a dynamic check (ID-check) that ensures the runtime destination has the ID of the proper equivalence class (that have to be defined in the CFG).
 
-
+##### tags: cfi, security
 
 ---
 
 
 ### 2009 - Bolz, Tracing the Meta-Level PyPys Tracing JIT Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general, pypy, python, unread
+
+---
+
+
+### 2009 - Callegati, Man-in-the-Middle Attack to the HTTPS Protocol
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -1293,17 +1516,15 @@ The main challenges when linking low-level and high-level programming are that t
 
  The framework is used by MMTk !
 
+ ##### tags: garbage collection, intermediate representation
+
 ---
 
 
 ### 2009 - Gal, Trace-based Just-in-Time Type Specialization for Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
----
-
-
-### 2009 - Yee, Native Client A Sandbox for Portable, Untrusted x86 Native Code
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
+##### tags: general vm, jit, unread
 
 ---
 
@@ -1311,11 +1532,15 @@ The main challenges when linking low-level and high-level programming are that t
 ### 2010 - Agesen, The Evolution of an X86 Virtual Machine Monitor
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: unread
+
 ---
 
 
 ### 2010 - Bania, JIT Spraying and Mitigations
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, jit, jit spraying, security, unread
 
 ---
 
@@ -1399,7 +1624,7 @@ which if execution begins at `0x0347006A` will become the `GetPC()` method:
 
 Flash objects are allocated using a custom allocator which boils down to `VirtualAlloc`. It will map pages at a 64kB granularity and does so with a linear scan finding the first hole that matches the size requested. 
 
-
+##### tags: attack, jit, jit spraying, rop, security
 
 ---
 
@@ -1407,11 +1632,15 @@ Flash objects are allocated using a custom allocator which boils down to `Virtua
 ### 2010 - Brunthaler, Inline Caching Meets Quickening
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: cache, general vm, unread
+
 ---
 
 
 ### 2010 - Checkoway, Return-Oriented Programming without Returns
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, rop, security, unread
 
 ---
 
@@ -1491,7 +1720,7 @@ int jitsec_monitor ( unsigned int orig_eax )
 }
 ```
 
-
+##### tags: defense, jit
 
 ---
 
@@ -1509,11 +1738,7 @@ Android runtime must support: **limited processor speed, limited RAM, no swap sp
 
 **Zygote:** The Zygote enable fast startup time for new instances as well as sharing of code. It assumes a significant number of core libraries are used among multiple applications and often in read-only mode. The Zygote is a VM process that starts at system boot time, preloads core libraries and waits for socket request to fork a new VM.
 
-
-
-
-
-
+##### tags: general vm, java
 
 ---
 
@@ -1521,11 +1746,15 @@ Android runtime must support: **limited processor speed, limited RAM, no swap sp
 ### 2010 - Erlingsson, Low-Level Software Security by Example
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: security, unread
+
 ---
 
 
 ### 2010 - Onarlioglu, G-Free
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: security, unread
 
 ---
 
@@ -1543,13 +1772,17 @@ Java Security is enforced in three ways:
 
 
 
-Almost all Java exploits use weaknesses in the **Bytecode Verifier**. The verifier uses a constraints-based approach to perform its analysis. The objective is to (1) provide an extensible framework for modeling security constraints and (2) provide a concrete model for meaningful, high value security constraints.
+Almost all Java exploits use weaknesses in the **Bytecode Verifier**. The verifier uses a constraints-based approach to perform its analysis. The objective is to (1) provide an extensible framework for modeling security constraints and (2) provide a concrete model for meaningful, h
+
+##### tags: java, formal, unread
 
 ---
 
 
 ### 2010 - Rizzo, Practical Padding Oracle Attacks
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, security, unread
 
 ---
 
@@ -1578,7 +1811,7 @@ Native code isolation:
 
 **Native Code Security:** The regulation of native system calls goes through the Java's Security Manager. It accepts or denies a system call based on a security policy. A security policy can grant two kinds of permissions: **mode permissions** and **system-access permissions**. **Mode permissions** specify whether a library can be loaded into the JVM and whether it should be sandboxed. The mode policy is enforced during library-loading. **System-access permissions** define what an application is allowed to perform (e.g. read or write files).
 
-
+##### tags: attack, java, sandbox, security
 
 ---
 
@@ -1621,11 +1854,15 @@ To write shell-code, the high byte must be <0x7F (for XOR) otherwise the compile
 
 (Description of the attack)
 
+##### tags: attack, jit, jit spraying, security
+
 ---
 
 
 ### 2010 - Swaine, Back to the futures Incremental Parallelization of Existing Sequential Runtime Systems
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, unread
 
 ---
 
@@ -1633,11 +1870,23 @@ To write shell-code, the high byte must be <0x7F (for XOR) otherwise the compile
 ### 2010 - Wei, Secure Dynamic Code Generation Against Spraying
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: jit, jit spraying, defense, diversification, security, unread
+
+---
+
+
+### 2010 - Yee, Native Client A Sandbox for Portable, Untrusted x86 Native Code
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: sandbox, unread
+
 ---
 
 
 ### 2011 - Ansel, Language-Independent Sandboxing of Just-In-Time Compilation and Self-Modifying Code
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: jit, defense, sandbox, security, unread
 
 ---
 
@@ -1645,17 +1894,24 @@ To write shell-code, the high byte must be <0x7F (for XOR) otherwise the compile
 ### 2011 - Bletsch, Jump-Oriented Programming A New Class of Code-Reuse Attack
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+
+##### tags: attack, jop, rop, security, unread
+
 ---
 
 
 ### 2011 - Bolz, Runtime Feedback in a Meta-Tracing JIT for Efficient Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, jit, unread
+
 ---
 
 
 ### 2011 - Cai, JVM virtual method invoking optimization based on CAM table
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: java, unread
 
 ---
 
@@ -1680,8 +1936,15 @@ Code-reuse attacks can be used instead of injecting a malicious piece of code. T
 **Implementation in Javascript engine:** In V8, Native code is stored as `SharedFunctionInfo`. At the end of `Compiler::Compile`, the page is set as non-executable. Before `Execution::call`, it is set as executable then non-executable again after the execution. In Safari's engine, the same idea is used: non-executable after `JIT::compile`, executable before `JITStubCall::call` then non-executable again.
 
  
+##### tags: defense, jit, w xor x, 
+
+---
 
 
+### 2011 - Davi, ROPdefender A Detection Tool to Defend Against Return-Oriented Programming Attacks
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -1699,11 +1962,15 @@ CSOM is a SmallTalk Virtual Machine written in C. It does not support images but
 
 An extension of C called ClassDL is used to help with OOP mechanisms. The combination of all the different elements create a toolchain generating a modular VM on demand.
 
+##### tags: general vm
+
 ---
 
 
 ### 2011 - Miranda, The Cog Smalltalk Virtual Machine Writing a JIT in a High-Level Language
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: cog, jit, smalltalk, unread
 
 ---
 
@@ -1711,11 +1978,23 @@ An extension of C called ClassDL is used to help with OOP mechanisms. The combin
 ### 2011 - Rohlf, The Security Challenges of Client-Side Just-in-Time Engines
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: jit, security, unread
+
 ---
 
 
 ### 2012 - Barbu, Application-Replay Attack on Java Cards When the Garbage Collector Gets Confused
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, garbage collection, java, unread
+
+---
+
+
+### 2012 - Pappas, Smashing the Gadgets: Hindering Return-Oriented Programming Using In-Place Code Randomization
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -1723,17 +2002,23 @@ An extension of C called ClassDL is used to help with OOP mechanisms. The combin
 ### 2012 - Rohou, Tiptop Hardware Performance Counters for the Masses
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, performance, unread
+
 ---
 
 
 ### 2012 - Wu, RIM An Architecture for JIT Spraying Mitigation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: jit, jit spraying, defense, diversification, unread
+
 ---
 
 
 ### 2012 - Wuerthinger, Self-optimizing AST interpreters
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: ast, interpreter, unread
 
 ---
 
@@ -1753,13 +2038,15 @@ Modern OS adopted ***data execution prevention (DEP)*** or ***writable XOR execu
 
 **W+X:** Two important points during the execution of JIT compiled code  have to be noted: (1) the code compilation point where the JIT compiler generates the native code and (2) the code execution point when the VM executes the native code. When entering (1), the memory pages are marked as writable and non-executable. Shortly before (2), memory pages are marked as executable, and afterwards, non-executable again.
 
-
+##### tags: defense, diversification, jit, jit spraying, w xor x, security
 
 ---
 
 
 ### 2013 - Duboscq, Graal IR An Extensible Declarative Intermediate Representation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, graal, intermediate representation, unread
 
 ---
 
@@ -1789,13 +2076,15 @@ The introduction of a **DMA-watchdog** can solve the issue. The watchdog resides
 
 **Proof-of-concept**: A DMA Simulator is added to the secondary data bus of the system and to the RAM via an SD-Arbiter. Its task is to *copy the content of internal Block-RAM (8KiB) to a given RAM address*. It does not take additional CPU time as it is completely independent.
 
-
+##### tags: defense, fpga, hardware, security
 
 ---
 
 
 ### 2013 - Fournet, Fully Abstract Compilation to Javascript
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: javascript, unread
 
 ---
 
@@ -1815,7 +2104,7 @@ Several assumptions are made to simplify the implementation effort. *No stack-po
 
 Two rewriting techniques are used: **NOP insertion** and **constant blinding**. Moreover, the randomization goes through **`mmap` address randomization**, **basic block reordering**, **equivalent instruction substitution** and **register reallocation**. The implementation is presented on x86.
 
-
+##### tags: defense, diversification, jit, security
 
 ---
 
@@ -1823,11 +2112,29 @@ Two rewriting techniques are used: **NOP insertion** and **constant blinding**. 
 ### 2013 - Kulkarni, Automatic Construction of Inlining Heuristics using Machine Learning
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: inlining, machine learning, unread
+
 ---
 
 
 ### 2013 - Marr, Supporting Concurrency Abstractions in High-level Language Virtual Machines
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, unread
+
+---
+
+
+### 2013 - Papadogiannakis, ASIST Architectural Support for Instruction Set Randomization
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+**Instruction Set Randomization (ISR)** has been proposed to defend against any type of code injection attack. It randomizes the instruction set of a processor so that an attacker is not able to inject meaningful code. ISR techniques encrypt the instructions of a possibly vulnerable program with a program-specific key. Instructions are decrypted at runtime. 
+
+**ASIST** is a hardware/software scheme that supports ISR on top of an unmodified ISA. It uses distinct per-process keys and another system kernel's key. Two registers, `oskey` and `usrkey` are added to processor, which contains the kernel's key and the user-level key of the running process. These registers are only accessible by the operating system via privileged instructions.
+
+The solution is built on top of a **SPARC** architecture. The decryption unit is added at the instruction fetch pipeline stage. It implements two (weak) encryption algorithms: XOR and transposition. The encryption comes with two different techniques: **statically** by adding a new section in the ELF that contains the key and encrypting code section using it and **dynamically** by generating a random key at load time and encrypting with this key.
+
+##### tags: defense, isr, security
 
 ---
 
@@ -1853,17 +2160,23 @@ The target platform uses the following mechanisms for mitigations: *non-executab
 
 **JIT Compilation:** Since each instantiation of a vulnerable application may yield a completely different set of concrete gadgets, a dynamic compilation is required to ensure we can use a plethora of gadget types to build the final payload. The gadget compiler works like a traditional compiler except that compilation is embedded directly in an exploit script.
 
+##### tags: aslr, attack, jit, rop, security
+
 ---
 
 
 ### 2013 - Wimmer, Maxine an Approachable Virtual Machine for and in Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, java, maxine, unread
+
 ---
 
 
 ### 2013 - Wuerthinger, One VM to Rule Them All
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, unread
 
 ---
 
@@ -1887,7 +2200,7 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 
 **RATTLE:** This translation table is needed because other methods have drawbacks. Storing the rattle at a **fixed** address in memory allows for its address to be hard-coded in the instructions themselves. Unfortunately, this can be exploited by an attacker. Ut can use a **Global Offset Table (GOT)** but this is realized using relative addresses and forfeits sharing. A dynamic address that is randomly chosen for every process could be stored in a dedicated **machine register**. However, this sacrifices the usage of that register. Rattle chose to use the x86 feature of ***memory segmentation*** to address and at the same time hide it from adversaries. It allows for different *segment descriptors* to be created, each with their own *base address* and *limit* (start and length).
 
-
+##### tags: aslr, diversification, defense, security
 
 ---
 
@@ -1895,11 +2208,15 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 ### 2014 - Bittau, Hacking Blind
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: attack, security, unread
+
 ---
 
 
 ### 2014 - Bosman, Framing Signals A Return to Portable Shellcode
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, rop, security, unread
 
 ---
 
@@ -1907,11 +2224,15 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 ### 2014 - Carlini, ROP is Still Dangerous Breaking Modern Defenses
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: attack, rop, security, unread
+
 ---
 
 
 ### 2014 - Davi, Stitching the Gadgets On the Ineffectiveness of Coarse-Grained Control-Flow Integrity Protection
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, cfi, rop, security, unread
 
 ---
 
@@ -1919,11 +2240,15 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 ### 2014 - Duboscq, Speculation Without Regret Reducing Deoptimization Meta-data in the Graal Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: deoptimization, general vm, graal, unread
+
 ---
 
 
 ### 2014 - Eckert, FPGA-Based System Virtual Machines
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: fpga, general vm, unread
 
 ---
 
@@ -1931,11 +2256,15 @@ Oxymoron uses a new x86 calling convention: ***Position-and-Layout-Agnostic Code
 ### 2014 - Freundenberg, SqueakJS a Modern and Practical Smalltalk that Runs in any Browser
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, javascript, smalltalk, squeak, unread
+
 ---
 
 
 ### 2014 - Goktas, Out Of Control Overcoming Control-Flow Integrity
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: cfi, unread
 
 ---
 
@@ -1967,7 +2296,7 @@ Several optimizations are enabled:
 - **Specialization Reduction:** As soon as an operation gets polymorphic, it is worthwhile to evaluate if a single more generic specialization leads to better code than a chain of monomorphic specializations. The `cost` option of specializations can be used to choose to replace with a more generic option. It is obtained from the sum of all specializations' `costs`.
 - **Guard Reduction:** Types and method guards are executed while the polymorphic chain of specializations is traversed. These guards are represented with constant boolean values and an `@Implies` annotation is used to prove that a Java guard method implies another.
 
-
+##### tags: ast, general vm, intermediate representation, interpreter
 
 ---
 
@@ -1985,7 +2314,7 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 
 - Current VMI systems face fundamental trade-offs between performance and risk, often making fragile assumptions about the guest OS
 
-  
+  ##### tags: formal, sok
 
 ---
 
@@ -1993,17 +2322,23 @@ Other methods allow to bridge the gap , such as *code implanting* where the obje
 ### 2014 - Jauernig, Lobotomy An Architecture for JIT Spraying Mitigation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: defense, jit, security, unread
+
 ---
 
 
 ### 2014 - Kuznetsov, Code Pointer Integrity
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: code pointer integrity, defense, security, unread
+
 ---
 
 
 ### 2014 - Lin, A Security PaaS Container with a Customized JVM
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: java, unread
 
 ---
 
@@ -2027,11 +2362,15 @@ Enforcing the control-flow integrity (CFI) in a JIT compiler provides a better d
 
 Those verifications are performed on native code emission, deletion or modification. The three address sets presented earlier are constructed at code installation. The verifier performs address-set updates and constraint checking in one phase: (1) **code installation** checks code and updates address sets, copies the code to the shadow heap and MCFI updates is tables, (2) **code deletion** checks that direct branches outside the code region do not target any instruction within, remove related entries in the MCDI table and checks that there are no threads in the code region (3) **code modification** boils down to a code deletion followed by a code installation.
 
+##### tags: cfi, defense, jit, security
+
 ---
 
 
 ### 2014 - Seaton, Debugging at Full Speed
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: debug, general vm, unread
 
 ---
 
@@ -2039,17 +2378,23 @@ Those verifications are performed on native code emission, deletion or modificat
 ### 2014 - Stadler, Partial Escape Analysis and Scalar Replacement for Java
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: java, unread
+
 ---
 
 
 ### 2014 - Woss, An Object Storage Model for the Truffle Language Implementation Framework
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: truffle, unread
+
 ---
 
 
 ### 2015 - Asanovic, The Berkeley Out-of-Order Machine BOOM An Industry Competitive Synthesizable Parameterized RISC-V
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: hardware, processor, risc-v, unread
 
 ---
 
@@ -2137,11 +2482,46 @@ O.func = foo;
 
 **Defenses:** Enhance the JIT buffer with G-Free to remove all gadgets. The produced code is safe and gadget-free.
 
+##### tags: attack, jit, rop, security
+
+---
+
+
+### 2015 - Carlini, Control-Flow Bending: On the Effectiveness of Control-Flow Integrity
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[12/10/2022]
+
+Using a generalization of non-control-data attacks called **Control-Flow Bending (CFB)**, the authors present a way to achieve a Turing-complete computation on memory using calls to the standard library.  A **non-control-data attack** is an attack where a memory corruption is used to corrupt data but no code pointer (*i.e.* pointer to a return address, function pointer). These attacks can still allow an attacker to execute arbitrary code through a victim's program.
+
+**Control-Flow Bending (CFB)**  allows an attacker to bend the control-flow of the application while still adhering to the imposed security policy (CFI). A "data-only attack" is a non-control-data attack where the entire execution trace is identical to some feasible non-exploit execution trace. CFB is more general as each control-flow transfer is *in* the valid CFG but the execution trace is not necessarily required to match a valid non-exploit trace. To clarify:
+
+- An attacker who overwrites arguments to `exec()` is performing a **data-only attack**
+- An attacker who overwrites an `is_admin` flag half-way through processing a request is performing a **non-control-data attack**
+- An attacker who modifies a function pointer to point to a different (valid) call target is mounting a **control-flow bending attack**
+
+**Fully-precise CFI** where a CFG is the most restrictive that still allows all feasible non-malicious execution does not exist in practice. Practical implementations of CFI are always limited by the precision of the CFG that can be obtained. Most CFI mechanisms over-approximate allowed targets for individual indirect control-flow transfers. While a CFI solution can be decoupled in: (1) restricting indirect control transfers to the CFG and (2) restricting the return instructions, some modern CFI schemes deactivate shadow stacks (answer to the second point) due to its performance overhead. 
+
+Evaluating CFI solutions is possible using the **AIR and gadget reduction metrics**. The **AIR metric** measures the relative reduction in the average number of valid targets for all indirect branch instructions that a CFI scheme provides (without CFI, an indirect branch can target any instruction in the program). The **gadget reduction metric** measures the relative reduction in the number of gadgets that can be found at locations that are valid targets for an indirect branch instruction. The authors propose **Basic Exploitation Test (BET)** that involves selecting a minimal program that contains a realistic vulnerability and determining if attacks are still possible under protection of the CFI scheme. The minimal program should be chosen to use a subset of common run-time libraries normally found in real applications, and constructed so it contains a vulnerability that allows hijacking control-flow in a way that is seen in real-life attacks. The evaluator applies the CFI scheme to the program, chooses an attacker goal (arbitrary code execution, partial code execution or information leakage) and checks whether it is achievable under the CFI scheme.
+
+To return to a different location than it was called from, a function must be able to **overwrite the return address on the stack after it is called and before it returns**. This is easy when the memory corruption vulnerability happens in that specific function. An attacker can use a **dispatcher function** to perform this task. It is a function that can overwrite its own return address when given arguments supplied by an attacker. Any function that contains a "write-what-where" primitive when the arguments are under the attacker's control can be used as a dispatcher function. The `libc` presents different dispatcher functions such as:
+
+- `memcpy()` - pointing the source buffer to an attacker-controlled location and the target buffer to `memcpy()`'s return address .
+- `printf()` - using `%n` to write an arbitrary value to an arbitrary location and rewrite its own return address.
+- `strcat()` - similar to `memcpy()` but only usable if the address to return to does not contain null bytes.
+- `fputs()` - characters are temporarily buffered to a location as specified in the `FILE` argument that the attacker can supply, placing the temporary buffer on top of the return address.
+
+It is also possible to perform a **loop injection** using two following calls to the same dispatcher function where the attacker controls the input to the second one. It is common for programs to perform successive calls to `printf()` for example. When the second call to `printf()` is reached, the attacker can modify the return address to point to the instruction right after the first `printf()` and re-trigger the second call! This just created a **loop**!
+
+##### tags: attack, cfi, security
+
 ---
 
 
 ### 2015 - Evans, Missing the Pointer on the Effectiveness of Code Pointer Integrity
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: code pointer integrity, unread
 
 ---
 
@@ -2149,11 +2529,15 @@ O.func = foo;
 ### 2015 - Grimmer, Dynamically Composing Languages in a Modular Way Supporting C Extensions for Dynamic Languages
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: general vm, unread
+
 ---
 
 
 ### 2015 - Gunadi, Formal Certification of Android Bytecode
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: android, formal, general vm, unread
 
 ---
 
@@ -2161,17 +2545,23 @@ O.func = foo;
 ### 2015 - Hussein, Impact of GC Design on Power and Performance for Android
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: android, garbage collection, unread
+
 ---
 
 
 ### 2015 - Jangda, Adaptive Just-in-time Code Diversification
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: diversification, unread
+
 ---
 
 
 ### 2015 - Lam, Numba
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: general vm, llvm, numba, python, unread
 
 ---
 
@@ -2226,7 +2616,7 @@ The original attack is unfeasible because ARM expects instruction to be 4-byte a
 
 ***Gadget chaining*** consists of using the already available sequences of instructions called ***gadgets*** to generate a full program. The major components are (1) ***pinpointing gadgets in memory***, (2) ***preparing registers and branching to gadgets from JavaScript*** (3) ***returning from gadgets without crashing***. 
 
-
+##### tags: attack, jit, jit spraying, rop, security
 
 ---
 
@@ -2234,11 +2624,15 @@ The original attack is unfeasible because ARM expects instruction to be 4-byte a
 ### 2015 - Lockhart, Pydgin Generating Fast Instruction Set Simulators from Simple Architecture Descriptions with Meta-Tracing JIT Compilers
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: pydgin, instruction set simulator, unread
+
 ---
 
 
 ### 2015 - McGillion, Open-TEE An Open Virtual Trusted Execution Environment
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: tee, unread
 
 ---
 
@@ -2246,11 +2640,15 @@ The original attack is unfeasible because ARM expects instruction to be 4-byte a
 ### 2015 - Prakash, Defeating ROP Through Denial of Stack Pivot
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: rop, security, unread
+
 ---
 
 
 ### 2015 - Rohou, Branch Prediction and the Performance of Interpreters Dont Trust Folklore
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: interpreter, performance, unread
 
 ---
 
@@ -2258,11 +2656,15 @@ The original attack is unfeasible because ARM expects instruction to be 4-byte a
 ### 2015 - Sartor, The Impact of Virtual Machines on Embedded Systems
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: embedded systems, general vm, unread
+
 ---
 
 
 ### 2015 - Simon, Snippets Taking the High Road to a Low Level
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -2292,12 +2694,15 @@ The race condition needs to be validated and the method that notifies the update
 **System Design:** Three main challenges. ***Memory Map Synchronization*** as all memory regions allocated by the code cache are dynamically allocated and can grow and shrink freely, an effective way is needed to synchronize memories. A *reservation-based* strategy is chosen for the shared memory. When the process is initialized, a we reserve a large chunk of shared memory in both the untrusted process and the SDT. Once the memory is allocated, the synchronization can be performed with *Inter-Process Communication (IPC)*. ***Remote Procedure Call*** can be done via stubs but suffers from performance and argument passing. There is a choice to extend the shared memory to dynamic data the SDT depends on. ***Permission Enforcement*** comes by intercepting system calls related to virtual memory management. Specifically, some policies are enforced: (i) memory cannot be mapped as both writable and executable, (ii) when mapping a memory region as executable, the base address and the size must come from the SDT process, and the memory is always mapped as RX, (iii) The permission of non-writable memory cannot be changed.
 
 
+##### tags: permissions, unread, w xor x
 
 ---
 
 
 ### 2015 - VanDeVanter, Building Debuggers and Other Tools We Can Have it All
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: debug, unread
 
 ---
 
@@ -2315,9 +2720,7 @@ JITScope enforces **CFI ** on both statically compiled and JIT compiled code as 
 
 **Implementation:** JITScope enforces a W+X on the JIT compiled code as well as a CFI policy on both the VM and a relaxed one on the JIT code. JITScope introduces **three delegates to enforce W+X:** `fwd-exec`, `bwd-exec` and `write`. All write operations are forced through the `write` delegate that enables the writable permission of the JIT code memory page and drops the executable permission at the same time and reverses it right after. All calls to the JIT code are enforced through the `fwd-exec` delegate that sets the target memory to read-only and executable before calling the JIT code. The reverse way is done through `bwd-exec` that only allows legitimate VM function calls and sets the target memory to read-only and executable before the VM functions return to the JIT compiled code. Another delegate is the `CodeGen` that enforces a CFI policy on the JIT code: it first randomly selects an ID at compile-time, when the JIT compiler is going to generate  a function, the delegate instruments the ID before this function. For an indirect call or jump instruction, the delegate invokes the delegate to instrument CFI checks before it (they validate the existence of the ID before the target function to ensure the transfer target is a valid JIT function entry). For the JIT code, the `CodeGen` delegate is used to instrument shadow stack related operations to runtime generated return instructions. The shadow stack is put in a separate memory region, indexed by a dedicated segment register (on x86). 
 
-
-
- 
+##### tags: cfi, defense, jit, w xor x
 
 ---
 
@@ -2325,11 +2728,23 @@ JITScope enforces **CFI ** on both statically compiled and JIT compiled code as 
 ### 2016 - Asanovic, The Rocket Chip Generator
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, processor, risc-v
+
 ---
 
 
 ### 2016 - Constan, Intel SGX Explained
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: tee, sgx, unread
+
+---
+
+
+### 2016 - Conti, A Survey of Man In The Middle Attack
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -2337,11 +2752,42 @@ JITScope enforces **CFI ** on both statically compiled and JIT compiled code as 
 ### 2016 - Gruss, Rowhammer js A Remote Software-Induced Fault Attack in JavaScript
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: attack, security, side-channel, unread
+
+---
+
+
+### 2016 - Hu, Data-Oriented Programming On the Expressiveness of Non-Control Data Attacks
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[12/10/2022]
+
+Authors present and qualify **non-control data attacks** that tamper with or leak security-sensitive memory that is not directly used in control transfer instructions. Data-oriented programming can offer rich exploits from common vulnerabilities. Corrupting simple local variables (through a buffer overflow for example) can allow an attacker to take control of simple operations (condition, dereference, assignment, addition, etc.) and extract these micro-operations as **data-oriented gadgets**. Executing them on attacker-controlled inputs chained in a sequence makes it possible to perform an expressive computation. A loop that allows to chain gadgets in an infinite sequence (*e.g.:* `while` on a local variable) are called **gadget dispatchers** and help attackers chaining the gadgets.
+
+| **Semantics**      | Instructions in C | Data-Oriented gadgets in DOP |
+| ------------------ | ----------------- | ---------------------------- |
+| arithmetic/logical | `a op b`          | `*p op *q`                   |
+| assignment         | `a = b`           | `*p = *q`                    |
+| load               | `a = *b`          | `*p = **q`                   |
+| store              | `*a = b`          | `**p = *q`                   |
+| jump               | `goto L`          | `vpc = &input`               |
+| conditional jump   | `if a goto L`     | `vpc = &input if *p`         |
+
+The authors define **MinDOP**, a small language that uses a virtual instruction set and virtual register operands in which the attacker's payload can be specified. The 6 kind of virtual instructions are presented in the above table and allow to perform arithmetic/logical calculations, load and stores as well as conditional and unconditional jumps . Note that `vpc` is the virtual input pointer that is modified to simulate jumps. Each virtual operation is simulated by real x86 instruction sequences available in the vulnerable program. **None of the gadgets or dispatchers modify any code-pointers or violate CFI in the real-program execution**. To avoid tampering with the CFG, virtual registers are implemented with carefully-chosen memory locations (**not** hardware registers) used only through gadget operations.
+
+A **data-oriented gadget** simulates three logical micro-operations: (**1**) loading the micro-operation, (**2**) the intended virtual operation's semantics (**3**) final store micro-operation. (1) simulates the read of the virtual register operand(s) from memory and (3) writes the result back to memory. The main differences with ROP/JOP gadgets is that: data-oriented gadgets require to write the operation result back in memory and they must execute in at least one legitimate control flow without the requirement of executing immediately one after the other. The **gadget dispatcher** is simulated by a loop which iterates over computation that simulates gadgets and has a selector in it. Each iteration executes a subset of gadgets using outputs from gadgets in the previous iteration. 
+
+An **interactive attack** rewrites local variables at each iteration so that the desired gadget works as required. Given *Mj* the memory state for executing gadget *j*, the attacker can corrupt local variables to configure *Mj* to execute a *j* in a round, provide multiple rounds of malicious inputs to perform an expressive computation the corrupt the loop condition variable to stop. A **non-interactive attack** consists of the attacker providing the entire malicious input as a single data transmission, *i.e.* all the memory setup and conditions for deciding loop termination and selective gadget activation. MinDOP adds two virtual operations that enable conditional chaining of operations, or virtual jumps. It keeps a pointer called **virtual PC** that points to the desired configuration *Mj*. 
+
+##### tags: attack, cfi, non-control data attack, security
+
 ---
 
 
 ### 2016 - Ilbeyi, Pydgin for RISC-V A Fast and Productive Instruction-Set Simulator
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: instruction set simulator, pydgin, risc-v, unread
 
 ---
 
@@ -2365,13 +2811,15 @@ Building a GC in Rust brought up the following challenges:
 
 Some **abuses** of Rust had to be performed to improve performance. To represent collections state, memory managers often use bit maps (or byte maps). Examples include **card tables** (remember modified memory regions) and **mark tables** (remember marked objects). Concurrent writing is needed in an array but forbidden by Rust. 
 
-
+##### tags: garbage collection, mmtk
 
 ---
 
 
 ### 2016 - Lopriore, Memory Protection in Embedded Systems
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: embedded system, security, unread
 
 ---
 
@@ -2391,11 +2839,39 @@ The mark unit consists of three parts: the ***reader*** that polls the range unt
 
 Changes to CPU consist of an added read barrier mechanism fully implemented in hardware than using a user-level trap. Three important cases are added ***NMT fault***, ***Relocation fault*** and ***Stale reference fault***
 
+##### tags: fpga, garbage collection, hardware
+
+---
+
+
+### 2016 - Maisuradze, What Cannot Be Read Cannot Be Leveraged Revisiting Assumptions of JIT-ROP Defenses
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, jit, rop, security
+
+---
+
+
+### 2016 - Shoshitaishvili, (State of) The Art of War Offensive Techniques in Binary Analysis
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
+
 ---
 
 
 ### 2017 - Burow, Control-Flow Integrity Precision Security and Performance
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: cfi, security, unread
+
+---
+
+
+### 2017 - Delshadtehrani, Nile A Programmable Monitoring Coprocessor
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -2423,9 +2899,7 @@ Changes to CPU consist of an added read barrier mechanism fully implemented in h
 
 **Security analysis and performance evaluation: ...**
 
-
-
-[25/04/2022]
+##### tags: attack, non-control data attack, defense jit, sgx, tee, security
 
 
 
@@ -2435,11 +2909,15 @@ Changes to CPU consist of an added read barrier mechanism fully implemented in h
 ### 2017 - Izraelevitz, Reusability is FIRRTL Ground Hardware Construction Languages Compiler Frameworks and Transformations
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: firrtl, hardware, unread
+
 ---
 
 
 ### 2017 - Jangda, RandHeap Heap Randomization for mitigating Heap Spray Attacks in Virtual Machines
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: defense, diversification, security, unread
 
 ---
 
@@ -2465,11 +2943,15 @@ Three kinds of unit tests can be ran into the toolchain: individual assembly ins
 
 Then, tracking faulty methods at runtime is comple as bootstraping a meta-circular VM in a new ISA holds many parts that are untested. A unique identifier called `MethodID` was injected during compilation to keep track execution. Another approach would be to check the address of the faulty instructions through the PC, against the code cache to find the boundaries of the faulty method. Inlined methods would not be taken in consideration so a dedicated `MethodIDNode` is attached to the IR graph before the inlined code to overcome this issue.
 
+##### tags: vm development
+
 ---
 
 
 ### 2017 - Lian, A Call to ARMs Understanding the Costs and Benefits of JIT Spraying Mitigations
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, defense, jit, jit spraying, sok, unread
 
 ---
 
@@ -2477,11 +2959,15 @@ Then, tracking faulty methods at runtime is comple as bootstraping a meta-circul
 ### 2017 - Maas, Full System Simulation of Java Workloads with RISC-V and the Jikes Research Virtual Machine
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, java, jikes, risc-v, unread
+
 ---
 
 
 ### 2017 - Maisuradze, Dachshund: Digging for and Securing Against Non-Blinded Constants in JIT Code
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: jit, security, unread
 
 ---
 
@@ -2511,17 +2997,35 @@ Example:
 
 Semantics for secure garbage collection
 
+##### tags: garbage collection, security, side-channel attack
+
 ---
 
 
 ### 2017 - Pridgen, Picking up the Trash Exploiting Generational GC for Memory Analysis
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: garbage collection, side-channel attack, unread
+
 ---
 
 
-### 2017 - Reshetova, Randomization cannott stop BPF JIT spray
+### 2017 - Reshetova, Randomization cannot stop BPF JIT spray
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, jit, jit spraying, unread
+
+---
+
+
+### 2017 - Sinha, Reviving Instruction Set Randomization
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+**Instruction Set Randomization (ISR)** is ineffective against code-reuse attacks which are the cornerstone of modern attacks. Previous solutions propose **(1)** unfavorable performance-security trade-offs, **(2)** no self-protection, **(3)** no support for shared libraries and page sharing, and **(4)** archaic threat models.
+
+**Polyglot** is a hardware-based ISR schemes that uses strong encryption (AES and ECC). It removes decryption from the critical path in the processor to improve performance. The encryption is performed at the page granularity and enables page sharing between applications. It comes with strong encryption and a low overhead. Instructions are encrypted right from system boot.
+
+##### tags: defense, isr, security
 
 ---
 
@@ -2529,17 +3033,31 @@ Semantics for secure garbage collection
 ### 2018 - Belleville, Automated Software Protection for the Masses Against Side-Channels Attacks
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: unread
+
+---
+
+
+### 2018 - Biondo, The Guard’s Dilemma Efficient Code-Reuse Attacks Against Intel SGX
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
+
 ---
 
 
 ### 2018 - Cho, FPGASwarm High Throughput Model Checking on FPGAs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: fpga, hardware, model-checking
+
 ---
 
 
 ### 2018 - Fratric, Bypassing Mitigations by Attacking JIT Server in Microsoft Edge
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: attack, jit, security, unread
 
 ---
 
@@ -2553,6 +3071,8 @@ Existing defenses in Edge are *Microsoft's Control Flow Guard* (**MS-CFG**), a C
 
 JIT-Spray specific protections: *constant folding*, *constant blinding*, *NOP insertion*.
 
+##### tags: jit, jit spraying, security, sok
+
 ---
 
 
@@ -2563,17 +3083,23 @@ JIT-Spray specific protections: *constant folding*, *constant blinding*, *NOP in
 
 A central security feature of operating systems is **memory isolation**. It ensures programs cannot access each other's or kernel's memory. It allows running multiple operations at the same time. This isolation is usually performed by a **supervisor bit** of the processor that defines whether a memory page of the kernel can be accessed or not . This bit can only be set when entering kernel code and is cleared when switching to user processes. This hardware feature **allows operating system to map the kernel into the address space of every process** and have efficient transitions from user processes to the kernel.
 
+##### tags: security, side-channel attack
+
 ---
 
 
 ### 2018 - Miranda, Two Decades of Smalltalk VM Development Live VM Development through Simulation Tools
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: smalltalk, vm development, unread 
+
 ---
 
 
 ### 2018 - Park, Bytecode Corruption Attacks are Real and How to Defend Against Them
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: non-control data attack, security, unread
 
 ---
 
@@ -2595,7 +3121,7 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 
 **Time Dilation in Multi-tenant Systems:** The *Time-stamp Counter* is commonly used for timekeeping as it is an **auto-incremented register on CPU at the clock rate**. Timing utilities such as `gettimeofday` use this register to keep track of time. Leaving the control of time keeping utilities to an external tool can allow other programs to run between the meantime and dilate the time spent performing an action.
 
-
+##### tags: hotspot, security, side-channel attack
 
 ---
 
@@ -2609,7 +3135,7 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 
 **Shadow Stack Design Space:** For a shadow stack to be adopted, it must be *highly performant*, *compatible with existing code* and provide *meaningful security*. Shadow stacks can be split into 5 categories, 3 as **compact** and 2 as **parallel**. They differ in the way they store the shadow stack pointer, either as a global variable, segment or register for the **compact** version or constant offset or register offset for the **parallel** version. The compact version use the location of the return address on the program stack to directly find the corresponding entry on the shadow stack. The parallel shadow stack is as large as the program stack and a simple offset maps from the program stack to the shadow stack. Direct mapping trades memory overhead for performance.
 
-
+##### tags: cfi, security, sok
 
 ---
 
@@ -2617,11 +3143,58 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 ### 2019 - Choi, Reusable Inline Caching for JavaScript Performance
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: cache, javascript, unread
+
+---
+
+
+### 2019 - De, FIXER Flow Integrity Extensions for Embedded RISC-V
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+**Flow Integrity eXtension for Embedded RISC-V (FIXER)**  is a low energy, low overhead solution that ensures integrity of backward and forward edge control flow of programs running on a RISC-V core. The unmodified RISC-V core is a hard IP, while the dynamically reconfigurable FIXER coprocessor is implemented on an on-chip FPGA.
+
+**RoCC:**  The architecture is based on the Rocket chip using the RocketChip generator to generate a Rocket Tile (scalar 64-bit RISC-V core, L1 instruction and data caches and the Rocket Custom Coprocessor **RoCC**). The communication between the core and RoCC goes through the **RoCCIO** interface. RoCC instructions extend the RISC-V ISA with 4 custom instructions. These instructions take the usual register/register fields:`opcode`, `rd`, `rs1`, `rs2` and `funct7`. The `funct3` is used by the RoCC interface and split in `xs1`, `xs2` and `xd` controlling the read and write of the core registers by the RoCC instruction. If `xs1` is 1, then the 64-bit value in the integer register specified by `rs1` is passed to the RoCC (and it is not if `xs1` is clear). The same idea applies to `xs2`, controlling the read of register specified by `rs2`. If the `xd` bit is 1 and `rd` is not 0, the core will wait for a value returned by the co-processor over RoCCIO after issuing the instruction to it. While the `funct7` field can be used to select user-defined functions on top of the already present 4 custom instructions, RoCC already defines 4 opcodes:
+
+| RoCC Instruction | Opcode  |
+| ---------------- | ------- |
+| custom0          | 0001011 |
+| custom1          | 0101011 |
+| custom2          | 1011011 |
+| custom3          | 1111011 |
+
+**CFI:** For backward-edge CFI, FIXER implements a **shadow stack** in a hardware memory on the RoCC. When a function call occurs, the return address is both set on the stack and simultaneously passed to the RoCC. When returning it retrieves the return address from the RoCC and compares it to the actual one, raising a CFI error in the case of a mismatch. The forward-edge protection uses a **control-flow graph (CFG)** represented as a **policy matrix** that indicates the valid call targets for each function call. The policy matrix is loaded in memory at runtimeand is queried to validate the call target for every indirect function call.
+
+**Software design:** Any program that wants to be backward-edge protected needs to go through three steps: (1) **source code annotation** to add `CFI_CALL` tags before function calls and a corresponding `CFI_RET` before a return from the called function (presented in the code snippet) (2) **tag expansion** to translate the tags to actual RISC-V assembly instructions (expansion presented in the code snippet below), and (3) **compilation** to assemble, link and generate the final executable (**no change to the compiler since it is passed as a word!**). For forward-edge integrity, a matrix is derived from a CFG. A RoCC instruction `cfi_matld` is used to load the policy from the policy matrix (64x64 - callee/caller addresses -, where a set/unset bit indicates a valid/invalid call). Another RoCC instruction `cfi_fwd` is inserted before every indirect function call in the source code. 
+
+```
+void main() {                   void myFunc()) {
+	...                             ...
+	CFI_CALL                        CFI_RET
+	myFunc();                       return;
+}
+
+# CFI_CALL                      # CFI_RET
+auipc  t0,0                     .word   0x0200428b
+add    t0,0,14                  bne     t0,ra,_cfi_error  
+.word  0x0002a00b               jr      ra
+call   myFunc
+```
+
+> `CFI_CALL` extends to: retrieve the current value of the pc, add 14 bytes of offset to calculate the return address, then a custom instruction is used - custom0 is used, `funct7` is set to `0000000` for `CFI_CALL` , `rs1` is set to use `t0` (X5 or `00101`) and `xs1` is set to 1 to transfer the computed value to the RoCC. The resulting instruction is `0x0002a00b`!
+>
+> `CFI_RET` extends to: compare the actual return value to the stored one where `funct7` is set to `0000001` for `CFI_RET` , `rd` is set to use `t0` (X5 or `00101`) and `xd` is set to 1 to transfer the computed value back to the core. The resulting instruction is `0x0200428b`! It should then be coupled with a `bne` to check equality between the actual `ra` and the one retrieved from the shadow stack.
+
+**Hardware design:** The program binary runs on the Rocket Core and sends RoCC instruction over the RoCCIO whenever a security validation is required. The RoCC instruction is passed to through the command decoder which extracts the individual fields of the RoCC instruction. The `funct7` decodes a `cfi_call` or `cfi_ret`. for a `cfi_call`, the contents of `t0` is sent through and stored in the shadow stack memory (in SRAM, that can store up to 1000 addresses but is parameterizable). It is accessed through a top-of-stack register. For a `cfi_ret`, the address pointed by the top-of-stack register is returned to the core. No presentation of the forward-edge implementation...
+
+##### tags: cfi, fpga, hardware, riscv, security
+
 ---
 
 
 ### 2019 - Du, XPC Architectural Support for Secure and Efficient Cross Process Call
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -2629,11 +3202,23 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 ### 2019 - Fumero, Dynamic Application Reconfiguration on Heterogeneous Hardware
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, unread
+
+---
+
+
+### 2019 - Hedayati, Hodor Intra-Process Isolation for High-Throughput Data Plane Libraries
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
+
 ---
 
 
 ### 2019 - Kermarrec, LiteX  an open-source SoC builder and library based on Migen Python DSL
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: hardware, fpga, unread
 
 ---
 
@@ -2641,11 +3226,15 @@ The GC cost is a metric used in adaptive heap sizing. The cost of a particular G
 ### 2019 - Kocher, Spectre Attacks Exploiting Speculative Execution
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: security, side-channel attack, unread
+
 ---
 
 
 ### 2019 - Kwon, uXOM Efficient eXecute-Only Memory on ARM Cortex-M
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: hardware, unread
 
 ---
 
@@ -2662,8 +3251,7 @@ The work focuses on IoT security and especially **low-cost microcontrollers (MCU
 **Implementation Details:** The MPU is configured with four Control and Status Registers (CSRs), which hold the address range of the API functions, called libraries and are not reprogrammed on every context switch. **Basic memory protection** is performed at task creation by specifying the priority, the amount of stack to be used as well as the entry function. When a task is loaded, the kernel assigns unique code and data (including stack) memory regions which are stored in the Task Control Block (TCB). The two privileges proposed by **`vscale`** are used to separate MPU configuration from being modified in user mode. **Peripheral protection** implies that shared peripherals are declared as resources. Tasks request access to a resource and wait for hardware checks to complete to give them access. One CSR is used to protect up to 32 peripherals. **Inter-task communication protection** is implemented using a shared memory approach. The memory region is divided into pages of configurable but mutually equal sizes. The MPU bitfield register has a '1' only if the communication is requested and acknowledged by both sending and receiving tasks. The authentication is performed in machine mode before switching to user mode to send data in a dedicated register and avoid expensive system calls. In hardware, every time a data memory operation is performed in the designated shared memory area for communication, the MPU calculates the page index, checks the `comm_reg` register and raises a data memory access exception if the executing task has no privileges to use the indexed page.
 
 
-
-
+##### tags: embedded system, hardware
 
 ---
 
@@ -2671,11 +3259,15 @@ The work focuses on IoT security and especially **low-cost microcontrollers (MCU
 ### 2019 - Park, libmpk Software Abstraction for Intel Memory Protection Keys
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: mpk, unread
+
 ---
 
 
 ### 2019 - Patel, Runtime-Programmable Pipelines for Model Checkers on FPGAs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: fpga, hardware, model checking, unread
 
 ---
 
@@ -2683,11 +3275,15 @@ The work focuses on IoT security and especially **low-cost microcontrollers (MCU
 ### 2019 - Polito, GildaVM a Non-Blocking IO Architecture for the Cog
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: cog, smalltalk, unread
+
 ---
 
 
 ### 2019 - Pullini, Mr Wolf An Energy-Precision Scalable Parallel Ultra Low Power SoC for IoT Edge Processing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: hardware, unread
 
 ---
 
@@ -2695,11 +3291,15 @@ The work focuses on IoT security and especially **low-cost microcontrollers (MCU
 ### 2019 - Schwarz, ZombieLoad Cross-Privilege-Boundary Data Sampling
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: attack, security, side-channel attack, unread
+
 ---
 
 
 ### 2019 - Vahldiek, ERIM Secure Efficient In-process Isolation with Protection Keys MPK
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: mpk, security, unread
 
 ---
 
@@ -2707,11 +3307,15 @@ The work focuses on IoT security and especially **low-cost microcontrollers (MCU
 ### 2019 - Weiser, TIMBER-V Tag-Isolated Memory Bringing Fine-grained Enclaves to RISC-V
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, risc-v, security, unread
+
 ---
 
 
 ### 2020 - Agache, Firecracker Lightweight Virtualization for Serverless Applications
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: serverless, unread
 
 ---
 
@@ -2719,11 +3323,15 @@ The work focuses on IoT security and especially **low-cost microcontrollers (MCU
 ### 2020 - Ahmed, Methodologies for Quantifying Re-randomization Security and Timing under JIT-ROP
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: diversification, jit, rop, security, unread
+
 ---
 
 
 ### 2020 - Araujo, Improving Cybersecurity Hygiene through JIT Patching
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: defense, jit, security, unread
 
 ---
 
@@ -2731,11 +3339,41 @@ The work focuses on IoT security and especially **low-cost microcontrollers (MCU
 ### 2020 - Brennan, JIT Leaks Inducing Timing Side Channels through Just-in-Time Compilation
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: attack, jit, side-channel attack, security, unread
+
 ---
 
 
 ### 2020 - Bruant, System Verilog to Chisel Translation for Faster Hardware Design
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: hardware, fpga, unread
+
+---
+
+
+### 2020 - Canacki, Efficient Context-Sensitive CFI Enforcement Through a Hardware Monitor
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
+
+---
+
+
+### 2020 - Christou, On Architectural Support for Instruction Set Randomization
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+**ASIST** extension is able to protect both user- and kernel-level processes transparently without any program modifications. It utilizes a combination of techniques to increase security and performance. It uses highly secure cryptographic algorithms that can provide resilience against several attacks. It takes advantage of efficient caching strategies, as well as the spatial locality of the code to decrease the execution overheads. This way, the number of decrypt operations needed decreases and the overall performance is improved. It adds less than 1.5% overhead for XOR or transposition and around 10% for AES.
+
+##### tags: defense, isr, security
+
+---
+
+
+### 2020 - Delshadtehrani, PHMon A Programmable Hardware Monitor and Its Security Use Cases
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -2789,7 +3427,7 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 
 *LOOK AT FIGURE 3 FOR ALGORITHM POSSIBILITIES*
 
-
+##### tags: hardware, fpga, model checking
 
 ---
 
@@ -2797,17 +3435,23 @@ The call to `is_safe` is inlined into the `next` instruction to reduce the call 
 ### 2020 - Fumero, Running Parallel Bytecode Interpreters on Heterogeneous Hardware
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, interpreter, unread
+
 ---
 
 
 ### 2020 - Garlati, A Clean Slate Approach to Linux Security RISC-V Enclaves
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, linux, risc-v, tee, unread
+
 ---
 
 
 ### 2020 - Geffen, Synthesizing JIT Compilers for In-Kernel DSLs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: hardware, jit, unread
 
 ---
 
@@ -2822,8 +3466,7 @@ JIT compilers mainly use two types of compilation: **trace-based** compilation a
 Using both strategies needs to answer several questions: (1) how can we construct such a compilation engine without using two different compilers (2) how do the code fragments that are compiled by different strategies interact with each others and (3) how can we determine a compilation strategy to compile part of a program.
 
 
-
-
+##### tags: jit
 
 ---
 
@@ -2845,7 +3488,7 @@ The base RISC-V ISA can be extended with several extensions: **M** for integer m
 
 RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction length is encoded in the LSB (lowest-address as RISC-V is little endian). 16-bit instructions require the last two bits to be different from 11 whereas 32-bit instructions have their last two bits equal to 11 and the three previous different from 11. This means that there is a possibility for overlapping instructions that can be obtained by either using two 32-bit instructions 2 bytes apart or by using a 32-bit instruction whose last 2 bytes are also a valid 16-bit compressed instruction.
 
-![](/home/quentin/Desktop/Research/VM/articles/2020_Jaloyan_Return-Oriented Programming on RISC-V/overlapping.png)
+![](overlapping.png)
 
 **Threat model:** The system consists of RISC-V systems with ROP mitigations deployed such as DEP, ASLR as well as `gcc`'s `-fstack-protector-strong` (since `gcc`'s `-mmitigate-rop` or `clang`'s CFI are not available on RISC-V).
 
@@ -2854,8 +3497,7 @@ RV64GC features 32- and 16-bit instructions, aligned on 16 bits. Instruction len
 **Gadget Chaining:** Hidden gadgets are inserted in the code using one function per gadget, each ending with a C `return` function. Note that for each function, the compiler may add assembly code at the beginning and the end whose purpose is to *insert (save)* or *remove (restore)* the call frame from the stack. Those *restore* are essential in ROP attacks as they tamper with the return address register. The hidden instructions are written directly in C code, and feature one or two instructions followed by a jump to a relative offset. 
 
 
-
-
+##### tags: attack, risc-v, rop, security
 
 ---
 
@@ -2881,7 +3523,7 @@ For *memory instructions*, RIMI uses replicated instructions for `domain1` and e
 
 **Evaluation:** Bristol/Embescom Embedded Benchmark Suite (BEEBS) shows that RIMI presents a 0.88% overhead against the 7.74% reached by other software solutions.
 
-
+##### tags: hardware, risc-v, security
 
 ---
 
@@ -2889,11 +3531,15 @@ For *memory instructions*, RIMI uses replicated instructions for `domain1` and e
 ### 2020 - Lee, Keystone An Open Framework for Architecting Trusted Execution Environments
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, risc-v, security, tee, unread
+
 ---
 
 
 ### 2020 - Lehmann, Everything Old is New Again Binary Security of WebAssembly
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: security, unread, webassembly
 
 ---
 
@@ -2901,17 +3547,15 @@ For *memory instructions*, RIMI uses replicated instructions for `domain1` and e
 ### 2020 - Lima, Exposing Bugs in JavaScript Engines through Test Transplantation and Differential Testing
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
----
-
-
-### 2020 - Lu, A survey on RISC-V Security Hardware and Architecture
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
+ ##### tags: fuzzing, javascript, unread
 
 ---
 
 
-### 2020 - Papadimitriou, Transparent Compiler and Runtime Specializations for Accelerating MAnaged Languages on FPGAs
+### 2020 - Papadimitriou, Transparent Compiler and Runtime Specializations for Accelerating Managed Languages on FPGAs
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -2967,13 +3611,15 @@ These threats can be countered by deploying **fine-grained security policies** t
 - (2) *Dynamic Object-Flow Analysis*: Only read permissions are granted to JavaScript objects. At runtime, when a `segfault` is obtained, if it is caused by an MPK violation, it logs the faulting code to be processed later by the LLVM passes. Before entering the signal handler, the OS saves the register state of the interrupted process in memory and recovers the registers after the signal handler returns.
 - (3) *Accessor Functions*: Only a limited number of functions can directly write to an object. Based on SpiderMonkey, any other function should invoke one of these accessor functions to modify a JS object. These functions can be decoupled in *Member Accessors* (private attributes), *Payload Accessors*, *Initialization Accessors* or *GC Accessors*.
 
-
+##### tags: jit, mpk, non-control data attack, security 
 
 ---
 
 
 ### 2020 - Proskurin, xMP Selective Memory Protection for Kernel and User Space
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -2997,7 +3643,7 @@ JavaScript is **jitted** and sandboxed through browsers to enforce security. The
 
 **Security Evaluation:** *Hardware call gates* prevent code-reuse attacks on Donky Monitor. *System calls and signals* are interposed by Donky by redirecting them to the Monitor. The *Donky Monitor* itself validates all inputs in the *Donky API*.
 
-
+##### tags: hardware, mpk, risc-v, security
 
 ---
 
@@ -3005,11 +3651,23 @@ JavaScript is **jitted** and sandboxed through browsers to enforce security. The
 ### 2020 - Sung, Intra-Unikernel Isolation with Intel Memory Protection Keys
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: mpk, security, unread
+
 ---
 
 
 ### 2020 - Varoumas, High-level programming models for microcontrollers with scarce resources
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: embedded systems, unread
+
+---
+
+
+### 2020 - Xu, Hardware-Based Domain Virtualization for Intra-Process Isolation of Persistent Memory Objects
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -3047,6 +3705,8 @@ Design of **rBPF**, a variant of the eBPF VM designed to be ISA-compatible. It e
 
 VM adds overhead that has an impact on execution time and a measurable additional size. While the Wasm VM requires too much RAM and ROM, rBPF looks like a good compromise between security through process isolation and memory and time overhead.
 
+##### tags: embedded systems
+
 ---
 
 
@@ -3074,11 +3734,33 @@ CRuby, the official Ruby implementation includes a JIT compiler known as MJIT th
 
 Validation over a list of benchmarks along with the number of instruction sequences compiled by YJIT.
 
+##### tags: general vm, jit
+
+---
+
+
+### 2021 - Cui, SmashEx Smashing SGX Enclaves Using Exceptions
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
+
 ---
 
 
 ### 2021 - Delshadtehrani, FlexFilt Towards Flexible Instruction
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+[24/10/2022]
+
+Moving the permission change from the OS level to the user-space (by changing the protection key right register PKRU using a dedicated `WRPKRU` instruction) makes it faster but an untrusted component can gain permission by writing into PKRU. Previous works were either insecure or too limiting in terms in terms of isolation.
+
+**Watchpoints:** A hardware watchpoint is a **debugging mechanism** that allows the software developer to **monitor a number of programmer-specified memory locations**. They are usually limited in modern architectures and cannot be used as a fine-grained standalone solution to filter instructions at runtime. Even with an unlimited number of watchpoints, the developer has to scan the binary and instrument each call to the target instructions. 
+
+**FlexFilt** goal is to generalize a solution to filter target instructions. The solution should (1) be flexible enough to be applicable to a variety of instructions, (2) be efficient enough to be applicable at runtime, and (3) be fine-grain to be able to filter various parts of the code. FlexFilt covers these requirements through two mechanisms: **instruction protection domains** and **flexible hardware-level filters**. 
+
+
+
+##### tags: hardware, riscv, security, unread
 
 ---
 
@@ -3086,11 +3768,15 @@ Validation over a list of benchmarks along with the number of instruction sequen
 ### 2021 - Dobis, Open-Source Verification with Chisel and Scala
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, fpga, unread
+
 ---
 
 
 ### 2021 - Dorflinger, A Comparative Survey of Open-Source Application-Class RISC-V Processor Implementations
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: hardware, processor, risc-v, unread
 
 ---
 
@@ -3098,11 +3784,7 @@ Validation over a list of benchmarks along with the number of instruction sequen
 ### 2021 - Harris, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
----
-
-
-### 2021 - Harros, Morpheus II a RISC-V Security Extension for Protecting Vulnerable Software and Hardware
-<!-- Please prefix the notes with the date as in [22/12/2020] -->
+##### tags: hardware, risc-v, security, unread
 
 ---
 
@@ -3110,11 +3792,58 @@ Validation over a list of benchmarks along with the number of instruction sequen
 ### 2021 - Herdt, Adaptive Simulation with Virtual Prototypes in an open-source RISC-V evaluation platform
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, risc-v, unread
+
 ---
 
 
 ### 2021 - Izawa, Threaded Code Generation with a Meta-Tracing JIT Compiler
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: jit, unread
+
+---
+
+
+### 2021 - Kang, A Framework for Automatic Exploit Generation for JIT Compilers
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+**Overview:** authors present a framework for **automatic exploit generation** for JIT compilers. It consists of two components: (1) an **analyzer of existing exploits** to extract exploitation primitives, which are abstractions of low-level behaviors useful for constructing exploits and (2) a **primitive composer** to construct an exploit for a new bug given a proof-of-concept input that triggers the bug.
+
+**Analyzer:** the analyzer determines **exploitation primitives**, high-level abstractions of lower-level behaviors represented in terms of one sequence of operations. Four kinds of primitives are extracted:
+
+| Primitive Name | Arguments        | Ability              | Description                                                  |
+| -------------- | ---------------- | -------------------- | ------------------------------------------------------------ |
+| Read           | `addr`           | `addrs`              | reads the value at address `addr` and its ability is described by the addresses `addrs` it can read from |
+| Write          | `addr`, `val`    | `addrs`              | writes an attacker-controlled value `val` to an attacker-control address `addr`, its ability is described by the `addrs` it can write to |
+| IP Hijack      | `addr`           | `n`                  | overwrites the instruction pointer register with an attacker-controlled address `addr`, its ability describes the number `n` of lowest bytes it is able to control (*i.e.* the range it can reach) |
+| Type Confusion | `obj`, `DstType` | `SrcType`, `DstType` | converts the type of an object `obj` into `DstType`, its ability is defined by its capability to convert from an `SrcType` to a `DstType` |
+
+Each of these primitives is represented by a sequence of operations defined by:
+
+| Operation Name | Arguments              | Description                                                  |
+| -------------- | ---------------------- | ------------------------------------------------------------ |
+| ReadData       | `obj`, `field`         | reads the value of an object at a specific field             |
+| WriteData      | `obj`, `field`, `data` | writes attacker-specified data to the attacker-specified field of an attacker-specified object |
+| CreateObj      | `specification`        | creates an object that is the same as the given specification |
+
+An **exploitation plan**, a mixture of real code and descriptions of wanted primitives. Descriptions correspond to the ones described by exploitation primitives where the address is represented by `(base, index, offset)`. An **exploit** derives from **exploitation primitives** and **exploit plans**.
+
+**Preprocessing:** The preprocessing phase relies on inspecting the data flow between different objects. It uses an instruction-level execution trace for a given exploit and **extracts operation sequences** on objects in a **dedicated algorithm**. Then, extracted operation sequences are stored in a **primitive database** as `(sequence, usage, ability)`. They are then sorted by ability for each category.
+
+**Exploit Creation:** A **memory analyzer** keeps track of values, permissions and objects (location and fields) in memory. A **bug analyzer** randomly modifies a PoC file to collect its optimization action sequence and extract the longest common subsequence that keeps optimizations unchanged and therefore leave a potential bug in place. Both these analyzers output their results to the **primitive application** where the primitive is built. It uses an algorithm that takes a sequence from the database, tries to implement each operation in the sequence. It checks pre- and post-conditions for each primitive.
+
+Still a prototype! (only preprocessing phase available)
+
+##### tags: jit, security, unread
+
+---
+
+
+### 2021 - Kim, Refining Indirect Call Targets at the Binary Level
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -3122,11 +3851,15 @@ Validation over a list of benchmarks along with the number of instruction sequen
 ### 2021 - Kwon, A Hardware Platform for Ensuring OS Kernel Integrity on RISC-V
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+##### tags: hardware, risc-v, security
+
 ---
 
 
 ### 2021 - Lu, A Survey on RISC-V Security Hardware and Architecture
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+ ##### tags: hardware, risc-v, security, survey, unread
 
 ---
 
@@ -3148,7 +3881,7 @@ Validation over a list of benchmarks along with the number of instruction sequen
 
 
 
-
+ ##### tags: cog, smalltalk, vm development
 
 ---
 
@@ -3156,17 +3889,68 @@ Validation over a list of benchmarks along with the number of instruction sequen
 ### 2021 - Suzaki, TS-Perf General Performance Measurement of Trusted Execution Environment and Rich Execution Environment on Intel SGX Arm TrustZone and RISC-V Keystone
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+ ##### tags: hardware, performance, tee, unread
+
 ---
 
 
 ### 2022 - Cloosters, RiscyROP Automated Return-Oriented Programming Attacks on RISC-V and ARM64
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+Due to the lack of a **stack-based return instruction** and **strict instruction alignment**, it is significantly harder to perform ROP attacks on RISC-V or ARM64. Existing tools to automate ROP attacks utilize implementations based on the **Galileo algorithm**. It searches for byte sequences reassembling a return instruction and analyzes the preceding bytes got valid and useful instructions. Some hidden instructions (overlapping, compressed) can still be missed by the algorithm. Several novelties with the architectures make it significantly harder to find ROP gadgets: (1) the program counter (`pc`) is **not a general purpose register**, (2) there is **no stack-based return instruction**, (3) arguments to function are passed via **dedicated registers instead of the stack**, (4) **memory alignment requirements** prevent execution of unintended sequences, and (5) function epilogue sequences introduce side effects by executing several instructions between loading a return address from the stack and actually using it. 
+
+|                                        | x86   | x86_64 | ARM32 | RISC-V | ARM64 |
+| -------------------------------------- | ----- | ------ | ----- | ------ | ----- |
+| (1) Writable PC                        | **X** | **X**  | **O** | **X**  | **X** |
+| (2) Available stack return instruction | **O** | **O**  | **O** | **X**  | **X** |
+| (3) Maximum arguments in registers     | 0     | 4-6    | 4     | 8      | 8     |
+| (3) Mixed-purpose registers            | **O** | **O**  | **O** | **X**  | **X** |
+| (4) Instruction alignment              | 1     | 1      | 4/2   | 4/2    | 4     |
+| (5) Short function epilogue            | **O** | **O**  | **O** | **X**  | **X** |
+
+**Challenges:** ***(1: stack-based returns)*** RISC architectures use a dedicated register to store the return address (`ra/lr`), but fr non-leaf functions (nested calls), the return addresses are still stored on the stack. On RISC-V and ARM64, the program counter is protected and can only be modified by jump instructions. RISC-V use a load instruction (`ld ra, 0x10(sp)`) to restore `ra` at the beginning of the epilogue and ARM64 use load pair to restore `lr` and `fp` in the same instruction before jumping/returning to the caller (`ldp fp, lr, [sp], #0x30; ret`).  Between the loading of the return address from the stack and the actual jump to the intended gadget, callee-saved registers are restored (`s0-s11` on RISC-V). ***(2: memory alignment)*** RISC-V should be aligned to 4 bytes (or 2 for compressed instructions), few hidden instructions are available, ARM64 is 4-bytes aligned only which prevents it. ***(3: function calls)*** arguments have to be loaded in dedicated registers that are not set by function epilogue. ***(4: system calls)*** the system call instruction is very unlikely to be included unintentionally and simply does not exist in applications that use the `libc` as a system-call wrapper.
+
+**RiscyROP:** the gadget finding tool operates through 4 steps to construct a ROP chain to perform arbitrary function calls: (1) **scan** of every aligned address (2) **evaluation** of gadgets using **symbolic execution** and storage in a **database with their constraints** (preconditions and effects) (3) stitching of compatible gadgets and verification that they do not contain breaking side effects (4) **exploit generation** using attacker-supplied argument values.
+
+**Gadget finding:** Does not rely on Galileo and specific byte sequence/pattern but uses **symbolic execution** without known instruction patterns. It allows the tool to discover gadgets based on their effects rather than specific instructions, allowing the use of different types of jumps. Every aligned address is analyzed independently by: (1) symbolically **initializing** registers and stack (2) **executing** the instructions until the control-flow changes to a symbolically unconstrained target (return or jump to an unset reg) and (3) **analyzing** the reached state and **summarizing** the effects of the gadget. The **effects** are summarized determining which registers: are overwritten with data from the stack, depend on one different register, are set to a constant, are changed in more complex ways. **Preconditions** are the return type of the gadget and the path constraints.
+
+**Gadget chaining:** Using attacker-supplied target registers (argument registers for example) as input and aiming for a chain to control them all, the tool provide a gadget chain. Gadgets are processed using priorities - (1) gadgets that load a value from the *stack* over another *register* (2) gadgets that return to a *stack-read* address over *register-based* return (3) gadgets that use the least amount of registers to reduce complexity. Once it is selected, the target registers are updated for the next iteration to include remaining registers and new dependencies. This procedure is done recursively until no registers remain.
+
+ ##### tags: attack, risc-v, rop, security, unread
+
+
+
 ---
 
 
 ### 2022 - Izawa, Two-level Just-in-Time Compilation with One Interpreter and One Engine
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+ ##### tags: jit, unread
+
+---
+
+
+### 2022 - Jentzch, 2022
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
+
+---
+
+
+### 2022 - Jeong, Exploiting Metaobjects to Reinforce Data Leakage Attacks
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
+
+---
+
+
+### 2022 - Jiang, On the Challenges of Detecting Side-Channel Attacks in SGX
+<!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+##### tags: unread
 
 ---
 
@@ -3227,17 +4011,23 @@ The two CFI solutions presented are **function signature check**, check at the g
 
 The solution is presented on top of the Spike RISC-V simulator ans as an LLVM pass. The code size overhead usually is lower than 1% for the function signature solution and around 2% for the other (up to 11% in worst-case scenario!). Execution time overhead is less than 6%!
 
+ ##### tags: cfi, hardware, risc-v, security
+
 ---
 
 
 ### 2022 - Qin, DeJITLeak Eliminating JIT-Induced Timing Side-Channel Leaks
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
 
+ ##### tags: defense, jit, security, side-channel attack, unread
+
 ---
 
 
 ### 2022 - Saileshwar, HeapCheck Low-cost Hardware Support for Memory Safety
 <!-- Please prefix the notes with the date as in [22/12/2020] -->
+
+ ##### tags: unread
 
 ---
 
@@ -3262,7 +4052,9 @@ A comparison of the solutions considering those four points is presented. Its me
 
 (3) involves two components: a *trusted path to the device* and a *trusted device architecture to protect security sensitive data just like the CPU*. The trusted paths are either *logical* or *cryptographic* and the same taxonomy as (2) is used to qualify the trusted device architecture.
 
-(4) ensures that any sensitive data that is persistent is only available to authorized entities (*sealing*). Early sealing mechanisms rely on concepts pioneered by the TPM.
+(4) ensures that any sensitive data that is persistent is only available
+
+ ##### tags: hardware, security, sok, tee
 
 ---
 
